@@ -1,0 +1,48 @@
+{
+  "verified_at": "2026-11-01T20:09:04.662047+08:00",
+  "formal_first_update": {
+    "microsteps": 16,
+    "optimizer_updates": 1,
+    "target_updates": 60000,
+    "loss": 0.3292647898197174,
+    "learning_rate": 2.6561669947816613e-08,
+    "elapsed_s": 70.38322417484596,
+    "peak_allocated_gib": 9.764780521392822,
+    "peak_reserved_gib": 9.962890625,
+    "adapter_changed": true,
+    "actual_optimizer_steps": [
+      1
+    ]
+  },
+  "smoke_reload": {
+    "passed": true,
+    "checkpoint": "/home/lp531/pi05_lora_workspace/pi05_cup513_20hz_chunk50_acc16_60k_20261101/smoke_output/checkpoints/000016/pretrained_model",
+    "tests": [
+      {
+        "source": "basic",
+        "episode": 60,
+        "prediction_shape": [
+          1,
+          50,
+          7
+        ],
+        "finite": true
+      },
+      {
+        "source": "actual_policy_push_recovery",
+        "episode": 506,
+        "prediction_shape": [
+          1,
+          50,
+          7
+        ],
+        "finite": true
+      }
+    ],
+    "normalization_roundtrip": true,
+    "strict_base_load": true,
+    "loaded_keys": 813
+  },
+  "tests_passed": 10,
+  "fresh_adapter": true
+}

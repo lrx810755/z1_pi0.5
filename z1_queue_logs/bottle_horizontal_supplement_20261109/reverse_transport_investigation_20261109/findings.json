@@ -1,0 +1,36 @@
+{
+  "source_case": "failed_1794226880019826047_0d3714e9",
+  "actual_reverse_distance_m": 0.09281968166982894,
+  "commanded_reverse_distance_m": 0.09331851323382641,
+  "initial_ee_world_m": [
+    0.5093620563,
+    -0.0644910204,
+    0.1069470088
+  ],
+  "reverse_ee_world_m": [
+    0.4686106809,
+    -0.2287317548,
+    0.1711609753
+  ],
+  "final_commanded_ee_world_m": [
+    0.2187671399,
+    0.2770557918,
+    0.2910957013
+  ],
+  "final_actual_ee_world_m": [
+    0.2188100669,
+    0.2772748671,
+    0.2898955536
+  ],
+  "wrist_orientation_change_rad": 0.5832966025,
+  "box_center_world_xy_m": [
+    0.32,
+    0.14
+  ],
+  "root_cause_confirmed": "OMPL free-space request constrains endpoint only; commanded trajectory itself moves away from box before turning toward it",
+  "additional_model_issue": "Object-to-EE target conversion uses current world offset, while endpoint orientation is allowed to change; offset is not rotated to the planned orientation",
+  "missing_runtime_guard": "Loaded trajectory is executed to completion before contact/slip probe; no per-sample loaded-contact stop in this route",
+  "frame_check": "URDF FK stator positions agree with recorded world stator positions in sampled completed cases",
+  "scheduler_state": "SIGSTOP to request worker; no new attempt dispatch",
+  "generated_at_unix": 1794227282.2635655
+}

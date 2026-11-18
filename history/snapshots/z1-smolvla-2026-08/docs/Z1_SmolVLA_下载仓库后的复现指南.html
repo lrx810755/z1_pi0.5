@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Z1 SmolVLA 下载仓库后的复现指南</title>
+  <style>
+    @page { size: A4; margin: 2.2cm 2.0cm 2.0cm 2.0cm; }
+    body { font-family: "Noto Serif CJK SC", "SimSun", serif; color: #1f2937; font-size: 11pt; line-height: 1.65; }
+    h1, h2, h3 { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; color: #17365d; }
+    h1 { font-size: 22pt; border-bottom: 2px solid #4f81bd; padding-bottom: 8px; }
+    h2 { font-size: 16pt; margin-top: 22px; border-left: 5px solid #4f81bd; padding-left: 10px; }
+    h3 { font-size: 13pt; margin-top: 16px; }
+    p { margin: 6px 0; }
+    ul, ol { margin-top: 5px; margin-bottom: 8px; }
+    li { margin-bottom: 4px; }
+    table { width: 17cm; table-layout: fixed; border-collapse: collapse; margin: 10px 0 16px; }
+    th { background: #d9eaf7; color: #17365d; font-family: "Noto Sans CJK SC", sans-serif; }
+    th, td { border: 1px solid #8ea9c1; padding: 6px 8px; vertical-align: top; }
+    code { font-family: "Noto Sans Mono CJK SC", "Consolas", monospace; font-size: 9.5pt; }
+    pre { font-family: "Noto Sans Mono CJK SC", "Consolas", monospace; font-size: 9pt; line-height: 1.45; background: #f3f6f9; border: 1px solid #cbd5e1; border-left: 4px solid #4f81bd; padding: 10px 12px; white-space: pre-wrap; }
+    .cover { text-align: center; padding-top: 150px; page-break-after: always; }
+    .cover h1 { border: 0; font-size: 28pt; color: #17365d; }
+    .cover .subtitle { font-size: 17pt; color: #4f81bd; margin-top: 18px; }
+    .cover .meta { margin-top: 110px; color: #475569; line-height: 2; }
+    .notice { background: #fff4ce; border-left: 5px solid #d6a500; padding: 10px 12px; margin: 12px 0; }
+    .success { background: #e8f5e9; border-left: 5px solid #3b873e; padding: 10px 12px; margin: 12px 0; }
+    .danger { background: #fdecec; border-left: 5px solid #c0392b; padding: 10px 12px; margin: 12px 0; }
+    .page-break { page-break-before: always; }
+    .small { color: #64748b; font-size: 9.5pt; }
+    .check { font-family: "Noto Sans CJK SC", sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="cover">
+    <h1>Z1 SmolVLA 下载仓库后的复现指南</h1>
+    <div class="subtitle">Isaac Sim + ROS 2 + MoveIt 2 + LeRobot/SmolVLA</div>
+    <div class="meta">
+      文档版本：V1.0<br>
+      适用仓库：z1-smolvla<br>
+      环境基线：Ubuntu 22.04 / ROS 2 Humble / Isaac Sim 5.1.0<br>
+      更新日期：2026 年 8 月 31 日
+    </div>
+  </div>
+
+  <h1 style="page-break-before: always;">文档说明</h1>
+  <table width="100%" border="1" cellspacing="0" cellpadding="6">
+    <tr><th style="width:22%">项目</th><th>说明</th></tr>
+    <tr><td>目标读者</td><td>已下载或收到 z1-smolvla 仓库，需要在另一台 PC 上恢复仿真、数据管线与 SmolVLA 训练环境的使用者。</td></tr>
+    <tr><td>复现范围</td><td>压缩包解压、路径配置、ROS 2 构建、Python/训练环境、URDF/USD 重建、数据恢复、系统启动与验收。</td></tr>
+    <tr><td>不随仓库提供</td><td>操作系统、NVIDIA 驱动、CUDA 运行能力、ROS 2、MoveIt 2、Isaac Sim、基础 SmolVLA checkpoint、正式训练数据及 Unitree 真机 SDK。</td></tr>
+    <tr><td>关键原则</td><td>仓库可放在任意目录；不要手工替换生成文件中的旧绝对路径；目标 PC 上通过脚本重新生成派生资产。</td></tr>
+  </table>
+
+  <table class="notice" width="100%" cellspacing="0" cellpadding="8"><tr><td><b>重要：</b>本指南将“代码/资产复现”和“训练结果复现”区分开。完成仓库构建并不代表能得到相同模型；训练结果还依赖同一数据版本、基础 checkpoint、训练参数、随机种子、CUDA/PyTorch 版本和评估协议。</td></tr></table>
+
+  <h2>1. 仓库内容与目录结构</h2>
+  <table width="100%" border="1" cellspacing="0" cellpadding="6">
+    <tr><th style="width:32%">目录或入口</th><th style="width:68%">功能</th></tr>
+    <tr><td><code>ros2_ws/src/z1_ros2/</code></td><td>Z1 描述、MoveIt 配置、ROS 2 控制桥、抓取与录制节点。</td></tr>
+    <tr><td><code>isaac_assets/z1/</code></td><td>Isaac USD、扫描物体、场景构建、相机和仿真运行脚本。</td></tr>
+    <tr><td><code>lerobot/</code></td><td>仓库固定的 LeRobot/SmolVLA 源代码。</td></tr>
+    <tr><td><code>dataset/</code></td><td>Episode 录制和 LeRobot 数据转换入口。</td></tr>
+    <tr><td><code>scripts/</code></td><td>环境初始化、ROS 构建、资产重建、验证和打包脚本。</td></tr>
+    <tr><td><code>data/runtime/</code></td><td>默认本地数据位置；不包含在核心迁移包中。</td></tr>
+  </table>
+  <p>顶层的 <code>robot_description</code>、<code>simulation</code>、<code>ros2_control</code>、<code>grasping</code>、<code>teleoperation</code>、<code>training</code> 和 <code>tests</code> 多数为相对软链接，用于提供清晰的模块入口。不要将其复制为重复目录。</p>
+
+  <h2>2. 目标 PC 要求</h2>
+  <table width="100%" border="1" cellspacing="0" cellpadding="6">
+    <tr><th style="width:22%">项目</th><th style="width:78%">推荐基线与确认方法</th></tr>
+    <tr><td>操作系统</td><td>Ubuntu 22.04 x86_64；执行 <code>lsb_release -a</code> 确认。</td></tr>
+    <tr><td>GPU</td><td>NVIDIA RTX 4090 级别，至少满足 Isaac Sim 与训练显存要求；执行 <code>nvidia-smi -L</code>。</td></tr>
+    <tr><td>ROS 2</td><td>Humble；执行 <code>test -f /opt/ros/humble/setup.bash</code>。</td></tr>
+    <tr><td>运动规划</td><td>与 ROS Humble 配套的 MoveIt 2；执行 <code>ros2 pkg prefix moveit_ros_move_group</code>。</td></tr>
+    <tr><td>Isaac Sim</td><td>5.1.0，默认安装到 <code>$HOME/isaac-sim</code>；检查对应目录下的 <code>python.sh</code>。</td></tr>
+    <tr><td>Python</td><td>Conda Python 3.10；执行 <code>python --version</code>。</td></tr>
+    <tr><td>磁盘</td><td>除仓库外，为 Isaac、Conda、数据和 checkpoint 预留足够空间；执行 <code>df -h</code>。</td></tr>
+  </table>
+
+  <h3>2.1 开始前检查</h3>
+  <pre>nvidia-smi -L
+test -f /opt/ros/humble/setup.bash &amp;&amp; echo "ROS Humble: OK"
+test -x "$HOME/isaac-sim/python.sh" &amp;&amp; echo "Isaac Sim: OK"
+conda --version
+df -h</pre>
+  <p>任一关键检查失败时，先修复驱动或系统依赖，不要继续训练。Isaac Sim 能启动也不等同于 PyTorch CUDA 可用，两者都必须单独确认。</p>
+
+  <h2 class="page-break">3. 解压仓库</h2>
+  <p>交付物只有一个 <code>z1-smolvla-core-YYYY-MM-DD.tar.zst</code>。把它复制到目标 PC 的工作目录后执行：</p>
+  <pre>tar -I zstd -xf z1-smolvla-core-YYYY-MM-DD.tar.zst
+cd z1-smolvla</pre>
+  <p>压缩包内部已经包含顶层 <code>z1-smolvla/</code> 目录，因此不需要预先创建目录，也不需要 GitHub、Git clone 或 Git submodule。</p>
+
+  <h3>3.1 不应从源 PC 直接复制的本机产物</h3>
+  <ul>
+    <li><code>ros2_ws/build/</code>、<code>ros2_ws/install/</code>、<code>ros2_ws/log/</code>：包含本机构建路径，必须在目标 PC 重建。</li>
+    <li><code>data/runtime/</code>、checkpoint、W&amp;B 输出：需要单独归档和版本管理。</li>
+    <li>Conda 环境目录和 Isaac Sim 安装目录：不应随仓库直接复制。</li>
+  </ul>
+
+  <h2>4. 初始化便携路径</h2>
+  <pre>cd /path/to/z1-smolvla
+source scripts/setup_env.sh
+./scripts/verify_reproduction.sh</pre>
+  <p>脚本默认得到以下变量：</p>
+  <table width="100%" border="1" cellspacing="0" cellpadding="6">
+    <tr><th style="width:25%">变量</th><th style="width:43%">默认值</th><th style="width:32%">作用</th></tr>
+    <tr><td><code>Z1_SMOLVLA_ROOT</code></td><td>当前仓库根目录</td><td>所有内部路径的根。</td></tr>
+    <tr><td><code>Z1_ASSET_ROOT</code></td><td><code>$Z1_SMOLVLA_ROOT/isaac_assets/z1</code></td><td>Isaac 资产与脚本。</td></tr>
+    <tr><td><code>Z1_ROS_WS</code></td><td><code>$Z1_SMOLVLA_ROOT/ros2_ws</code></td><td>ROS 2 工作空间。</td></tr>
+    <tr><td><code>SMOLVLA_DATA_ROOT</code></td><td><code>$Z1_SMOLVLA_ROOT/data/runtime</code></td><td>录制、审核和转换后的数据。</td></tr>
+    <tr><td><code>ISAAC_SIM_ROOT</code></td><td><code>$HOME/isaac-sim</code></td><td>Isaac Sim 安装位置。</td></tr>
+    <tr><td><code>ROS_DISTRO</code></td><td><code>humble</code></td><td>ROS 2 发行版。</td></tr>
+  </table>
+  <p>外部软件或数据位于其他路径时，应在 source 前覆盖变量：</p>
+  <pre>export ISAAC_SIM_ROOT=/opt/isaac-sim
+export SMOLVLA_DATA_ROOT=/data/z1-smolvla
+source scripts/setup_env.sh
+./scripts/verify_reproduction.sh</pre>
+  <table class="success" width="100%" cellspacing="0" cellpadding="8"><tr><td>预期结果：输出 <b>Portable source checks passed.</b>，并显示当前仓库、ROS、Isaac 资产、数据和 Isaac Sim 的实际路径。</td></tr></table>
+
+  <h2>5. 构建 ROS 2 工作空间</h2>
+  <p>确保已安装 ROS 2 Humble、MoveIt 2、rosdep、colcon 和必要系统包，然后执行：</p>
+  <pre>source scripts/setup_env.sh
+./scripts/bootstrap_ros.sh
+source "${Z1_ROS_WS}/install/setup.bash"</pre>
+  <p>脚本默认构建 <code>z1_description</code>、<code>z1_examples</code>、<code>z1_moveit</code> 和 <code>z1_isaac_bridge</code>。它会设置 <code>PYTHONNOUSERSITE=1</code>，避免用户目录中的 setuptools/packaging 污染 ROS 构建。</p>
+  <table class="notice" width="100%" cellspacing="0" cellpadding="8"><tr><td><b>真机例外：</b><code>z1_hardware_interface</code> 和 <code>z1_bringup</code> 默认不构建，因为真机接口需要额外的 Unitree SDK/controller、网络配置和版本固定。仿真复现不依赖它们。</td></tr></table>
+
+  <h3>5.1 ROS 构建验证</h3>
+  <pre>source "/opt/ros/${ROS_DISTRO}/setup.bash"
+source "${Z1_ROS_WS}/install/setup.bash"
+ros2 pkg prefix z1_description
+ros2 pkg prefix z1_moveit
+ros2 pkg prefix z1_isaac_bridge
+ros2 launch z1_isaac_bridge z1_isaac.launch.py --show-args</pre>
+
+  <h2 class="page-break">6. 创建 SmolVLA 训练环境</h2>
+  <pre>conda env create -f environment.yml
+conda activate z1-smolvla</pre>
+  <p>根据目标 PC 的 NVIDIA 驱动选择兼容的 CUDA PyTorch。不要盲目复制源 PC 的 CUDA wheel。安装并验证 PyTorch 后，在仓库根目录安装固定的 LeRobot 源码：</p>
+  <pre># 按 PyTorch 官方说明安装与本机驱动兼容的 CUDA 版本
+python -c 'import torch; print(torch.__version__, torch.cuda.is_available())'
+
+python -m pip install -r requirements-training.txt
+lerobot-train --help</pre>
+  <table class="danger" width="100%" cellspacing="0" cellpadding="8"><tr><td><b>训练前硬性条件：</b><code>torch.cuda.is_available()</code> 必须返回 <code>True</code>。如果为 <code>False</code>，先检查驱动、PyTorch wheel 和 CUDA 兼容性。</td></tr></table>
+
+  <h2>7. 恢复训练数据与 checkpoint</h2>
+  <h3>7.1 数据目录建议</h3>
+  <pre>${SMOLVLA_DATA_ROOT}/
+├── raw/          # 原始录制，只读保全
+├── quarantine/   # 失败或不完整回合
+├── reviewed/     # 人工审核通过的数据
+└── lerobot/      # 转换后的 LeRobot 数据集</pre>
+  <p>历史完整归档可能包含失败回合、隔离数据和 <code>.recording_*</code> 临时目录。正式训练只能使用人工审核后的版本，禁止将完整归档直接作为训练集。</p>
+
+  <h3>7.2 转换为 LeRobot 数据集</h3>
+  <pre>python "${Z1_ASSET_ROOT}/scripts/export_z1_lerobot_dataset.py" \
+  --input "${SMOLVLA_DATA_ROOT}/reviewed" \
+  --output "${SMOLVLA_DATA_ROOT}/lerobot/z1_tabletop_v1" \
+  --repo-id lp531/z1_smolvla_tabletop</pre>
+  <p>转换后至少记录：原始数据归档名称、审核规则、Episode 数量、成功/失败分布、相机分辨率、语言指令集合以及所用核心压缩包日期。</p>
+
+  <h3>7.3 checkpoint</h3>
+  <p>基础 SmolVLA checkpoint 不在核心压缩包内。应单独下载或迁移，并记录来源、版本、文件名和授权信息。训练输出也应与核心压缩包分开保存。</p>
+
+  <h2>8. 重建 URDF 与 USD 派生资产</h2>
+  <pre>source scripts/setup_env.sh
+source "/opt/ros/${ROS_DISTRO}/setup.bash"
+source "${Z1_ROS_WS}/install/setup.bash"
+./scripts/rebuild_generated_assets.sh</pre>
+  <p>该脚本依次执行：</p>
+  <ol>
+    <li>从 Xacro 展开双相机 Z1 URDF；</li>
+    <li>规范化扫描物体资产；</li>
+    <li>生成带绝对网格解析路径的临时 resolved URDF；</li>
+    <li>通过 Isaac Sim 重新导入机器人 USD；</li>
+    <li>生成双腕部相机场景和相对路径元数据；</li>
+    <li>执行场景与相机 smoke test。</li>
+  </ol>
+  <p>resolved URDF 中出现当前目标 PC 的绝对网格路径是正常现象，它属于派生输入，不是需要手工维护的源码。路径变化、Xacro/网格/相机修改或首次迁移后都必须重建。</p>
+  <p>脚本默认要求 <code>nvidia-smi -L</code> 成功。只有在明确接受“未完成 GPU 验证”的情况下，才可设置：</p>
+  <pre>Z1_ALLOW_NO_GPU=1 ./scripts/rebuild_generated_assets.sh</pre>
+
+  <h2>9. 启动完整系统</h2>
+  <pre>cd /path/to/z1-smolvla
+source scripts/setup_env.sh
+source "/opt/ros/${ROS_DISTRO}/setup.bash"
+source "${Z1_ROS_WS}/install/setup.bash"
+ros2 launch z1_isaac_bridge z1_isaac.launch.py</pre>
+  <p>临时覆盖 Isaac 或数据位置：</p>
+  <pre>ros2 launch z1_isaac_bridge z1_isaac.launch.py \
+  isaac_sim_root:="${ISAAC_SIM_ROOT}" \
+  dataset_root:="${SMOLVLA_DATA_ROOT}/z1_tabletop_raw_dual_wrist"</pre>
+
+  <h2 class="page-break">10. 复现验证与验收</h2>
+  <h3>10.1 自动检查</h3>
+  <pre>./scripts/verify_reproduction.sh
+
+PYTHONNOUSERSITE=1 python3 -m pytest -q \
+  ros2_ws/src/z1_ros2/z1_isaac_bridge/test</pre>
+  <p>整理版本基线结果为 <b>80 项测试通过</b>。若目标 PC 数量不同，应首先确认当前仓库版本是否一致。</p>
+
+  <h3>10.2 运行时检查</h3>
+  <pre>ros2 node list
+ros2 topic list
+ros2 topic hz /joint_states
+ros2 control list_controllers</pre>
+  <table class="check" width="100%" border="1" cellspacing="0" cellpadding="6">
+    <tr><th style="width:9%">完成</th><th style="width:25%">验收项目</th><th style="width:66%">合格标准</th></tr>
+    <tr><td>☐</td><td>仓库检查</td><td>压缩包正常解压；便携性检查通过。</td></tr>
+    <tr><td>☐</td><td>GPU</td><td>Isaac Sim 可识别 GPU；PyTorch CUDA 返回 True。</td></tr>
+    <tr><td>☐</td><td>ROS 构建</td><td>四个仿真包构建完成，launch 参数可展示。</td></tr>
+    <tr><td>☐</td><td>Isaac 场景</td><td>桌面、机器人、扫描物体与两个腕部相机正常加载。</td></tr>
+    <tr><td>☐</td><td>ROS 话题</td><td><code>/clock</code>、<code>/joint_states</code> 与三路 RGB 持续更新。</td></tr>
+    <tr><td>☐</td><td>MoveIt/RViz</td><td>规划模型与 Isaac 关节状态一致，轨迹可执行。</td></tr>
+    <tr><td>☐</td><td>Episode 录制</td><td>失败回合可丢弃，成功回合原子保存，无残留临时目录。</td></tr>
+    <tr><td>☐</td><td>数据集</td><td>转换后的 LeRobot 数据集可重新加载，帧数与元数据一致。</td></tr>
+    <tr><td>☐</td><td>训练</td><td>短程 smoke run 能前向、反向、保存并重新加载 checkpoint。</td></tr>
+    <tr><td>☐</td><td>策略评估</td><td>在未见随机 seed 上按固定协议完成评估后，才标记 checkpoint 可用。</td></tr>
+  </table>
+
+  <h2>11. 开始正式训练前必须固化的信息</h2>
+  <p>当前仓库提供 LeRobot/SmolVLA 训练入口，但尚未固化项目专用的一键正式训练配置。因此正式训练前应创建并版本化一份实验清单，至少包含：</p>
+  <ul>
+    <li>核心压缩包文件名和日期；LeRobot 版本；基础 checkpoint 名称与版本；</li>
+    <li>数据集名称、版本、路径、Episode 数和审核规则；</li>
+    <li>训练命令的完整参数：batch size、学习率、步数、保存间隔、图像键、状态键、动作维度；</li>
+    <li>随机种子、GPU 型号、驱动、CUDA、PyTorch 和 Transformers 版本；</li>
+    <li>评估任务、成功判据、seed 列表和每个 checkpoint 的成功率。</li>
+  </ul>
+  <p>先通过 <code>lerobot-train --help</code> 确认当前固定版本的参数名称，不要直接套用其他版本教程中的命令。</p>
+
+  <h2>12. 常见问题排查</h2>
+  <table width="100%" border="1" cellspacing="0" cellpadding="6">
+    <tr><th style="width:30%">现象</th><th style="width:70%">原因与处理</th></tr>
+    <tr><td><code>Portable source checks</code> 失败</td><td>确认在仓库根目录执行；检查仓库是否完整、软链接是否保留，以及是否自行加入了机器绝对路径。</td></tr>
+    <tr><td>ROS 构建出现 setuptools/packaging 冲突</td><td>使用 <code>scripts/bootstrap_ros.sh</code>；该脚本已设置 <code>PYTHONNOUSERSITE=1</code>。不要让 <code>~/.local</code> Python 包覆盖 ROS 系统环境。</td></tr>
+    <tr><td>找不到 Isaac <code>python.sh</code></td><td>在 source 前设置正确的 <code>ISAAC_SIM_ROOT</code>。</td></tr>
+    <tr><td>Isaac 报 <code>No space left on device</code>，但磁盘有空间</td><td>通常是 inotify 实例上限。检查 <code>cat /proc/sys/fs/inotify/max_user_instances</code>，由系统管理员按需提高。</td></tr>
+    <tr><td>Isaac 报无 CUDA/Vulkan 设备</td><td>先保证 <code>nvidia-smi -L</code> 正常，再检查显示会话、容器 GPU 映射和驱动兼容性。</td></tr>
+    <tr><td><code>torch.cuda.is_available()</code> 为 False</td><td>安装与目标驱动兼容的 CUDA PyTorch；不要只依赖系统中存在 CUDA toolkit。</td></tr>
+    <tr><td>resolved URDF 出现旧 PC 路径</td><td>不要手工替换。删除对旧派生物的依赖并重新运行 <code>scripts/rebuild_generated_assets.sh</code>。</td></tr>
+    <tr><td>话题有名称但没有数据</td><td>检查 Isaac ROS bridge、<code>RMW_IMPLEMENTATION</code>、ROS_DOMAIN_ID、仿真是否播放及发布频率。</td></tr>
+    <tr><td>训练结果无法复现</td><td>核对数据集和 checkpoint 的名称与版本、完整训练参数、随机种子、依赖版本和评估协议。</td></tr>
+  </table>
+
+  <h2>13. 最短执行流程</h2>
+  <pre># 1. 仓库与路径
+cd /path/to/z1-smolvla
+source scripts/setup_env.sh
+./scripts/verify_reproduction.sh
+
+# 2. ROS
+./scripts/bootstrap_ros.sh
+source "/opt/ros/${ROS_DISTRO}/setup.bash"
+source "${Z1_ROS_WS}/install/setup.bash"
+
+# 3. Python/SmolVLA
+conda env create -f environment.yml
+conda activate z1-smolvla
+# 安装与本机驱动兼容的 CUDA PyTorch
+python -m pip install -r requirements-training.txt
+python -c 'import torch; print(torch.cuda.is_available())'
+
+# 4. 恢复数据与基础 checkpoint 后重建资产
+./scripts/rebuild_generated_assets.sh
+
+# 5. 启动
+ros2 launch z1_isaac_bridge z1_isaac.launch.py</pre>
+
+  <h2>14. 复现记录</h2>
+  <table width="100%" border="1" cellspacing="0" cellpadding="6">
+    <tr><th style="width:30%">记录项</th><th style="width:70%">填写内容</th></tr>
+    <tr><td>目标 PC / 操作系统</td><td>&nbsp;</td></tr>
+    <tr><td>GPU / 驱动版本</td><td>&nbsp;</td></tr>
+    <tr><td>核心压缩包文件名 / 日期</td><td>&nbsp;</td></tr>
+    <tr><td>ROS / Isaac Sim 版本</td><td>&nbsp;</td></tr>
+    <tr><td>PyTorch / CUDA 版本</td><td>&nbsp;</td></tr>
+    <tr><td>数据集名称与版本</td><td>&nbsp;</td></tr>
+    <tr><td>基础 checkpoint 名称与版本</td><td>&nbsp;</td></tr>
+    <tr><td>自动测试结果</td><td>&nbsp;</td></tr>
+    <tr><td>运行验收结果</td><td>&nbsp;</td></tr>
+    <tr><td>复现人 / 日期</td><td>&nbsp;</td></tr>
+  </table>
+
+  <p class="small">配套文件：README.md、REPRODUCE.md、MIGRATION.md、ARCHITECTURE.md、data/README.md、scripts/setup_env.sh、scripts/bootstrap_ros.sh、scripts/rebuild_generated_assets.sh、scripts/verify_reproduction.sh。</p>
+</body>
+</html>

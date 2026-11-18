@@ -1,0 +1,47 @@
+{
+  "scene_seed": 342470491,
+  "grid": [
+    3,
+    0
+  ],
+  "stages": {
+    "home": 0,
+    "midway": 50,
+    "preclose": 105
+  },
+  "repetitions": 5,
+  "inference_seed": 20261004,
+  "checkpoint": "/home/lp531/smolvla_training/pi05_bottle_lora_20261001/checkpoints/108000/pretrained_model",
+  "source_sha256": "c20b55f1acefae01705f540e7a5542d95f399f2c3c15b2c56b3d9ae5c17aaff0",
+  "execution_args": {
+    "policy_type": "pi05",
+    "wrist_rgb_topic": "/left_wrist_camera/color/image_raw",
+    "checkpoint": "/home/lp531/smolvla_training/pi05_bottle_lora_20261001/checkpoints/108000/pretrained_model",
+    "target_xy_bounds": null,
+    "objects": [
+      "beverage_bottle"
+    ],
+    "episodes_per_object": 20,
+    "eval_seeds": null,
+    "timeout": 60.0,
+    "rate": 10.0,
+    "execution_rate": 60.0,
+    "prelift_contact_stable_s": 0.5,
+    "prelift_contact_timeout_s": 2.0,
+    "execute_steps": 5,
+    "stop_on_pregrasp_contact": false,
+    "freeze_target_until_close": true,
+    "max_joint_step": 0.1,
+    "stale_timeout": 0.5,
+    "tracking_error": 0.08,
+    "tracking_error_duration": 0.5,
+    "sim_clock_timeout": 10.0,
+    "startup_timeout": 300.0,
+    "preview_episodes": 3,
+    "training_manifest": null,
+    "training_dataset_root": null,
+    "max_training_target_distance_m": null,
+    "reject_blank_cameras": true,
+    "output": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004"
+  }
+}

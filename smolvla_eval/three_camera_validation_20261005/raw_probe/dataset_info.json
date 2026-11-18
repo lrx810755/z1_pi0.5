@@ -1,0 +1,94 @@
+{
+  "format": "z1_smolvla_raw_v1",
+  "fps": 10.0,
+  "robot_type": "unitree_z1",
+  "joint_names": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "jointGripper"
+  ],
+  "observation_keys": [
+    "observation.images.wrist",
+    "observation.images.global",
+    "observation.images.global_right",
+    "observation.state"
+  ],
+  "action_key": "action",
+  "image_encoding": "jpeg_bgr8",
+  "image_shapes": {
+    "wrist": [
+      360,
+      640,
+      3
+    ],
+    "global": [
+      480,
+      640,
+      3
+    ],
+    "global_right": [
+      480,
+      640,
+      3
+    ]
+  },
+  "external_camera_calibration": {
+    "global": {
+      "position_m": [
+        0.88,
+        -0.48,
+        0.64
+      ],
+      "orientation_xyzw": [
+        0.8155933975064666,
+        0.3662553170956584,
+        -0.1835078289452492,
+        -0.40864327886167223
+      ],
+      "look_at_m": [
+        0.34,
+        0.0,
+        0.1
+      ],
+      "topic": "/global_camera/color/image_raw",
+      "frame_id": "global_camera_optical_frame",
+      "width": 640,
+      "height": 480,
+      "fx": 554.2562584220408,
+      "fy": 554.2562584220408,
+      "cx": 320.0,
+      "cy": 240.0
+    },
+    "global_right": {
+      "position_m": [
+        0.88,
+        0.48,
+        0.64
+      ],
+      "orientation_xyzw": [
+        0.3662553170956585,
+        0.8155933975064668,
+        -0.40864327886167234,
+        -0.18350782894524925
+      ],
+      "look_at_m": [
+        0.34,
+        0.0,
+        0.1
+      ],
+      "topic": "/global_right_camera/color/image_raw",
+      "frame_id": "global_right_camera_optical_frame",
+      "width": 640,
+      "height": 480,
+      "fx": 554.2562584220408,
+      "fy": 554.2562584220408,
+      "cx": 320.0,
+      "cy": 240.0
+    }
+  },
+  "timestamp_domain": "simulation_clock"
+}

@@ -1,0 +1,3 @@
+import os
+args=['/usr/bin/python3', '/home/lp531/ros2_ws/install/z1_isaac_bridge/lib/z1_isaac_bridge/grasp_gui_bridge', '--ros-args', '--params-file', '/tmp/launch_params_67v4cjtx']
+os.execv(args[0],args)

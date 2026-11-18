@@ -1,0 +1,17 @@
+[
+  {
+    "pid": 668390,
+    "rss": "VmRSS:\t  499836 kB",
+    "command": "/usr/bin/python3 /home/lp531/ros2_ws/install/z1_isaac_bridge/lib/z1_isaac_bridge/episode_recorder --ros-args --params-file /tmp/launch_params_co7_9yz5 --params-file /tmp/launch_params_tc2v9jdu --params-file /tmp/launch_params_w9bwnwgn --params-file /tmp/launch_params_l5azrl0_ --params-file /tmp/launch_params_bqphm9ud --params-file /tmp/launch_params_sa3auklp --params-file /tmp/launch_params_mrunmbzf --params-file /tmp/launch_params_lvzrgrzc "
+  },
+  {
+    "pid": 668406,
+    "rss": "VmRSS:\t 5786492 kB",
+    "command": "/home/lp531/isaac-sim/kit/python/bin/python3 /home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/run_z1_ros2_scene.py --scene /home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/generated_dual_camera/smolvla_dual_wrist_camera.usd --grasp-config /home/lp531/ros2_ws/install/z1_isaac_bridge/share/z1_isaac_bridge/config/grasp_physics.json --eval-table-friction 0 --eval-arm-max-velocity 0 --external-camera-layout dual --headless "
+  },
+  {
+    "pid": 669347,
+    "rss": "VmRSS:\t    3368 kB",
+    "command": "/bin/bash -c tail -n 4 /home/lp531/smolvla_eval/three_camera_validation_20261005/probe_v2.log\nrg --files /home/lp531/ros2_ws/src/z1_ros2/z1_isaac_bridge/test -g '*sync*' -g '*export*' -g '*camera*'\n/usr/bin/python3 - <<'PY'\nimport json\nfrom pathlib import Path\nout=[]\nfor p in Path('/proc').iterdir():\n if not p.name.isdigit():continue\n try:\n  args=(p/'cmdline').read_bytes().decode().replace('\\x00',' ')\n  if 'episode_recorder --ros-args' in args or ('run_z1_ros2_scene.py' in args and 'kit/python' in args):\n   s=(p/'status').read_text();rss=next(x for x in s.splitlines() if x.startswith('VmRSS:'));out.append({'pid':int(p.name),'rss':rss,'command':args})\n except (OSError,StopIteration):pass\nPath('/home/lp531/smolvla_eval/three_camera_validation_20261005/memory_sample.json').write_text(json.dumps(out,indent=2))\nprint([(x['pid'],x['rss']) for x in out])\nPY "
+  }
+]

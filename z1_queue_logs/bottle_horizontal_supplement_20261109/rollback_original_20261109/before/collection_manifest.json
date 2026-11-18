@@ -1,0 +1,137 @@
+{
+  "created_at": "2026-11-09T11:38:51.570918+08:00",
+  "target": "beverage_bottle",
+  "columns": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "rows": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "quota_per_cell_default": 10,
+  "total_target_default": 200,
+  "frames_per_second": 10,
+  "ros_domain_id": 136,
+  "gui_port": 8839,
+  "headless": false,
+  "auto_started": false,
+  "first_column_policy": "no_retreat_only",
+  "other_columns_policy": [
+    "direct_low_all_candidates",
+    "via_high",
+    "no_retreat_fallback"
+  ],
+  "retreat_candidates_mm": [
+    50,
+    60,
+    80,
+    100
+  ],
+  "high_offsets_mm": [
+    80,
+    120
+  ],
+  "max_axis_pitch_deg": 8,
+  "final_velocity_scale": 0.064,
+  "grasp_profile": "beverage_bottle profile; authorized preclose XYZ tolerance10mm and corresponding envelope expansion",
+  "bottle_release_policy": "aligned XY<=20mm; root Z115..130mm inclusive; nominal descent122.5mm; check before gripper open",
+  "dataset_root": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109",
+  "failure_root": "/home/lp531/smolvla_eval/bottle_horizontal_supplement_20261109_failures",
+  "validation": {
+    "unit_tests_passed": 67,
+    "launch_arguments_parse": true,
+    "ros_node_constructed": true,
+    "profile_preserved": false,
+    "original_interfaces_unchanged": true,
+    "simulator_started": true,
+    "physical_trial": true,
+    "forward_guard_first_trial": "lift cancelled at measured lateral displacement4.32mm >3mm; no success claim",
+    "non_preclose_profile_preserved": true
+  },
+  "entry": "/home/lp531/SH/start_bottle_horizontal_supplement_20261109.sh",
+  "files": {
+    "assistant.py": "37b52e958c7187798723bdc7f53b9e22a999fee256e9b369c0250098118283ec",
+    "base_assistant_snapshot.py": "277dec7c9baa6ab21cd1c85564c06884ee5526f055b56677995c926f631b198e",
+    "core.py": "af988b64c31d48eaa63d83724eb9a35495822d8783c6c45c33dca7550609e4bb",
+    "geometry.py": "d4394e83801ed92259f2919a6d4d6f9027e46c889cce29441b48a5b9653509cf",
+    "grasp_physics.json": "03cd744b60316de35c81d873c145ae566997a109820453e99c7e175bc9a9fa82",
+    "collect.sh": "70d8c61b623d0501c66a3f1efff51977be6227280455397035fd41b71f506b6a",
+    "collection.launch.py": "91fcc4abe3c0c7718b036e9b9f9aeb2b356a8fb2e8c140cbb534b4cb6f94d469",
+    "start_collection.sh": "b85026e1cdf7faafc3d76603a510afdc354525d1f19e6c569d00764ad8b71155",
+    "startup.py": "637bf52ed4a158f2492cfd2000324e9517b0f1be635d5954746d11c131823217",
+    "failure_recorder.py": "d8c3db9f5f697e8cc636a71dfa9a0427b9ab5f860141e078e60fa7191e92eba6",
+    "forward_core.py": "d1f17829a6ffab036a65b9b5cf845bfd02a6a1b5fbb4551b1f011e7c5ddf705f",
+    "forward_transport.py": "99eb451b6f38a04f8197b26dadca6db436e1c1d302c3aa6ae95c6ae8fdb44ad7",
+    "preplanned_transport.py": "681a8d549278e6326bedb9fedd258500b0ddfddfcca10e73ac05b6d6b9692821",
+    "combined_transport.py": "c3a48626a3d5466f3b1159a4ae87c71bdeb4c640dc684a63328dbf4e6c14f196"
+  },
+  "single_request_free_space_pipeline": "ompl",
+  "loaded_transport_policy": {
+    "phases": [
+      "vertical_lift",
+      "horizontal_forward_to_box"
+    ],
+    "reverse_tolerance_m": 0.005,
+    "horizontal_height_tolerance_m": 0.003,
+    "lateral_tolerance_m": 0.02,
+    "orientation_tolerance_rad": 0.45,
+    "goal_tolerance_m": 0.003,
+    "planner_candidates": [
+      "Pilz LIN v=.04 a=.02",
+      "Pilz LIN v=.02 a=.01",
+      "OMPL v=.04 a=.02"
+    ],
+    "fallback_requires_same_audit": true,
+    "live_guard_cancels_arm": true,
+    "lost_bilateral_contact_grace_s": 0.5,
+    "feedback_max_age_s": 1.0,
+    "box_horizontal_alignment_guarded": true,
+    "nominal_object_root_height_m": 0.18,
+    "preplan_both_after_close_before_motion": false,
+    "second_start": "first trajectory final joints; actual closed gripper retained",
+    "new_hard_planning_budget": false,
+    "no_planning_between_lift_and_carry": true,
+    "box_acceptance_xy_m": 0.02,
+    "lift_lateral_tolerance_m": 0.005,
+    "mode": "single combined upward box-directed OMPL carry",
+    "downward_drawdown_m": 0.005,
+    "preplan_full_combined_carry": true,
+    "wrist_direction_guard": true,
+    "orientation_search": "continuous per-axis tolerances0.2 then0.4rad",
+    "position_constraint": "bottle root via link06 target_point_offset",
+    "fixed_goal_orientation_candidates": false,
+    "object_root_goal_height_range_m": [
+      0.18,
+      0.3
+    ],
+    "object_root_path_max_height_m": 0.3,
+    "wrist_path_max_height_m": 0.5,
+    "goal_height_overshoot_guard": false
+  },
+  "preclose_position_tolerance_m": [
+    0.01,
+    0.01,
+    0.01
+  ],
+  "relative_azimuth_candidates_deg": [
+    0,
+    0,
+    30,
+    45,
+    45,
+    -30,
+    -45,
+    -45
+  ],
+  "extra_world_azimuth_candidates_deg": [
+    70,
+    75,
+    80
+  ]
+}

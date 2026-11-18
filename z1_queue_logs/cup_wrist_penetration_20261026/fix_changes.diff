@@ -1,0 +1,50 @@
+--- /home/lp531/z1_queue_logs/cup_wrist_penetration_20261026/fix_backup/run_z1_ros2_scene.py
++++ /home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/run_z1_ros2_scene.py
+@@ -93,6 +93,7 @@
+ )
+ 
+ import carb
++from render_occlusion import configure_close_range_refraction
+ import numpy as np
+ import omni.graph.core as og
+ import omni.usd
+@@ -2520,6 +2521,14 @@
+     # Let the OmniGraph articulation controller create its physics view first;
+     # configuring gains before this tick is overwritten during its lazy init.
+     context.step(render=False)
++    # RTX initializes its translucency pass lazily on the first rendered frame.
++    # Apply the close-range threshold afterwards so initialization cannot replace it.
++    context.render()
++    print(
++        "Close-range glass occlusion:",
++        configure_close_range_refraction(carb.settings.get_settings()),
++        flush=True,
++    )
+     robot = configure_drive_gains(articulation_root)
+     training_objects = initialize_training_objects()
+     reset_interface = SceneResetInterface(
+--- /home/lp531/z1_queue_logs/cup_wrist_penetration_20261026/fix_backup/run_cup_only_scene.py
++++ /home/lp531/smolvla_eval/act_cup_only_frustum_steps15_paired30_20261025/run_cup_only_scene.py
+@@ -96,6 +96,7 @@
+ )
+ 
+ import carb
++from render_occlusion import configure_close_range_refraction
+ import numpy as np
+ import omni.graph.core as og
+ import omni.usd
+@@ -2476,6 +2477,14 @@
+     # Let the OmniGraph articulation controller create its physics view first;
+     # configuring gains before this tick is overwritten during its lazy init.
+     context.step(render=False)
++    # RTX initializes its translucency pass lazily on the first rendered frame.
++    # Apply the close-range threshold afterwards so initialization cannot replace it.
++    context.render()
++    print(
++        "Close-range glass occlusion:",
++        configure_close_range_refraction(carb.settings.get_settings()),
++        flush=True,
++    )
+     robot = configure_drive_gains(articulation_root)
+     training_objects = initialize_training_objects()
+     reset_interface = SceneResetInterface(

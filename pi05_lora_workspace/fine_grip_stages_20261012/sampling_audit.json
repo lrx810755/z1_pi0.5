@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "episodes_annotated": 211,
+  "train_episodes": 203,
+  "validation_episodes": 8,
+  "stage_names": [
+    "other",
+    "preclose",
+    "closing",
+    "prelift_hold",
+    "initial_lift",
+    "stable_hold"
+  ],
+  "stage_weights": {
+    "other": 1.0,
+    "preclose": 1.5,
+    "closing": 2.0,
+    "prelift_hold": 2.0,
+    "initial_lift": 1.5,
+    "stable_hold": 1.0
+  },
+  "anchor_weight_rule": "max(fine stage weight, 2 for logged pre-close recovery); normalize within 70/30 source pools",
+  "recovery_weight": 2,
+  "overlap_rule": "maximum",
+  "recovery_train_anchors": 1484,
+  "recovery_anchor_mass_before": 0.06954577003161874,
+  "recovery_anchor_mass_after": 0.11202113606340824,
+  "loss_weight": 1,
+  "chunk_size": 15,
+  "eligible_train_anchors": 42294,
+  "episodes_without_detectable_prelift_hold": [
+    190
+  ],
+  "stage_training_anchor_counts": {
+    "other": 24170,
+    "preclose": 2030,
+    "closing": 1621,
+    "prelift_hold": 859,
+    "initial_lift": 11372,
+    "stable_hold": 2242
+  },
+  "previous": {
+    "anchor_mass": {
+      "other": 0.42853700099237857,
+      "preclose": 0.06718537764878628,
+      "closing": 0.07114107252331611,
+      "prelift_hold": 0.0371104230264354,
+      "initial_lift": 0.35988475620658117,
+      "stable_hold": 0.03614136960264491
+    },
+    "valid_action_slot_mass": {
+      "other": 0.40457236256717133,
+      "preclose": 0.05394176081546358,
+      "closing": 0.0582211436855842,
+      "prelift_hold": 0.03507815660307923,
+      "initial_lift": 0.38175078004414054,
+      "stable_hold": 0.06643579628468939
+    },
+    "expected_valid_slots_per_chunk": 14.738617294377832,
+    "padded_slot_fraction": 0.01742551370814449
+  },
+  "current": {
+    "anchor_mass": {
+      "other": 0.46853841384329165,
+      "preclose": 0.06240171884430629,
+      "closing": 0.06539297560424777,
+      "prelift_hold": 0.03422784623319292,
+      "initial_lift": 0.3336473375544604,
+      "stable_hold": 0.03579170792062433
+    },
+    "valid_action_slot_mass": {
+      "other": 0.44099688235422785,
+      "preclose": 0.05646512796312369,
+      "closing": 0.05421232677984564,
+      "prelift_hold": 0.0323643413047525,
+      "initial_lift": 0.35371602646282363,
+      "stable_hold": 0.06224529513533215
+    },
+    "expected_valid_slots_per_chunk": 14.738617294377834,
+    "padded_slot_fraction": 0.01742551370814438
+  },
+  "empirical_draws": {
+    "anchor_mass": {
+      "other": 0.4709651487210981,
+      "preclose": 0.06137986475622836,
+      "closing": 0.06502104317397067,
+      "prelift_hold": 0.03478034709414981,
+      "initial_lift": 0.33236392868973147,
+      "stable_hold": 0.03548966756513857
+    },
+    "valid_action_slot_mass": {
+      "other": 0.44304402806416154,
+      "preclose": 0.05562402511120797,
+      "closing": 0.053534633826954545,
+      "prelift_hold": 0.032433707562247914,
+      "initial_lift": 0.35330130241943014,
+      "stable_hold": 0.06206230301629603
+    },
+    "expected_valid_slots_per_chunk": 14.733721095190807,
+    "padded_slot_fraction": 0.017751926987279565
+  },
+  "within_pool": {
+    "original": {
+      "anchor_mass": {
+        "other": 0.4992276318861597,
+        "preclose": 0.053343409310646794,
+        "closing": 0.05707744796239132,
+        "prelift_hold": 0.03067246035362257,
+        "initial_lift": 0.31075869886536267,
+        "stable_hold": 0.04892035162197359
+      },
+      "valid_action_slot_mass": {
+        "other": 0.4869395089448129,
+        "preclose": 0.043156339157159225,
+        "closing": 0.047120188125167745,
+        "prelift_hold": 0.029299963149956976,
+        "initial_lift": 0.3305775579438592,
+        "stable_hold": 0.06290644267918792
+      },
+      "expected_valid_slots_per_chunk": 14.62659613482547,
+      "padded_slot_fraction": 0.024893591011635352
+    },
+    "correction": {
+      "anchor_mass": {
+        "other": 0.39693023840976016,
+        "preclose": 0.08353777442284663,
+        "closing": 0.08479587343523887,
+        "prelift_hold": 0.042523746618858715,
+        "initial_lift": 0.3870541611624809,
+        "stable_hold": 0.005158205950808328
+      },
+      "valid_action_slot_mass": {
+        "other": 0.3364659998741879,
+        "preclose": 0.08674592690444688,
+        "closing": 0.07034870310960102,
+        "prelift_hold": 0.039336562454131654,
+        "initial_lift": 0.4063617873393276,
+        "stable_hold": 0.060741020318298755
+      },
+      "expected_valid_slots_per_chunk": 14.999999999999998,
+      "padded_slot_fraction": 1.1102230246251565e-16
+    }
+  },
+  "source_pool_mass": {
+    "original": 0.7000000000000003,
+    "correction": 0.3000000000000001
+  },
+  "all_source_frame_hashes_match": true,
+  "eligibility_and_splits_unchanged": true,
+  "actual_sampler_draws_verified": 42294,
+  "deterministic_resume_verified": true,
+  "data_and_normalization_unchanged": true,
+  "training_started": false
+}

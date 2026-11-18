@@ -1,0 +1,153 @@
+{
+  "created_at": "2026-10-26T16:16:45.797644+08:00",
+  "task": "fresh_cup_basic_demonstrations",
+  "target_object": "cup",
+  "rows": 4,
+  "columns": 5,
+  "quota_per_cell": 20,
+  "total_quota": 400,
+  "cells": [
+    {
+      "column": 0,
+      "row": 0,
+      "quota": 20
+    },
+    {
+      "column": 1,
+      "row": 0,
+      "quota": 20
+    },
+    {
+      "column": 2,
+      "row": 0,
+      "quota": 20
+    },
+    {
+      "column": 3,
+      "row": 0,
+      "quota": 20
+    },
+    {
+      "column": 4,
+      "row": 0,
+      "quota": 20
+    },
+    {
+      "column": 0,
+      "row": 1,
+      "quota": 20
+    },
+    {
+      "column": 1,
+      "row": 1,
+      "quota": 20
+    },
+    {
+      "column": 2,
+      "row": 1,
+      "quota": 20
+    },
+    {
+      "column": 3,
+      "row": 1,
+      "quota": 20
+    },
+    {
+      "column": 4,
+      "row": 1,
+      "quota": 20
+    },
+    {
+      "column": 0,
+      "row": 2,
+      "quota": 20
+    },
+    {
+      "column": 1,
+      "row": 2,
+      "quota": 20
+    },
+    {
+      "column": 2,
+      "row": 2,
+      "quota": 20
+    },
+    {
+      "column": 3,
+      "row": 2,
+      "quota": 20
+    },
+    {
+      "column": 4,
+      "row": 2,
+      "quota": 20
+    },
+    {
+      "column": 0,
+      "row": 3,
+      "quota": 20
+    },
+    {
+      "column": 1,
+      "row": 3,
+      "quota": 20
+    },
+    {
+      "column": 2,
+      "row": 3,
+      "quota": 20
+    },
+    {
+      "column": 3,
+      "row": 3,
+      "quota": 20
+    },
+    {
+      "column": 4,
+      "row": 3,
+      "quota": 20
+    }
+  ],
+  "dataset_root": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026",
+  "log_root": "/home/lp531/z1_queue_logs/cup_basic_4x5x20_renderfix_20261026",
+  "source_requirements": "/home/lp531/docs/杯子纠偏数据集要求_20261026.md",
+  "cameras": {
+    "wrist": "/left_wrist_camera/color/image_raw",
+    "global": "/global_camera/color/image_raw",
+    "global_right": "/global_right_camera/color/image_raw"
+  },
+  "recording_fps": 10,
+  "roll_deg": -90,
+  "mirror_wrist_roll_candidates": false,
+  "renderer_world_eps": 0.0001,
+  "scene_objects": "production multi-object scene; target cup",
+  "collection_mode": "expert full successful pick, lift, transport, place, release; no policy inference",
+  "new_recordings_only": true,
+  "reserved_validation_cells_column_row": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "source_sha256": {
+    "/home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/render_occlusion.py": "fc6c8aca65e14f8baaa27cd20116f4c90706e40643b7ffd811b0af127e3271ad",
+    "/home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/run_z1_ros2_scene.py": "a41a05e92954021bb5a61f061c1a50fb210b38f95be5f077759d388d4ef5ca8c",
+    "/home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/generated_dual_camera/smolvla_dual_wrist_camera.usd": "89b60c55c68c83a38d6608729b178252d49da1b499cb26333966e2cd849c93c8",
+    "/home/lp531/ros2_ws/src/z1_ros2/z1_isaac_bridge/z1_isaac_bridge/grasp_assistant.py": "40b6ca3dd6619faaf84b34327e783e5ede614c53e8713e597a10708491d44d71",
+    "/home/lp531/ros2_ws/src/z1_ros2/z1_isaac_bridge/z1_isaac_bridge/grasp_gui_bridge.py": "53dc4b0c37e179e8636920924d978dbe2efe029232bca1f749069d94ccdd6366",
+    "/home/lp531/ros2_ws/src/z1_ros2/z1_isaac_bridge/z1_isaac_bridge/episode_recorder.py": "f9983a54a54a2dd2c8ce551211931ca0b5ab643692c3df816d6eba937d2225ad",
+    "/home/lp531/ros2_ws/src/z1_ros2/scripts/collect_smolvla_balanced_v2.sh": "ecce1eb611deb1ec50b2566f3eb67fe439eebd4b6261a5ac5fa071ee7dd97729",
+    "/home/lp531/z1_queue_logs/cup_basic_4x5x20_renderfix_20261026/grasp_physics_minus90.json": "b6926b66dbf3eb0216ca77582c0fb105886aebac27ac15bacb0625f1bb8e2c51",
+    "/home/lp531/z1_queue_logs/cup_basic_4x5x20_renderfix_20261026/collection.launch.py": "e72e79bc567effbc526ab5e64b7bbb23885ad028ec7b958ed42cf3c91d234946",
+    "/home/lp531/z1_queue_logs/cup_basic_4x5x20_renderfix_20261026/start_collection.sh": "83aa5fef344d6f6e26867c26103b37981a2f00cff820635430a5f112346aa10e"
+  },
+  "physical_grid_shape": [
+    5,
+    5
+  ],
+  "grid_selection_note": "Preserve the previous 20-cell collection: columns 0..4, rows 0..3 of the original physical grid; do not repartition."
+}

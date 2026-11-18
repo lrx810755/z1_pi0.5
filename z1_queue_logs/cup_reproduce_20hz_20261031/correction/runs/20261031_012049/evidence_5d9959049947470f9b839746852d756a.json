@@ -1,0 +1,246 @@
+{
+  "task_id": "cup_correction_044_shifted_target",
+  "task": {
+    "id": "cup_correction_044_shifted_target",
+    "kind": "shifted_target",
+    "grid": [
+      4,
+      0
+    ],
+    "split": "train",
+    "source_type": "synthetic_failure_informed",
+    "source_report": "/home/lp531/smolvla_eval/act_cup_only_frustum_steps15_paired30_20261025/失败原因分类.md",
+    "synthesis_note": "Bounded perturbation around a newly planned minus90 reference, not exact policy-state replay.",
+    "route_kind": "shifted_target",
+    "offset_approach_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_tool_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "preparation_retreat_m": 0.004,
+    "requested_shift_world_m": [
+      -0.01,
+      0.0,
+      0.0
+    ],
+    "loaded_offset_world_m": [
+      -0.018,
+      -0.012,
+      0.025
+    ],
+    "variant": 9,
+    "reference_basic_episode": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026/episode_000036",
+    "seed": 314836958,
+    "reference_scene": {
+      "curriculum_level": "full",
+      "target_grid": [
+        4,
+        0
+      ],
+      "seed": 314836958,
+      "object_positions_m": {
+        "cup": [
+          0.63867,
+          -0.190851,
+          0.0
+        ],
+        "mouse": [
+          0.400485,
+          -0.061151,
+          0.00015
+        ],
+        "beverage_bottle": [
+          0.369617,
+          -0.23675,
+          1e-06
+        ],
+        "apple": [
+          0.596646,
+          0.098182,
+          -0.0
+        ],
+        "peach": [
+          0.6742,
+          -0.000906,
+          0.0
+        ]
+      },
+      "object_orientations_xyzw": {
+        "cup": [
+          0.3360583,
+          1.6e-06,
+          1.5e-06,
+          -0.9418413
+        ],
+        "mouse": [
+          0.3865652,
+          -0.0,
+          -1e-07,
+          0.9222621
+        ],
+        "beverage_bottle": [
+          0.9257018,
+          -2.32e-05,
+          -1.58e-05,
+          0.3782543
+        ],
+        "apple": [
+          0.9563827,
+          -4.54e-05,
+          -1.4e-05,
+          0.2921168
+        ],
+        "peach": [
+          0.8714525,
+          -2.9e-05,
+          -4.54e-05,
+          0.4904801
+        ]
+      },
+      "object_displacements_mm": {
+        "cup": 112.4,
+        "mouse": 98.5,
+        "beverage_bottle": 403.8,
+        "apple": 319.3,
+        "peach": 208.1
+      },
+      "sweep_clearance_target": "cup",
+      "target_sweep_clear": true
+    },
+    "reference_initial_episode": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026/episode_000032"
+  },
+  "source_type": "synthetic_failure_informed",
+  "accepted": false,
+  "recovery_complete": false,
+  "events": [
+    {
+      "event": "gripper_intent",
+      "time": 9328.617153191,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 9337.633820328001,
+      "state": "open",
+      "target": -0.9
+    }
+  ],
+  "recovery_stages": [],
+  "prepared_cup_shift": {
+    "before": [
+      0.6386697888374329,
+      -0.19085092842578888,
+      -4.470348358154297e-08
+    ],
+    "after": [
+      0.628669798374176,
+      -0.19085097312927246,
+      -2.9802322387695312e-08
+    ],
+    "actual_shift_world_m": [
+      -0.009999990463256836,
+      -4.470348358154297e-08,
+      1.4901161193847656e-08
+    ],
+    "distance_m": 0.009999990463367858,
+    "mode": "setup_relocation_before_approach_and_recording"
+  },
+  "reference_position_m": [
+    0.5323501686509944,
+    -0.051897561151513436,
+    0.08097907839584335
+  ],
+  "reference_orientation_xyzw": [
+    -0.589349163781928,
+    0.39072698154436775,
+    -0.33570471066906044,
+    0.6223361923248332
+  ],
+  "requested_start_position_m": [
+    0.53669565290541,
+    -0.04131325645811198,
+    0.08897906349468215
+  ],
+  "preflight": {
+    "route": {
+      "anchor_position": [
+        0.5323501686509944,
+        -0.051897561151513436,
+        0.08097907839584335
+      ],
+      "bad_position": [
+        0.53669565290541,
+        -0.04131325645811198,
+        0.08897906349468215
+      ],
+      "bad_orientation": [
+        -0.5893491637819281,
+        0.3907269815443678,
+        -0.3357047106690605,
+        0.6223361923248333
+      ],
+      "retreat_m": 0.004,
+      "strategy": "raised",
+      "preparation": [
+        {
+          "stage": "prepare_deviation",
+          "position": [
+            0.53669565290541,
+            -0.04131325645811198,
+            0.08897906349468215
+          ],
+          "orientation": [
+            -0.5893491637819281,
+            0.3907269815443678,
+            -0.3357047106690605,
+            0.6223361923248333
+          ],
+          "linear": false
+        }
+      ],
+      "recovery": [
+        {
+          "stage": "recover_clearance",
+          "position": [
+            0.53669565290541,
+            -0.04131325645811198,
+            0.10697906349468216
+          ],
+          "orientation": [
+            -0.589349163781928,
+            0.39072698154436775,
+            -0.33570471066906044,
+            0.6223361923248332
+          ],
+          "linear": false
+        },
+        {
+          "stage": "recover_approach",
+          "position": [
+            0.5323501686509944,
+            -0.051897561151513436,
+            0.08097907839584335
+          ],
+          "orientation": [
+            -0.589349163781928,
+            0.39072698154436775,
+            -0.33570471066906044,
+            0.6223361923248332
+          ],
+          "linear": true
+        }
+      ]
+    },
+    "rejected": [
+      "side_entry_0.06:prepare_lower_behind position=[0.508423121861204, 0.011608043491477385, 0.08897906349468215]: MoveIt error_code=-2",
+      "side_entry_0.1:prepare_lower_behind position=[0.4895747678317333, 0.04688891012453698, 0.08897906349468215]: MoveIt error_code=-2",
+      "direct:prepare_deviation position=[0.53669565290541, -0.04131325645811198, 0.08897906349468215]: MoveIt error_code=-2"
+    ]
+  }
+}

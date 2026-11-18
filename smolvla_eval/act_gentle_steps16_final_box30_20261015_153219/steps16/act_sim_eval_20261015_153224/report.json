@@ -1,0 +1,34 @@
+{
+  "checkpoint": "/home/lp531/smolvla_training/act_gentle_cached_chunk16_20261015/checkpoints/050000/pretrained_model",
+  "policy_type": "act",
+  "target_xy_bounds": [
+    0.35,
+    0.7,
+    -0.27,
+    0.16
+  ],
+  "overall": {
+    "episodes": 30,
+    "successes": 6,
+    "success_rate": 0.2
+  },
+  "per_object": {
+    "beverage_bottle": {
+      "episodes": 30,
+      "successes": 6,
+      "success_rate": 0.2
+    }
+  },
+  "failure_categories": {
+    "bottle_tipped": 10,
+    "finger_table_contact": 1,
+    "grasp_failed": 11,
+    "placement_failed": 2
+  },
+  "acceptance": {
+    "per_object_minimum": 0.7,
+    "overall_minimum": 0.75,
+    "complete": true,
+    "passed": false
+  }
+}

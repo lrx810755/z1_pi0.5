@@ -1,0 +1,37 @@
+{
+  "target_new_episodes": 19,
+  "accepted_final_range": [
+    16,
+    20
+  ],
+  "old_basic": 400,
+  "old_correction": 100,
+  "chunk_size": 30,
+  "batch_size": 64,
+  "steps": 90000,
+  "precision": "FP32",
+  "learning_rate": 1e-05,
+  "backbone_learning_rate": 1e-05,
+  "weight_decay": 0.0001,
+  "fresh_act": true,
+  "backbone": "ResNet18_Weights.IMAGENET1K_V1",
+  "source_mass": {
+    "basic": 0.75,
+    "correction": 0.25
+  },
+  "recovery_multiplier": 3,
+  "transition_multiplier": 1.5,
+  "ordinary_multiplier": 1,
+  "overlap": "max",
+  "holdout_cells": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "gpu_launched": false
+}

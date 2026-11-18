@@ -1,0 +1,142 @@
+{
+  "service_success": false,
+  "error": "目标物体一次闭爪失败：目标物体闭爪后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.121388, 0.024171, 0.019653], reference=None, left=cup, right=cup, bilateral=True, contact_report=True, impulses_ns=(0.002097634557919172, 0.032860156573694434), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+  "failed_stage": "grasp_and_lift",
+  "case": {
+    "id": "cylinder_h34_near_10",
+    "shape": "cylinder",
+    "height_mm": 34,
+    "position": "near",
+    "repeat": 10,
+    "target_grid": [
+      0,
+      1
+    ],
+    "cup_position_m": [
+      0.393,
+      -0.141,
+      0.0
+    ],
+    "planning_attempts": 1
+  },
+  "steps": [
+    {
+      "stage": "planning",
+      "attempt": 1,
+      "success": true,
+      "message": "不回退：MoveIt直接规划到最终抓取位"
+    },
+    {
+      "stage": "approach",
+      "attempt": 1,
+      "success": true,
+      "message": "已到达闭爪前最终定位姿态"
+    },
+    {
+      "stage": "grasp_and_lift",
+      "attempt": 1,
+      "success": false,
+      "message": "目标物体一次闭爪失败：目标物体闭爪后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.121388, 0.024171, 0.019653], reference=None, left=cup, right=cup, bilateral=True, contact_report=True, impulses_ns=(0.002097634557919172, 0.032860156573694434), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}"
+    }
+  ],
+  "elapsed_wall_s": 49.226398944854736,
+  "frames": 394,
+  "max_object_root_z_m": 0.000855,
+  "maximum_rise_m": 0.000855,
+  "final_status": {
+    "baseline_z_m": 0.0,
+    "bilateral_contact": true,
+    "bilateral_contact_consecutive_frames": 40,
+    "bilateral_contact_recent": true,
+    "capture_radius_is_debug_only": true,
+    "closed": false,
+    "contact_angle_valid": true,
+    "contact_report_available": true,
+    "cylinder_tilt_deg": 0.008497936870027215,
+    "cylinder_tilt_valid": true,
+    "failure_reason": "",
+    "frozen": false,
+    "geometry_contact_valid": false,
+    "grasp_envelope": {
+      "x_max_m": 0.149,
+      "x_min_m": 0.113,
+      "y_abs_max_m": 0.07,
+      "z_max_m": 0.04,
+      "z_min_m": 0.002
+    },
+    "grasp_success": false,
+    "gripper_commanded_closed": false,
+    "gripper_object_distance_m": 0.125309,
+    "gripper_obstructed": false,
+    "gripper_obstructed_estimated": false,
+    "gripper_position_past_threshold": false,
+    "gripper_position_rad": -0.7518,
+    "gripper_tf_stamp_s": 455.650023763,
+    "gripper_world_orientation_xyzw": [
+      -0.6951065529316609,
+      -0.11042823166687638,
+      0.19644124453186285,
+      0.6826736578843245
+    ],
+    "gripper_world_position_m": [
+      0.29525187751843346,
+      -0.20833926643795098,
+      0.0691478409763628
+    ],
+    "holding_observed": false,
+    "inside_grasp_envelope": true,
+    "inside_success_volume": false,
+    "left_finger_contact_impulse_ns": 0.0052772161422955065,
+    "left_finger_contact_object": "cup",
+    "left_finger_table_impulse_ns": 0.0,
+    "left_finger_touching_table": false,
+    "lifted": false,
+    "near_gripper": true,
+    "object_orientation_xyzw": [
+      6.038372157490812e-05,
+      0.00017037436191458255,
+      -0.024228934198617935,
+      0.9997064471244812
+    ],
+    "object_pose_stamp_s": 455.650023763,
+    "object_position_m": [
+      0.393196,
+      -0.140411,
+      0.0
+    ],
+    "object_speed_m_s": 0.0,
+    "object_touching_table": true,
+    "object_touching_table_estimated": true,
+    "phase": "READY",
+    "physical_grasp_candidate": false,
+    "physical_grasp_ok": false,
+    "physical_test_lift_active": false,
+    "placement_stable": false,
+    "relative_pose_stable": false,
+    "relative_position_gripper_m": [
+      0.121379,
+      0.024165,
+      0.019639
+    ],
+    "release_sequence_complete": false,
+    "release_started": false,
+    "released": false,
+    "reported_bilateral_contact": true,
+    "right_finger_contact_impulse_ns": 0.02996070276740615,
+    "right_finger_contact_object": "cup",
+    "right_finger_table_impulse_ns": 0.0,
+    "right_finger_touching_table": false,
+    "target_collisions_enabled": true,
+    "target_finger_contact_pair_count": 2,
+    "target_finger_max_penetration_m": 3.242963430238888e-05,
+    "target_finger_min_separation_m": -3.242963430238888e-05,
+    "target_object": "cup",
+    "task_success": false,
+    "transport_failure_reason": "",
+    "transport_height_ok": false,
+    "was_grasped": false
+  },
+  "ever_physical_grasp": false,
+  "table_contact": false,
+  "passed": false
+}

@@ -1,0 +1,32 @@
+{
+  "steps": 90000,
+  "preferred_batch_size": 32,
+  "fallback_batch_size": 16,
+  "batch_selection": "four real optimizer updates at32; fallback16 only for CUDA OOM; require<=20GiB peak allocation",
+  "learning_rate": 1e-05,
+  "backbone_learning_rate": 1e-05,
+  "weight_decay": 0.0001,
+  "grad_clip_norm": 1.0,
+  "mixed_precision": "no",
+  "gradient_accumulation": 1,
+  "chunk_size": 16,
+  "n_action_steps": 5,
+  "train_episode_target": 450,
+  "validation_episode_target": 50,
+  "source_mass": {
+    "basic": 0.75,
+    "correction": 0.25
+  },
+  "phase_multiplier": 1.5,
+  "phase_radius_frames": 8,
+  "optimizer_updates_32_batch_anchors": 2880000,
+  "optimizer_updates_16_batch_anchors": 1440000,
+  "save_and_eval_interval": 5000,
+  "early_checkpoint_step": 20,
+  "fresh_policy": true,
+  "backbone_pretrained_weights": "ResNet18_Weights.IMAGENET1K_V1",
+  "decode_workers": 4,
+  "train_workers": 2,
+  "train_stats": "train episodes AND expert_frame_mask only",
+  "decode_worker_selection": "Measured initial2 workers<0.9GiB RSS each,~15GiB available host RAM; increased within supported1-4 limit; actual launch recorded inworkflow_launch.json"
+}

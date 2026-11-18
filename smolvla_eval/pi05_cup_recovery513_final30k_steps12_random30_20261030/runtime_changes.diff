@@ -1,0 +1,13 @@
+--- /home/lp531/ros2_ws/src/z1_ros2/z1_isaac_bridge/z1_isaac_bridge/smolvla_sim_rollout.py
++++ runtime_rollout.py
+@@ -1318,8 +1318,8 @@
+         parser.error("This Diffusion checkpoint requires cup and execute-steps <= 15")
+     if args.policy_type == "pi05" and args.checkpoint is None:
+         parser.error("PI05 evaluation requires an explicit LoRA checkpoint")
+-    if args.policy_type == "pi05" and args.objects != ["beverage_bottle"]:
+-        parser.error("This PI05 checkpoint is trained for bottle-only evaluation")
++    if args.policy_type == "pi05" and args.objects != ["cup"]:
++        parser.error("This scoped PI05 checkpoint is trained for cup evaluation")
+     if args.target_xy_bounds is not None:
+         x_min, x_max, y_min, y_max = args.target_xy_bounds
+         if not (np.isfinite(args.target_xy_bounds).all()

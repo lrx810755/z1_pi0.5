@@ -1,0 +1,96 @@
+--- /home/lp531/z1_queue_logs/tabletop_refraction_20261026/backup/isaac_assets/z1/scripts/build_smolvla_red_ball_scene.py
++++ /home/lp531/isaac_assets/z1/scripts/build_smolvla_red_ball_scene.py
+@@ -22,6 +22,7 @@
+ from pathlib import Path
+ 
+ from isaacsim import SimulationApp
++from render_occlusion import author_close_range_refraction
+ 
+ 
+ def parse_args() -> argparse.Namespace:
+@@ -941,6 +942,7 @@
+         "trainingObjectAssetManifest": "../scanned_objects/manifest.json",
+         "trainingObjectVisualQuality": "high_quality_textured_scan",
+     }
++    author_close_range_refraction(stage)
+     stage.GetRootLayer().Save()
+     return task_metadata
+ 
+--- /home/lp531/z1_queue_logs/tabletop_refraction_20261026/backup/isaac_assets/z1/scripts/run_z1_ros2_scene.py
++++ /home/lp531/isaac_assets/z1/scripts/run_z1_ros2_scene.py
+@@ -77,6 +77,7 @@
+ )
+ 
+ import carb
++from render_occlusion import configure_close_range_refraction
+ import numpy as np
+ import omni.graph.core as og
+ import omni.usd
+@@ -2280,6 +2281,13 @@
+     # Let the OmniGraph articulation controller create its physics view first;
+     # configuring gains before this tick is overwritten during its lazy init.
+     context.step(render=False)
++    # RTX initializes translucency lazily; apply the all-object fix afterwards.
++    context.render()
++    print(
++        "Close-range glass occlusion:",
++        configure_close_range_refraction(carb.settings.get_settings()),
++        flush=True,
++    )
+     robot = configure_drive_gains(articulation_root)
+     training_objects = initialize_training_objects()
+     reset_interface = SceneResetInterface(
+--- /home/lp531/z1_queue_logs/tabletop_refraction_20261026/backup/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/build_smolvla_red_ball_scene.py
++++ /home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/build_smolvla_red_ball_scene.py
+@@ -24,6 +24,7 @@
+ from isaacsim import SimulationApp
+ from z1_paths import asset_root, repository_root
+ from cup_collision import CUP_COLLISION, define_cup_collider
++from render_occlusion import author_close_range_refraction
+ 
+ 
+ def parse_args() -> argparse.Namespace:
+@@ -945,6 +946,7 @@
+         "trainingObjectAssetManifest": "../scanned_objects/manifest.json",
+         "trainingObjectVisualQuality": "high_quality_textured_scan",
+     }
++    author_close_range_refraction(stage)
+     stage.GetRootLayer().Save()
+     return task_metadata
+ 
+--- /home/lp531/z1_queue_logs/tabletop_refraction_20261026/backup/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/render_occlusion.py
++++ /home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/render_occlusion.py
+@@ -1,14 +1,30 @@
+-"""Keep close-range glass behind opaque robot geometry in RTX real-time RGB."""
++"""Keep all tabletop glass behind opaque geometry in RTX real-time RGB."""
+ 
+ 
+ CLOSE_RANGE_REFRACTION_WORLD_EPS = 0.0001
+ 
+ 
++def author_close_range_refraction(stage):
++    """Persist the all-object setting in Kit's serialized render-settings metadata.
++
++    Scene builders and saved scenes need this in addition to the runtime call:
++    RTX can overwrite its settings while initializing the first render pass.
++    Preserve all other task metadata and render settings; do not edit materials.
++    The caller owns saving the root layer.
++    """
++    layer = stage.GetRootLayer()
++    metadata = dict(layer.customLayerData)
++    render_settings = dict(metadata.get("renderSettings", {}))
++    render_settings["rtx:translucency:worldEps"] = CLOSE_RANGE_REFRACTION_WORLD_EPS
++    metadata["renderSettings"] = render_settings
++    layer.customLayerData = metadata
++
++
+ def configure_close_range_refraction(settings):
+     """Avoid image-based refraction reprojection at centimetre-scale grasps.
+ 
+-    RTX's default worldEps=1.0 can composite a hidden glass cup over an opaque
+-    finger even though depth and semantic AOVs correctly see the finger.
++    RTX's default worldEps=1.0 can composite hidden glass (cups, bottles, liquid,
++    or condensation) over opaque fingers despite correct depth/semantic AOVs.
+     A 0.1 mm threshold retains glass materials and real-time rendering while
+     tracing refraction accurately at the task's metre-based scene scale.
+     Call after the first warm-up render, when RTX has initialized its pass.

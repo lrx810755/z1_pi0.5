@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "dataset": "/home/lp531/smolvla_data/z1_bottle_three_camera_pi05_binary_20261007",
+  "action_gripper_encoding": {
+    "open": 0,
+    "close": 1
+  },
+  "action_arm_encoding": "six absolute joint target angles, unchanged",
+  "observation_gripper_encoding": "actual jointGripper angle in radians, unchanged",
+  "deployment_mapping": {
+    "threshold": 0.5,
+    "open_target_rad": -0.9,
+    "close_target_rad": 0.0
+  },
+  "label_source": "recorded causal gripper commands plus phase and final monotonic release ramp",
+  "inferred_intent": true,
+  "explicit_intent_field_in_raw": false,
+  "source_dataset": "/home/lp531/smolvla_data/z1_bottle_three_camera_pi05_20261006",
+  "raw_manifest": "/home/lp531/pi05_lora_workspace/three_camera_20261006/split_manifest.json",
+  "episodes": 160,
+  "frames": 37557,
+  "train_episodes": 160,
+  "validation_episodes": 0,
+  "frames_removed": 0,
+  "fps": 10,
+  "training_started": false,
+  "training_batch_or_chunk_15": "awaiting user clarification",
+  "requires_binary_model_output_adapter": true,
+  "open_frames": 17795,
+  "closed_frames": 19762,
+  "differences_from_naive_threshold": 1082,
+  "all_non_action_columns_identical": true,
+  "arm_action_columns_identical": true,
+  "original_source_hashes": {
+    "data/chunk-000/file-000.parquet": "b082ad460c4a93e47912fe0c9d7206e582cdec769e81754d7a0d3e5cc749bb6c",
+    "meta/tasks.parquet": "4ad7aeb55d85f2e2214e45a8d354b593e1bb7fbb0eec34605f4ad657544ae02d",
+    "meta/stats.json": "9af0d78548c71a2dc7c56808db1e81b5520b269f491d1530a470c172bdc3c37c",
+    "meta/info.json": "6a22ebea79aae6e0e700fdbbcdbbec1c2d917d59e0f7f73bf4d7ae72acf776f0",
+    "meta/episodes/chunk-000/file-000.parquet": "674b6fa91d6024dcd1425c48f7e25a27c8d462fa749e391ea37e92e1671c402b"
+  },
+  "videos": [
+    {
+      "path": "videos/observation.images.global_right/chunk-000/file-000.mp4",
+      "sha256": "a252d77115fe0e8c7cd16f456e40b2cc059af9391e83a53b7905679d03e10d9c"
+    },
+    {
+      "path": "videos/observation.images.wrist/chunk-000/file-000.mp4",
+      "sha256": "7607098fca3a48e3e0832f01be5290645fc6e1e65a9af7f0cf864d11a2ca0c6c"
+    },
+    {
+      "path": "videos/observation.images.global/chunk-000/file-000.mp4",
+      "sha256": "0e4c0f9dd958f34e160e11275c0de3d5065e003680825aee0bfd799f15fce886"
+    }
+  ],
+  "episodes_with_exactly_one_close_and_one_open": 160,
+  "independent_checks": {
+    "exactly_two_transitions_all_160": true,
+    "per_episode_binary_stats_checked": true,
+    "ready_placing_success_open": true,
+    "physical_test_lift_closed": true,
+    "actual_lerobot_loader": {
+      "episodes": 160,
+      "frames": 37557,
+      "boundary_samples": 8,
+      "cameras_per_sample": 3,
+      "binary_action_and_continuous_state": true,
+      "binary_q01": 0.0,
+      "binary_q99": 1.0
+    }
+  }
+}

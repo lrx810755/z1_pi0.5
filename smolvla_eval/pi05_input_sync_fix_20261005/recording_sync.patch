@@ -1,0 +1,54 @@
+--- /home/lp531/smolvla_eval/pi05_input_sync_fix_20261005/recording_sync.py.before	2026-10-05 00:12:25.689780694 +0800
++++ /home/lp531/ros2_ws/src/z1_ros2/z1_isaac_bridge/z1_isaac_bridge/recording_sync.py	2026-10-05 00:15:43.249719708 +0800
+@@ -36,7 +36,8 @@
+     def begin_episode(self):
+         self.used_images.clear()
+ 
+-    def select(self, target):
++    def select_observation(self, target):
++        """Pair images and interpolate measured joints at one sensor time."""
+         images = {}
+         for name in self.cameras:
+             candidates = [
+@@ -63,6 +64,31 @@
+             fraction = (target - left[0]) / (right[0] - left[0])
+             state = [a + fraction * (b - a) for a, b in zip(left[1], right[1])]
+ 
++        return {
++            "time": target, "images": images, "state": state,
++            "state_bracket": (left[0], right[0]),
++        }
++
++    def select_latest_observation(self, now, max_age):
++        """Choose the newest unused, bounded-age camera/state observation."""
++        targets = sorted({
++            stamp for name in self.cameras for stamp, _ in self.buffers[name]
++            if now - max_age - 1e-9 <= stamp <= now + 1e-9
++        }, reverse=True)
++        for target in targets:
++            try:
++                sample = self.select_observation(target)
++            except ValueError:
++                continue
++            stamps = [target, *(value[0] for value in sample["images"].values())]
++            if (max(stamps) - min(stamps) <= self.tolerance + 1e-9
++                    and now - min(stamps) <= max_age + 1e-9
++                    and max(stamps) <= now + 1e-9):
++                return sample
++        raise ValueError("no fresh camera/state observation within sync tolerance and age limit")
++
++    def select(self, target):
++        sample = self.select_observation(target)
+         commands = [sample for sample in self.buffers["action"] if sample[0] <= target]
+         if not commands or target - commands[-1][0] > self.action_age + 1e-9:
+             stamps = [sample[0] for sample in self.buffers["action"]]
+@@ -76,8 +102,7 @@
+         if not statuses or target - statuses[-1][0] > 1.0:
+             raise ValueError("status: no recent task status")
+         return {
+-            "time": target, "images": images, "state": state,
+-            "state_bracket": (left[0], right[0]),
++            **sample,
+             "action": commands[-1], "status": statuses[-1][1],
+         }
+ 

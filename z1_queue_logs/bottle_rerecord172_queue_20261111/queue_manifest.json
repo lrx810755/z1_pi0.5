@@ -1,0 +1,66 @@
+{
+  "target": 172,
+  "base_demonstrations": 170,
+  "correction_demonstrations": 2,
+  "stages": [
+    {
+      "name": "base160",
+      "target": 160,
+      "data": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111",
+      "logs": "/home/lp531/z1_queue_logs/bottle_rerecord160_renderfix_20261111",
+      "command": [
+        "bash",
+        "/home/lp531/SH/start_bottle_rerecord160_renderfix_20261111.sh"
+      ]
+    },
+    {
+      "name": "wait8_retake12",
+      "target": 12,
+      "data": "/home/lp531/smolvla_data/bottle_wait8_retake12_20261111",
+      "logs": "/home/lp531/z1_queue_logs/bottle_wait8_retake12_20261111",
+      "command": [
+        "bash",
+        "/home/lp531/SH/start_bottle_wait8_retake12_20261111.sh"
+      ]
+    }
+  ],
+  "column0": "original approach",
+  "other_columns": "horizontal approach",
+  "waiting_gate_s": 8,
+  "old_sources_preserved": true,
+  "training_started": false,
+  "extensions": [
+    {
+      "id": "reverse8_20261112",
+      "plan": "/home/lp531/robot/reverse8_queue_20261112/plan.json",
+      "plan_hash": "9fc5257bd03bcb674d309932f7ccc3a78417a3ec499a513b4545f7a0c355e29a",
+      "target": 41,
+      "service": "reverse8-rerecord41-20261112.service",
+      "executor": "/home/lp531/robot/reverse8_queue_20261112/run_extension.py",
+      "completion_audit": "/home/lp531/z1_queue_logs/reverse8_queue_20261112/completion_verified.json",
+      "replacement_map": "/home/lp531/z1_queue_logs/reverse8_queue_20261112/replacement_map.json",
+      "starts_after_original172": true,
+      "stage_data_roots": [
+        "/home/lp531/smolvla_data/reverse8_apple_basic_1_20261112",
+        "/home/lp531/smolvla_data/reverse8_cup_basic_19_20261112",
+        "/home/lp531/smolvla_data/reverse8_bottle_basic_17_20261112",
+        "/home/lp531/smolvla_data/bottle_reverse8_corrections4_20261112"
+      ]
+    },
+    {
+      "id": "cup_reverse8_20261112",
+      "plan": "/home/lp531/robot/cup_reverse8_queue_20261112/plan.json",
+      "plan_hash": "247bd564065ef7aa141e7d70bb411bc58f2e03c641b79df2d8630fc1a6aa3783",
+      "target": 7,
+      "service": "cup-reverse8-rerecord7-20261112.service",
+      "executor": "/home/lp531/robot/cup_reverse8_queue_20261112/run_extension.py",
+      "completion_audit": "/home/lp531/z1_queue_logs/cup_reverse8_queue_20261112/completion_verified.json",
+      "replacement_map": "/home/lp531/z1_queue_logs/cup_reverse8_queue_20261112/replacement_map.json",
+      "starts_after_extension": "reverse8_20261112",
+      "stage_data_roots": [
+        "/home/lp531/smolvla_data/cup_reverse8_corrections7_20261112"
+      ]
+    }
+  ],
+  "combined_recording_operations": 220
+}

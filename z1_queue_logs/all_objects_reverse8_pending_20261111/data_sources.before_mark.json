@@ -1,0 +1,122 @@
+{
+  "schema": "pi05_raw_training_sources_v1",
+  "updated_at": "2026-11-11T21:15:23.802850+08:00",
+  "status": "sources_registered_pending_replacement_audits",
+  "training_started": false,
+  "intended_split": "all_train_no_validation",
+  "fps": 10,
+  "base_scope_file": "/home/lp531/robot/dataset_trajectory_review/current_round_sources.json",
+  "base_sources": [
+    {
+      "root": "/home/lp531/smolvla_data/apple_scale110_demo400_20261105",
+      "saved_episodes_at_registration": 323,
+      "exclude_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/apple_scale110_correction60_20261106",
+      "saved_episodes_at_registration": 59,
+      "exclude_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/peach_scale120_demo_20261106",
+      "saved_episodes_at_registration": 340,
+      "exclude_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/peach_scale120_correction60_20261106",
+      "saved_episodes_at_registration": 57,
+      "exclude_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108",
+      "saved_episodes_at_registration": 200,
+      "exclude_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109",
+      "saved_episodes_at_registration": 40,
+      "exclude_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109",
+      "saved_episodes_at_registration": 200,
+      "exclude_episodes": [
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000052",
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000041",
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000043",
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000160",
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000042",
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000123",
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000124",
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000161",
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000122",
+        "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000125"
+      ]
+    },
+    {
+      "root": "/home/lp531/smolvla_data/bottle_correction60_20261111",
+      "saved_episodes_at_registration": 58,
+      "exclude_episodes": [
+        "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000028",
+        "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000046"
+      ]
+    }
+  ],
+  "additions": [
+    {
+      "root": "/home/lp531/smolvla_data/cup_quality200_from_pi05_513_20261111",
+      "episodes": 200,
+      "object": "cup",
+      "pool": "basic",
+      "manifest": "/home/lp531/smolvla_data/cup_quality200_from_pi05_513_20261111/selection_manifest.json",
+      "status": "verified"
+    }
+  ],
+  "replacement_queue": {
+    "manifest": "/home/lp531/z1_queue_logs/bottle_rerecord172_queue_20261111/queue_manifest.json",
+    "target": 172,
+    "sources_to_replace": [
+      "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000028",
+      "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000046",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000052",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000041",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000043",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000160",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000042",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000123",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000124",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000161",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000122",
+      "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000125"
+    ],
+    "stages": [
+      {
+        "name": "base160",
+        "target": 160,
+        "data": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111",
+        "logs": "/home/lp531/z1_queue_logs/bottle_rerecord160_renderfix_20261111",
+        "command": [
+          "bash",
+          "/home/lp531/SH/start_bottle_rerecord160_renderfix_20261111.sh"
+        ]
+      },
+      {
+        "name": "wait8_retake12",
+        "target": 12,
+        "data": "/home/lp531/smolvla_data/bottle_wait8_retake12_20261111",
+        "logs": "/home/lp531/z1_queue_logs/bottle_wait8_retake12_20261111",
+        "command": [
+          "bash",
+          "/home/lp531/SH/start_bottle_wait8_retake12_20261111.sh"
+        ]
+      }
+    ],
+    "require_completed_stage_audits": true
+  },
+  "rules": [
+    "Resolve actual saved episodes and replacement maps after queue audits.",
+    "Exclude original 12 long-wait sources when applying their replacement map.",
+    "Deduplicate by resolved frames path and frames SHA256 before training.",
+    "This registers data sources only; no sampling weights or optimizer configuration changed."
+  ]
+}

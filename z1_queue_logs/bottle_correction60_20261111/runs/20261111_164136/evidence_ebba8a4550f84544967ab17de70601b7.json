@@ -1,0 +1,408 @@
+{
+  "task_id": "bottle_correction_021_regrasp",
+  "task": {
+    "id": "bottle_correction_021_regrasp",
+    "kind": "regrasp",
+    "grid": [
+      2,
+      1
+    ],
+    "split": "train",
+    "source_type": "synthetic_coverage_gap_curriculum",
+    "source_report": "/home/lp531/pi05_lora_workspace/four_object_correction_audit_20261110/report.json",
+    "synthesis_note": "Synthetic bounded recoverable state; not an exact policy failure replay. Bottle production calibration retained.",
+    "route_kind": "regrasp",
+    "offset_approach_m": [
+      0.0,
+      0.004,
+      0.0
+    ],
+    "rotation_tool_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "preparation_retreat_m": 0.004,
+    "requested_shift_world_m": [
+      0.01,
+      0.0,
+      0.0
+    ],
+    "loaded_offset_world_m": [
+      0.02,
+      0.01,
+      0.008
+    ],
+    "variant": 4,
+    "reference_basic_episode": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000127",
+    "seed": 1585182532,
+    "reference_scene": {
+      "curriculum_level": "full",
+      "target_grid": [
+        2,
+        1
+      ],
+      "seed": 1585182532,
+      "object_positions_m": {
+        "beverage_bottle": [
+          0.54227,
+          -0.131244,
+          1e-06
+        ],
+        "mouse": [
+          0.619725,
+          -0.24207,
+          0.00015
+        ],
+        "cup": [
+          0.524015,
+          0.088272,
+          0.0
+        ],
+        "peach": [
+          0.466586,
+          -0.226995,
+          0.0
+        ],
+        "apple": [
+          0.674492,
+          -0.140448,
+          -0.0
+        ]
+      },
+      "object_orientations_xyzw": {
+        "beverage_bottle": [
+          0.9461889,
+          -2.63e-05,
+          1e-05,
+          -0.3236148
+        ],
+        "mouse": [
+          0.1543149,
+          0.0,
+          0.0,
+          0.9880217
+        ],
+        "cup": [
+          0.9137339,
+          2e-07,
+          4e-07,
+          0.406313
+        ],
+        "peach": [
+          0.6962092,
+          -1.65e-05,
+          -4.01e-05,
+          0.7178391
+        ],
+        "apple": [
+          0.0431384,
+          1.6e-06,
+          -5.01e-05,
+          0.9990692
+        ]
+      },
+      "object_displacements_mm": {
+        "beverage_bottle": 225.1,
+        "mouse": 257.2,
+        "cup": 193.7,
+        "peach": 99.4,
+        "apple": 237.8
+      },
+      "sweep_clearance_target": "beverage_bottle",
+      "target_sweep_clear": true
+    },
+    "reference_initial_episode": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000073"
+  },
+  "source_type": "synthetic_coverage_gap_curriculum",
+  "accepted": false,
+  "recovery_complete": true,
+  "events": [
+    {
+      "event": "gripper_intent",
+      "time": 3216.000167727,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3232.116835234,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "intervention_start",
+      "time": 3233.0335019490003,
+      "purpose": "prepare_unilateral_partial_clamp"
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3233.0335019490003,
+      "state": "close",
+      "target": -0.86
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3234.700168702,
+      "state": "close",
+      "target": -0.84
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3236.4001687910004,
+      "state": "close",
+      "target": -0.82
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3238.083502212,
+      "state": "close",
+      "target": -0.7999999999999999
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3239.7501689660003,
+      "state": "close",
+      "target": -0.7799999999999999
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3241.4335023870003,
+      "state": "close",
+      "target": -0.7599999999999999
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3243.1168358080004,
+      "state": "close",
+      "target": -0.7399999999999999
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3244.783502561,
+      "state": "close",
+      "target": -0.7199999999999999
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3246.48350265,
+      "state": "close",
+      "target": -0.6999999999999998
+    },
+    {
+      "event": "intervention_end",
+      "time": 3248.1501694040003
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3248.1501694040003,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "retry_opened",
+      "time": 3250.333502851
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3251.233502898,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 3251.8168362620004,
+      "state": "close",
+      "target": 0.0
+    }
+  ],
+  "recovery_stages": [
+    {
+      "stage": "recover_align_approach",
+      "start": 3250.3501695180003,
+      "end": 3251.1335028930002,
+      "ee_position_m": [
+        0.38383495705893866,
+        -0.19726318868802042,
+        0.10736702452276123
+      ]
+    }
+  ],
+  "reference_position_m": [
+    0.38403788174583775,
+    -0.19737359720376263,
+    0.10884259740988057
+  ],
+  "reference_orientation_xyzw": [
+    0.7039718323419013,
+    0.06651059502208499,
+    -0.13488877901200655,
+    -0.694121759719175
+  ],
+  "requested_start_position_m": [
+    0.3790715218555545,
+    -0.19466522694839025,
+    0.10884259740988057
+  ],
+  "preflight": {
+    "route": {
+      "anchor_position": [
+        0.38403788174583775,
+        -0.19737359720376263,
+        0.10884259740988057
+      ],
+      "bad_position": [
+        0.3790715218555545,
+        -0.19466522694839025,
+        0.10884259740988057
+      ],
+      "bad_orientation": [
+        0.7039718323419014,
+        0.066510595022085,
+        -0.13488877901200658,
+        -0.6941217597191751
+      ],
+      "retreat_m": 0.004,
+      "strategy": "direct",
+      "preparation": [
+        {
+          "stage": "prepare_deviation",
+          "position": [
+            0.3790715218555545,
+            -0.19466522694839025,
+            0.10884259740988057
+          ],
+          "orientation": [
+            0.7039718323419014,
+            0.066510595022085,
+            -0.13488877901200658,
+            -0.6941217597191751
+          ],
+          "linear": false
+        }
+      ],
+      "recovery": [
+        {
+          "stage": "recover_align_approach",
+          "position": [
+            0.38403788174583775,
+            -0.19737359720376263,
+            0.10884259740988057
+          ],
+          "orientation": [
+            0.7039718323419013,
+            0.06651059502208499,
+            -0.13488877901200655,
+            -0.694121759719175
+          ],
+          "linear": true
+        }
+      ]
+    },
+    "rejected": [
+      "side_entry_0.06:prepare_lower_behind position=[0.3215110457631374, -0.21160014921022183, 0.10884259740988057]: MoveIt error_code=-1",
+      "side_entry_0.1:prepare_lower_behind position=[0.2831373950348593, -0.22289009738477622, 0.10884259740988057]: MoveIt error_code=-31"
+    ]
+  },
+  "actual_start_position_m": [
+    0.3783474306395856,
+    -0.1943100144300713,
+    0.1071227866238447
+  ],
+  "actual_start_orientation_xyzw": [
+    -0.6993895086110442,
+    -0.05074272859871422,
+    0.1394175967021941,
+    0.6991725283997818
+  ],
+  "measured_start_deviation_m": 0.0066876395195666835,
+  "measured_world_z_deviation_m": -0.0017198107860358774,
+  "measured_finger_table_clearance_m": 0.048160848952705025,
+  "actual_bottle_position_at_recording_m": [
+    0.5428871512413025,
+    -0.12810592353343964,
+    7.599592208862305e-07
+  ],
+  "preparation_table_contact_seen": false,
+  "retry_contact_seen": true,
+  "retry_unilateral_contact": true,
+  "retry_probe": {
+    "phase": "PROBED",
+    "message": "beverage_bottle 相对夹爪位置已测量",
+    "target_finger_min_separation_m": -4.825428732146975e-06,
+    "target_finger_max_penetration_m": 4.825428732146975e-06,
+    "target_finger_contact_pair_count": 1,
+    "frozen": false,
+    "target_collisions_enabled": true,
+    "contact_report_available": true,
+    "left_finger_contact_object": null,
+    "right_finger_contact_object": "beverage_bottle",
+    "left_finger_contact_collider": null,
+    "right_finger_contact_collider": "/World/Z1/root_joint/gripperMover/collisions/z1_GripperMover/node_STL_BINARY_",
+    "left_finger_contact_impulse_ns": 0.0,
+    "right_finger_contact_impulse_ns": 0.006008436032718464,
+    "left_finger_touching_table": false,
+    "right_finger_touching_table": false,
+    "left_finger_table_impulse_ns": 0.0,
+    "right_finger_table_impulse_ns": 0.0,
+    "bilateral_contact_consecutive_frames": 0,
+    "target": "beverage_bottle",
+    "local_position_m": [
+      0.127456,
+      0.006883,
+      0.019576
+    ],
+    "gripper_position_m": [
+      0.4271046,
+      -0.1807514,
+      0.1008143
+    ],
+    "gripper_orientation_wxyz": [
+      -0.69916123,
+      0.6994015,
+      0.05076537,
+      -0.13940598
+    ],
+    "physics_enabled": true,
+    "gravity_enabled": true,
+    "object_position_m": [
+      0.54289,
+      -0.128106,
+      2e-06
+    ],
+    "object_orientation_wxyz": [
+      0.959737,
+      1.94e-05,
+      2.16e-05,
+      -0.2809002
+    ],
+    "linear_velocity_m_s": [
+      0.000836,
+      -0.003899,
+      0.007263
+    ],
+    "angular_velocity_rad_s": [
+      0.221568,
+      0.040979,
+      -0.165085
+    ],
+    "linear_speed_m_s": 0.008286,
+    "angular_speed_rad_s": 0.279329,
+    "velocity_available": true,
+    "object_touching_table": true,
+    "object_touching_table_estimated": false,
+    "left_finger_contact": false,
+    "right_finger_contact": true,
+    "left_finger_contact_point_object_m": null,
+    "right_finger_contact_point_object_m": [
+      -0.024315,
+      0.002284,
+      0.118561
+    ],
+    "bilateral_contact_required_frames": 10,
+    "bilateral_contact": false,
+    "sustained_bilateral_contact": false
+  },
+  "retry_performed": true,
+  "relocalized": false
+}

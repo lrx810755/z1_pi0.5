@@ -1,0 +1,3 @@
+import os
+args=['/usr/bin/python3', '/home/lp531/ros2_ws/install/z1_isaac_bridge/lib/z1_isaac_bridge/episode_recorder', '--ros-args', '--params-file', '/tmp/launch_params_16tb58qq', '--params-file', '/tmp/launch_params_ce8fyu8x', '--params-file', '/tmp/launch_params_xj66f_t5', '--params-file', '/tmp/launch_params_f76x6tfo', '--params-file', '/tmp/launch_params_tkj044nt', '--params-file', '/tmp/launch_params_es78jv7n', '--params-file', '/tmp/launch_params_eghh0bjd', '--params-file', '/tmp/launch_params_rkfv0zji', '-p', 'dataset_root:=/home/lp531/smolvla_data/z1_bottle_collision_consistent_supplement_20261003_raw_v1']
+os.execv(args[0],args)

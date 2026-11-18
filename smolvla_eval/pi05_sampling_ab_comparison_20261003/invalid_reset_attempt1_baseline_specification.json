@@ -1,0 +1,43 @@
+{
+  "arm": "baseline",
+  "checkpoint": "/home/lp531/smolvla_training/pi05_bottle_lora_20261001/checkpoints/108000/pretrained_model",
+  "arguments": [
+    "--policy-type",
+    "pi05",
+    "--checkpoint",
+    "/home/lp531/smolvla_training/pi05_bottle_lora_20261001/checkpoints/108000/pretrained_model",
+    "--objects",
+    "beverage_bottle",
+    "--episodes-per-object",
+    "10",
+    "--wrist-rgb-topic",
+    "/left_wrist_camera/color/image_raw",
+    "--training-dataset-root",
+    "/home/lp531/smolvla_data/z1_tabletop_bottle_recovery_boundary_only_prepared_v1",
+    "--max-training-target-distance-m",
+    "0.03",
+    "--reject-blank-cameras",
+    "--execute-steps",
+    "5",
+    "--freeze-target-until-close",
+    "--timeout",
+    "60",
+    "--output",
+    "/home/lp531/smolvla_eval/pi05_sampling_ab_comparison_20261003/baseline"
+  ],
+  "requested_scene_seeds": [
+    763856373,
+    20855437,
+    1001730107,
+    393805101,
+    882884764,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "inference_seed_per_episode": 20261003,
+  "adapter_sha256": "78b92866f4853c4210ec2e9a70d17472f45753b51ad3f096993e45f113e33eea",
+  "comparison": "same final update count for A/B; same scene layouts and control settings"
+}

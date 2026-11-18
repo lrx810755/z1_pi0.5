@@ -1,0 +1,1085 @@
+{
+  "total": 30,
+  "successes": 9,
+  "success_rate": 0.3,
+  "checkpoint": {
+    "checkpoint": "/home/lp531/smolvla_training/pi05_cup_recovery513_lora_20261029/checkpoints/240000/pretrained_model",
+    "optimizer_updates": 30000,
+    "microsteps": 240000,
+    "selection": "final model explicitly discussed with user",
+    "heldout_loss": 0.0327,
+    "adapter_sha256": "45237da918a747e15b4491ab593882e321db363c70014d29ba1337f2b3e23d67"
+  },
+  "strict_successes": 3,
+  "strict_success_rate": 0.1,
+  "physics": {
+    "passed": true,
+    "authored_cup_mass_kg": 0.30000001192092896,
+    "actual_cup_mass_kg": 0.30000001192092896,
+    "cup_material": {
+      "path": "/World/PhysicsMaterials/EvalCupFriction2",
+      "static": 0.4000000059604645,
+      "dynamic": 0.30000001192092896,
+      "restitution": 0.0,
+      "combine": "min"
+    },
+    "table_material": {
+      "path": "/World/Looks/TablePhysics",
+      "static": 0.800000011920929,
+      "dynamic": 0.6499999761581421,
+      "restitution": 0.019999999552965164,
+      "combine": null
+    },
+    "gripper_material": {
+      "path": "/World/PhysicsMaterials/SmolVLAGripper",
+      "static": 6.0,
+      "dynamic": 5.0,
+      "restitution": 0.0,
+      "combine": "max"
+    },
+    "effective_cup_table_friction": {
+      "static": 0.4,
+      "dynamic": 0.3
+    },
+    "effective_cup_gripper_friction": {
+      "static": 6.0,
+      "dynamic": 5.0
+    },
+    "drive_parameters_unchanged": true,
+    "drive_parameters": {
+      "joint1": [
+        100000.0,
+        1000.0,
+        1000.0
+      ],
+      "joint2": [
+        200000.0,
+        1000.0,
+        2000.0
+      ],
+      "joint3": [
+        400000.0,
+        1200.0,
+        1600.0
+      ],
+      "joint4": [
+        300000.0,
+        1200.0,
+        2000.0
+      ],
+      "joint5": [
+        50000.0,
+        500.0,
+        600.0
+      ],
+      "joint6": [
+        80000.0,
+        800.0,
+        800.0
+      ],
+      "jointGripper": [
+        6000.0,
+        240.0,
+        800.0
+      ]
+    },
+    "mass_readback": "initialized PhysX rigid-body view",
+    "target_collisions_enabled": true
+  },
+  "preclose_tilt_gt60_episodes": [
+    7,
+    13,
+    15,
+    18,
+    21,
+    23,
+    24,
+    25
+  ],
+  "never_bilateral_episodes": [
+    2,
+    7,
+    12,
+    13,
+    15,
+    18,
+    20,
+    21,
+    23,
+    24,
+    25,
+    28,
+    30
+  ],
+  "observed_categories": {
+    "闭爪后未形成有效夹持": 20,
+    "成功放入蓝盒并松爪": 9,
+    "未发出闭爪命令": 1
+  },
+  "episodes": [
+    {
+      "episode": 1,
+      "source_episode": 1,
+      "seed": 2097328307,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        13.003859,
+        0.525494,
+        -8420.063477
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_001_seed_2097328307/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0105085372924805,
+      "min_gripper_object_distance_m": 0.114457,
+      "trace_rows": 3042,
+      "initial_cup_position_m": [
+        0.656963,
+        -0.17015,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 54.79141732969538
+    },
+    {
+      "episode": 2,
+      "source_episode": 2,
+      "seed": 1598075308,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.375092,
+        -0.227637,
+        5e-06
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_002_seed_1598075308/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.009948492050171,
+      "min_gripper_object_distance_m": 0.093276,
+      "trace_rows": 3037,
+      "initial_cup_position_m": [
+        0.36875,
+        -0.184997,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 2.190470060702357
+    },
+    {
+      "episode": 3,
+      "source_episode": 3,
+      "seed": 1913199055,
+      "success": true,
+      "inside_box": true,
+      "final_position_m": [
+        0.338926,
+        0.144303,
+        0.010002
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": true,
+      "legacy_failure_category": "success",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_003_seed_1913199055/result.json",
+      "observed_category": "成功放入蓝盒并松爪",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": true,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0125102996826172,
+      "min_gripper_object_distance_m": 0.134486,
+      "trace_rows": 1530,
+      "initial_cup_position_m": [
+        0.476531,
+        -0.036259,
+        0.0
+      ],
+      "preclose_max_tilt_deg": 1.4090164247720953
+    },
+    {
+      "episode": 4,
+      "source_episode": 4,
+      "seed": 1414784450,
+      "success": true,
+      "inside_box": true,
+      "final_position_m": [
+        0.313613,
+        0.129775,
+        0.01
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_004_seed_1414784450/result.json",
+      "observed_category": "成功放入蓝盒并松爪",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0093247890472412,
+      "min_gripper_object_distance_m": 0.122794,
+      "trace_rows": 3034,
+      "initial_cup_position_m": [
+        0.42414,
+        -0.113274,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 3.150654906427234
+    },
+    {
+      "episode": 5,
+      "source_episode": 5,
+      "seed": 1418533244,
+      "success": false,
+      "inside_box": true,
+      "final_position_m": [
+        0.332674,
+        0.142618,
+        0.027535
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_005_seed_1418533244/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0091840028762817,
+      "min_gripper_object_distance_m": 0.137222,
+      "trace_rows": 3034,
+      "initial_cup_position_m": [
+        0.595858,
+        0.016362,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 3.1485274952197417
+    },
+    {
+      "episode": 6,
+      "source_episode": 6,
+      "seed": 629075602,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.501225,
+        -0.25577,
+        0.0178
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_006_seed_629075602/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0117501020431519,
+      "min_gripper_object_distance_m": 0.142229,
+      "trace_rows": 3047,
+      "initial_cup_position_m": [
+        0.497085,
+        -0.232487,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 5.914194589233652
+    },
+    {
+      "episode": 7,
+      "source_episode": 7,
+      "seed": 1361625666,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.555248,
+        0.003559,
+        0.017892
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_007_seed_1361625666/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0061285495758057,
+      "min_gripper_object_distance_m": 0.17761,
+      "trace_rows": 3026,
+      "initial_cup_position_m": [
+        0.498819,
+        -0.094769,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 87.47297166388374
+    },
+    {
+      "episode": 8,
+      "source_episode": 8,
+      "seed": 285601569,
+      "success": true,
+      "inside_box": true,
+      "final_position_m": [
+        0.318204,
+        0.146637,
+        0.027804
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_008_seed_285601569/result.json",
+      "observed_category": "成功放入蓝盒并松爪",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.00620698928833,
+      "min_gripper_object_distance_m": 0.129372,
+      "trace_rows": 3053,
+      "initial_cup_position_m": [
+        0.424305,
+        -0.186723,
+        0.0
+      ],
+      "preclose_max_tilt_deg": 10.075202070089583
+    },
+    {
+      "episode": 9,
+      "source_episode": 9,
+      "seed": 1211707135,
+      "success": true,
+      "inside_box": true,
+      "final_position_m": [
+        0.349894,
+        0.118855,
+        0.027803
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_009_seed_1211707135/result.json",
+      "observed_category": "成功放入蓝盒并松爪",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0088350772857666,
+      "min_gripper_object_distance_m": 0.112532,
+      "trace_rows": 3020,
+      "initial_cup_position_m": [
+        0.548777,
+        -0.158514,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 8.323344705725251
+    },
+    {
+      "episode": 10,
+      "source_episode": 10,
+      "seed": 263859115,
+      "success": false,
+      "inside_box": true,
+      "final_position_m": [
+        0.351845,
+        0.144701,
+        0.027892
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_010_seed_263859115/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0101804733276367,
+      "min_gripper_object_distance_m": 0.122224,
+      "trace_rows": 3047,
+      "initial_cup_position_m": [
+        0.402552,
+        -0.137056,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 4.169998577719401
+    },
+    {
+      "episode": 11,
+      "source_episode": 11,
+      "seed": 1361898724,
+      "success": true,
+      "inside_box": true,
+      "final_position_m": [
+        0.310105,
+        0.146543,
+        0.027862
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": true,
+      "legacy_failure_category": "success",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_011_seed_1361898724/result.json",
+      "observed_category": "成功放入蓝盒并松爪",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": true,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0059068202972412,
+      "min_gripper_object_distance_m": 0.137256,
+      "trace_rows": 1530,
+      "initial_cup_position_m": [
+        0.414297,
+        -0.057365,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 27.3111420262145
+    },
+    {
+      "episode": 12,
+      "source_episode": 12,
+      "seed": 1715419259,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.49829,
+        0.034186,
+        -0.0
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_012_seed_1715419259/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.013238549232483,
+      "min_gripper_object_distance_m": 0.18029,
+      "trace_rows": 3037,
+      "initial_cup_position_m": [
+        0.490055,
+        0.023205,
+        0.0
+      ],
+      "preclose_max_tilt_deg": 0.027129772918262907
+    },
+    {
+      "episode": 13,
+      "source_episode": 13,
+      "seed": 2017574528,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.631807,
+        -0.094413,
+        0.017893
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_013_seed_2017574528/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.009509801864624,
+      "min_gripper_object_distance_m": 0.161959,
+      "trace_rows": 3037,
+      "initial_cup_position_m": [
+        0.523352,
+        -0.17343,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 83.98657052949375
+    },
+    {
+      "episode": 14,
+      "source_episode": 14,
+      "seed": 467961729,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.696212,
+        -0.268603,
+        0.017799
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_014_seed_467961729/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0112180709838867,
+      "min_gripper_object_distance_m": 0.123575,
+      "trace_rows": 3039,
+      "initial_cup_position_m": [
+        0.634338,
+        -0.174182,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 5.153660821265956
+    },
+    {
+      "episode": 15,
+      "source_episode": 15,
+      "seed": 1490287571,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.627324,
+        -0.22329,
+        0.017802
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_015_seed_1490287571/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0130916833877563,
+      "min_gripper_object_distance_m": 0.181712,
+      "trace_rows": 3046,
+      "initial_cup_position_m": [
+        0.463799,
+        -0.262485,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 89.5569573369853
+    },
+    {
+      "episode": 16,
+      "source_episode": 16,
+      "seed": 1246051314,
+      "success": true,
+      "inside_box": true,
+      "final_position_m": [
+        0.316393,
+        0.144286,
+        0.027892
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": true,
+      "legacy_failure_category": "success",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_016_seed_1246051314/result.json",
+      "observed_category": "成功放入蓝盒并松爪",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": true,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0109612941741943,
+      "min_gripper_object_distance_m": 0.112966,
+      "trace_rows": 2030,
+      "initial_cup_position_m": [
+        0.372992,
+        -0.185125,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 15.332424927096566
+    },
+    {
+      "episode": 17,
+      "source_episode": 17,
+      "seed": 790676409,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.441914,
+        -0.179168,
+        2.8e-05
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_017_seed_790676409/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0105282068252563,
+      "min_gripper_object_distance_m": 0.102475,
+      "trace_rows": 3058,
+      "initial_cup_position_m": [
+        0.373132,
+        -0.192301,
+        0.0
+      ],
+      "preclose_max_tilt_deg": 15.048047803790837
+    },
+    {
+      "episode": 18,
+      "source_episode": 18,
+      "seed": 1295513469,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.658848,
+        -0.216158,
+        0.017534
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_018_seed_1295513469/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.013538122177124,
+      "min_gripper_object_distance_m": 0.173308,
+      "trace_rows": 3033,
+      "initial_cup_position_m": [
+        0.648994,
+        -0.236702,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 83.39549419791553
+    },
+    {
+      "episode": 19,
+      "source_episode": 19,
+      "seed": 1826989978,
+      "success": false,
+      "inside_box": true,
+      "final_position_m": [
+        0.336178,
+        0.135528,
+        0.027804
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_019_seed_1826989978/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0117793083190918,
+      "min_gripper_object_distance_m": 0.119574,
+      "trace_rows": 3021,
+      "initial_cup_position_m": [
+        0.6356,
+        0.043086,
+        0.0
+      ],
+      "preclose_max_tilt_deg": 1.2314207511601576
+    },
+    {
+      "episode": 20,
+      "source_episode": 20,
+      "seed": 1098085043,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.275644,
+        -0.062837,
+        0.061
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_020_seed_1098085043/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.013732671737671,
+      "min_gripper_object_distance_m": 0.098901,
+      "trace_rows": 3020,
+      "initial_cup_position_m": [
+        0.372394,
+        -0.125064,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 27.755774615608875
+    },
+    {
+      "episode": 21,
+      "source_episode": 21,
+      "seed": 1533864554,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.532402,
+        -0.179232,
+        0.01789
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_021_seed_1533864554/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0117661952972412,
+      "min_gripper_object_distance_m": 0.173075,
+      "trace_rows": 3038,
+      "initial_cup_position_m": [
+        0.435255,
+        -0.15623,
+        0.0
+      ],
+      "preclose_max_tilt_deg": 88.3565538200483
+    },
+    {
+      "episode": 22,
+      "source_episode": 22,
+      "seed": 341750258,
+      "success": true,
+      "inside_box": true,
+      "final_position_m": [
+        0.294102,
+        0.143842,
+        0.027323
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "joint_tracking_fault",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_022_seed_341750258/result.json",
+      "observed_category": "成功放入蓝盒并松爪",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0105420351028442,
+      "min_gripper_object_distance_m": 0.112041,
+      "trace_rows": 2954,
+      "initial_cup_position_m": [
+        0.372145,
+        -0.029924,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 4.5536302594250495
+    },
+    {
+      "episode": 23,
+      "source_episode": 23,
+      "seed": 237534238,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.272146,
+        0.046263,
+        0.017848
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_023_seed_237534238/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.011709451675415,
+      "min_gripper_object_distance_m": 0.166502,
+      "trace_rows": 3047,
+      "initial_cup_position_m": [
+        0.392141,
+        -0.077503,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 85.62180542745597
+    },
+    {
+      "episode": 24,
+      "source_episode": 24,
+      "seed": 1462386261,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        10.168612,
+        -12.494482,
+        -10329.908203
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_024_seed_1462386261/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0088269710540771,
+      "min_gripper_object_distance_m": 0.132486,
+      "trace_rows": 3047,
+      "initial_cup_position_m": [
+        0.377785,
+        -0.071375,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 89.92425751284799
+    },
+    {
+      "episode": 25,
+      "source_episode": 25,
+      "seed": 1741832481,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.34871,
+        0.045148,
+        0.017889
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_025_seed_1741832481/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0098602771759033,
+      "min_gripper_object_distance_m": 0.151991,
+      "trace_rows": 3052,
+      "initial_cup_position_m": [
+        0.439905,
+        -0.080131,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 85.74642489655383
+    },
+    {
+      "episode": 26,
+      "source_episode": 26,
+      "seed": 1363495169,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.616546,
+        -0.111752,
+        0.017802
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_026_seed_1363495169/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0102788209915161,
+      "min_gripper_object_distance_m": 0.152795,
+      "trace_rows": 3027,
+      "initial_cup_position_m": [
+        0.505768,
+        -0.076809,
+        0.0
+      ],
+      "preclose_max_tilt_deg": 3.2438801120027745
+    },
+    {
+      "episode": 27,
+      "source_episode": 27,
+      "seed": 146728536,
+      "success": true,
+      "inside_box": true,
+      "final_position_m": [
+        0.34569,
+        0.139931,
+        0.027803
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_027_seed_146728536/result.json",
+      "observed_category": "成功放入蓝盒并松爪",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0088496208190918,
+      "min_gripper_object_distance_m": 0.127357,
+      "trace_rows": 3042,
+      "initial_cup_position_m": [
+        0.571031,
+        -0.007387,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 3.7526921480598117
+    },
+    {
+      "episode": 28,
+      "source_episode": 28,
+      "seed": 1592681612,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.679703,
+        0.065266,
+        -0.0
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "finger_table_contact",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_028_seed_1592681612/result.json",
+      "observed_category": "未发出闭爪命令",
+      "close_command_observed": false,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": false,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 0.0049934983253479,
+      "min_gripper_object_distance_m": 0.219057,
+      "trace_rows": 752,
+      "initial_cup_position_m": [
+        0.679703,
+        0.065266,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 0.02096745092604151
+    },
+    {
+      "episode": 29,
+      "source_episode": 29,
+      "seed": 1579140737,
+      "success": true,
+      "inside_box": true,
+      "final_position_m": [
+        0.305452,
+        0.127116,
+        0.01
+      ],
+      "released": true,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_029_seed_1579140737/result.json",
+      "observed_category": "成功放入蓝盒并松爪",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": true,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0098261833190918,
+      "min_gripper_object_distance_m": 0.119377,
+      "trace_rows": 3037,
+      "initial_cup_position_m": [
+        0.655976,
+        0.046308,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 0.02810143672361401
+    },
+    {
+      "episode": 30,
+      "source_episode": 30,
+      "seed": 1553045381,
+      "success": false,
+      "inside_box": false,
+      "final_position_m": [
+        0.424547,
+        -0.186858,
+        0.061
+      ],
+      "released": false,
+      "holding": false,
+      "legacy_success": false,
+      "legacy_failure_category": "grasp_failed",
+      "source_result": "/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030/batch_01/pi05_sim_eval_20261030_140946/episodes/cup_030_seed_1553045381/result.json",
+      "observed_category": "闭爪后未形成有效夹持",
+      "close_command_observed": true,
+      "bilateral_cup_contact_observed": false,
+      "physical_grasp_observed": false,
+      "lift_observed": true,
+      "finger_table_contact_observed": false,
+      "max_gripper_prediction": 1.0095926523208618,
+      "min_gripper_object_distance_m": 0.110261,
+      "trace_rows": 3051,
+      "initial_cup_position_m": [
+        0.388558,
+        -0.105531,
+        -0.0
+      ],
+      "preclose_max_tilt_deg": 59.62684329673061
+    }
+  ],
+  "videos_verified": 90,
+  "source_hashes_unchanged": true,
+  "all_targets_dynamic_and_collisions_enabled": true,
+  "finished": "2026-10-30T14:43:54.667107+08:00"
+}

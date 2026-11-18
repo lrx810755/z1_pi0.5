@@ -1,0 +1,90 @@
+b9faa86 2026-09-14 fix: normalize all binary assets into Git LFS
+d91d7cc 2026-09-14 docs: add clean-machine reproduction workflow
+276b32a 2026-09-14 feat: add native and WSL2 reproduction launchers
+a7ac4f6 2026-09-14 build: document ROS Python and training dependencies
+0e75d75 2026-09-14 refactor: make Isaac scripts location independent
+1e3ba57 2026-09-14 refactor: make ROS and dataset paths portable
+b956213 2026-09-14 build: bundle active Isaac assets with Git LFS
+33b7e5f 2026-09-14 feat: add Z1 Isaac training and grasp workflow
+a7152e2 2026-09-14 docs: plan portable Z1 Isaac repository
+64603eb 2026-09-13 docs: design portable Z1 Isaac repository
+d2462f7 2025-06-02 Fixed CMakeLists.txt to retain "z1_ctrl" executable permissions Thanks @caicaixia for the proposed fix in #8 The problem with permission was also present in other issues, eg #7
+78e9009 2025-05-07 Merge branch 'moveit' - #9
+a1e0b12 2025-05-07 MoveIt package README
+8d93129 2025-05-04 Moveit launch file which properly sets the "use_sim_time" parameter Based on the suggestion in #9
+13bba88 2025-05-04 Removed moveit_setup_assistant code for ROS2 code generation As suggested by @mohd-osama-47 in #9
+3796892 2025-04-29 delete assistant build the ros2controller, it works on the real robot
+6a2af03 2025-04-29 add z1_moveit with moveit_setup_assistant
+c843276 2025-04-28 Add LICENSE And insertion of banner notice in relevant source files
+59be9ad 2025-04-24 Improved README and documentation with GIF for the example
+3c4ffa4 2025-04-24 Z1 test package First node which calls the joint trajectory controller to move the robot in some joint configurations
+f988c43 2025-04-24 Updated package.xml with correct dependencies
+3ca8406 2025-04-24 Updated README
+8856a95 2025-04-23 Added delay for the killing of the z1_ctrl executable
+0f85a1b 2025-04-23 Hardware interface fixes for smoother behaviors
+2ff3f5d 2025-04-20 Fixed linking issue with libZ1_SDK.so
+ac30d09 2025-04-19 Hardware interface implementation widh SDK communication
+42e1051 2025-04-19 Fixed launch file to autonomously start z1_ctrl executable
+1c2afd6 2024-12-27 Hardware interface cleanup
+9b9e0d1 2024-12-27 CMakelist refactor
+3fed2c2 2024-12-21 Changed hardware interface package name
+1ff5638 2024-12-30 added jazzy and rolling CI and update package.xml deps
+c8909c4 2024-12-30 Adding first github CI for humble
+7ce0a46 2024-12-30 Added contribution guide
+789b8ad 2024-12-30 Updated README
+b1ad957 2024-12-21 z1_bringup package initial commit
+efac5ae 2024-05-06 Added configurable starting controller
+a50246a 2024-05-06 Fixed robot description
+9d1f087 2024-05-06 urdf xacro fix for coppelia
+d89b502 2024-12-30 Merge remote-tracking branch 'origin/urdf-fix'
+76f091f 2024-12-28 added gazebo color and removed transmission and gazebo.xacro
+1f36df4 2024-12-28 added initial configuration for gazebo simulation in z1.ros2_control.xacro
+010b20d 2024-12-28 fixed collision shape to be the same as the visual in urdf
+5cef33f 2024-05-05 Moved coppelia hw interface to dedicated branch
+5bc7adc 2024-01-11 Package to communicate with coppelia. Problems with the controller when the launch file is executed.
+7dfead6 2024-01-10 Removed velocity interface from URDF
+3414c9c 2024-01-05 Renamed hw interface files
+72668dc 2024-01-05 Added dependencies in package.xml
+3abb425 2024-01-05 Reformatted and improved URDF files
+f77ce43 2024-01-04 Launch file remake
+d06efa8 2024-01-04 Modified files according to new file structure
+590e72e 2024-01-04 Moved files to rework file structure
+385f87a 2024-01-04 Working Ignition simulation With "simple" effort controller
+526c45c 2024-01-03 Fixed simulation Able to load ignition, spawn the model and launch rviz The system doesn't crash Still there are issues in the communication
+918464c 2024-01-02 Migrated to unique pointer
+ee492dd 2024-01-02 Switched data storage Migrated data storage of command and states from std::vector to Eigen vectors Furthermore data of gripper is handled separately from the one of the robot's kinematic chain
+a4b3518 2024-01-02 Removed unnecessary extra code
+e75d8d2 2024-01-02 Working version of the SDK
+a00862a 2023-12-21 Testing position and torque control
+fb942ba 2023-12-20 Added configuration of z1_ctrl executable
+94a2928 2023-12-18 "working" hardware interface Lot of minor changes
+21c2893 2023-12-18 Testing joint controllers
+834871b 2023-12-18 Modified logging and attempt to avoid initial fast movement
+2c11e37 2023-12-18 Improved launch file And overall code refactoring
+3fdee77 2023-12-15 Fixed command interface switch and minor error
+4d41d4c 2023-12-15 Developed hardware interface Tested that state interface is working as expected
+73859a5 2023-12-08 Improved documentation and modified CMakeLists After further discussion, dependency of z1 controller and sdk has been further clarified. The README has been modified to describe added knowledge and the CMake has been modified aswell.
+4805873 2023-12-08 Added controller manager ndoe to z1_spawner launch file
+d63500c 2023-12-07 Added dependency for z1_controller from unitree
+98b2eef 2023-12-05 Allocated memory for joint commands/states
+0cf931d 2023-12-05 Improved logging and workaround for on_shutdown callback
+9b654ad 2023-12-05 Fixed state/commands interface export
+b624723 2023-12-05 Export command and state interface
+e152f7d 2023-12-05 Fixed urdf Fixed urdf to work in ROS2 Create sample launch file that loads the model in RVIZ
+371e7a8 2023-12-05 Fixed CMake file Fixed cpp, cmake and headers so that the ros2 control plugin can be compiled and exported correctly
+1e6e634 2023-12-04 Added pyproject.toml Contains configuration for yapf python file formatter Addedd gitignore for clang compile commands
+bb1b4be 2023-12-04 Fixed typo in dynamic library import
+f3fd674 2023-12-02 Written ros2_control.xacro file
+c342472 2023-12-02 Unitree Z1 robot description copy
+3eeec56 2023-12-01 Improved documentation of functions
+74bfee8 2023-12-01 Added small description of FSM
+82887f8 2023-12-01 Fixed cmake
+524e268 2023-12-01 Filled .cpp file with functions that needs to be implemented
+4b34d0d 2023-12-01 Modified clang format
+125a9de 2023-12-01 Improved CMakeLists Improved ros2 packages dependency management
+8a81c3c 2023-12-01 Header file initial commit Functions declaration that must be implemented for the hardware interface
+a163ae4 2023-12-01 Added .clang-format with rules for code formatting
+df9dfd0 2023-12-01 Added README
+7b62684 2023-12-01 Added missing .xml for plugin description
+33cd2ba 2023-12-01 ROS2 package setup Cmake file should be "complete"
+8c38542 2023-12-01 Git repo setup

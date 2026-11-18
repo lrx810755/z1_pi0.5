@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmolVLA 抓取判定</title>
+  <style>
+    :root { color-scheme: dark; --bg:#08111f; --panel:#101c2e; --line:#24334b; --ink:#e8eef8; --muted:#91a1b8; --cyan:#31c7c2; --green:#45d483; --amber:#f4b860; --red:#ff746c; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; background:radial-gradient(circle at 85% 10%,#153153 0,transparent 38%),var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { width:min(980px,calc(100vw - 32px)); margin:32px auto; }
+    header { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:18px; }
+    h1 { margin:0; font-size:26px; letter-spacing:.02em; }
+    .sub { color:var(--muted); margin-top:5px; }
+    .grid { display:grid; grid-template-columns:1.1fr .9fr; gap:16px; }
+    .card { background:color-mix(in srgb,var(--panel) 94%,transparent); border:1px solid var(--line); border-radius:14px; padding:18px; box-shadow:0 18px 50px #0005; }
+    .label { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.09em; }
+    .phase { font-size:32px; font-weight:750; margin:6px 0 18px; }
+    .signals { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    .signal { padding:14px; border:1px solid var(--line); border-radius:10px; }
+    .signal strong { display:block; margin-top:5px; font-size:18px; }
+    .ok strong { color:var(--green); } .bad strong { color:var(--red); }
+    .pill { display:inline-flex; border-radius:999px; padding:5px 10px; color:var(--muted); background:#18273d; font-weight:700; }
+    .pill.ok { color:#062417; background:var(--green); } .pill.bad { color:#30100d; background:var(--red); }
+    .controls { display:grid; gap:12px; }
+    .wide { grid-column:1 / -1; }
+    .record-buttons { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }
+    .reset-episode { background:var(--red); color:#fff; min-height:50px; }
+    .auto-demo { background:var(--green); color:#062417; min-height:58px; font-size:17px; }
+    .force-stop { background:#b91c1c; color:#fff; min-height:58px; font-size:17px; border:2px solid #ff9b95; }
+    .force-stop:not(:disabled):hover { background:#dc2626; }
+    select,button { width:100%; min-height:42px; border-radius:8px; border:1px solid var(--line); font:inherit; }
+    select { padding:0 10px; color:var(--ink); background:#0c1728; }
+    button { cursor:pointer; font-weight:700; color:#062629; background:var(--cyan); border-color:transparent; }
+    button:disabled { cursor:not-allowed; opacity:.42; }
+    button.secondary { color:var(--ink); background:#18273d; border-color:var(--line); }
+    .detail { margin-top:16px; display:grid; gap:0; }
+    .row { min-height:38px; display:flex; justify-content:space-between; align-items:center; gap:16px; border-bottom:1px solid var(--line); }
+    .row:last-child { border-bottom:0; }
+    .row span:first-child { color:var(--muted); }
+    .mono { font-variant-numeric:tabular-nums; text-align:right; overflow-wrap:anywhere; }
+    #message { min-height:22px; color:var(--amber); }
+    @media(max-width:720px){ .grid{grid-template-columns:1fr} header{flex-direction:column}.signals{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+<main>
+  <header><div><h1>SmolVLA 自动示教</h1><div class="sub">自动规划、录制、抓取、放置、判定与保存</div></div><span id="connection" class="pill">等待 ROS</span></header>
+  <div class="grid">
+    <section class="card">
+      <div class="label">当前阶段</div><div id="phase" class="phase">WAITING_FOR_STATE</div>
+      <div class="signals">
+        <div id="graspCard" class="signal"><span class="label">抓取判定</span><strong id="grasp">未抓稳</strong></div>
+        <div id="taskCard" class="signal"><span class="label">任务判定</span><strong id="task">未完成</strong></div>
+      </div>
+      <div class="detail">
+        <div class="row"><span>目标</span><strong id="target">apple</strong></div>
+        <div class="row"><span>目标位置 m</span><span id="position" class="mono">-</span></div>
+        <div class="row"><span>夹爪开合 rad</span><span id="gripper" class="mono">-</span></div>
+        <div class="row"><span>夹爪距离 m</span><span id="distance" class="mono">-</span></div>
+        <div class="row"><span>箱内</span><span id="inside">-</span></div>
+        <div class="row"><span>失败原因</span><span id="failure" class="mono">-</span></div>
+        <div class="row"><span>MoveIt 场景碰撞</span><strong id="collisionScene">等待</strong></div>
+        <div class="row"><span>动态物体碰撞</span><strong id="objectCollisions">等待</strong></div>
+      </div>
+    </section>
+    <section class="card controls">
+      <div><div class="label">本轮训练目标</div><select id="targetSelect"></select></div>
+      <div>
+        <div class="label">课程随机化等级</div>
+        <select id="curriculumLevel">
+          <option value="easy">Easy — 局部稳定</option>
+          <option value="medium">Medium — 扩大局部范围</option>
+          <option value="full">Full — 共享安全工作区</option>
+        </select>
+      </div>
+      <button id="autoDemonstrate" class="auto-demo">一键自动示教</button>
+      <div id="autoMessage" class="sub">成功自动保存；失败自动丢弃录制并保留现场。</div>
+      <button id="forceStop" class="force-stop">强制停止抓取</button>
+      <div id="forceStopMessage" class="sub">立即取消抓取和夹爪轨迹，并保持当前关节位置。</div>
+      <button id="resetEpisode" class="reset-episode">一键重置 Episode</button>
+      <div id="resetMessage" class="sub">失败后点击：自动停止、丢弃录制并恢复整个场景。</div>
+      <button id="randomizeEpisode" class="secondary">随机化场景并重置</button>
+      <button id="apply">切换目标并开始新一轮</button>
+      <button id="reset" class="secondary">仅复位判定器</button>
+      <div id="message"></div>
+      <div class="sub">训练采集统一使用“一键自动示教”，失败后保留现场供检查。</div>
+    </section>
+    <section class="card wide">
+      <div class="label">SmallVLA 训练集录制</div>
+      <div class="detail">
+        <div class="row"><span>录制状态</span><strong id="recordPhase">等待节点</strong></div>
+        <div class="row"><span>Episode</span><span id="recordEpisode" class="mono">-</span></div>
+        <div class="row"><span>已录帧数 / 时长</span><span id="recordFrames" class="mono">-</span></div>
+        <div class="row"><span>丢帧</span><span id="recordDropped" class="mono">0</span></div>
+        <div class="row"><span>保存目录</span><span id="recordPath" class="mono">-</span></div>
+        <div class="row"><span>录制错误</span><span id="recordError" class="mono">-</span></div>
+      </div>
+      <div class="record-buttons">
+        <button id="recordStart">仅开始录制（手动模式）</button>
+        <button id="recordSave" disabled style="background:var(--green);color:#062417">保存成功 Episode</button>
+        <button id="recordDiscard" disabled style="background:var(--red);color:#fff">丢弃本轮</button>
+      </div>
+      <div id="recordMessage" class="sub">自动示教会自动管理录制；手动录制仅用于独立数据检查。</div>
+    </section>
+  </div>
+</main>
+<script>
+  const $ = (id) => document.getElementById(id);
+  const names = {cup:"杯子",apple:"苹果",peach:"桃子",mouse:"鼠标",beverage_bottle:"饮料瓶"};
+  let initialized = false;
+  async function api(path,payload){ const r=await fetch(path,{method:payload?"POST":"GET",headers:payload?{"Content-Type":"application/json"}:{},body:payload?JSON.stringify(payload):undefined}); const d=await r.json(); if(!r.ok) throw new Error(d.error||r.statusText); return d; }
+  function fmt(value,digits=3){ return Number.isFinite(Number(value))?Number(value).toFixed(digits):"-"; }
+  function render(s){
+    $("connection").textContent=s.connected?"ROS 在线":"ROS 离线"; $("connection").className=s.connected?"pill ok":"pill bad";
+    $("phase").textContent=s.phase||"WAITING_FOR_STATE";
+    $("grasp").textContent=s.grasp_success?"已抓稳":"未抓稳"; $("graspCard").className=`signal ${s.grasp_success?"ok":"bad"}`;
+    $("task").textContent=s.task_success?"已完成":"未完成"; $("taskCard").className=`signal ${s.task_success?"ok":"bad"}`;
+    $("target").textContent=names[s.target_object]||s.target_object||"-";
+    $("position").textContent=Array.isArray(s.object_position_m)?s.object_position_m.map(v=>fmt(v)).join(", "):"-";
+    $("gripper").textContent=fmt(s.gripper_position_rad); $("distance").textContent=fmt(s.gripper_object_distance_m);
+    $("inside").textContent=s.inside_success_volume===undefined?"-":(s.inside_success_volume?"是":"否"); $("failure").textContent=s.failure_reason||"-";
+    const collision=s.collision_scene||{}; $("collisionScene").textContent=collision.ready?`已载入 ${collision.object_count||0} 个`:(collision.phase||"等待"); $("collisionScene").style.color=collision.ready?"var(--green)":"var(--amber)";
+    const objects=s.object_collisions||{}; $("objectCollisions").textContent=objects.ready?`已同步 ${objects.world_object_count||0} 个`:(objects.phase||"等待"); $("objectCollisions").style.color=objects.ready?"var(--green)":"var(--amber)";
+    const rec=s.recording||{}; $("recordPhase").textContent=rec.recording?"正在录制":(rec.ready?"就绪":(rec.phase||"等待节点")); $("recordPhase").style.color=rec.recording?"var(--red)":(rec.ready?"var(--green)":"var(--amber)");
+    $("recordEpisode").textContent=Number.isInteger(rec.episode_index)?String(rec.episode_index).padStart(6,"0"):"-";
+    $("recordFrames").textContent=rec.recording?`${rec.frame_count||0} / ${fmt(rec.duration_s||0,1)} s`:"-"; $("recordDropped").textContent=rec.dropped_frames||0; $("recordPath").textContent=rec.dataset_root||"-"; $("recordError").textContent=rec.last_error||((rec.missing_streams||[]).length?`等待: ${rec.missing_streams.join(", ")}`:"-");
+    const auto=s.auto_demonstration||{},autoRunning=!!auto.running; $("autoMessage").textContent=auto.step?`${auto.step}：${auto.message||auto.phase}`:(auto.message||"成功自动保存；失败自动丢弃录制并保留现场。"); $("autoMessage").style.color=auto.phase==="SUCCESS"?"var(--green)":(["ERROR","STOPPED"].includes(auto.phase)?"var(--red)":"var(--muted)");
+    const forceStop=s.force_stop||{}; $("forceStop").disabled=!s.connected||!!forceStop.running; $("forceStop").textContent=forceStop.running?"正在强制停止…":"强制停止抓取"; $("forceStopMessage").textContent=forceStop.message||"立即取消抓取和夹爪轨迹，并保持当前关节位置。"; $("forceStopMessage").style.color=forceStop.phase==="STOP_ERROR"?"var(--red)":(forceStop.phase==="STOPPED"?"var(--amber)":"var(--muted)");
+    const episodeReset=s.episode_reset||{}; $("resetEpisode").disabled=!episodeReset.ready||episodeReset.resetting||autoRunning; $("randomizeEpisode").disabled=!episodeReset.ready||episodeReset.resetting||autoRunning; if(episodeReset.resetting) $("resetMessage").textContent=episodeReset.message||"正在复位…";
+    $("autoDemonstrate").disabled=!s.connected||!rec.ready||rec.recording||episodeReset.resetting||autoRunning; $("recordStart").disabled=!rec.ready||rec.recording||episodeReset.resetting||autoRunning; $("recordSave").disabled=!rec.recording||!rec.task_success||episodeReset.resetting||autoRunning; $("recordDiscard").disabled=!rec.recording||episodeReset.resetting||autoRunning; $("targetSelect").disabled=!!rec.recording||episodeReset.resetting||autoRunning; $("curriculumLevel").disabled=!!rec.recording||episodeReset.resetting||autoRunning; $("apply").disabled=!!rec.recording||episodeReset.resetting||autoRunning; $("reset").disabled=!!rec.recording||episodeReset.resetting||autoRunning;
+    if(!initialized){ (s.available_objects||Object.keys(names)).forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=`${names[v]||v} (${v})`;$("targetSelect").appendChild(o);}); initialized=true; }
+    if(document.activeElement!==$("targetSelect")&&s.target_object) $("targetSelect").value=s.target_object;
+  }
+  async function refresh(){ try{render(await api("/api/status"));}catch(e){$("connection").textContent="GUI 桥离线";$("connection").className="pill bad";$("message").textContent=e.message;} }
+  $("resetEpisode").onclick=async()=>{try{$("resetEpisode").disabled=true;$("resetMessage").textContent="正在完整复位，请稍候…";const d=await api("/api/reset_episode",{});$("resetMessage").textContent=d.message;await refresh();}catch(e){$("resetMessage").textContent=e.message;await refresh();}};
+  $("randomizeEpisode").onclick=async()=>{try{$("randomizeEpisode").disabled=true;const level=$("curriculumLevel").value;$("resetMessage").textContent=`正在生成 ${level} 课程随机布局…`;const d=await api("/api/randomize_episode",{curriculum_level:level});$("resetMessage").textContent=d.message;await refresh();}catch(e){$("resetMessage").textContent=e.message;await refresh();}};
+  $("autoDemonstrate").onclick=async()=>{try{$("autoDemonstrate").disabled=true;$("autoMessage").textContent="正在启动一键自动示教…";const d=await api("/api/demonstration/auto",{target_object:$("targetSelect").value,curriculum_level:$("curriculumLevel").value});$("autoMessage").textContent=d.message;await refresh();}catch(e){$("autoMessage").textContent=e.message;await refresh();}};
+  $("forceStop").onclick=async()=>{try{if(!confirm("确定立即停止抓取并保持机械臂当前位置？"))return;$("forceStop").disabled=true;$("forceStopMessage").textContent="正在取消全部抓取运动…";const d=await api("/api/force_stop",{});$("forceStopMessage").textContent=d.message;await refresh();}catch(e){$("forceStopMessage").textContent=e.message;await refresh();}};
+  $("apply").onclick=async()=>{try{await api("/api/target",{target_object:$("targetSelect").value});const d=await api("/api/reset_episode",{});$("message").textContent=d.message;await refresh();}catch(e){$("message").textContent=e.message;}};
+  $("reset").onclick=async()=>{try{const d=await api("/api/reset",{});$("message").textContent=d.message;await refresh();}catch(e){$("message").textContent=e.message;}};
+  $("recordStart").onclick=async()=>{try{const d=await api("/api/recording/start",{});$("recordMessage").textContent=d.message;await refresh();}catch(e){$("recordMessage").textContent=e.message;}};
+  $("recordSave").onclick=async()=>{try{const d=await api("/api/recording/save",{});$("recordMessage").textContent=d.message;await refresh();}catch(e){$("recordMessage").textContent=e.message;}};
+  $("recordDiscard").onclick=async()=>{try{if(!confirm("确定丢弃当前录制的 episode？"))return;const d=await api("/api/recording/discard",{});$("recordMessage").textContent=d.message;await refresh();}catch(e){$("recordMessage").textContent=e.message;}};
+  refresh(); setInterval(refresh,250);
+</script>
+</body>
+</html>

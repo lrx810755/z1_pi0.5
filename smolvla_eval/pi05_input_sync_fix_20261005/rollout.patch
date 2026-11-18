@@ -1,0 +1,233 @@
+--- /home/lp531/smolvla_eval/pi05_input_sync_fix_20261005/smolvla_sim_rollout.py.before	2026-10-05 00:12:25.688780690 +0800
++++ /home/lp531/ros2_ws/src/z1_ros2/z1_isaac_bridge/z1_isaac_bridge/smolvla_sim_rollout.py	2026-10-05 00:25:38.192892732 +0800
+@@ -22,7 +22,8 @@
+ from std_srvs.srv import SetBool, Trigger
+ 
+ from .dataset_selection import grid_bin
+-from .episode_recorder import image_to_bgr
++from .episode_recorder import image_to_bgr, stamp_seconds
++from .recording_sync import RecordingSynchronizer
+ from .grasp_config import GRASP_CONFIG
+ from .smolvla_rollout_core import (
+     GraspPhaseTracker,
+@@ -134,6 +135,12 @@
+         self._seen_eval_seeds: set[int] = set()
+         self._joint_sim_stamp = 0.0
+         self.policy = self._load_policy(args.checkpoint)
++        self._observation_sync = RecordingSynchronizer(
++            self.camera_keys, tolerance=args.input_sync_tolerance, capacity=32,
++        )
++        self._input_sync_path = None
++        self._input_sync_index = 0
++        self._last_input_sync = None
+ 
+         for name in self.camera_keys:
+             topic = (
+@@ -252,6 +259,10 @@
+         with self._lock:
+             self._images[name] = image
+             self._stamps[name] = time.monotonic()
++            stamp = stamp_seconds(message.header.stamp)
++            if self._joint_sim_stamp > 0 and stamp > self._joint_sim_stamp + 0.5:
++                return  # Discard messages from a previous clock epoch.
++            self._observation_sync.push(name, stamp, image)
+ 
+     def _joint_callback(self, message: JointState) -> None:
+         values = dict(zip(message.name, message.position))
+@@ -261,12 +272,16 @@
+         if not all(np.isfinite(value) for value in positions.values()):
+             return
+         with self._lock:
++            stamp = stamp_seconds(message.header.stamp)
++            if stamp < self._joint_sim_stamp:
++                # A delayed message cannot distinguish clock reset from DDS
++                # reordering. Never roll safety feedback back; a simulator
++                # clock reset requires restarting this validation process.
++                return
+             self._joints = positions
+             self._stamps["joint"] = time.monotonic()
+-            self._joint_sim_stamp = (
+-                float(message.header.stamp.sec)
+-                + float(message.header.stamp.nanosec) * 1.0e-9
+-            )
++            self._joint_sim_stamp = stamp
++            self._observation_sync.push("state", stamp, [positions[name] for name in JOINT_NAMES])
+ 
+     def _status_callback(self, message: String) -> None:
+         try:
+@@ -379,6 +394,62 @@
+                     raise RuntimeError(f"blank_camera:{name}")
+         return images, joints, status, evidence
+ 
++    def _synchronized_policy_observation(self):
++        started = time.monotonic()
++        deadline = started + self.args.input_sync_timeout
++        reason = "missing streams"
++        while time.monotonic() < deadline:
++            with self._lock:
++                if streams_are_fresh(self._stamps, time.monotonic(),
++                                     self.args.stale_timeout, self.camera_keys):
++                    try:
++                        sample = self._observation_sync.select_latest_observation(
++                            self._joint_sim_stamp, self.args.input_sync_max_age,
++                        )
++                    except ValueError as exc:
++                        reason = str(exc)
++                    else:
++                        self._observation_sync.commit(sample)
++                        stamps = {name: value[0] for name, value in sample["images"].items()}
++                        all_stamps = [sample["time"], *stamps.values()]
++                        self._last_input_sync = {
++                            "prediction": self._input_sync_index,
++                            "observation_time_s": sample["time"],
++                            "image_stamps_s": stamps,
++                            "state_bracket_s": list(sample["state_bracket"]),
++                            "sensor_skew_s": max(all_stamps) - min(all_stamps),
++                            "oldest_sensor_age_s": self._joint_sim_stamp - min(all_stamps),
++                            "latest_state_time_s": self._joint_sim_stamp,
++                            "latest_received_sensor_skew_s": max(
++                                self._observation_sync.buffers[name][-1][0]
++                                for name in (*self.camera_keys, "state")
++                            ) - min(
++                                self._observation_sync.buffers[name][-1][0]
++                                for name in (*self.camera_keys, "state")
++                            ),
++                            "wait_wall_s": time.monotonic() - started,
++                            "input_state": sample["state"],
++                        }
++                        self._input_sync_index += 1
++                        break
++                else:
++                    reason = "stale_stream"
++            time.sleep(0.005)
++        else:
++            if self._input_sync_path is not None:
++                with self._input_sync_path.open("a", encoding="utf-8") as stream:
++                    stream.write(json.dumps({"error": "input_sync_timeout", "detail": reason}) + "\n")
++            raise RuntimeError("input_sync_timeout: " + reason)
++        if self._input_sync_path is not None:
++            with self._input_sync_path.open("a", encoding="utf-8") as stream:
++                stream.write(json.dumps(self._last_input_sync) + "\n")
++        images = {name: value[1] for name, value in sample["images"].items()}
++        if self.args.reject_blank_cameras:
++            for name, image in images.items():
++                if image[::16, ::16].std() < 5.0:
++                    raise RuntimeError(f"blank_camera:{name}")
++        return images, np.asarray(sample["state"], dtype=np.float32)
++
+     def _policy_batch(
+         self,
+         images: dict[str, np.ndarray],
+@@ -388,6 +459,7 @@
+     ):
+         import torch
+ 
++        images, joints = self._synchronized_policy_observation()
+         state = (
+             np.asarray(augmented_state(joints, status), dtype=np.float32)
+             if self.state_dim == len(AUGMENTED_STATE_NAMES)
+@@ -567,6 +639,8 @@
+         with self._lock:
+             self._evidence = {}
+             self._status = {}
++            self._observation_sync.reset()
++            self._last_input_sync = None
+         self._publish_target(target)
+         self.policy.reset()
+         stream_deadline = time.monotonic() + 5.0
+@@ -627,6 +701,8 @@
+             self._activate_policy(target)
+         episode_dir = root / "episodes" / f"{target}_{episode_number:03d}_seed_{seed}"
+         episode_dir.mkdir(parents=True, exist_ok=False)
++        self._input_sync_path = episode_dir / "input_sync.jsonl"
++        self._input_sync_index = 0
+         video = VideoSet(episode_dir / "videos", self.args.rate)
+         trace_path = episode_dir / "trace.jsonl"
+         success = False
+@@ -848,6 +924,8 @@
+             error_detail = str(exc) if str(exc) else type(exc).__name__
+             if error_detail == "stale_stream":
+                 stop_reason = "stale_stream"
++            elif error_detail.startswith("input_sync_timeout:"):
++                stop_reason = "input_sync_timeout"
+             elif error_detail.startswith("blank_camera:"):
+                 stop_reason = "blank_camera"
+             elif isinstance(exc, ValueError):
+@@ -857,18 +935,22 @@
+             else:
+                 stop_reason = "runtime_error"
+         finally:
++            # Stop before scene cleanup, which can block waiting for an ACK.
++            with self._lock:
++                hold = [self._joints.get(name) for name in JOINT_NAMES]
++            if all(value is not None and np.isfinite(value) for value in hold):
++                self._publish_command(hold)
++            self._set_active(False)
+             if target_frozen:
+                 try:
+                     self._set_target_frozen(target, False)
+                 except RuntimeError as exc:
+                     self.get_logger().error(f"Target unfreeze failed: {exc}")
+-                    stop_reason = "target_unfreeze_failed"
+-                    error_detail = str(exc)
++                    cleanup_error = str(exc)
++                    if not stop_reason:
++                        stop_reason = "target_unfreeze_failed"
++                        error_detail = cleanup_error
+                     success = False
+-            with self._lock:
+-                hold = [self._joints.get(name) for name in JOINT_NAMES]
+-            if all(value is not None and np.isfinite(value) for value in hold):
+-                self._publish_command(hold)
+             self._publish_grasp_phase(target, {
+                 "gripper_commanded_closed": False,
+                 "gripper_obstructed": False,
+@@ -878,7 +960,6 @@
+                 "release_sequence_complete": False,
+                 "transport_failure_reason": stop_reason,
+             })
+-            self._set_active(False)
+             video.close()
+ 
+         timed_out = not success and not stop_reason
+@@ -896,6 +977,7 @@
+             "failure_category": category,
+             "stop_reason": stop_reason,
+             "error_detail": locals().get("error_detail", ""),
++            "cleanup_error": locals().get("cleanup_error", ""),
+             "duration_s": round(time.monotonic() - started, 3),
+             "simulation_duration_s": round(
+                 max(0.0, self._joint_sim_stamp - locals().get(
+@@ -908,6 +990,8 @@
+             "action_rate_hz": self.args.rate,
+             "execution_rate_hz": execution_rate,
+             "execute_steps": self.args.execute_steps,
++            "input_sync_tolerance_s": self.args.input_sync_tolerance,
++            "input_sync_max_age_s": self.args.input_sync_max_age,
+             "prelift_contact_stable_s": self.args.prelift_contact_stable_s,
+             "freeze_target_until_close": self.args.freeze_target_until_close,
+             "frozen_target_collision_mode": "enabled" if self.args.freeze_target_until_close else "not_frozen",
+@@ -1021,6 +1105,12 @@
+     )
+     parser.add_argument("--max-joint-step", type=float, default=0.10)
+     parser.add_argument("--stale-timeout", type=float, default=0.5)
++    parser.add_argument("--input-sync-tolerance", type=float, default=0.025,
++                        help="Maximum spread of model image/state sensor times, seconds")
++    parser.add_argument("--input-sync-max-age", type=float, default=0.2,
++                        help="Maximum age of a synchronized model observation in simulation seconds")
++    parser.add_argument("--input-sync-timeout", type=float, default=0.5,
++                        help="Wall-clock wait for a fresh synchronized observation before stopping")
+     parser.add_argument("--tracking-error", type=float, default=0.08)
+     parser.add_argument("--tracking-error-duration", type=float, default=0.5)
+     parser.add_argument("--sim-clock-timeout", type=float, default=10.0)
+@@ -1057,6 +1147,10 @@
+     args.output = args.output.expanduser().resolve()
+     if args.episodes_per_object <= 0 or args.execute_steps <= 0:
+         parser.error("episode and execution counts must be positive")
++    if any(not np.isfinite(value) or value <= 0 for value in (
++        args.input_sync_tolerance, args.input_sync_max_age, args.input_sync_timeout,
++    )) or args.input_sync_tolerance > args.input_sync_max_age:
++        parser.error("input sync requires finite positive values and tolerance <= max age")
+     if args.max_training_target_distance_m is not None and (
+         not np.isfinite(args.max_training_target_distance_m)
+         or args.max_training_target_distance_m <= 0

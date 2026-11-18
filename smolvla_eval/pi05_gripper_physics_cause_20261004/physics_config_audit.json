@@ -1,0 +1,128 @@
+{
+  "scene_path": "/home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/generated_dual_camera/smolvla_dual_wrist_camera.usd",
+  "scene_sha256": "841a5dfd87abfcb928cc158931613bc5809c1e85c77fb47e05f13b6a08a64a40",
+  "authored_attributes": [
+    {
+      "path": "/World/Z1/root_joint/joints/jointGripper",
+      "type": "PhysicsRevoluteJoint",
+      "attributes": {
+        "drive:angular:physics:damping": "100.0",
+        "drive:angular:physics:maxForce": "80.0",
+        "drive:angular:physics:stiffness": "2000.0",
+        "drive:angular:physics:targetPosition": "0.0",
+        "drive:angular:physics:targetVelocity": "0.0",
+        "drive:angular:physics:type": "acceleration",
+        "isaac:physics:AccelerationLimit": "None",
+        "isaac:physics:JerkLimit": "None",
+        "physics:JointEquivalentInertia": "0.0019644307903945446",
+        "physics:lowerLimit": "-90.0",
+        "physics:upperLimit": "0.0",
+        "physxJoint:maxJointVelocity": "179.9946746826172"
+      }
+    },
+    {
+      "path": "/World/Z1/root_joint/gripperStator",
+      "type": "Xform",
+      "attributes": {
+        "physics:angularVelocity": "(0, 0, 0)",
+        "physics:centerOfMass": "(0.04764427, -0.00035819, -0.00249162)",
+        "physics:diagonalInertia": "(0.00036694252, 0.0006865259, 0.0006824316)",
+        "physics:mass": "0.5260365605354309",
+        "physics:velocity": "(0, 0, 0)"
+      }
+    },
+    {
+      "path": "/World/Z1/root_joint/gripperMover",
+      "type": "Xform",
+      "attributes": {
+        "physics:angularVelocity": "(0, 0, 0)",
+        "physics:centerOfMass": "(0.01320633, 0.00476708, 0.00380534)",
+        "physics:diagonalInertia": "(0.0001723776, 0.00027088815, 0.00035904415)",
+        "physics:mass": "0.27621302008628845",
+        "physics:velocity": "(0, 0, 0)"
+      }
+    },
+    {
+      "path": "/World/Z1/root_joint/root_joint",
+      "type": "PhysicsFixedJoint",
+      "attributes": {
+        "physxArticulation:solverPositionIterationCount": "32",
+        "physxArticulation:solverVelocityIterationCount": "1"
+      }
+    },
+    {
+      "path": "/World/PhysicsScene",
+      "type": "PhysicsScene",
+      "attributes": {
+        "physxScene:enableCCD": "True",
+        "physxScene:solverType": "TGS"
+      }
+    }
+  ],
+  "runtime_gripper_drive_override": {
+    "drive_stiffness": 6000.0,
+    "drive_damping": 240.0,
+    "max_effort": 800.0,
+    "close_duration_s": 1.5,
+    "open_duration_s": 2.0,
+    "obstruction_window_s": 0.25,
+    "obstruction_max_motion_rad": 0.006,
+    "preclose_seating_z_target_m": 0.014,
+    "preclose_seating_max_translation_m": 0.01,
+    "preclose_seating_step_m": 0.001,
+    "require_clear_fingers_before_close": true,
+    "stator_support_z_max_m": 0.019,
+    "contact_hold_preload_rad": 0.15,
+    "contact_hold_preload_step_rad": 0.01,
+    "contact_hold_duration_s": 180.0,
+    "contact_unjam_lift_m": 0.0,
+    "contact_stator_seating_m": 0.0,
+    "allow_retention_lip": false,
+    "obstruction_min_position_rad": -1.1,
+    "mechanical_limit_tolerance_rad": 0.03
+  },
+  "collision_proxy": {
+    "contact_offset_m": 0.00025,
+    "rest_offset_m": 0.0,
+    "fruit_linear_damping": 5.0,
+    "fruit_angular_damping": 20.0,
+    "gripper_mesh_approximation": "convexDecomposition",
+    "apple": {
+      "shape": "ellipsoid",
+      "mass_kg": 0.15,
+      "radii_m": [
+        0.0176,
+        0.0175,
+        0.019
+      ],
+      "latitude_segments": 8,
+      "longitude_segments": 12,
+      "flat_base_height_m": 0.0025
+    },
+    "peach": {
+      "shape": "ellipsoid",
+      "radii_m": [
+        0.01545,
+        0.01515,
+        0.0145
+      ],
+      "latitude_segments": 8,
+      "longitude_segments": 12,
+      "flat_base_height_m": 0.002
+    },
+    "mouse": {
+      "shape": "ellipsoid",
+      "mass_kg": 0.07,
+      "radii_m": [
+        0.043,
+        0.0245,
+        0.01415
+      ],
+      "latitude_segments": 8,
+      "longitude_segments": 16,
+      "flat_base_height_m": 0.003,
+      "vertical_shape_power": 0.55
+    }
+  },
+  "config_sha256": "e45cab33a0fadcd9a2fb323831074b6ea80fc0b193c0f2457492ebc253ed347f"
+}

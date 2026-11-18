@@ -1,0 +1,302 @@
+{
+  "target_object": "apple",
+  "episode_number": 47,
+  "seed": 433035231,
+  "target_position_m": [
+    0.500284,
+    -0.250046,
+    0.0
+  ],
+  "initial_joint_state": [
+    0.0,
+    0.0033,
+    0.0003,
+    0.0076,
+    -0.0002,
+    0.0002,
+    -0.8959
+  ],
+  "initial_scene_randomization": {
+    "phase": "RANDOMIZED",
+    "ready": true,
+    "message": "场景已随机化并通过物理验收；level=full；seed=433035231；物体平移=86–322 mm",
+    "curriculum_level": "full",
+    "target_grid": null,
+    "sweep_clearance_target": "apple",
+    "target_sweep_clear": true,
+    "seed": 433035231,
+    "requested_object_positions_m": {
+      "apple": [
+        0.500284,
+        -0.250044,
+        -0.0
+      ],
+      "mouse": [
+        0.672333,
+        -0.248342,
+        0.00015
+      ],
+      "cup": [
+        0.686395,
+        -0.025273,
+        0.0
+      ],
+      "beverage_bottle": [
+        0.403156,
+        -0.033267,
+        -0.0
+      ],
+      "peach": [
+        0.461363,
+        0.152439,
+        -0.0
+      ]
+    },
+    "object_positions_m": {
+      "apple": [
+        0.500284,
+        -0.250046,
+        0.0
+      ],
+      "mouse": [
+        0.672332,
+        -0.248342,
+        0.00015
+      ],
+      "cup": [
+        0.686395,
+        -0.025273,
+        0.0
+      ],
+      "beverage_bottle": [
+        0.403155,
+        -0.033265,
+        -0.0
+      ],
+      "peach": [
+        0.461364,
+        0.152439,
+        0.0
+      ]
+    },
+    "object_orientations_xyzw": {
+      "apple": [
+        0.9870511,
+        3.08e-05,
+        -1.27e-05,
+        -0.1604067
+      ],
+      "mouse": [
+        -0.207702,
+        -0.0,
+        0.0,
+        0.9781922
+      ],
+      "cup": [
+        0.9702828,
+        -2e-07,
+        4e-07,
+        -0.2419739
+      ],
+      "beverage_bottle": [
+        0.9939994,
+        -4.5e-06,
+        -2.4e-06,
+        -0.1093861
+      ],
+      "peach": [
+        0.4468358,
+        -3.3e-05,
+        2.85e-05,
+        -0.894616
+      ]
+    },
+    "object_displacements_mm": {
+      "apple": 92.4,
+      "mouse": 292.2,
+      "cup": 86.0,
+      "beverage_bottle": 244.6,
+      "peach": 322.2
+    },
+    "settle_metrics": {
+      "apple": {
+        "horizontal_drift_m": 1e-06,
+        "vertical_drift_m": 0.0,
+        "linear_speed_m_s": 0.002443,
+        "angular_speed_rad_s": 0.067707,
+        "orientation_drift_deg": 0.0,
+        "touching_table": true,
+        "table_penetration_m": 1e-06
+      },
+      "mouse": {
+        "horizontal_drift_m": 0.0,
+        "vertical_drift_m": 0.0,
+        "linear_speed_m_s": 1e-06,
+        "angular_speed_rad_s": 2.3e-05,
+        "orientation_drift_deg": 0.03,
+        "touching_table": true,
+        "table_penetration_m": 0.0
+      },
+      "cup": {
+        "horizontal_drift_m": 0.0,
+        "vertical_drift_m": 0.0,
+        "linear_speed_m_s": 8.5e-05,
+        "angular_speed_rad_s": 0.000514,
+        "orientation_drift_deg": 0.0,
+        "touching_table": true,
+        "table_penetration_m": 0.0
+      },
+      "beverage_bottle": {
+        "horizontal_drift_m": 2e-06,
+        "vertical_drift_m": 0.0,
+        "linear_speed_m_s": 0.002081,
+        "angular_speed_rad_s": 0.008942,
+        "orientation_drift_deg": 0.0,
+        "touching_table": true,
+        "table_penetration_m": 1e-06
+      },
+      "peach": {
+        "horizontal_drift_m": 1e-06,
+        "vertical_drift_m": 0.0,
+        "linear_speed_m_s": 0.001159,
+        "angular_speed_rad_s": 0.05444,
+        "orientation_drift_deg": 0.0,
+        "touching_table": true,
+        "table_penetration_m": 0.0
+      }
+    },
+    "settle_duration_s": 1.038
+  },
+  "task": "Physically grasp the apple, lift it clear, and place it in the box.",
+  "success": false,
+  "failure_category": "grasp_failed",
+  "stop_reason": "",
+  "error_detail": "",
+  "cleanup_error": "",
+  "duration_s": 73.613,
+  "simulation_duration_s": 60.0,
+  "physical_predicates": {
+    "physical_grasp_ok": false,
+    "lifted": false,
+    "bilateral_contact": false,
+    "release_sequence_complete": false,
+    "task_success": false,
+    "gripper_commanded_closed": true,
+    "inside_success_volume": false,
+    "placement_stable": false,
+    "object_transported_to_box": false
+  },
+  "first_pregrasp_contact": null,
+  "action_rate_hz": 10.0,
+  "execution_rate_hz": 60.0,
+  "execute_steps": 15,
+  "binary_gripper": true,
+  "gripper_action_encoding": "binary",
+  "gripper_min_close_hold_s": 0.0,
+  "gripper_binary_threshold": null,
+  "gripper_binary_hysteresis": {
+    "open_threshold": 0.4,
+    "close_threshold": 0.6,
+    "initial_target_rad": -0.9
+  },
+  "gripper_binary_threshold_rad": -0.75,
+  "input_sync_tolerance_s": 0.045,
+  "input_sync_max_age_s": 0.2,
+  "prelift_contact_stable_s": 0.0,
+  "freeze_target_until_close": false,
+  "frozen_target_collision_mode": "not_frozen",
+  "final_status": {
+    "baseline_z_m": -0.0,
+    "bilateral_contact": false,
+    "bilateral_contact_consecutive_frames": 0,
+    "bilateral_contact_recent": false,
+    "capture_radius_is_debug_only": true,
+    "closed": false,
+    "contact_angle_valid": true,
+    "contact_report_available": true,
+    "cylinder_tilt_deg": 0.0,
+    "cylinder_tilt_valid": true,
+    "failure_reason": "",
+    "frozen": false,
+    "geometry_contact_valid": false,
+    "grasp_envelope": {
+      "x_max_m": 0.154,
+      "x_min_m": 0.11,
+      "y_abs_max_m": 0.04,
+      "z_max_m": 0.03,
+      "z_min_m": 0.006
+    },
+    "grasp_success": false,
+    "gripper_commanded_closed": false,
+    "gripper_object_distance_m": 0.535223,
+    "gripper_obstructed": false,
+    "gripper_obstructed_estimated": false,
+    "gripper_position_past_threshold": false,
+    "gripper_position_rad": -0.8898,
+    "gripper_tf_stamp_s": 1880.60009808,
+    "gripper_world_orientation_xyzw": [
+      -0.5564578505631149,
+      0.4088181226992056,
+      0.4435450442601712,
+      0.5713932068301284
+    ],
+    "gripper_world_position_m": [
+      0.27395973478419394,
+      0.12979126970714205,
+      0.3225029909120205
+    ],
+    "holding_observed": false,
+    "inside_grasp_envelope": false,
+    "inside_success_volume": false,
+    "left_finger_contact_impulse_ns": 0.0,
+    "left_finger_contact_object": null,
+    "left_finger_table_impulse_ns": 0.0,
+    "left_finger_touching_table": false,
+    "lifted": false,
+    "near_gripper": false,
+    "object_orientation_xyzw": [
+      3.0743132811039686e-05,
+      -1.2735137715935707e-05,
+      -0.16040676832199097,
+      0.9870511293411255
+    ],
+    "object_pose_stamp_s": 1880.616764748,
+    "object_position_m": [
+      0.500284,
+      -0.250046,
+      0.0
+    ],
+    "object_speed_m_s": 0.0,
+    "object_touching_table": true,
+    "object_touching_table_estimated": true,
+    "phase": "READY",
+    "physical_grasp_candidate": false,
+    "physical_grasp_ok": false,
+    "physical_test_lift_active": false,
+    "placement_stable": false,
+    "relative_pose_stable": false,
+    "relative_position_gripper_m": [
+      0.331695,
+      -0.130432,
+      -0.399287
+    ],
+    "release_sequence_complete": false,
+    "release_started": false,
+    "released": true,
+    "reported_bilateral_contact": false,
+    "right_finger_contact_impulse_ns": 0.0,
+    "right_finger_contact_object": null,
+    "right_finger_table_impulse_ns": 0.0,
+    "right_finger_touching_table": false,
+    "target_collisions_enabled": true,
+    "target_finger_contact_pair_count": 0,
+    "target_finger_max_penetration_m": null,
+    "target_finger_min_separation_m": null,
+    "target_object": "apple",
+    "task_success": false,
+    "transport_failure_reason": "",
+    "transport_height_ok": false,
+    "was_grasped": false
+  },
+  "visual_review_required": false
+}

@@ -1,0 +1,7 @@
+# Horizontal demo recorder implementation plan
+
+Goal: independent cup demonstration recorder with planned-through exterior waypoint and slow horizontal final entry; provide one-command Bash and dry-run for review, no collection during implementation.
+
+Authorized design: frozen source copy of existing tested pose calibration/physical grasp/place support, replace approach in an independent assistant. No changes to production scripts or datasets. Plan PTP to exterior final-height/orientation waypoint then LIN to final pose using Pilz sequence with3mm blend and single trajectory execution; reject unavailable planner/empty/unblended response. Check full gripper mesh floor>=3mm, blend seam nonzero joint velocity, last entry height/orientation and time consistency. Final-pose stop for physical closure acceptance allowed; no intermediate dwell or runtime planning. Speed0.8x existing0.08 =>0.064. Default exterior offset60mm; blended region must remain outside target. Read source snapshots, CPU tests, dryrun, independent code review; actual robot/sim verification pending user review. Default20trials(20cells1success each),10Hz three cameras; existing full grasp/lift/place/release acceptance.
+
+Tasks: 1 pure route/continuity acceptance + tests;2 isolated sequence assistant and launch;3 Bash collector supervisor/dryrun and documentation;4 CPU verification and fresh review. No GPU runtime invocation. Calls settled: targetcup based latest dataset context; generic bottle unimplemented; continuous means no zero-velocity middle boundary, not nonstop closure.

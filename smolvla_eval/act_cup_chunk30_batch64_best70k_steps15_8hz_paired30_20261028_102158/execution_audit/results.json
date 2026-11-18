@@ -1,0 +1,1675 @@
+{
+  "total": 30,
+  "reference_point_local_m": [
+    0.12083045,
+    -0.0028452,
+    0.0194797
+  ],
+  "reference_source": "cup calibrated_grasp_reference in current grasp_physics.json; geometry-derived and marked pending validation, used as an analysis reference, not an exact measured finger midpoint",
+  "pre_displacement_definition": "stop analysis at first cup root displacement above3cm; near means reference-to-cup-center distance below12cm; last execution_substep7",
+  "latency_method": "offline best fit over0..150ms of issued command to future joint state; moving commands before3cm cup displacement; observational rather than controlled step response",
+  "metrics": {
+    "lag_command_mm": {
+      "median": 2.8064703022966624,
+      "p95": 3.6565183334970275,
+      "max": 6.764540399362757
+    },
+    "endpoint_target_mm": {
+      "median": 2.736738475195682,
+      "p95": 3.7577547204868402,
+      "max": 7.909206513825068
+    },
+    "endpoint_command_mm": {
+      "median": 2.721284734326431,
+      "p95": 3.7197606004512593,
+      "max": 7.909206513825068
+    },
+    "fk_tf_mm": {
+      "median": 0.37449946689007024,
+      "p95": 2.7672846928239965,
+      "max": 28.806763096879397
+    },
+    "sensor_age_ms": {
+      "median": 33.33333499998048,
+      "p95": 33.33333599994148,
+      "max": 33.333336000168856
+    },
+    "skew_ms": {
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 16.666667000002633
+    }
+  },
+  "best_command_lag_ms": {
+    "median": 41.666666665,
+    "p95": 49.99999999799999,
+    "max": 49.99999999799999
+  },
+  "command_follow_rmse_deg": {
+    "median": 0.13778705143429087,
+    "p95": 0.1511071097146999,
+    "max": 0.15246320628017757
+  },
+  "episodes_never_nearer_than5cm": 23,
+  "episodes_policy_pause": 0,
+  "episodes": [
+    {
+      "episode": 1,
+      "success": false,
+      "category": "闭爪后未形成有效夹持",
+      "trace_rows": 3528,
+      "pre_displacement_rows": 1468,
+      "near_reference_rows": 764,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.1339001199558705,
+      "command_follow_near_mm": {
+        "median": 1.888187625147523,
+        "p95": 2.961092639979555,
+        "max": 3.232428725951826
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.9611726280220034,
+        "p95": 2.6571978368557256,
+        "max": 3.738502315981416
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.9611726280220034,
+        "p95": 2.6571978368557256,
+        "max": 3.738502315981416
+      },
+      "nearest_actual_reference_mm": 43.059274129309685,
+      "at_nearest_goal_reference_mm": 44.892288924733705,
+      "at_nearest_command_reference_mm": 44.569847815761634,
+      "at_nearest_goal_actual_mm": 1.8956024027546448,
+      "at_nearest_actual_minus_cup_mm": [
+        -21.96786095408837,
+        -13.606279591330262,
+        34.44391570840092
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.015873015873015872,
+      "step_limited_action_start_fraction": 0.049886621315192746,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.8071002721814398,
+        "p95": 4.331556353397777,
+        "max": 21.983855293514665
+      },
+      "sensor_age_ms": {
+        "median": 33.333335000001796,
+        "p95": 33.333335550003085,
+        "max": 33.333335999998326
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 16.666667000002633
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 25.150001311000004
+    },
+    {
+      "episode": 2,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3545,
+      "pre_displacement_rows": 778,
+      "near_reference_rows": 94,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.14372519831977454,
+      "command_follow_near_mm": {
+        "median": 2.652411642237031,
+        "p95": 2.8974843865698494,
+        "max": 2.9492054048456677
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.7500948704175565,
+        "p95": 2.4971988877589357,
+        "max": 3.0131677626923814
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.7500948704175565,
+        "p95": 2.4971988877589357,
+        "max": 3.0131677626923814
+      },
+      "nearest_actual_reference_mm": 81.78749102218688,
+      "at_nearest_goal_reference_mm": 81.45448768092659,
+      "at_nearest_command_reference_mm": 82.63216769719418,
+      "at_nearest_goal_actual_mm": 3.473340696611325,
+      "at_nearest_actual_minus_cup_mm": [
+        38.03812059197198,
+        -44.77218276893101,
+        56.90120139013178
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.013513513513513514,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.4095402275799273,
+        "p95": 2.3674113642780465,
+        "max": 8.508057721891147
+      },
+      "sensor_age_ms": {
+        "median": 33.3333350000089,
+        "p95": 33.333335999998326,
+        "max": 33.333335999998326
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 13.183334020999993
+    },
+    {
+      "episode": 3,
+      "success": true,
+      "category": "成功放入蓝盒并松爪",
+      "trace_rows": 3545,
+      "pre_displacement_rows": 1488,
+      "near_reference_rows": 823,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.1397161033646882,
+      "command_follow_near_mm": {
+        "median": 1.8592484329392704,
+        "p95": 2.9546575186740123,
+        "max": 3.077597505619431
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.794108280757166,
+        "p95": 3.0690268911483667,
+        "max": 4.114414863115693
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.794108280757166,
+        "p95": 3.0690268911483667,
+        "max": 4.114414863115693
+      },
+      "nearest_actual_reference_mm": 20.939751929221476,
+      "at_nearest_goal_reference_mm": 23.011483590763177,
+      "at_nearest_command_reference_mm": 22.45366911405479,
+      "at_nearest_goal_actual_mm": 3.42694973709228,
+      "at_nearest_actual_minus_cup_mm": [
+        2.1410375069617626,
+        5.249006110123605,
+        20.157805041893884
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.07657657657657657,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.5854830085442284,
+        "p95": 2.6288203999315285,
+        "max": 11.225237565795869
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499998048,
+        "p95": 33.3333350000089,
+        "max": 33.333335999998326
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 25.250001317
+    },
+    {
+      "episode": 4,
+      "success": false,
+      "category": "抬升后未完成放盒",
+      "trace_rows": 3552,
+      "pre_displacement_rows": 1294,
+      "near_reference_rows": 496,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.14125548118885664,
+      "command_follow_near_mm": {
+        "median": 2.9448670475354493,
+        "p95": 3.750427278806794,
+        "max": 3.819518636346624
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.86010325669603,
+        "p95": 3.784626580181599,
+        "max": 5.750962888044119
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.86010325669603,
+        "p95": 3.784626580181599,
+        "max": 5.750962888044119
+      },
+      "nearest_actual_reference_mm": 29.106840629173792,
+      "at_nearest_goal_reference_mm": 35.35550077918521,
+      "at_nearest_command_reference_mm": 32.90016970655107,
+      "at_nearest_goal_actual_mm": 6.25825583570002,
+      "at_nearest_actual_minus_cup_mm": [
+        2.5309670674503737,
+        7.259270241139371,
+        28.073214505676265
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.009009009009009009,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.532587609168496,
+        "p95": 3.1090936411817927,
+        "max": 8.333759973265975
+      },
+      "sensor_age_ms": {
+        "median": 33.3333350000089,
+        "p95": 33.333335999998326,
+        "max": 33.333335999998326
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 21.916667810000007
+    },
+    {
+      "episode": 5,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3546,
+      "pre_displacement_rows": 943,
+      "near_reference_rows": 254,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.1386072286621803,
+      "command_follow_near_mm": {
+        "median": 1.9461362929456596,
+        "p95": 2.734875686074167,
+        "max": 2.784922187348602
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.7887580485482635,
+        "p95": 2.079960038751393,
+        "max": 2.132358095620343
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.7887580485482635,
+        "p95": 2.079960038751393,
+        "max": 2.132358095620343
+      },
+      "nearest_actual_reference_mm": 68.96510276001109,
+      "at_nearest_goal_reference_mm": 68.9957443356902,
+      "at_nearest_command_reference_mm": 69.23828666724968,
+      "at_nearest_goal_actual_mm": 1.9335412642211636,
+      "at_nearest_actual_minus_cup_mm": [
+        -59.86723886309952,
+        -6.65646980863676,
+        33.582592504066476
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.018018018018018018,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.32803470861768674,
+        "p95": 1.960981111914566,
+        "max": 9.640915113244414
+      },
+      "sensor_age_ms": {
+        "median": 33.3333350000089,
+        "p95": 33.3333350000089,
+        "max": 33.333335999998326
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 15.93333416400003
+    },
+    {
+      "episode": 6,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3547,
+      "pre_displacement_rows": 875,
+      "near_reference_rows": 44,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.13319529481686665,
+      "command_follow_near_mm": {
+        "median": 3.529044293572098,
+        "p95": 3.978123257174585,
+        "max": 3.997677954676521
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.5659655361295135,
+        "p95": 3.7019103715381108,
+        "max": 3.924544521122208
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.5659655361295135,
+        "p95": 3.7019103715381108,
+        "max": 3.924544521122208
+      },
+      "nearest_actual_reference_mm": 94.506712437126,
+      "at_nearest_goal_reference_mm": 87.20307237433855,
+      "at_nearest_command_reference_mm": 91.11314222700618,
+      "at_nearest_goal_actual_mm": 8.45464637099109,
+      "at_nearest_actual_minus_cup_mm": [
+        -18.074545497601235,
+        47.503947354937836,
+        79.67562040190252
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.01126126126126126,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.2042185101234151,
+        "p95": 2.6479355380179537,
+        "max": 5.348598574622945
+      },
+      "sensor_age_ms": {
+        "median": 33.3333350000089,
+        "p95": 33.3333350000089,
+        "max": 33.333335999998326
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 14.833334106999985
+    },
+    {
+      "episode": 7,
+      "success": false,
+      "category": "闭爪后未形成有效夹持",
+      "trace_rows": 3546,
+      "pre_displacement_rows": 762,
+      "near_reference_rows": 68,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.13696687420640144,
+      "command_follow_near_mm": {
+        "median": 2.470069109048361,
+        "p95": 2.648762552959206,
+        "max": 2.68542961769791
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.7529673906269103,
+        "p95": 2.3577926532958977,
+        "max": 2.660824562466034
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.7529673906269103,
+        "p95": 2.3577926532958977,
+        "max": 2.660824562466034
+      },
+      "nearest_actual_reference_mm": 87.45755041360046,
+      "at_nearest_goal_reference_mm": 82.98015684295015,
+      "at_nearest_command_reference_mm": 86.50486339185935,
+      "at_nearest_goal_actual_mm": 5.4447664971179695,
+      "at_nearest_actual_minus_cup_mm": [
+        -59.891768580978834,
+        40.4387214631793,
+        49.25960806800379
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.015765765765765764,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.2844975303015266,
+        "p95": 2.223645784386937,
+        "max": 7.596738804326303
+      },
+      "sensor_age_ms": {
+        "median": 33.3333350000089,
+        "p95": 33.333335550003085,
+        "max": 33.33333600005517
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 12.933334007999974
+    },
+    {
+      "episode": 8,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3557,
+      "pre_displacement_rows": 725,
+      "near_reference_rows": 16,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.1454988249024245,
+      "command_follow_near_mm": {
+        "median": 2.8134520494700053,
+        "p95": 3.5830120406265715,
+        "max": 3.7657573165371505
+      },
+      "target_residual_near_end_mm": {
+        "median": 3.0821432796108876,
+        "p95": 3.4833720366406773,
+        "max": 4.28778629280759
+      },
+      "command_residual_near_end_mm": {
+        "median": 3.0764271849165947,
+        "p95": 3.474431445015279,
+        "max": 3.507910427260463
+      },
+      "nearest_actual_reference_mm": 114.21695704195837,
+      "at_nearest_goal_reference_mm": 109.12635255953579,
+      "at_nearest_command_reference_mm": 113.28490376175154,
+      "at_nearest_goal_actual_mm": 5.1896841877947395,
+      "at_nearest_actual_minus_cup_mm": [
+        12.325803183856344,
+        87.12174254306959,
+        72.82437660602731
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.011235955056179775,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.2336298471777187,
+        "p95": 1.813093205271274,
+        "max": 4.412922946216327
+      },
+      "sensor_age_ms": {
+        "median": 33.3333350000089,
+        "p95": 33.333335999998326,
+        "max": 33.333335999998326
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 12.266667306999977
+    },
+    {
+      "episode": 9,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3542,
+      "pre_displacement_rows": 971,
+      "near_reference_rows": 170,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.13048671619965152,
+      "command_follow_near_mm": {
+        "median": 2.4988046736059575,
+        "p95": 2.9256702577379365,
+        "max": 2.970296201348153
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.8147453596516345,
+        "p95": 2.094260056605024,
+        "max": 3.4660500027482977
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.8147453596516345,
+        "p95": 2.094260056605024,
+        "max": 3.4660500027482977
+      },
+      "nearest_actual_reference_mm": 37.686657116147586,
+      "at_nearest_goal_reference_mm": 42.457894682649155,
+      "at_nearest_command_reference_mm": 41.03051674317346,
+      "at_nearest_goal_actual_mm": 5.078170451226036,
+      "at_nearest_actual_minus_cup_mm": [
+        4.689105865248511,
+        -2.9119210894428362,
+        37.280251157193504
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.013544018058690745,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.274143244397302,
+        "p95": 2.4128261218351774,
+        "max": 5.0700616442159
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.3333355499974,
+        "max": 33.33333600005517
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 16.550000863000037
+    },
+    {
+      "episode": 10,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3540,
+      "pre_displacement_rows": 968,
+      "near_reference_rows": 86,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.12475808881108472,
+      "command_follow_near_mm": {
+        "median": 3.1017868860442808,
+        "p95": 3.880882907608594,
+        "max": 4.282015472043022
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.218703968889727,
+        "p95": 5.0121272681647815,
+        "max": 7.909206513825068
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.218703968889727,
+        "p95": 5.0121272681647815,
+        "max": 7.909206513825068
+      },
+      "nearest_actual_reference_mm": 92.08788331245249,
+      "at_nearest_goal_reference_mm": 91.42080504202144,
+      "at_nearest_command_reference_mm": 93.28125032092464,
+      "at_nearest_goal_actual_mm": 0.8442710085125428,
+      "at_nearest_actual_minus_cup_mm": [
+        28.608301345528055,
+        -54.24281295317881,
+        68.69833032918471
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.013544018058690745,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.35667713606628026,
+        "p95": 3.3585953013514116,
+        "max": 13.309297084388783
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.3333355499974,
+        "max": 33.33333600005517
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 16.50000086099999
+    },
+    {
+      "episode": 11,
+      "success": true,
+      "category": "成功放入蓝盒并松爪",
+      "trace_rows": 3548,
+      "pre_displacement_rows": 1547,
+      "near_reference_rows": 825,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.1324410056755147,
+      "command_follow_near_mm": {
+        "median": 1.67540438117071,
+        "p95": 2.668772040580006,
+        "max": 2.90883224865934
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.6643965721581484,
+        "p95": 2.0636644717117836,
+        "max": 3.026172265855392
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.6643965721581484,
+        "p95": 2.0636644717117836,
+        "max": 3.026172265855392
+      },
+      "nearest_actual_reference_mm": 30.194306424934737,
+      "at_nearest_goal_reference_mm": 31.131711096150084,
+      "at_nearest_command_reference_mm": 31.721122146990766,
+      "at_nearest_goal_actual_mm": 1.275066186477429,
+      "at_nearest_actual_minus_cup_mm": [
+        4.719722551622619,
+        2.140768749225086,
+        29.746217720592668
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.013513513513513514,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.5288854472623993,
+        "p95": 3.0717357972310935,
+        "max": 12.421558273340715
+      },
+      "sensor_age_ms": {
+        "median": 33.3333350000089,
+        "p95": 33.33333599994148,
+        "max": 33.33333600005517
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 26.150001363
+    },
+    {
+      "episode": 12,
+      "success": true,
+      "category": "成功放入蓝盒并松爪",
+      "trace_rows": 3550,
+      "pre_displacement_rows": 1378,
+      "near_reference_rows": 745,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.12874408830142733,
+      "command_follow_near_mm": {
+        "median": 1.7059913487345555,
+        "p95": 2.7857437692861904,
+        "max": 2.9542377090652177
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.8359560987132577,
+        "p95": 2.6951012078723116,
+        "max": 3.9797691569215377
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.8359560987132577,
+        "p95": 2.6951012078723116,
+        "max": 3.9797691569215377
+      },
+      "nearest_actual_reference_mm": 32.234390483293346,
+      "at_nearest_goal_reference_mm": 33.86722510143563,
+      "at_nearest_command_reference_mm": 33.86565689326678,
+      "at_nearest_goal_actual_mm": 1.8038843011955685,
+      "at_nearest_actual_minus_cup_mm": [
+        -5.377641474988981,
+        -8.632855917200644,
+        30.587754097167135
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.015765765765765764,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.49022174377705796,
+        "p95": 2.5153614486653613,
+        "max": 8.784660151435194
+      },
+      "sensor_age_ms": {
+        "median": 33.333335000065745,
+        "p95": 33.33333600000401,
+        "max": 33.33333600005517
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 23.333334550000018
+    },
+    {
+      "episode": 13,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3543,
+      "pre_displacement_rows": 3543,
+      "near_reference_rows": 0,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.14817830485615902,
+      "command_follow_near_mm": {
+        "median": 3.0519086903048143,
+        "p95": 3.663926771571256,
+        "max": 3.929165774877979
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.974704619704327,
+        "p95": 3.9349064412538857,
+        "max": 6.878085155653187
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.9719186911414033,
+        "p95": 3.933132184160208,
+        "max": 6.878085155653187
+      },
+      "nearest_actual_reference_mm": 135.7585324461145,
+      "at_nearest_goal_reference_mm": 136.8663521777848,
+      "at_nearest_command_reference_mm": 136.83437204348445,
+      "at_nearest_goal_actual_mm": 3.1686273046360935,
+      "at_nearest_actual_minus_cup_mm": [
+        128.48381937480312,
+        -36.08613080505907,
+        24.90137454651558
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.009029345372460496,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.3189347425161992,
+        "p95": 2.8052483614985855,
+        "max": 9.465307427015489
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.333335000065745,
+        "max": 33.33333599994148
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": null
+    },
+    {
+      "episode": 14,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3543,
+      "pre_displacement_rows": 822,
+      "near_reference_rows": 29,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.10945702378522774,
+      "command_follow_near_mm": {
+        "median": 2.5692331071051537,
+        "p95": 3.595033561322065,
+        "max": 3.714436413322926
+      },
+      "target_residual_near_end_mm": {
+        "median": 3.338236213473165,
+        "p95": 3.6007878761563727,
+        "max": 4.57661030421732
+      },
+      "command_residual_near_end_mm": {
+        "median": 3.3110302031743446,
+        "p95": 3.5827369245058676,
+        "max": 4.57661030421732
+      },
+      "nearest_actual_reference_mm": 77.74356193598774,
+      "at_nearest_goal_reference_mm": 74.60939226784562,
+      "at_nearest_command_reference_mm": 77.39054572865905,
+      "at_nearest_goal_actual_mm": 3.517081306386494,
+      "at_nearest_actual_minus_cup_mm": [
+        -25.097725648031588,
+        23.90839919046825,
+        69.58846195986887
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.011286681715575621,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.3127049444563326,
+        "p95": 3.085180160011382,
+        "max": 9.372226139546695
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.333335000065745,
+        "max": 33.33333600005517
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 14.016667397999981
+    },
+    {
+      "episode": 15,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3545,
+      "pre_displacement_rows": 3545,
+      "near_reference_rows": 146,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.11860989972157215,
+      "command_follow_near_mm": {
+        "median": 3.077494400682138,
+        "p95": 3.256328554712335,
+        "max": 3.3826832126032196
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.606157121755178,
+        "p95": 3.2410118261307104,
+        "max": 5.997484837168342
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.606157121755178,
+        "p95": 3.2410118261307104,
+        "max": 5.997484837168342
+      },
+      "nearest_actual_reference_mm": 107.13495486005564,
+      "at_nearest_goal_reference_mm": 116.20448773633714,
+      "at_nearest_command_reference_mm": 110.40517152305428,
+      "at_nearest_goal_actual_mm": 18.129832181926147,
+      "at_nearest_actual_minus_cup_mm": [
+        36.758815239174794,
+        86.04045390748205,
+        52.18935089146855
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.01126126126126126,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.37637726437054975,
+        "p95": 3.281967083266031,
+        "max": 13.633668124020666
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.3333355499974,
+        "max": 33.33333600005517
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": null
+    },
+    {
+      "episode": 16,
+      "success": false,
+      "category": "闭爪后未形成有效夹持",
+      "trace_rows": 3548,
+      "pre_displacement_rows": 692,
+      "near_reference_rows": 101,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.13640865554773865,
+      "command_follow_near_mm": {
+        "median": 2.89567186930723,
+        "p95": 3.1286311455384057,
+        "max": 3.1688353895970387
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.4996877727815647,
+        "p95": 2.7866691035881326,
+        "max": 2.838072992938476
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.4996877727815647,
+        "p95": 2.7866691035881326,
+        "max": 2.838072992938476
+      },
+      "nearest_actual_reference_mm": 66.7791679033428,
+      "at_nearest_goal_reference_mm": 64.98900911506513,
+      "at_nearest_command_reference_mm": 67.58656201133834,
+      "at_nearest_goal_actual_mm": 4.652040498373939,
+      "at_nearest_actual_minus_cup_mm": [
+        -17.992456551364832,
+        -12.942422624295984,
+        62.99382882254585
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.013513513513513514,
+      "step_limited_action_start_fraction": 0.018018018018018018,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.42319512104075385,
+        "p95": 2.530974648958892,
+        "max": 24.132109688145295
+      },
+      "sensor_age_ms": {
+        "median": 33.333335000065745,
+        "p95": 33.333335000065745,
+        "max": 33.33333600005517
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 11.700000609999961
+    },
+    {
+      "episode": 17,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 830,
+      "pre_displacement_rows": 830,
+      "near_reference_rows": 20,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.13349670856725596,
+      "command_follow_near_mm": {
+        "median": 2.7718336696183283,
+        "p95": 3.63735824198372,
+        "max": 3.767027833978131
+      },
+      "target_residual_near_end_mm": {
+        "median": 3.0871813504332963,
+        "p95": 3.8939437061756004,
+        "max": 4.349602246738301
+      },
+      "command_residual_near_end_mm": {
+        "median": 3.064855623296724,
+        "p95": 3.8909238476386445,
+        "max": 3.9529587112384834
+      },
+      "nearest_actual_reference_mm": 117.50550499213641,
+      "at_nearest_goal_reference_mm": 115.58413494306585,
+      "at_nearest_command_reference_mm": 116.77962504490618,
+      "at_nearest_goal_actual_mm": 2.575531035557826,
+      "at_nearest_actual_minus_cup_mm": [
+        -106.50535192190397,
+        -45.443875628873,
+        19.975181683176324
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.057692307692307696,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 1.1967274444520086,
+        "p95": 2.846359173437512,
+        "max": 4.3558644410498095
+      },
+      "sensor_age_ms": {
+        "median": 33.333335000065745,
+        "p95": 33.33333570005834,
+        "max": 33.33333600005517
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": null
+    },
+    {
+      "episode": 18,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3553,
+      "pre_displacement_rows": 772,
+      "near_reference_rows": 58,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.14433510224548782,
+      "command_follow_near_mm": {
+        "median": 2.442974915551362,
+        "p95": 2.603656266951053,
+        "max": 2.641223695107919
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.463538686717869,
+        "p95": 1.9290445246056227,
+        "max": 2.005582763226359
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.463538686717869,
+        "p95": 1.9290445246056227,
+        "max": 2.005582763226359
+      },
+      "nearest_actual_reference_mm": 67.84672462646387,
+      "at_nearest_goal_reference_mm": 64.62077503447308,
+      "at_nearest_command_reference_mm": 67.95790075659863,
+      "at_nearest_goal_actual_mm": 4.299086622117013,
+      "at_nearest_actual_minus_cup_mm": [
+        35.46748389935506,
+        15.688180145163988,
+        55.66971018535205
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.011235955056179775,
+      "step_limited_action_start_fraction": 0.0044943820224719105,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.2715567187299194,
+        "p95": 2.209739034979541,
+        "max": 16.24932435427464
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333555004856,
+        "max": 33.333336000168856
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 13.050000681000029
+    },
+    {
+      "episode": 19,
+      "success": false,
+      "category": "闭爪后未形成有效夹持",
+      "trace_rows": 3538,
+      "pre_displacement_rows": 3538,
+      "near_reference_rows": 232,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.14733440261255268,
+      "command_follow_near_mm": {
+        "median": 2.0209791986013568,
+        "p95": 2.33436943127436,
+        "max": 2.5114975848759222
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.9160875283346315,
+        "p95": 2.7367553036612,
+        "max": 4.2208254316684615
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.9160875283346315,
+        "p95": 2.7367553036612,
+        "max": 4.2208254316684615
+      },
+      "nearest_actual_reference_mm": 98.73996652846921,
+      "at_nearest_goal_reference_mm": 98.17519096690458,
+      "at_nearest_command_reference_mm": 98.70247368981023,
+      "at_nearest_goal_actual_mm": 4.624338751255308,
+      "at_nearest_actual_minus_cup_mm": [
+        -10.492002007759016,
+        89.74626898960786,
+        39.81339079201058
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.013544018058690745,
+      "step_limited_action_start_fraction": 0.013544018058690745,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.4522349553254691,
+        "p95": 2.6217338590927035,
+        "max": 28.806763096879397
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333599994148,
+        "max": 33.333336000168856
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": null
+    },
+    {
+      "episode": 20,
+      "success": false,
+      "category": "闭爪后未形成有效夹持",
+      "trace_rows": 3551,
+      "pre_displacement_rows": 761,
+      "near_reference_rows": 74,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.1446629903908214,
+      "command_follow_near_mm": {
+        "median": 2.806062498429796,
+        "p95": 3.6775532292541397,
+        "max": 4.012859120305576
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.1219814464829114,
+        "p95": 4.7289348377423,
+        "max": 5.013494291762804
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.1219814464829114,
+        "p95": 4.7289348377423,
+        "max": 5.013494291762804
+      },
+      "nearest_actual_reference_mm": 60.69432954028455,
+      "at_nearest_goal_reference_mm": 51.22011146409563,
+      "at_nearest_command_reference_mm": 57.42800718455993,
+      "at_nearest_goal_actual_mm": 11.513858421456174,
+      "at_nearest_actual_minus_cup_mm": [
+        -14.861352323593646,
+        -5.545630024657605,
+        58.584877170548815
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.013513513513513514,
+      "step_limited_action_start_fraction": 0.02027027027027027,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.6124377826564316,
+        "p95": 3.408810676716993,
+        "max": 19.07372483374719
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333555004856,
+        "max": 33.333336000168856
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 12.866667337999843
+    },
+    {
+      "episode": 21,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3556,
+      "pre_displacement_rows": 909,
+      "near_reference_rows": 38,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.1251898461710961,
+      "command_follow_near_mm": {
+        "median": 4.153058626701239,
+        "p95": 4.250093197997331,
+        "max": 4.26142288138432
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.0968511022948113,
+        "p95": 2.1552110484403766,
+        "max": 2.1624142407030966
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.0968511022948113,
+        "p95": 2.1552110484403766,
+        "max": 2.1624142407030966
+      },
+      "nearest_actual_reference_mm": 103.45688561845992,
+      "at_nearest_goal_reference_mm": 104.87423935816115,
+      "at_nearest_command_reference_mm": 105.54911945414979,
+      "at_nearest_goal_actual_mm": 3.476464708983268,
+      "at_nearest_actual_minus_cup_mm": [
+        50.40093041905946,
+        -64.15402835149212,
+        63.61866110694386
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.011235955056179775,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.4276945050954387,
+        "p95": 3.454360471898907,
+        "max": 14.709299059109181
+      },
+      "sensor_age_ms": {
+        "median": 33.333335000065745,
+        "p95": 33.33333555004856,
+        "max": 33.333336000168856
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 15.36666746800006
+    },
+    {
+      "episode": 22,
+      "success": false,
+      "category": "闭爪后未形成有效夹持",
+      "trace_rows": 3548,
+      "pre_displacement_rows": 960,
+      "near_reference_rows": 269,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.14150697855143726,
+      "command_follow_near_mm": {
+        "median": 2.0641571670067016,
+        "p95": 2.99169403042527,
+        "max": 3.042444302265375
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.917188256210093,
+        "p95": 2.1032428849055127,
+        "max": 2.147635824593427
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.917188256210093,
+        "p95": 2.1032428849055127,
+        "max": 2.147635824593427
+      },
+      "nearest_actual_reference_mm": 68.83455684664176,
+      "at_nearest_goal_reference_mm": 68.37714002479353,
+      "at_nearest_command_reference_mm": 69.05966956902844,
+      "at_nearest_goal_actual_mm": 2.2595373073219633,
+      "at_nearest_actual_minus_cup_mm": [
+        -56.841729579731826,
+        19.396594478397756,
+        33.63013703954812
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.013513513513513514,
+      "step_limited_action_start_fraction": 0.0045045045045045045,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.300643379067523,
+        "p95": 2.3989420709351514,
+        "max": 16.642037989825734
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333555004856,
+        "max": 33.333336000168856
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 16.333334185000012
+    },
+    {
+      "episode": 23,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3545,
+      "pre_displacement_rows": 1075,
+      "near_reference_rows": 395,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.1327418766241425,
+      "command_follow_near_mm": {
+        "median": 2.098895071255083,
+        "p95": 3.157174177549227,
+        "max": 3.2784465184789773
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.171381779020769,
+        "p95": 2.538863324599926,
+        "max": 3.1000576387278205
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.171381779020769,
+        "p95": 2.538863324599926,
+        "max": 3.1000576387278205
+      },
+      "nearest_actual_reference_mm": 58.214052838000406,
+      "at_nearest_goal_reference_mm": 57.995039384055,
+      "at_nearest_command_reference_mm": 58.361722707048386,
+      "at_nearest_goal_actual_mm": 2.6846920683006044,
+      "at_nearest_actual_minus_cup_mm": [
+        -52.27323073582141,
+        -9.392730228634335,
+        23.83614723727764
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.015765765765765764,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.38095592909235443,
+        "p95": 2.143574077866338,
+        "max": 8.297023516325254
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.333335550173615,
+        "max": 33.333336000168856
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 18.28333428699989
+    },
+    {
+      "episode": 24,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3545,
+      "pre_displacement_rows": 753,
+      "near_reference_rows": 65,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.14432281491620175,
+      "command_follow_near_mm": {
+        "median": 2.7992476184268553,
+        "p95": 5.405594255966507,
+        "max": 6.764540399362757
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.068733788021369,
+        "p95": 3.9505165578676626,
+        "max": 3.9869650658363254
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.068733788021369,
+        "p95": 3.9505165578676626,
+        "max": 3.9869650658363254
+      },
+      "nearest_actual_reference_mm": 84.11657115825963,
+      "at_nearest_goal_reference_mm": 79.1199953447365,
+      "at_nearest_command_reference_mm": 84.11331563072942,
+      "at_nearest_goal_actual_mm": 5.209245239482544,
+      "at_nearest_actual_minus_cup_mm": [
+        -48.4428579660125,
+        25.777757750042568,
+        63.752601993074876
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.015765765765765764,
+      "step_limited_action_start_fraction": 0.0022522522522522522,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.3649385869797845,
+        "p95": 2.666712673648955,
+        "max": 13.545979741483823
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333555004856,
+        "max": 33.33333599994148
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 12.766667332999987
+    },
+    {
+      "episode": 25,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3547,
+      "pre_displacement_rows": 3547,
+      "near_reference_rows": 0,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.15023021242399348,
+      "command_follow_near_mm": {
+        "median": 3.455494945626969,
+        "p95": 3.6902948578521015,
+        "max": 3.723768095860248
+      },
+      "target_residual_near_end_mm": {
+        "median": 3.3114775696174656,
+        "p95": 4.651776704662724,
+        "max": 6.77137636819591
+      },
+      "command_residual_near_end_mm": {
+        "median": 3.3100209465539026,
+        "p95": 4.125913652936587,
+        "max": 6.77137636819591
+      },
+      "nearest_actual_reference_mm": 146.86456736686614,
+      "at_nearest_goal_reference_mm": 148.10412771769202,
+      "at_nearest_command_reference_mm": 148.10148890794008,
+      "at_nearest_goal_actual_mm": 1.3883366881323094,
+      "at_nearest_actual_minus_cup_mm": [
+        -5.196250692643067,
+        133.6260754677318,
+        60.714677646249726
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.01126126126126126,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.3094823752833806,
+        "p95": 2.9258083334226757,
+        "max": 10.659570632420326
+      },
+      "sensor_age_ms": {
+        "median": 33.333335000065745,
+        "p95": 33.33333555004856,
+        "max": 33.333336000168856
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": null
+    },
+    {
+      "episode": 26,
+      "success": false,
+      "category": "闭爪后未形成有效夹持",
+      "trace_rows": 3548,
+      "pre_displacement_rows": 1476,
+      "near_reference_rows": 823,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.13405671249494067,
+      "command_follow_near_mm": {
+        "median": 1.8096510690572527,
+        "p95": 2.817835674081853,
+        "max": 2.9836812126840235
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.9096247982558734,
+        "p95": 2.877921322619614,
+        "max": 5.655280921984281
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.9096247982558734,
+        "p95": 2.877921322619614,
+        "max": 5.655280921984281
+      },
+      "nearest_actual_reference_mm": 33.28102486956711,
+      "at_nearest_goal_reference_mm": 35.08614294436867,
+      "at_nearest_command_reference_mm": 35.013554091930004,
+      "at_nearest_goal_actual_mm": 2.1539182687405054,
+      "at_nearest_actual_minus_cup_mm": [
+        -9.417299928923429,
+        -4.773248673335062,
+        31.561957726350695
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.01126126126126126,
+      "step_limited_action_start_fraction": 0.015765765765765764,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.4906208664709062,
+        "p95": 2.988860156872349,
+        "max": 18.81241397150173
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333599994148,
+        "max": 33.33333599994148
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 24.966667969000127
+    },
+    {
+      "episode": 27,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3551,
+      "pre_displacement_rows": 3551,
+      "near_reference_rows": 275,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.15246320628017757,
+      "command_follow_near_mm": {
+        "median": 3.1794608276614222,
+        "p95": 3.801375046327826,
+        "max": 3.8608170527826835
+      },
+      "target_residual_near_end_mm": {
+        "median": 3.2182235325884943,
+        "p95": 3.8177518172866525,
+        "max": 4.753145641249284
+      },
+      "command_residual_near_end_mm": {
+        "median": 3.2182235325884943,
+        "p95": 3.8177518172866525,
+        "max": 4.753145641249284
+      },
+      "nearest_actual_reference_mm": 90.87851319491416,
+      "at_nearest_goal_reference_mm": 89.56288598663089,
+      "at_nearest_command_reference_mm": 90.30907429896557,
+      "at_nearest_goal_actual_mm": 2.5245138867172834,
+      "at_nearest_actual_minus_cup_mm": [
+        -3.526294763974369,
+        82.84172415664837,
+        37.19836212132919
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.009009009009009009,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.3691372241453569,
+        "p95": 2.8404275357789848,
+        "max": 12.827165981388962
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333599994148,
+        "max": 33.333336000168856
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": null
+    },
+    {
+      "episode": 28,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3543,
+      "pre_displacement_rows": 3543,
+      "near_reference_rows": 212,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.11539376570872101,
+      "command_follow_near_mm": {
+        "median": 2.89385942226154,
+        "p95": 3.5632913502405947,
+        "max": 3.6277477095062394
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.628932187708749,
+        "p95": 4.348494232056004,
+        "max": 5.593285469489369
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.628932187708749,
+        "p95": 4.348494232056004,
+        "max": 5.593285469489369
+      },
+      "nearest_actual_reference_mm": 99.64232492497733,
+      "at_nearest_goal_reference_mm": 97.97197464328048,
+      "at_nearest_command_reference_mm": 100.9837037765969,
+      "at_nearest_goal_actual_mm": 4.629091656100855,
+      "at_nearest_actual_minus_cup_mm": [
+        47.108722613360634,
+        48.95475905524843,
+        72.88890681053445
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.011286681715575621,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.3308822354751258,
+        "p95": 3.1334855826367507,
+        "max": 12.065240121286957
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333500007711,
+        "max": 33.33333599994148
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": null
+    },
+    {
+      "episode": 29,
+      "success": false,
+      "category": "闭爪后未形成有效夹持",
+      "trace_rows": 3550,
+      "pre_displacement_rows": 769,
+      "near_reference_rows": 78,
+      "best_command_lag_ms": 49.99999999799999,
+      "command_follow_rmse_deg": 0.1518245711343688,
+      "command_follow_near_mm": {
+        "median": 2.77024219951069,
+        "p95": 3.7975076364303595,
+        "max": 3.8397735111183975
+      },
+      "target_residual_near_end_mm": {
+        "median": 1.7763405199601447,
+        "p95": 4.522117556046638,
+        "max": 4.632230835522461
+      },
+      "command_residual_near_end_mm": {
+        "median": 1.7763405199601447,
+        "p95": 4.522117556046638,
+        "max": 4.632230835522461
+      },
+      "nearest_actual_reference_mm": 62.374760025893366,
+      "at_nearest_goal_reference_mm": 53.6471004043794,
+      "at_nearest_command_reference_mm": 58.68965175282632,
+      "at_nearest_goal_actual_mm": 9.161375037600067,
+      "at_nearest_actual_minus_cup_mm": [
+        4.078652689428253,
+        4.315073710844858,
+        62.0915084322871
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.018018018018018018,
+      "step_limited_action_start_fraction": 0.0,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.22200366057024684,
+        "p95": 1.8450400617850522,
+        "max": 6.011091707872846
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333599994148,
+        "max": 33.333336000168856
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 13.05000068000004
+    },
+    {
+      "episode": 30,
+      "success": false,
+      "category": "未发出闭爪命令",
+      "trace_rows": 3543,
+      "pre_displacement_rows": 793,
+      "near_reference_rows": 44,
+      "best_command_lag_ms": 41.666666665,
+      "command_follow_rmse_deg": 0.13983415332417787,
+      "command_follow_near_mm": {
+        "median": 3.5168597242084925,
+        "p95": 3.5906793840228626,
+        "max": 3.5942497513165637
+      },
+      "target_residual_near_end_mm": {
+        "median": 2.3142260960258056,
+        "p95": 3.6700849135305953,
+        "max": 4.097265803490493
+      },
+      "command_residual_near_end_mm": {
+        "median": 2.3142260960258056,
+        "p95": 3.6700849135305953,
+        "max": 4.097265803490493
+      },
+      "nearest_actual_reference_mm": 65.15970041338372,
+      "at_nearest_goal_reference_mm": 67.25829261055287,
+      "at_nearest_command_reference_mm": 68.2684484995649,
+      "at_nearest_goal_actual_mm": 3.9382097656234576,
+      "at_nearest_actual_minus_cup_mm": [
+        24.89880489487628,
+        3.643995075452322,
+        60.10455367656333
+      ],
+      "joint_limit_clipped_action_start_fraction": 0.011286681715575621,
+      "step_limited_action_start_fraction": 0.006772009029345372,
+      "fk_vs_recorded_tf_mm": {
+        "median": 0.3068823017594193,
+        "p95": 2.9495401134963792,
+        "max": 24.82750206815324
+      },
+      "sensor_age_ms": {
+        "median": 33.33333499995206,
+        "p95": 33.33333599994148,
+        "max": 33.33333599994148
+      },
+      "sensor_skew_ms": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "policy_paused_rows": 0,
+      "first_cup_3cm_displacement_s": 13.483334036000088
+    }
+  ],
+  "prediction_output_observation_age_ms": {
+    "all": {
+      "median": 66.66666999990412,
+      "p95": 83.33333800010223,
+      "max": 316.6666830000011
+    },
+    "first": {
+      "median": 58.3333364999703,
+      "p95": 125.83333984994165,
+      "max": 316.6666830000011
+    },
+    "subsequent": {
+      "median": 66.66666999990412,
+      "p95": 83.33333800001697,
+      "max": 150.00000800000635
+    }
+  },
+  "largest_sent_joint_step_rad": 0.06233431868553163,
+  "step_limit_fraction_per_episode": {
+    "median": 0.0,
+    "p95": 0.01925675675675675,
+    "max": 0.049886621315192746
+  },
+  "joint_limit_fraction_per_episode": {
+    "median": 0.013513513513513514,
+    "p95": 0.03983887733887723,
+    "max": 0.07657657657657657
+  }
+}

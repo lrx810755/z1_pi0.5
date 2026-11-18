@@ -1,0 +1,2049 @@
+{
+  "schema": "pending_rerecord_reverse8_v1",
+  "status": "marked_pending_rerecord",
+  "frozen_at": "2026-11-11T23:36:17.788401+08:00",
+  "threshold_m": 0.08,
+  "comparison": ">= applied before rounding",
+  "criterion": "Per episode maximum reverse excursion in a phase with stable jaw intent; loaded XY, open XYZ.",
+  "training_source_manifest": "/home/lp531/pi05_lora_workspace/pi05_current_round_20261111/data_sources.json",
+  "training_source_before_sha256": "2345f6e07bcae37cf4e41ef45e8e6e7af2618f0f79b2cdbcd7a6f9a254eaa647",
+  "assessed_episodes": 1535,
+  "marked_episodes": 41,
+  "assessed_by_object": {
+    "apple": 382,
+    "peach": 397,
+    "cup": 400,
+    "beverage_bottle": 356
+  },
+  "marked_by_object": {
+    "apple": 1,
+    "beverage_bottle": 21,
+    "cup": 19
+  },
+  "marked_by_scope": {
+    "registered_base": 35,
+    "saved_replacement_snapshot": 4,
+    "registered_addition": 2
+  },
+  "already_queued_wait8_overlap": 0,
+  "pending_replacement_snapshot": true,
+  "require_rescan_after_replacement_completion": true,
+  "source_files_changed": false,
+  "active_recording_queue_changed": false,
+  "execution_started": false,
+  "marks_published": true,
+  "coverage": [
+    {
+      "root": "/home/lp531/smolvla_data/apple_scale110_demo400_20261105",
+      "scope": "registered_base",
+      "frozen_saved_episodes": 323,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/apple_scale110_correction60_20261106",
+      "scope": "registered_base",
+      "frozen_saved_episodes": 59,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/peach_scale120_demo_20261106",
+      "scope": "registered_base",
+      "frozen_saved_episodes": 340,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/peach_scale120_correction60_20261106",
+      "scope": "registered_base",
+      "frozen_saved_episodes": 57,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108",
+      "scope": "registered_base",
+      "frozen_saved_episodes": 200,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109",
+      "scope": "registered_base",
+      "frozen_saved_episodes": 40,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109",
+      "scope": "registered_base",
+      "frozen_saved_episodes": 200,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/bottle_correction60_20261111",
+      "scope": "registered_base",
+      "frozen_saved_episodes": 58,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/cup_quality200_from_pi05_513_20261111",
+      "scope": "registered_addition",
+      "frozen_saved_episodes": 200,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111",
+      "scope": "saved_replacement_snapshot",
+      "frozen_saved_episodes": 58,
+      "skipped_unfinished_episodes": []
+    },
+    {
+      "root": "/home/lp531/smolvla_data/bottle_wait8_retake12_20261111",
+      "scope": "saved_replacement_snapshot",
+      "frozen_saved_episodes": 0,
+      "skipped_unfinished_episodes": []
+    }
+  ],
+  "reused_report_pins": {
+    "/home/lp531/z1_queue_logs/fruit_motion_height_review_20261111/report.json": "334a2ae05b78bc6b31982bd328192a06e3fdb2beaf422fdc754b3a8beed5ad21",
+    "/home/lp531/z1_queue_logs/cup_training_motion_review_20261111/report.json": "6462ed4e10e1364e89abf834c4de2e4ed2fe48c772c59b97ebd9e58479811791"
+  },
+  "analysis_code_sha256": "e224dadf0c451d6afab8fce27b9f87592d5bca4356bd661c6154b760a381b63a",
+  "episodes": [
+    {
+      "logical_path": "/home/lp531/smolvla_data/apple_scale110_demo400_20261105/episode_000229",
+      "physical_path": "/home/lp531/smolvla_data/apple_scale110_demo400_20261105/episode_000229",
+      "scope": "registered_base",
+      "object": "apple",
+      "grid": [
+        0,
+        3
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "0317bfad3829f58f939358b298f8b935e0e62d19a5e90a3c2e814dcb2f4e07de",
+        "episode_summary.json": "f39fc491110da302bee5ca45a3ec21fb78c17e15b8422574a54b3fa75d54601a",
+        "episode_start.json": "7d2fa5c58c657406daec2e02fc74a77920a339099e5a62a6da6fd556cf8a3dcf"
+      },
+      "max_reverse_excursion_m": 0.0830335434496382,
+      "matched_segments": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 195,
+          "phase": "READY",
+          "jaw_closed": false,
+          "metric": "XYZ",
+          "path_m": 1.3270042620669993,
+          "net_m": 0.3531757676850546,
+          "backward_m": 0.0830335434496382,
+          "backward_fraction": 0.06257217540530093,
+          "max_reverse_excursion_m": 0.0830335434496382,
+          "reverse_start_frame": 114,
+          "reverse_end_frame_exclusive": 139,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "raw_command_hysteresis_close_-0.60_open_-0.75",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 702981615,
+      "source_frames_sha256": "0317bfad3829f58f939358b298f8b935e0e62d19a5e90a3c2e814dcb2f4e07de",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "f52515d9bcece583ac7f68ec70aa9dbc9d9cfe5f1d0054cb966cb711a06e5e5d"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000034",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000034",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        0,
+        3
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "978a08bd5a32285957199def893a6390c10ccd7a9827f471a2a64475f43a9419",
+        "episode_summary.json": "61a6e5b357f171e0c6630f7a3b34d5ca1ee991ceb8e8fb33e50d94649bd1705d",
+        "episode_start.json": "a98ec89fadfc33ea3f20302096721cc8dcbd689878ba8422875949853155918e"
+      },
+      "max_reverse_excursion_m": 0.1646440909552671,
+      "matched_segments": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 111,
+          "phase": "READY",
+          "jaw_closed": false,
+          "metric": "XYZ",
+          "path_m": 0.9702902907343652,
+          "net_m": 0.3094249038118469,
+          "backward_m": 0.16543862604678983,
+          "backward_fraction": 0.17050425797992622,
+          "max_reverse_excursion_m": 0.1646440909552671,
+          "reverse_start_frame": 0,
+          "reverse_end_frame_exclusive": 22,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1916484005,
+      "source_frames_sha256": "978a08bd5a32285957199def893a6390c10ccd7a9827f471a2a64475f43a9419",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "12e7904f0c2b21ec50888867e83e62aff9a37eda6cc39f8892eb1da34ec8e825"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000018",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000018",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        0,
+        1
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "bc8e2258c834eaeae69cb1ca9eee56b30dd1fc8bc6f44ce0a9035642cde60240",
+        "episode_summary.json": "8c32353460aeff0452cfe8cbd899c374d2815584498f5cdb6a117af709a07649",
+        "episode_start.json": "2509895f46fdbda1dba2c5ece2dc1639be86856d989a07fe9595f5bf080b490c"
+      },
+      "max_reverse_excursion_m": 0.15348425061630477,
+      "matched_segments": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 92,
+          "phase": "READY",
+          "jaw_closed": false,
+          "metric": "XYZ",
+          "path_m": 0.9101000124937548,
+          "net_m": 0.32079313651634883,
+          "backward_m": 0.1540333694211807,
+          "backward_fraction": 0.16924883782730163,
+          "max_reverse_excursion_m": 0.15348425061630477,
+          "reverse_start_frame": 45,
+          "reverse_end_frame_exclusive": 67,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 445023070,
+      "source_frames_sha256": "bc8e2258c834eaeae69cb1ca9eee56b30dd1fc8bc6f44ce0a9035642cde60240",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "3422b71caedac41f6a33bdae43835349914e7ef4dcaeb5384bfa682b9f3ddea8"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111/episode_000056",
+      "physical_path": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111/episode_000056",
+      "scope": "saved_replacement_snapshot",
+      "object": "beverage_bottle",
+      "grid": [
+        0,
+        2
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "546f87ba7e2f3d1d4dd830dac1d8ff409842ae2e748c2a326188b97a666d1f32",
+        "episode_summary.json": "25dee87b949d70b92c497c62e67804c69cdf30d7859eb3d19095c710e0d464ae",
+        "episode_start.json": "10a664071f1a9b78271049e6070ed21ffe98196992a93ebe28a176eca873e865"
+      },
+      "max_reverse_excursion_m": 0.14160347819846741,
+      "matched_segments": [
+        {
+          "start_frame": 146,
+          "end_frame_exclusive": 352,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.5968417564400677,
+          "net_m": 0.13706340988510043,
+          "backward_m": 0.14160347819846741,
+          "backward_fraction": 0.23725464358103543,
+          "max_reverse_excursion_m": 0.14160347819846741,
+          "reverse_start_frame": 146,
+          "reverse_end_frame_exclusive": 234,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 39645025,
+      "source_frames_sha256": "546f87ba7e2f3d1d4dd830dac1d8ff409842ae2e748c2a326188b97a666d1f32",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "ef7edb300adc3281963d27a84e2872dad82f0c282b1df935f31a9c8a59259e79"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111/episode_000044",
+      "physical_path": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111/episode_000044",
+      "scope": "saved_replacement_snapshot",
+      "object": "beverage_bottle",
+      "grid": [
+        3,
+        1
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "e880bce783c3c4831bb6cd53a8345c265b1eebac998e3cac9cf140982da96c89",
+        "episode_summary.json": "a41491d747598c71b0a69a4f36678876df62860ea2454bead8c888a015d13b67",
+        "episode_start.json": "ec35dab7cfe59c68044c719365f86e14bd8ba605b02ee81fc1e8c68e4d7f8b4c"
+      },
+      "max_reverse_excursion_m": 0.1399475314463158,
+      "matched_segments": [
+        {
+          "start_frame": 106,
+          "end_frame_exclusive": 356,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.8328935137071793,
+          "net_m": 0.4013611078928344,
+          "backward_m": 0.1399475314463158,
+          "backward_fraction": 0.1680257189462484,
+          "max_reverse_excursion_m": 0.1399475314463158,
+          "reverse_start_frame": 106,
+          "reverse_end_frame_exclusive": 203,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1965470513,
+      "source_frames_sha256": "e880bce783c3c4831bb6cd53a8345c265b1eebac998e3cac9cf140982da96c89",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "b8f0d17aa822712e6b4799b08fb1879f0b2c45d818dc7e0b26f19c787b507778"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109/episode_000024",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109/episode_000024",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        2,
+        2
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "740dbd7922585c998322a095f65b515d0bb171debcd830d26e857ce34c8a729d",
+        "episode_summary.json": "3810511daf97896e7bd840e520f0dacb50c012a466d3ad15f65df094e111eed2",
+        "episode_start.json": "f82ef0c61172898748e124ed23af2e330ff180f6bdc982ec78b88e0b78033439"
+      },
+      "max_reverse_excursion_m": 0.13179371740927415,
+      "matched_segments": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 78,
+          "phase": "READY",
+          "jaw_closed": false,
+          "metric": "XYZ",
+          "path_m": 1.0009970646838209,
+          "net_m": 0.40446312386284633,
+          "backward_m": 0.13179371740927415,
+          "backward_fraction": 0.13166244143872996,
+          "max_reverse_excursion_m": 0.13179371740927415,
+          "reverse_start_frame": 0,
+          "reverse_end_frame_exclusive": 19,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 588437079,
+      "source_frames_sha256": "740dbd7922585c998322a095f65b515d0bb171debcd830d26e857ce34c8a729d",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "485fab2c7eb866be4fc74ed94e2fce46e3419c933b504e59c4d781bbf35c232a"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000014",
+      "physical_path": "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000014",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        4,
+        1
+      ],
+      "kind": "transport",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "50ab21fa3ff4579f95b7b39107eff72b240cb546769f2f64950f19a1e7beec1b",
+        "episode_summary.json": "d67079c2729377579067ac6cbee532baf21c9eef5d9cf051274c8d4f480c0e32",
+        "episode_start.json": "7df47d79ba7f63638448ed5603aa89d14ee2937d852c5e344f366a89a315ad8a",
+        "correction.json": "e0be9c2a0c01773390bc5e2e808d5a42ef8c4dc15d1eaaa1e823bc00344f9f4c",
+        "gripper_labels.json": "cce125d371405f3a96258670d398cb0492a797381b7a640b10131d245dec9430",
+        "training_mask.json": "45fe4922095dfe5bbdfbd523b367777059b4d0f86230d4fd2df083e1c019a62e"
+      },
+      "max_reverse_excursion_m": 0.1166065375882801,
+      "matched_segments": [
+        {
+          "start_frame": 70,
+          "end_frame_exclusive": 360,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 1.4320262210684949,
+          "net_m": 0.4882076722809377,
+          "backward_m": 0.1373138874944374,
+          "backward_fraction": 0.09588783045605251,
+          "max_reverse_excursion_m": 0.1166065375882801,
+          "reverse_start_frame": 169,
+          "reverse_end_frame_exclusive": 239,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "saved_gripper_labels",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 418955209,
+      "source_frames_sha256": "50ab21fa3ff4579f95b7b39107eff72b240cb546769f2f64950f19a1e7beec1b",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "b48580eb493eb87ae670ca0910c93f813ead5bae7a15b4f820aa50f96ca36a8a"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109/episode_000031",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109/episode_000031",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        0,
+        3
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "8bb503e2729bc773d7c860d06ca1738ca69ce43e748434a22610d6b18e1e4bfd",
+        "episode_summary.json": "b3c9ac8feb55faeece2d621be88ad543bf0eb861a67a31afa37911e987481eb5",
+        "episode_start.json": "cf1df63a70e115b9fda2630afdf734f547e646ef3f92fad0529f04be40288cbb"
+      },
+      "max_reverse_excursion_m": 0.11370725769491372,
+      "matched_segments": [
+        {
+          "start_frame": 152,
+          "end_frame_exclusive": 321,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.44298019616716056,
+          "net_m": 0.08154757555081801,
+          "backward_m": 0.12774810734732361,
+          "backward_fraction": 0.2883833373425057,
+          "max_reverse_excursion_m": 0.11370725769491372,
+          "reverse_start_frame": 209,
+          "reverse_end_frame_exclusive": 270,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1464126723,
+      "source_frames_sha256": "8bb503e2729bc773d7c860d06ca1738ca69ce43e748434a22610d6b18e1e4bfd",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "43e33696b1cc470c9a484e5d4201bc5d60c59fd34cab65899bee4765756af8f8"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111/episode_000011",
+      "physical_path": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111/episode_000011",
+      "scope": "saved_replacement_snapshot",
+      "object": "beverage_bottle",
+      "grid": [
+        2,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "13d18104c9a7d9005c02f883f447854940a08a89f71b3a08672373a14514eda7",
+        "episode_summary.json": "cc28734d6c4926e01c7fb9620218813ddc050b713f996b276ee7e1d800e67071",
+        "episode_start.json": "c674036b553283638e637a924cabd60cf7ba1d36bcbfece5952874c7d4c85d4a"
+      },
+      "max_reverse_excursion_m": 0.11122167740714028,
+      "matched_segments": [
+        {
+          "start_frame": 106,
+          "end_frame_exclusive": 398,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.8277752182117115,
+          "net_m": 0.38880906966705964,
+          "backward_m": 0.11122167740714028,
+          "backward_fraction": 0.1343621734018791,
+          "max_reverse_excursion_m": 0.11122167740714028,
+          "reverse_start_frame": 106,
+          "reverse_end_frame_exclusive": 224,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 690781810,
+      "source_frames_sha256": "13d18104c9a7d9005c02f883f447854940a08a89f71b3a08672373a14514eda7",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "bf25095fb056d1b29916711f92db8381f4736b5f38bb2e2c695efba28f9ae260"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000077",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000077",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        3,
+        1
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "02ca24b74f5970eeb78ebb7727421fb0de22e4f98d29733a4cb7b71d33d6726f",
+        "episode_summary.json": "02e182303b5ba915a88f2ab767f8c6406b61937c1d86b780bc0f25467ae672fc",
+        "episode_start.json": "2329afaaee986010952dd2f5ae1edd5715a5c457761b964310b45a1be594356a"
+      },
+      "max_reverse_excursion_m": 0.11101652446628478,
+      "matched_segments": [
+        {
+          "start_frame": 110,
+          "end_frame_exclusive": 349,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.8117646631783693,
+          "net_m": 0.36098146391280184,
+          "backward_m": 0.11101652446628478,
+          "backward_fraction": 0.13675949385578404,
+          "max_reverse_excursion_m": 0.11101652446628478,
+          "reverse_start_frame": 110,
+          "reverse_end_frame_exclusive": 201,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1199995783,
+      "source_frames_sha256": "02ca24b74f5970eeb78ebb7727421fb0de22e4f98d29733a4cb7b71d33d6726f",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "9b62aecbef19000facb5959eb4e08245d353ab58806b3b5730a78bf63cf0e38b"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111/episode_000009",
+      "physical_path": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111/episode_000009",
+      "scope": "saved_replacement_snapshot",
+      "object": "beverage_bottle",
+      "grid": [
+        2,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "cdd712548f2bc090afad9d62c08a0f3d05badfbdb403340a1cf485869d6d9db9",
+        "episode_summary.json": "9de718958c92d67f050d6a37d1148642ab3cce6ecc32b5eb2d45089fa1dfd7ac",
+        "episode_start.json": "69278462af1d96cc0cf83216b38ffae09818370140287a20836a794c617b8495"
+      },
+      "max_reverse_excursion_m": 0.10338523823727727,
+      "matched_segments": [
+        {
+          "start_frame": 106,
+          "end_frame_exclusive": 364,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.7294584647198039,
+          "net_m": 0.3741940985651797,
+          "backward_m": 0.10338523823727727,
+          "backward_fraction": 0.1417287525438328,
+          "max_reverse_excursion_m": 0.10338523823727727,
+          "reverse_start_frame": 106,
+          "reverse_end_frame_exclusive": 224,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1583736378,
+      "source_frames_sha256": "cdd712548f2bc090afad9d62c08a0f3d05badfbdb403340a1cf485869d6d9db9",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "674a2bf23a88c69b43e777ac35201550ab64054ab5320cde9f7c5f3d5577b1b0"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000022",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000022",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        0,
+        2
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "322af5d43565257c3153cecc5854dead7923740ba68b6b90d7e907039239d6c6",
+        "episode_summary.json": "2997aee88d57a36d088faed6f1b54d0d84d17823746d961fc20e4566de685a32",
+        "episode_start.json": "ebee3fee06d6dc4c7e913125a6bcc53fa52234d976562d57dfb4fea219df197d"
+      },
+      "max_reverse_excursion_m": 0.09880982196912141,
+      "matched_segments": [
+        {
+          "start_frame": 87,
+          "end_frame_exclusive": 172,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.48706266941287285,
+          "net_m": 0.24266056180172357,
+          "backward_m": 0.09880982196912141,
+          "backward_fraction": 0.20286880554453332,
+          "max_reverse_excursion_m": 0.09880982196912141,
+          "reverse_start_frame": 87,
+          "reverse_end_frame_exclusive": 127,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1445806553,
+      "source_frames_sha256": "322af5d43565257c3153cecc5854dead7923740ba68b6b90d7e907039239d6c6",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "28bd263253d8fcbe2aec4ada5a82428760cedd244475d4fd999f771f4a9259b2"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109/episode_000022",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109/episode_000022",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        1,
+        2
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "dea93c3f5e878313d1eb6d2448760811c6f68a1cf8964c262194b8a857bfc9f0",
+        "episode_summary.json": "afd4bc74ea9650699dd5a08c38b7f0d6eb40733054d19babafb5467c508eca2e",
+        "episode_start.json": "e269252237f29d623acbfaca6a069903eb36a14a36f99db25c321ec39d746aff"
+      },
+      "max_reverse_excursion_m": 0.09626359476398937,
+      "matched_segments": [
+        {
+          "start_frame": 99,
+          "end_frame_exclusive": 180,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.5272024939605148,
+          "net_m": 0.2564224267690978,
+          "backward_m": 0.09626359476398937,
+          "backward_fraction": 0.18259320823925976,
+          "max_reverse_excursion_m": 0.09626359476398937,
+          "reverse_start_frame": 99,
+          "reverse_end_frame_exclusive": 136,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 390759533,
+      "source_frames_sha256": "dea93c3f5e878313d1eb6d2448760811c6f68a1cf8964c262194b8a857bfc9f0",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "c115a41bcc33d427f4035b7dfc1bfc609b609e9d8e460e25a0ab39da49d11376"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000061",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000061",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        3,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "8ba56816519b3cc2cdd491cf25019aa86dc506282fa9f19df98b366772504bb3",
+        "episode_summary.json": "c9e1c580b1c2f3ebf3b1173679929b0e35dd327bf642b56df84e6baf65c14dfc",
+        "episode_start.json": "8e5898b3544d14848b48d334df66ed4f7ae6473ac71b692c5f72479200b33354"
+      },
+      "max_reverse_excursion_m": 0.09360426109638423,
+      "matched_segments": [
+        {
+          "start_frame": 166,
+          "end_frame_exclusive": 411,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.7799182642137004,
+          "net_m": 0.44779194592119687,
+          "backward_m": 0.09360426109638423,
+          "backward_fraction": 0.12001803957079318,
+          "max_reverse_excursion_m": 0.09360426109638423,
+          "reverse_start_frame": 166,
+          "reverse_end_frame_exclusive": 206,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 442632184,
+      "source_frames_sha256": "8ba56816519b3cc2cdd491cf25019aa86dc506282fa9f19df98b366772504bb3",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "d11f8dc725641153a1e3a2570f226c3eeeca34b84f7b205f92d0e72eae578989"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000033",
+      "physical_path": "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000033",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        0,
+        2
+      ],
+      "kind": "close_transition",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "6101beed6b85bffe4d1923c304d3170a567f98fd239b2a314359221c9b72d470",
+        "episode_summary.json": "c87201918f443925b94c89d9f8631ff21f729d91d7352d0466d79de380ee9310",
+        "episode_start.json": "45b7f05f630a53b3e3119dcbe96f378e6605c4f04bd75edf338f553090022522",
+        "correction.json": "69b7b3396499711ed194e371a3e388efe99d65e15ca7250f03969de31b7c431b",
+        "gripper_labels.json": "c02f1a38e6462e87c7b3ec76f91c35e42c1248cfa85d04dade4e1782ed668210",
+        "training_mask.json": "c83b8cace278c5e01296fb75bddef05a896422a36adeb18d719adb8963ee8a71"
+      },
+      "max_reverse_excursion_m": 0.08948988980966978,
+      "matched_segments": [
+        {
+          "start_frame": 36,
+          "end_frame_exclusive": 216,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.37538724783767397,
+          "net_m": 0.18200696002251052,
+          "backward_m": 0.08948988980966978,
+          "backward_fraction": 0.23839352648539425,
+          "max_reverse_excursion_m": 0.08948988980966978,
+          "reverse_start_frame": 36,
+          "reverse_end_frame_exclusive": 118,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "saved_gripper_labels",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1544866453,
+      "source_frames_sha256": "6101beed6b85bffe4d1923c304d3170a567f98fd239b2a314359221c9b72d470",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "da8c5a18c02d0107adb63f3ff51c14431256d5a20d6f8f165464732a588cde2b"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000051",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000051",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        2,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "4b043931415dc516e2c83c0aeb269b039efb7d745e0e67bc9bc94336d08c042d",
+        "episode_summary.json": "4e893a0b674f589c3e8e730872f9aa9d6d92f1da9148c1b4fbdfceceb4e2a47a",
+        "episode_start.json": "ab67a4e6b89429f9cc7b1c20af66234e095c85a66a55554ba2dc39a0b177c346"
+      },
+      "max_reverse_excursion_m": 0.0879246638598022,
+      "matched_segments": [
+        {
+          "start_frame": 107,
+          "end_frame_exclusive": 387,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.7281072918402501,
+          "net_m": 0.4027991156232394,
+          "backward_m": 0.08792466385980222,
+          "backward_fraction": 0.12075784001225641,
+          "max_reverse_excursion_m": 0.0879246638598022,
+          "reverse_start_frame": 107,
+          "reverse_end_frame_exclusive": 225,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 552464258,
+      "source_frames_sha256": "4b043931415dc516e2c83c0aeb269b039efb7d745e0e67bc9bc94336d08c042d",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "5bf449fe0ae48979c0837f27745c429ee5a8c24115f394ec74dce58a06dc7b79"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000021",
+      "physical_path": "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000021",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        1,
+        3
+      ],
+      "kind": "close_transition",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "c1961a72d43b70b6552a26f771ad76a61bd8687884cf01578bee8b487c6c79ba",
+        "episode_summary.json": "c387d092c3cfe0c4a2bfc5eb2d0bd83e5e0e5ea20770a7022c6f189d75130622",
+        "episode_start.json": "03148efb042c6400d1b9c0b9063d675ee2b91ea7e3c90438e09f197480ea1557",
+        "correction.json": "481a24084383597a5a9adc43d37ba1cc1b6446312e5ee2f7307a5056d54d042f",
+        "gripper_labels.json": "84f5eefe3f46a26e05e113fcb93e11728549d8bf9222ba4d332b3ba83ae9f289",
+        "training_mask.json": "2f79e34edec58b12f65dd335ba7f7460d0f8475346691b7360ad90b6b79b8e56"
+      },
+      "max_reverse_excursion_m": 0.08595991552757215,
+      "matched_segments": [
+        {
+          "start_frame": 33,
+          "end_frame_exclusive": 237,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.4744465377132155,
+          "net_m": 0.20276922061907232,
+          "backward_m": 0.08595991552757215,
+          "backward_fraction": 0.18117935045303582,
+          "max_reverse_excursion_m": 0.08595991552757215,
+          "reverse_start_frame": 33,
+          "reverse_end_frame_exclusive": 127,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "saved_gripper_labels",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1549950107,
+      "source_frames_sha256": "c1961a72d43b70b6552a26f771ad76a61bd8687884cf01578bee8b487c6c79ba",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "b6b64fb7f2665c0aa50068a3fab70d808fb2d59e92389e8d275d8cf8e7fde620"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000030",
+      "physical_path": "/home/lp531/smolvla_data/bottle_correction60_20261111/episode_000030",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        0,
+        1
+      ],
+      "kind": "regrasp",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "fd47d16b03ba5bb921e66d16df00d577ee5a09ed5f2b1334a02716bedf42c6db",
+        "episode_summary.json": "1b9e77ca3ddfba20539367bc3f13e6ee45460f75faa9c72cae4328936d60dba3",
+        "episode_start.json": "2ae1e440c879a46524689c1bf75a7a6b3238a9574dc6b610c2d189267ed47522",
+        "correction.json": "4270a50ce1eb48297e7d8c07608e9b8b93c1dc97ab01b1a27543ec2f45018438",
+        "gripper_labels.json": "9e46175f8eadfc1773c929e21a50feb0e7a36a328e20669a87e949a0f89f6eba",
+        "training_mask.json": "f21b1530cc002314011bf7789d5fc84706e8fd1b465953d9ea5ec1a3205723dd"
+      },
+      "max_reverse_excursion_m": 0.08581417758245011,
+      "matched_segments": [
+        {
+          "start_frame": 237,
+          "end_frame_exclusive": 465,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.6681067047482084,
+          "net_m": 0.32188529087837536,
+          "backward_m": 0.08616627362060311,
+          "backward_fraction": 0.12897082607946117,
+          "max_reverse_excursion_m": 0.08581417758245011,
+          "reverse_start_frame": 237,
+          "reverse_end_frame_exclusive": 271,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "saved_gripper_labels",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 161708575,
+      "source_frames_sha256": "fd47d16b03ba5bb921e66d16df00d577ee5a09ed5f2b1334a02716bedf42c6db",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "b96e0a4cfa811f56db12b66ccf6c866e5261ebdf50a42b26494e3b2c8b61a1f0"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000162",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000162",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        2,
+        2
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "5264f9831ece50663176920aac9b55531b6a3efb795a9e02bf006173616414e5",
+        "episode_summary.json": "237ec128a9a2a7b0cf8ec9539f4aed3f3b4b9598ce855a8a8237fe67f8210ba9",
+        "episode_start.json": "9f6ab4c4b31ff3e408f92add9c9e668b2b333db2e43f34b8be40d2d4dc5598c4"
+      },
+      "max_reverse_excursion_m": 0.08474865605091421,
+      "matched_segments": [
+        {
+          "start_frame": 109,
+          "end_frame_exclusive": 315,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.3124504918768444,
+          "net_m": 0.10879267193260671,
+          "backward_m": 0.08474865605091421,
+          "backward_fraction": 0.27123867061895607,
+          "max_reverse_excursion_m": 0.08474865605091421,
+          "reverse_start_frame": 109,
+          "reverse_end_frame_exclusive": 227,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1425488706,
+      "source_frames_sha256": "5264f9831ece50663176920aac9b55531b6a3efb795a9e02bf006173616414e5",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "dbb785b3afdea7ae20af748541badb6d6db858c0cabfe023129714ac9add644d"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000039",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000039",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        0,
+        3
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "1e9152a29054feb318c5246041c558baee489c9154dcd070b616c3616ce51dbd",
+        "episode_summary.json": "8a3eb6381b90ca016d76c0ce47ccfb5f520e59eadabad41aea675a3c1dbf1545",
+        "episode_start.json": "021ba4ba10b5a6b91b485340e989606ef3667db0216d7bb05579380a61ab4cff"
+      },
+      "max_reverse_excursion_m": 0.0839435033593564,
+      "matched_segments": [
+        {
+          "start_frame": 88,
+          "end_frame_exclusive": 155,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.39664948768880903,
+          "net_m": 0.17602787492283242,
+          "backward_m": 0.0839435033593564,
+          "backward_fraction": 0.21163144278460327,
+          "max_reverse_excursion_m": 0.0839435033593564,
+          "reverse_start_frame": 88,
+          "reverse_end_frame_exclusive": 119,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 62424937,
+      "source_frames_sha256": "1e9152a29054feb318c5246041c558baee489c9154dcd070b616c3616ce51dbd",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "26fd81c8d0550143db74efa7a8cce73e6605f428af5c386c25b166fa5aa934eb"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000175",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000175",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        1,
+        3
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "dc9c7c8a446d1da362f63ffc7dca86996418cc8d573bb645eeb31266b5f1b4c8",
+        "episode_summary.json": "a7dce6af4e3945d6763ac7b7c619f90a967173452935c5a9745187698c0d5088",
+        "episode_start.json": "a5d38cf4fb1f783da9e58178dd6083abcc79781898b6253049e41df5a87e164e"
+      },
+      "max_reverse_excursion_m": 0.0835484809464317,
+      "matched_segments": [
+        {
+          "start_frame": 105,
+          "end_frame_exclusive": 293,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.4339290421473117,
+          "net_m": 0.16279388221951835,
+          "backward_m": 0.0835484809464317,
+          "backward_fraction": 0.19253950031320646,
+          "max_reverse_excursion_m": 0.0835484809464317,
+          "reverse_start_frame": 105,
+          "reverse_end_frame_exclusive": 193,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 549338635,
+      "source_frames_sha256": "dc9c7c8a446d1da362f63ffc7dca86996418cc8d573bb645eeb31266b5f1b4c8",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "38cc0fe7cea2966e0ec4e42841e3eac8195b0c0c0b5ecabbb94ece547c0591d9"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109/episode_000013",
+      "physical_path": "/home/lp531/smolvla_data/bottle_horizontal_supplement_20261109/episode_000013",
+      "scope": "registered_base",
+      "object": "beverage_bottle",
+      "grid": [
+        1,
+        1
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "66643a96e27af9717a540e60d064ec36bed5e57fa89e7c81efd8c28557e79f90",
+        "episode_summary.json": "2dc7b0c863a584d613c9c303a1ba5bdb1ef14e76fa70e64df2c603e65f642451",
+        "episode_start.json": "221d1da66a7589213ed472d718608ff5cf28c0cb9cc7fe22471632b4144ece38"
+      },
+      "max_reverse_excursion_m": 0.08085827567542499,
+      "matched_segments": [
+        {
+          "start_frame": 100,
+          "end_frame_exclusive": 171,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.5030341329040027,
+          "net_m": 0.3043966032829089,
+          "backward_m": 0.08085827567542499,
+          "backward_fraction": 0.1607411314389986,
+          "max_reverse_excursion_m": 0.08085827567542499,
+          "reverse_start_frame": 100,
+          "reverse_end_frame_exclusive": 119,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cylinder_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "fresh_bottle_frames_analysis",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 227679245,
+      "source_frames_sha256": "66643a96e27af9717a540e60d064ec36bed5e57fa89e7c81efd8c28557e79f90",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "e011bd1eb10dd9220ac4ecc7e2305376328a442925441da265298d9b02e16dbd"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000174",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000174",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        4,
+        3
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "b4643b8908f103c87e158561c0f90f11982059468d59bfa068bea2e4db1c10f1",
+        "episode_start.json": "b7892feae04bf882d81deb5754f452a77bc14833cb173050d53013289f821003",
+        "episode_summary.json": "633132d18e48152dd6406ea82f136663c4469418c64959ddea0e119cf6e9f246"
+      },
+      "max_reverse_excursion_m": 0.5025896072615017,
+      "matched_segments": [
+        {
+          "start_frame": 184,
+          "end_frame_exclusive": 543,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 1.7395933079748536,
+          "net_m": 0.391127260152228,
+          "backward_m": 0.5253856672689151,
+          "backward_fraction": 0.30201637639118223,
+          "max_reverse_excursion_m": 0.5025896072615017,
+          "reverse_start_frame": 289,
+          "reverse_end_frame_exclusive": 392,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1831352513,
+      "source_frames_sha256": "b4643b8908f103c87e158561c0f90f11982059468d59bfa068bea2e4db1c10f1",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "45bb3f9367f31fd47526fc5e005b988069b6eec8dc7de6dc4e3c44ec67d839a0"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000028",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000028",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        3,
+        3
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "59be2bfaab792f541251e5a1db5e71661daa547531e6cdb3a53b4f9054ccd08c",
+        "episode_start.json": "e3bbdead91d728468ea2de5648c7feee0c244a7a34eb041af9dc36483ea563ba",
+        "episode_summary.json": "8bf08b8a6d0ba0eb9bc3ae73d99bb5ec1082e12cd901d546cafd5ca3bc4e5b9d"
+      },
+      "max_reverse_excursion_m": 0.34678299410557917,
+      "matched_segments": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 240,
+          "phase": "READY",
+          "jaw_closed": false,
+          "metric": "XYZ",
+          "path_m": 1.6840114292672537,
+          "net_m": 0.5233838067188976,
+          "backward_m": 0.34678299410557917,
+          "backward_fraction": 0.2059267461483152,
+          "max_reverse_excursion_m": 0.34678299410557917,
+          "reverse_start_frame": 0,
+          "reverse_end_frame_exclusive": 91,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1283494900,
+      "source_frames_sha256": "59be2bfaab792f541251e5a1db5e71661daa547531e6cdb3a53b4f9054ccd08c",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "ded2d5417cbf795c689085cf5c1a7d660376ca83fe66434fa4c6dff602308fbe"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000058",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000058",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        2,
+        1
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "51f970d6dddca7ffef3dbdd829da7fb0fca5152276db97acd43a59631d5e5c04",
+        "episode_start.json": "898a7a7ff44b7050e3423aa6073a21331c8f7e53a39b209068f648cd6f4e379a",
+        "episode_summary.json": "bf4c93d9384af4c9f7a7b75816476f8bb4dbbf7ae0a98f766cc8075b8ae8922f"
+      },
+      "max_reverse_excursion_m": 0.29587997748044553,
+      "matched_segments": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 238,
+          "phase": "READY",
+          "jaw_closed": false,
+          "metric": "XYZ",
+          "path_m": 1.4042316927873695,
+          "net_m": 0.4387205223430222,
+          "backward_m": 0.29587997748044553,
+          "backward_fraction": 0.21070595329829808,
+          "max_reverse_excursion_m": 0.29587997748044553,
+          "reverse_start_frame": 0,
+          "reverse_end_frame_exclusive": 82,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1838306487,
+      "source_frames_sha256": "51f970d6dddca7ffef3dbdd829da7fb0fca5152276db97acd43a59631d5e5c04",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "b0d9744d04834c73d0b766a60bf51ad08280bcde81010eb5043d1a85d77fdf01"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000047",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000047",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        0,
+        1
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "9b27d0f7387fa47743773c7d4aca56c07e6d6362a2bb4c0f323650c23285bf27",
+        "episode_start.json": "7c54cace3c168baf771dd3da81f8d781ef8c4b072f13609ff2eefb04546a5bb8",
+        "episode_summary.json": "7f1a013b826b3114de4266a97c9f736d31156dba3d21824f4d257638886448ed"
+      },
+      "max_reverse_excursion_m": 0.27882435372764636,
+      "matched_segments": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 231,
+          "phase": "READY",
+          "jaw_closed": false,
+          "metric": "XYZ",
+          "path_m": 1.369900025503116,
+          "net_m": 0.35163518124472615,
+          "backward_m": 0.27882435372764636,
+          "backward_fraction": 0.20353627895235932,
+          "max_reverse_excursion_m": 0.27882435372764636,
+          "reverse_start_frame": 0,
+          "reverse_end_frame_exclusive": 91,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 2144647489,
+      "source_frames_sha256": "9b27d0f7387fa47743773c7d4aca56c07e6d6362a2bb4c0f323650c23285bf27",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "bb181a312c70ca407f5fc8daf71495ef0463592d0809c263cdf48da39d37628f"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000188",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000188",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        1,
+        2
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "ab13e82c503b250c7b962622827669e177d2a21f09aa27188cdcc9c6597d14ee",
+        "episode_start.json": "f99d48ffa777ff0137037b368c75058e8923f773ac65e9dfb9413d315b4c563a",
+        "episode_summary.json": "3c8ef4e9f683b7e6c45beaf2987fb7dc0c5d18151a54153cd3920fc1670a5588"
+      },
+      "max_reverse_excursion_m": 0.26337238106193867,
+      "matched_segments": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 213,
+          "phase": "READY",
+          "jaw_closed": false,
+          "metric": "XYZ",
+          "path_m": 1.243619613466041,
+          "net_m": 0.34968718491943035,
+          "backward_m": 0.26337238106193867,
+          "backward_fraction": 0.21177888979082948,
+          "max_reverse_excursion_m": 0.26337238106193867,
+          "reverse_start_frame": 0,
+          "reverse_end_frame_exclusive": 73,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1154323259,
+      "source_frames_sha256": "ab13e82c503b250c7b962622827669e177d2a21f09aa27188cdcc9c6597d14ee",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "186bedf7d566eb9bca3fe3b5d3dc7da399da770d47338b77733a655f3ea71096"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000117",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000117",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        1,
+        2
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "0a1b9900eec3995a191ffeec301eb759f5685efea2ce0d2815b6c51b06bc47f2",
+        "episode_start.json": "1f638c313c5ca8df5eaab43c3d8e4ffad48d77d4d4e5810bcf694283e10748c3",
+        "episode_summary.json": "f4a61be0cdb890c0bc0b0d3336304e81742c848654b755b879f9dec907d11985"
+      },
+      "max_reverse_excursion_m": 0.24932368492676024,
+      "matched_segments": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 223,
+          "phase": "READY",
+          "jaw_closed": false,
+          "metric": "XYZ",
+          "path_m": 1.2767242745214595,
+          "net_m": 0.3837601646634557,
+          "backward_m": 0.24932368492676024,
+          "backward_fraction": 0.19528389167677687,
+          "max_reverse_excursion_m": 0.24932368492676024,
+          "reverse_start_frame": 0,
+          "reverse_end_frame_exclusive": 85,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 824524940,
+      "source_frames_sha256": "0a1b9900eec3995a191ffeec301eb759f5685efea2ce0d2815b6c51b06bc47f2",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "8362f4c4176635353e6a199fb01f14ebd51e17a8d2e07c9f0fc936ad2bab3b3c"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000010",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000010",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        2,
+        1
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "ee21cfcfed344627b71e8685802dc58f02958f7c2f402431fdbb112008169e6a",
+        "episode_start.json": "d8de90cb1a5e08bacf34aebea3ff34f22190e3d464f7e2e4295ba4dbb131fd9a",
+        "episode_summary.json": "d7b994ac46e5ffcf93b67f0cf9f72eb78403015d5869a0cdaa6f1288dab2c999"
+      },
+      "max_reverse_excursion_m": 0.20506330277291393,
+      "matched_segments": [
+        {
+          "start_frame": 209,
+          "end_frame_exclusive": 659,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 1.144380393711088,
+          "net_m": 0.2839096886038458,
+          "backward_m": 0.21115362961277276,
+          "backward_fraction": 0.18451349811056003,
+          "max_reverse_excursion_m": 0.20506330277291393,
+          "reverse_start_frame": 455,
+          "reverse_end_frame_exclusive": 612,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1024468149,
+      "source_frames_sha256": "ee21cfcfed344627b71e8685802dc58f02958f7c2f402431fdbb112008169e6a",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "bf6d82371ea96584e8f4669591eb90ec61b7ad5d6dced70c59ee6d20436308a0"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000077",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000077",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        2,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "9abe958ba5589b9064b696e81ce4e1959471d068e52fac8748a321cb614a9191",
+        "episode_start.json": "3487c6ff8a909e9eefa336bd35a8260ca3d380971d3bdc2122280b3d63ad9fe4",
+        "episode_summary.json": "130f7958848e8e67b8fa83443237823665f6c1aaab84386f0f216ecc0e0e686e"
+      },
+      "max_reverse_excursion_m": 0.16901300971918432,
+      "matched_segments": [
+        {
+          "start_frame": 169,
+          "end_frame_exclusive": 623,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 1.0429224324590696,
+          "net_m": 0.41845328550455535,
+          "backward_m": 0.19239554887246535,
+          "backward_fraction": 0.18447733300627425,
+          "max_reverse_excursion_m": 0.16901300971918432,
+          "reverse_start_frame": 313,
+          "reverse_end_frame_exclusive": 428,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 556514127,
+      "source_frames_sha256": "9abe958ba5589b9064b696e81ce4e1959471d068e52fac8748a321cb614a9191",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "5238783829ecaa2f1b4f322be1698d48e69ccd3aecbf16b73b35d1751d48b684"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000171",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000171",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        3,
+        3
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "37890cc670d2047f381cfde91d8f0ffc2fdcb90c99af82b5439c1655da826e36",
+        "episode_start.json": "2c1d87ccec1ab29cd2c17f8221d8e56409231c187133b4b1d7c818db12e63ba7",
+        "episode_summary.json": "3accc278e999d1cb820f9bd42ed6862ab9f6422c972b20092b33547e56424092"
+      },
+      "max_reverse_excursion_m": 0.1647893493934348,
+      "matched_segments": [
+        {
+          "start_frame": 178,
+          "end_frame_exclusive": 418,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.8460042813898886,
+          "net_m": 0.26071434686687756,
+          "backward_m": 0.1688922949962397,
+          "backward_fraction": 0.19963527219834976,
+          "max_reverse_excursion_m": 0.1647893493934348,
+          "reverse_start_frame": 265,
+          "reverse_end_frame_exclusive": 335,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1034825171,
+      "source_frames_sha256": "37890cc670d2047f381cfde91d8f0ffc2fdcb90c99af82b5439c1655da826e36",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "7da0047ebf7d1522eedf8e5f9d3c14446335f52df0fdcde5a4159da74727c40d"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000016",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000016",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        0,
+        2
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "77c037e2f15d441371c07167ba49b67e68e0d225e9cc2bb3a7f0a42222d190c9",
+        "episode_start.json": "2bac195bcb707bd949cfc29be6d650de5a001b35d4c4a8a89c905536f592012c",
+        "episode_summary.json": "954ff35f34f8e9a233b96564ac51b431488ce78184ed1137a7ae8575ba1fd3ee"
+      },
+      "max_reverse_excursion_m": 0.13507400829192134,
+      "matched_segments": [
+        {
+          "start_frame": 229,
+          "end_frame_exclusive": 600,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.9237320633354141,
+          "net_m": 0.2819224306419366,
+          "backward_m": 0.19648644102323504,
+          "backward_fraction": 0.2127093437828295,
+          "max_reverse_excursion_m": 0.13507400829192134,
+          "reverse_start_frame": 391,
+          "reverse_end_frame_exclusive": 470,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 2145591379,
+      "source_frames_sha256": "77c037e2f15d441371c07167ba49b67e68e0d225e9cc2bb3a7f0a42222d190c9",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "67e1bcfee36e33f582db03a89eb8f1419080ff84492e4b31ff1ebc450b06a46b"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000038",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000038",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        0,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "05de1f251cf87c07c73578fbbce98c8a1996e71d20910f22cb7591451d02ad93",
+        "episode_start.json": "338ed4d8e807dfe558379aefa16832f0ce4a142f7e1418629e5e7ef6628a5d37",
+        "episode_summary.json": "006e080ac94390903ab53bb29616e4efc1f20c282e232d0244dbc1f284b8c901"
+      },
+      "max_reverse_excursion_m": 0.1326678712164249,
+      "matched_segments": [
+        {
+          "start_frame": 244,
+          "end_frame_exclusive": 478,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.7826999467007455,
+          "net_m": 0.3641562961280325,
+          "backward_m": 0.1326678712164249,
+          "backward_fraction": 0.16950029417486165,
+          "max_reverse_excursion_m": 0.1326678712164249,
+          "reverse_start_frame": 244,
+          "reverse_end_frame_exclusive": 305,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1422928833,
+      "source_frames_sha256": "05de1f251cf87c07c73578fbbce98c8a1996e71d20910f22cb7591451d02ad93",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "7e7418073fcb191088411e024e3032931a70a0a6f5d0f63ea86d16e35396092c"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_quality200_from_pi05_513_20261111/episode_000296",
+      "physical_path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026/episode_000296",
+      "scope": "registered_addition",
+      "object": "cup",
+      "grid": [
+        0,
+        1
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "aea2af7babfd9e9cb49285a3685a8aa42ea1fe2d5fe04b131707e5b89c927e3e",
+        "episode_start.json": "a1b957abb24aa8885a43370f18bc26f8bd1e612215d66165bac4fd10df324200",
+        "episode_summary.json": "cd8e8894f26ef120084ad721260f65109d3337cef826988bcef80d53aa220f8a"
+      },
+      "max_reverse_excursion_m": 0.11447741583035767,
+      "matched_segments": [
+        {
+          "start_frame": 134,
+          "end_frame_exclusive": 274,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.6662916100214913,
+          "net_m": 0.3446841341991264,
+          "backward_m": 0.123798994973665,
+          "backward_fraction": 0.18580302244789162,
+          "max_reverse_excursion_m": 0.11447741583035767,
+          "reverse_start_frame": 134,
+          "reverse_end_frame_exclusive": 165,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "original_513_training_binary_labels",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 332037625,
+      "source_frames_sha256": "aea2af7babfd9e9cb49285a3685a8aa42ea1fe2d5fe04b131707e5b89c927e3e",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "43a0135845d962f1a1bd268a75a1c2cdb4bd38b1deba2816f50be6fb0ecc100b"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000009",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000009",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        1,
+        1
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "0f30bca79001a704dafb727cb626a353479e7c0b83504ffb3d2d719631812f6c",
+        "episode_start.json": "81e0b844a5b50e06ec45f8e3f0d1b931d927cac5ebcfa5aeada380739510c619",
+        "episode_summary.json": "4e58c965c853cdf60b046bca46d1c78d704db7228bfdd5266fa194013e5a75cc"
+      },
+      "max_reverse_excursion_m": 0.11363530749147403,
+      "matched_segments": [
+        {
+          "start_frame": 203,
+          "end_frame_exclusive": 438,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 1.0008289927629532,
+          "net_m": 0.3188718787639182,
+          "backward_m": 0.11459427988911845,
+          "backward_fraction": 0.11449936074769584,
+          "max_reverse_excursion_m": 0.11363530749147403,
+          "reverse_start_frame": 203,
+          "reverse_end_frame_exclusive": 267,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1816979606,
+      "source_frames_sha256": "0f30bca79001a704dafb727cb626a353479e7c0b83504ffb3d2d719631812f6c",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "dd109519fa989978e23870550749070d658b7270839f500637332abddde4d60b"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000083",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000083",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        3,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "d0f6a55f43dcc968ab6a39e133c0bf76429a17d45d40ce0b293eb39ce2de5074",
+        "episode_start.json": "d79c3c478c998477329fc97f20427bd55518ad9bcb2266576d09ef0e244ac5d1",
+        "episode_summary.json": "cf146b4499b8963fbd33b307aa7b4e12538cf9053bfe73a4cccd01d013185e10"
+      },
+      "max_reverse_excursion_m": 0.1102207012732714,
+      "matched_segments": [
+        {
+          "start_frame": 199,
+          "end_frame_exclusive": 417,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.7085946498848036,
+          "net_m": 0.4207905315901675,
+          "backward_m": 0.1102207012732714,
+          "backward_fraction": 0.15554831142344921,
+          "max_reverse_excursion_m": 0.1102207012732714,
+          "reverse_start_frame": 199,
+          "reverse_end_frame_exclusive": 278,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1055624654,
+      "source_frames_sha256": "d0f6a55f43dcc968ab6a39e133c0bf76429a17d45d40ce0b293eb39ce2de5074",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "b1a4337a5b2c89a6a2a8fa89a63f7f59c80d62e9010cb9ce24f2535cc633a532"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000018",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000018",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        2,
+        2
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "98ce872e17d579e2ba589c008f60429d1d9f17984c117d465fc8169e5a641502",
+        "episode_start.json": "619e4325838d45a5c84ab8c5b1b04bc5d5ffff907e40c00d8148b80e36994190",
+        "episode_summary.json": "241f1e9e3b083e45d12cdfd59359de3ad10abdc93847e011d06ca015bf8a340f"
+      },
+      "max_reverse_excursion_m": 0.10946352940983312,
+      "matched_segments": [
+        {
+          "start_frame": 178,
+          "end_frame_exclusive": 512,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.716803608668879,
+          "net_m": 0.3422229582803459,
+          "backward_m": 0.13353304124690135,
+          "backward_fraction": 0.1862895772732999,
+          "max_reverse_excursion_m": 0.10946352940983312,
+          "reverse_start_frame": 391,
+          "reverse_end_frame_exclusive": 479,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 288595757,
+      "source_frames_sha256": "98ce872e17d579e2ba589c008f60429d1d9f17984c117d465fc8169e5a641502",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "6214f60317ff00753949fca02dea62771b49470fb50c120ed52155a1a73f7c78"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000182",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000182",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        4,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "23f9a32ea95454ff9528380897ebc0eef9f0ac4a3cafb6f6deb7a8210cc7041c",
+        "episode_start.json": "b0015d96db795e474d425c7357f1bf6b9a70a619401a6431992bf449189e9c95",
+        "episode_summary.json": "a4721b2438d14253b5d7f01d036e0bce8c8ea9906b22ee4be129c7386adaa7e7"
+      },
+      "max_reverse_excursion_m": 0.10795124630687897,
+      "matched_segments": [
+        {
+          "start_frame": 218,
+          "end_frame_exclusive": 514,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.8729390191790719,
+          "net_m": 0.435809374146506,
+          "backward_m": 0.10795124630687897,
+          "backward_fraction": 0.12366413224190428,
+          "max_reverse_excursion_m": 0.10795124630687897,
+          "reverse_start_frame": 317,
+          "reverse_end_frame_exclusive": 480,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 951825798,
+      "source_frames_sha256": "23f9a32ea95454ff9528380897ebc0eef9f0ac4a3cafb6f6deb7a8210cc7041c",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "f12ff4dd0acd9aef3c2e9ebf10c3410e97d2c5c008c20c5fe6d9d831e92405c9"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000006",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000006",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        2,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "14685a2f48058a214d59191a105ec353713acc84c0c1ec5f5f1528c7dbc00920",
+        "episode_start.json": "a25a3534b2f6ab84937a39a8a69f6c30a5f137fd6c9c09e05457aedca8ac7667",
+        "episode_summary.json": "68c11b09db677785a1ad0d0d0894e10a1156fadf3256f54c2358b16c3387a911"
+      },
+      "max_reverse_excursion_m": 0.08606672461306682,
+      "matched_segments": [
+        {
+          "start_frame": 186,
+          "end_frame_exclusive": 447,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 1.2565399567900695,
+          "net_m": 0.46743893766349387,
+          "backward_m": 0.13136669136275175,
+          "backward_fraction": 0.10454637009581322,
+          "max_reverse_excursion_m": 0.08606672461306682,
+          "reverse_start_frame": 186,
+          "reverse_end_frame_exclusive": 217,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 896306214,
+      "source_frames_sha256": "14685a2f48058a214d59191a105ec353713acc84c0c1ec5f5f1528c7dbc00920",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "2c298c3dc98104caabc15513961deec4b37b198f84e0e70e3c0fe1dfbfd8bb3d"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000180",
+      "physical_path": "/home/lp531/smolvla_data/cup_cylinder_horizontal200_20261108/episode_000180",
+      "scope": "registered_base",
+      "object": "cup",
+      "grid": [
+        4,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "f9a56aa029c140f951a0859979a252a764907e68f0d825028b401b393cfe30b1",
+        "episode_start.json": "bc2cd6326946a7b65475e1a0785b901510fe056032d38d786e485c00009dd58c",
+        "episode_summary.json": "39dd4a99e7fb36c859fb0088d369dad51b56aecae28bc307144527ecf00fbf41"
+      },
+      "max_reverse_excursion_m": 0.08177653685362901,
+      "matched_segments": [
+        {
+          "start_frame": 226,
+          "end_frame_exclusive": 499,
+          "phase": "TRANSPORT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.8822145206547667,
+          "net_m": 0.44519086261275703,
+          "backward_m": 0.08177653685362901,
+          "backward_fraction": 0.09269461671627856,
+          "max_reverse_excursion_m": 0.08177653685362901,
+          "reverse_start_frame": 328,
+          "reverse_end_frame_exclusive": 416,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "cup_command_hysteresis_close_-0.82_open_-0.875",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 1656904663,
+      "source_frames_sha256": "f9a56aa029c140f951a0859979a252a764907e68f0d825028b401b393cfe30b1",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "b35781f92229463067787cc3e2a502383a0c330cf2b097d591796e6c4bdbbb4d"
+    },
+    {
+      "logical_path": "/home/lp531/smolvla_data/cup_quality200_from_pi05_513_20261111/episode_000016",
+      "physical_path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026/episode_000016",
+      "scope": "registered_addition",
+      "object": "cup",
+      "grid": [
+        1,
+        0
+      ],
+      "kind": "basic",
+      "fps": 10.0,
+      "source_hashes": {
+        "frames.jsonl": "ce73420e21553776a6524f89bb18ab2c981c2bab8bc36e7eaa75e0828b3bc720",
+        "episode_start.json": "689b7354dc311819019956c653649f29c8169105b3853e04c8987df57fa7c42b",
+        "episode_summary.json": "6e3a9890d3f952b2059c221e373945e1b0aa860eaa255f26b04d2b496733b495"
+      },
+      "max_reverse_excursion_m": 0.081440555838072,
+      "matched_segments": [
+        {
+          "start_frame": 145,
+          "end_frame_exclusive": 296,
+          "phase": "PHYSICAL_TEST_LIFT",
+          "jaw_closed": true,
+          "metric": "XY",
+          "path_m": 0.7933449732907113,
+          "net_m": 0.40410400925580814,
+          "backward_m": 0.11434486537544844,
+          "backward_fraction": 0.14413006853898375,
+          "max_reverse_excursion_m": 0.081440555838072,
+          "reverse_start_frame": 145,
+          "reverse_end_frame_exclusive": 179,
+          "tier": "重点"
+        }
+      ],
+      "gripper_label_source": "original_513_training_binary_labels",
+      "already_excluded": false,
+      "existing_retake_task_id": null,
+      "source_analysis": "frozen_report",
+      "status": "pending_rerecord",
+      "status_zh": "待重新录制",
+      "reason": "single_reverse_excursion_ge_8cm",
+      "threshold_m": 0.08,
+      "seed": 874906792,
+      "source_frames_sha256": "ce73420e21553776a6524f89bb18ab2c981c2bab8bc36e7eaa75e0828b3bc720",
+      "task_execution_status": "not_scheduled",
+      "mark_id": "628f2b30e7b8a37e95f7828588e33421763329b30eac3fc369d98f94e6b575ea"
+    }
+  ]
+}

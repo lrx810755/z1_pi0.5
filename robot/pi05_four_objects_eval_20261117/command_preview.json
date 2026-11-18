@@ -1,0 +1,9 @@
+{
+  "final_checkpoint_ready": false,
+  "expected_checkpoint": "/home/lp531/smolvla_training/pi05_current_round_20261111/checkpoints/800000/pretrained_model",
+  "reason": "missing /home/lp531/pi05_lora_workspace/pi05_current_round_20261111/completed.json",
+  "launched": false,
+  "scene": "ros2 launch /home/lp531/robot/pi05_four_objects_eval_20261117/scene.launch.py external_camera_layout:=dual headless:=false rviz:=false target_object:=apple task_gui:=true task_gui_port:=8868 run_smolvla_policy:=false freeze_target_keep_collisions:=true wrist_rgb_topic:=/left_wrist_camera/color/image_raw vla_wrist_rgb_topic:=none dataset_root:=/home/lp531/smolvla_eval/pi05_four_objects_final_20261117/inactive_recorder recording_fps:=10.0",
+  "evaluation": "/home/lp531/miniconda3/envs/unifolm-vla/bin/python /home/lp531/robot/pi05_four_objects_eval_20261117/entry.py --policy-type pi05 --checkpoint /home/lp531/smolvla_training/pi05_current_round_20261111/checkpoints/800000/pretrained_model --objects apple peach cup beverage_bottle --episodes-per-object 1 --timeout 60.0 --rate 10 --execution-rate 60 --execute-steps 15 --binary-gripper --gripper-action-encoding binary --gripper-min-close-hold-s 0 --no-freeze-target-until-close --prelift-contact-stable-s 0 --wrist-rgb-topic /left_wrist_camera/color/image_raw --reject-blank-cameras --input-sync-tolerance 0.045 --output /home/lp531/smolvla_eval/pi05_four_objects_final_20261117",
+  "output": "/home/lp531/smolvla_eval/pi05_four_objects_final_20261117"
+}

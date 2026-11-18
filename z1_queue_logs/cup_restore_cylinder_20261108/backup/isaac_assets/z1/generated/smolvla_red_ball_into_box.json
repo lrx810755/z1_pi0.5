@@ -1,0 +1,304 @@
+{
+  "task": "multi_object_tabletop_manipulation",
+  "language_instruction": "Manipulate the requested tabletop object.",
+  "candidate_instructions": [
+    "Put the cup into the blue box.",
+    "Put the apple into the blue box.",
+    "Put the peach into the blue box.",
+    "Put the computer mouse into the blue box.",
+    "Put the beverage bottle into the blue box."
+  ],
+  "coordinate_frame": "Z1 link00; +X forward; +Z up",
+  "robot_asset": "z1_with_d435.usd",
+  "scene_asset": "smolvla_red_ball_into_box.usd",
+  "camera": {
+    "color_prim_in_robot_asset": "/z1_description/root_joint/camera_color_optical_frame/ColorCamera",
+    "depth_prim_in_robot_asset": "/z1_description/root_joint/camera_depth_optical_frame/DepthCamera",
+    "color_resolution": [
+      640,
+      360
+    ],
+    "depth_resolution": [
+      640,
+      480
+    ],
+    "color_K": [
+      [
+        451.606170654297,
+        0.0,
+        325.197723388672
+      ],
+      [
+        0.0,
+        451.370849609375,
+        188.640960693359
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "depth_K": [
+      [
+        387.84747314453125,
+        0.0,
+        319.447265625
+      ],
+      [
+        0.0,
+        387.84747314453125,
+        238.202484130859
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "color_horizontal_fov_rad": 1.2329249975478676,
+    "depth_horizontal_fov_rad": 1.3796793554207174,
+    "clipping_range_m": [
+      0.05,
+      5.0
+    ]
+  },
+  "global_camera": {
+    "prim": "/World/GlobalCamera/global_camera_optical_frame/GlobalCamera",
+    "frame_id": "global_camera_optical_frame",
+    "resolution": [
+      640,
+      480
+    ],
+    "K": [
+      [
+        554.2562584220408,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        554.2562584220408,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "position_m": [
+      0.72,
+      -0.72,
+      0.72
+    ],
+    "orientation_wxyz": [
+      0.44389558219778247,
+      -0.8618642404075918,
+      -0.2180293171642894,
+      0.11229407851178168
+    ],
+    "look_at_m": [
+      0.32,
+      0.02,
+      0.12
+    ],
+    "clipping_range_m": [
+      0.05,
+      5.0
+    ]
+  },
+  "initial_state": {
+    "box_center_xy_m": [
+      0.32,
+      0.14
+    ],
+    "objects": {
+      "cup": {
+        "prim": "/World/Task/Objects/Cup",
+        "position_m": [
+          0.62,
+          -0.08,
+          0.0
+        ],
+        "yaw_deg": -20.0,
+        "mass_kg": 0.08,
+        "semantic_label": "cup",
+        "visual_asset": "../scanned_objects/usd/cup.usd",
+        "visual_quality": "high_quality_textured_scan",
+        "collision": {
+          "shape": "frustum",
+          "bottom_radius_m": 0.018,
+          "top_radius_m": 0.0252,
+          "height_m": 0.061,
+          "sides": 64
+        },
+        "grasp": {
+          "strategy": "side_pinch",
+          "width_m": 0.0504,
+          "height_m": 0.035,
+          "compatible_with_z1_gripper": true,
+          "recommended_max_width_m": 0.055
+        }
+      },
+      "apple": {
+        "prim": "/World/Task/Objects/Apple",
+        "position_m": [
+          0.44,
+          -0.18,
+          0.0
+        ],
+        "yaw_deg": 12.0,
+        "mass_kg": 0.1,
+        "semantic_label": "apple",
+        "visual_asset": "../scanned_objects/usd/apple.usd",
+        "visual_quality": "high_quality_textured_scan",
+        "collision": {
+          "shape": "ellipsoid",
+          "radii_m": [
+            0.0176,
+            0.0175,
+            0.019
+          ]
+        },
+        "grasp": {
+          "strategy": "equatorial_pinch",
+          "width_m": 0.0352,
+          "height_m": 0.019,
+          "compatible_with_z1_gripper": true,
+          "recommended_max_width_m": 0.055
+        }
+      },
+      "peach": {
+        "prim": "/World/Task/Objects/Peach",
+        "position_m": [
+          0.54,
+          -0.16,
+          0.0
+        ],
+        "yaw_deg": -8.0,
+        "mass_kg": 0.1,
+        "semantic_label": "peach",
+        "visual_asset": "../scanned_objects/usd/peach.usd",
+        "visual_quality": "high_quality_textured_scan",
+        "collision": {
+          "shape": "ellipsoid",
+          "radii_m": [
+            0.01545,
+            0.01515,
+            0.0145
+          ]
+        },
+        "grasp": {
+          "strategy": "equatorial_pinch",
+          "width_m": 0.0309,
+          "height_m": 0.0145,
+          "compatible_with_z1_gripper": true,
+          "recommended_max_width_m": 0.055
+        }
+      },
+      "mouse": {
+        "prim": "/World/Task/Objects/Mouse",
+        "position_m": [
+          0.49,
+          -0.02,
+          0.0
+        ],
+        "yaw_deg": 18.0,
+        "mass_kg": 0.07,
+        "semantic_label": "computer_mouse",
+        "visual_asset": "../scanned_objects/usd/mouse.usd",
+        "visual_quality": "high_quality_textured_scan",
+        "collision": {
+          "shape": "ellipsoid",
+          "radii_m": [
+            0.043,
+            0.0245,
+            0.01415
+          ]
+        },
+        "grasp": {
+          "strategy": "side_pinch_across_short_axis",
+          "width_m": 0.049,
+          "height_m": 0.02,
+          "compatible_with_z1_gripper": true,
+          "recommended_max_width_m": 0.055
+        }
+      },
+      "beverage_bottle": {
+        "prim": "/World/Task/Objects/BeverageBottle",
+        "position_m": [
+          0.62,
+          0.08,
+          0.0
+        ],
+        "yaw_deg": 5.0,
+        "mass_kg": 0.18,
+        "semantic_label": "beverage_bottle",
+        "visual_asset": "../scanned_objects/usd/beverage_bottle.usd",
+        "visual_quality": "high_quality_textured_scan",
+        "collision": {
+          "shape": "cylinder",
+          "radius_m": 0.0242,
+          "height_m": 0.157
+        },
+        "grasp": {
+          "strategy": "side_pinch_on_body",
+          "width_m": 0.0484,
+          "height_m": 0.075,
+          "compatible_with_z1_gripper": true,
+          "recommended_max_width_m": 0.055
+        }
+      }
+    }
+  },
+  "randomization_ranges": {
+    "object_translation_delta_m": [
+      -0.025,
+      0.025
+    ],
+    "object_yaw_delta_deg": [
+      -15.0,
+      15.0
+    ],
+    "box_x_m": [
+      0.28,
+      0.37
+    ],
+    "box_y_m": [
+      0.08,
+      0.18
+    ],
+    "light_intensity_scale": [
+      0.8,
+      1.2
+    ],
+    "camera_translation_delta_m": [
+      -0.005,
+      0.005
+    ],
+    "camera_rotation_delta_deg": [
+      -2.0,
+      2.0
+    ]
+  },
+  "success_condition": {
+    "selected_object_center_inside": "/World/Task/Box/SuccessVolume",
+    "maximum_object_speed_m_s": 0.03,
+    "stable_duration_s": 0.5,
+    "gripper_released": true
+  },
+  "validation": {
+    "robot_prim_count": 82,
+    "robot_mesh_count_including_instances": 19,
+    "robot_collision_count_including_instances": 10,
+    "scene_prim_count": 313,
+    "training_object_mesh_count": 36,
+    "articulation_roots": [
+      "/World/Z1/root_joint/root_joint"
+    ],
+    "color_camera": "/z1_description/root_joint/camera_color_optical_frame/ColorCamera",
+    "depth_camera": "/z1_description/root_joint/camera_depth_optical_frame/DepthCamera",
+    "global_camera": "/World/GlobalCamera/global_camera_optical_frame/GlobalCamera"
+  }
+}

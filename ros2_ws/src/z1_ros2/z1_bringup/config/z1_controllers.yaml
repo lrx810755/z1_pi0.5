@@ -1,0 +1,93 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000 # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    position_controller:
+      type: position_controllers/JointGroupPositionController
+
+    torque_controller:
+      type: effort_controllers/JointGroupEffortController
+
+    joint_trajectory_controller:
+      type: "joint_trajectory_controller/JointTrajectoryController"
+
+    gripper_trajectory_controller:
+      type: "joint_trajectory_controller/JointTrajectoryController"
+
+position_controller:
+  ros__parameters:
+    joints:
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+      - joint6
+
+torque_controller:
+  ros__parameters:
+    joints:
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+      - joint6
+
+joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+      - joint6
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    action_monitor_rate: 20.0
+
+    allow_partial_joints_goal: false
+    interpolate_from_desired_state: true
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      # The 2026-09-02 bottle trial showed short MoveIt corrections returning
+      # success with joint2 still about 0.031 rad from its requested endpoint.
+      # Hold the final command longer and reject errors large enough to move
+      # the gripper TCP by centimetres.
+      goal_time: 3.0
+      joint1: {trajectory: 0.10, goal: 0.02}
+      joint2: {trajectory: 0.10, goal: 0.02}
+      joint3: {trajectory: 0.10, goal: 0.05}
+      joint4: {trajectory: 0.10, goal: 0.02}
+      joint5: {trajectory: 0.10, goal: 0.02}
+      joint6: {trajectory: 0.10, goal: 0.02}
+
+gripper_trajectory_controller:
+  ros__parameters:
+    joints:
+      - jointGripper
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    action_monitor_rate: 20.0
+
+    allow_partial_joints_goal: false
+    interpolate_from_desired_state: true
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      goal_time: 1.0

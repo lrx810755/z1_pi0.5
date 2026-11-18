@@ -1,0 +1,83 @@
+{
+  "checkpoint": "/home/lp531/smolvla_training/pi05_bottle_binary_chunk15_attn_ffn_20261007/checkpoints/080000/pretrained_model",
+  "use_relative_actions": false,
+  "chunk_size": 15,
+  "input_features": {
+    "observation.state": {
+      "type": "STATE",
+      "shape": [
+        7
+      ]
+    },
+    "observation.images.wrist": {
+      "type": "VISUAL",
+      "shape": [
+        3,
+        360,
+        640
+      ]
+    },
+    "observation.images.global": {
+      "type": "VISUAL",
+      "shape": [
+        3,
+        480,
+        640
+      ]
+    },
+    "observation.images.global_right": {
+      "type": "VISUAL",
+      "shape": [
+        3,
+        480,
+        640
+      ]
+    }
+  },
+  "output_features": {
+    "action": {
+      "type": "ACTION",
+      "shape": [
+        7
+      ]
+    }
+  },
+  "normalization_mapping": {
+    "VISUAL": "IDENTITY",
+    "STATE": "QUANTILES",
+    "ACTION": "QUANTILES"
+  },
+  "quantile_stat_max_differences": {
+    "policy_preprocessor_step_3_normalizer_processor.safetensors/action.q01": 1.1444091807533141e-07,
+    "policy_preprocessor_step_3_normalizer_processor.safetensors/action.q99": 5.7220458149487285e-08,
+    "policy_preprocessor_step_3_normalizer_processor.safetensors/observation.state.q01": 4.7683715642676816e-08,
+    "policy_preprocessor_step_3_normalizer_processor.safetensors/observation.state.q99": 8.583068877854316e-08,
+    "policy_postprocessor_step_0_unnormalizer_processor.safetensors/action.q01": 1.1444091807533141e-07,
+    "policy_postprocessor_step_0_unnormalizer_processor.safetensors/action.q99": 5.7220458149487285e-08,
+    "policy_postprocessor_step_0_unnormalizer_processor.safetensors/observation.state.q01": 4.7683715642676816e-08,
+    "policy_postprocessor_step_0_unnormalizer_processor.safetensors/observation.state.q99": 8.583068877854316e-08
+  },
+  "checks": {
+    "absolute_joint_actions": true,
+    "gripper_action_binary_open0_close1": true,
+    "gripper_state_continuous_radians": true,
+    "live_rgb_conversion": true,
+    "action_horizon_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  }
+}

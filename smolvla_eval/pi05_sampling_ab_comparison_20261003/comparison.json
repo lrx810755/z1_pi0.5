@@ -1,0 +1,932 @@
+{
+  "aggregate": {
+    "baseline": {
+      "episodes": 10,
+      "success": 0,
+      "closed_once": 0,
+      "preclose_target_contact": 0,
+      "table_contact": 7,
+      "physical_grasp": 0,
+      "lifted": 0,
+      "median_first_close_sim_s": null,
+      "policy_gripper_range_rad": [
+        -0.9067032337188721,
+        -0.8946910500526428
+      ],
+      "median_effective_actions_per_sim_s": 8.069501195274825,
+      "failure_categories": {
+        "grasp_failed": 2,
+        "joint_tracking_fault": 1,
+        "finger_table_contact": 7
+      }
+    },
+    "uniform": {
+      "episodes": 10,
+      "success": 0,
+      "closed_once": 0,
+      "preclose_target_contact": 0,
+      "table_contact": 8,
+      "physical_grasp": 0,
+      "lifted": 0,
+      "median_first_close_sim_s": null,
+      "policy_gripper_range_rad": [
+        -0.9074006080627441,
+        -0.8951719403266907
+      ],
+      "median_effective_actions_per_sim_s": 8.092716226814098,
+      "failure_categories": {
+        "finger_table_contact": 8,
+        "joint_tracking_fault": 1,
+        "grasp_failed": 1
+      }
+    },
+    "weighted": {
+      "episodes": 10,
+      "success": 0,
+      "closed_once": 1,
+      "preclose_target_contact": 0,
+      "table_contact": 6,
+      "physical_grasp": 0,
+      "lifted": 1,
+      "median_first_close_sim_s": 27.266668088999722,
+      "policy_gripper_range_rad": [
+        -0.9074589014053345,
+        -0.6234616041183472
+      ],
+      "median_effective_actions_per_sim_s": 8.106781114953144,
+      "failure_categories": {
+        "grasp_failed": 4,
+        "finger_table_contact": 6
+      }
+    }
+  },
+  "episode_metrics": {
+    "baseline": [
+      {
+        "seed": 763856373,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": false,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "grasp_failed",
+        "simulation_duration_s": 60.117,
+        "actions": 480,
+        "clipped_actions": 3,
+        "min_policy_gripper_rad": -0.9067032337188721,
+        "max_policy_gripper_rad": -0.8946910500526428,
+        "target_position_m": [
+          0.615098,
+          -0.215406,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 20855437,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": false,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "joint_tracking_fault",
+        "simulation_duration_s": 4.417,
+        "actions": 35,
+        "clipped_actions": 3,
+        "min_policy_gripper_rad": -0.9028798341751099,
+        "max_policy_gripper_rad": -0.8971909880638123,
+        "target_position_m": [
+          0.431407,
+          -0.10685,
+          1e-06
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1001730107,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 7.667,
+        "actions": 62,
+        "clipped_actions": 4,
+        "min_policy_gripper_rad": -0.9051708579063416,
+        "max_policy_gripper_rad": -0.8973971009254456,
+        "target_position_m": [
+          0.439549,
+          -0.125324,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 393805101,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": false,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "grasp_failed",
+        "simulation_duration_s": 60.017,
+        "actions": 484,
+        "clipped_actions": 4,
+        "min_policy_gripper_rad": -0.9061536192893982,
+        "max_policy_gripper_rad": -0.8955841660499573,
+        "target_position_m": [
+          0.661888,
+          -0.262505,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 882884764,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 7.183,
+        "actions": 58,
+        "clipped_actions": 4,
+        "min_policy_gripper_rad": -0.9050334095954895,
+        "max_policy_gripper_rad": -0.8979467153549194,
+        "target_position_m": [
+          0.484978,
+          -0.103911,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1810093728,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 8.2,
+        "actions": 66,
+        "clipped_actions": 2,
+        "min_policy_gripper_rad": -0.9043912291526794,
+        "max_policy_gripper_rad": -0.8966770768165588,
+        "target_position_m": [
+          0.517089,
+          -0.236499,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1370963773,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 16.317,
+        "actions": 133,
+        "clipped_actions": 2,
+        "min_policy_gripper_rad": -0.906051516532898,
+        "max_policy_gripper_rad": -0.8969162106513977,
+        "target_position_m": [
+          0.526796,
+          -0.218592,
+          -0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1280471574,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 7.95,
+        "actions": 65,
+        "clipped_actions": 0,
+        "min_policy_gripper_rad": -0.9035728573799133,
+        "max_policy_gripper_rad": -0.896127462387085,
+        "target_position_m": [
+          0.669807,
+          -0.177224,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 558614987,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 9.117,
+        "actions": 74,
+        "clipped_actions": 0,
+        "min_policy_gripper_rad": -0.9038777351379395,
+        "max_policy_gripper_rad": -0.8958526849746704,
+        "target_position_m": [
+          0.687016,
+          -0.21207,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1947663274,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 7.333,
+        "actions": 59,
+        "clipped_actions": 2,
+        "min_policy_gripper_rad": -0.9038416147232056,
+        "max_policy_gripper_rad": -0.8972266912460327,
+        "target_position_m": [
+          0.524888,
+          -0.118004,
+          0.0
+        ],
+        "contact_report_available": true
+      }
+    ],
+    "uniform": [
+      {
+        "seed": 763856373,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 11.067,
+        "actions": 89,
+        "clipped_actions": 1,
+        "min_policy_gripper_rad": -0.9039790034294128,
+        "max_policy_gripper_rad": -0.896614670753479,
+        "target_position_m": [
+          0.615096,
+          -0.215406,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 20855437,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": false,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "joint_tracking_fault",
+        "simulation_duration_s": 3.783,
+        "actions": 30,
+        "clipped_actions": 2,
+        "min_policy_gripper_rad": -0.9024607539176941,
+        "max_policy_gripper_rad": -0.8978093266487122,
+        "target_position_m": [
+          0.431407,
+          -0.10685,
+          1e-06
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1001730107,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 16.2,
+        "actions": 133,
+        "clipped_actions": 4,
+        "min_policy_gripper_rad": -0.9055448174476624,
+        "max_policy_gripper_rad": -0.8977763056755066,
+        "target_position_m": [
+          0.43955,
+          -0.125323,
+          -0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 393805101,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 11.083,
+        "actions": 90,
+        "clipped_actions": 2,
+        "min_policy_gripper_rad": -0.9036445021629333,
+        "max_policy_gripper_rad": -0.896127462387085,
+        "target_position_m": [
+          0.661888,
+          -0.262505,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 882884764,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 13.067,
+        "actions": 106,
+        "clipped_actions": 3,
+        "min_policy_gripper_rad": -0.9047891497612,
+        "max_policy_gripper_rad": -0.8978120684623718,
+        "target_position_m": [
+          0.484977,
+          -0.103913,
+          -0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1810093728,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": false,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "grasp_failed",
+        "simulation_duration_s": 60.083,
+        "actions": 485,
+        "clipped_actions": 7,
+        "min_policy_gripper_rad": -0.9074006080627441,
+        "max_policy_gripper_rad": -0.8958526849746704,
+        "target_position_m": [
+          0.51709,
+          -0.236499,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1370963773,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 7.3,
+        "actions": 60,
+        "clipped_actions": 1,
+        "min_policy_gripper_rad": -0.9032920002937317,
+        "max_policy_gripper_rad": -0.8958526849746704,
+        "target_position_m": [
+          0.526796,
+          -0.218595,
+          1e-06
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1280471574,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 8.0,
+        "actions": 65,
+        "clipped_actions": 0,
+        "min_policy_gripper_rad": -0.9039936661720276,
+        "max_policy_gripper_rad": -0.8958526849746704,
+        "target_position_m": [
+          0.669807,
+          -0.177224,
+          -0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 558614987,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 10.9,
+        "actions": 88,
+        "clipped_actions": 2,
+        "min_policy_gripper_rad": -0.9041851162910461,
+        "max_policy_gripper_rad": -0.8951719403266907,
+        "target_position_m": [
+          0.687016,
+          -0.21207,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1947663274,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 8.133,
+        "actions": 65,
+        "clipped_actions": 6,
+        "min_policy_gripper_rad": -0.9044598937034607,
+        "max_policy_gripper_rad": -0.8972597122192383,
+        "target_position_m": [
+          0.524888,
+          -0.118004,
+          0.0
+        ],
+        "contact_report_available": true
+      }
+    ],
+    "weighted": [
+      {
+        "seed": 763856373,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": false,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "grasp_failed",
+        "simulation_duration_s": 60.083,
+        "actions": 488,
+        "clipped_actions": 10,
+        "min_policy_gripper_rad": -0.9074589014053345,
+        "max_policy_gripper_rad": -0.8918188214302063,
+        "target_position_m": [
+          0.615098,
+          -0.215406,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 20855437,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 15.583,
+        "actions": 127,
+        "clipped_actions": 8,
+        "min_policy_gripper_rad": -0.906120240688324,
+        "max_policy_gripper_rad": -0.8980510830879211,
+        "target_position_m": [
+          0.431409,
+          -0.10685,
+          -0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1001730107,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 10.95,
+        "actions": 89,
+        "clipped_actions": 8,
+        "min_policy_gripper_rad": -0.9051108360290527,
+        "max_policy_gripper_rad": -0.8977763056755066,
+        "target_position_m": [
+          0.43955,
+          -0.125324,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 393805101,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": false,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "grasp_failed",
+        "simulation_duration_s": 60.033,
+        "actions": 485,
+        "clipped_actions": 3,
+        "min_policy_gripper_rad": -0.9070467352867126,
+        "max_policy_gripper_rad": -0.8958034515380859,
+        "target_position_m": [
+          0.661889,
+          -0.262506,
+          -0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 882884764,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 24.433,
+        "actions": 199,
+        "clipped_actions": 9,
+        "min_policy_gripper_rad": -0.9054082632064819,
+        "max_policy_gripper_rad": -0.8970400094985962,
+        "target_position_m": [
+          0.484978,
+          -0.103911,
+          -0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1810093728,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": false,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "grasp_failed",
+        "simulation_duration_s": 60.083,
+        "actions": 485,
+        "clipped_actions": 5,
+        "min_policy_gripper_rad": -0.9070559740066528,
+        "max_policy_gripper_rad": -0.8969518542289734,
+        "target_position_m": [
+          0.517089,
+          -0.236499,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1370963773,
+        "success": false,
+        "closed_once": true,
+        "first_close_sim_s": 27.266668088999722,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": true,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 37.033,
+        "actions": 300,
+        "clipped_actions": 6,
+        "min_policy_gripper_rad": -0.9059141278266907,
+        "max_policy_gripper_rad": -0.6234616041183472,
+        "target_position_m": [
+          0.526796,
+          -0.218595,
+          1e-06
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1280471574,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 9.25,
+        "actions": 75,
+        "clipped_actions": 0,
+        "min_policy_gripper_rad": -0.9032653570175171,
+        "max_policy_gripper_rad": -0.8953030705451965,
+        "target_position_m": [
+          0.669809,
+          -0.177225,
+          -0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 558614987,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": false,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "grasp_failed",
+        "simulation_duration_s": 60.083,
+        "actions": 487,
+        "clipped_actions": 8,
+        "min_policy_gripper_rad": -0.9068406224250793,
+        "max_policy_gripper_rad": -0.8901699781417847,
+        "target_position_m": [
+          0.687015,
+          -0.212068,
+          0.0
+        ],
+        "contact_report_available": true
+      },
+      {
+        "seed": 1947663274,
+        "success": false,
+        "closed_once": false,
+        "first_close_sim_s": null,
+        "preclose_target_contact": false,
+        "table_contact": true,
+        "preclose_target_contact_measurable": false,
+        "physical_grasp": false,
+        "lifted": false,
+        "failure_category": "finger_table_contact",
+        "simulation_duration_s": 7.6,
+        "actions": 61,
+        "clipped_actions": 2,
+        "min_policy_gripper_rad": -0.9044598937034607,
+        "max_policy_gripper_rad": -0.8974658250808716,
+        "target_position_m": [
+          0.524887,
+          -0.118004,
+          0.0
+        ],
+        "contact_report_available": true
+      }
+    ]
+  },
+  "pairing": [
+    {
+      "seed": 763856373,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 3.6055512754906894e-06,
+      "max_all_objects_orientation_difference_deg": 0.011254822319472972,
+      "max_initial_joint_difference_rad": 0.0002999999999999999,
+      "within_tolerance": true
+    },
+    {
+      "seed": 763856373,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 0.0,
+      "max_all_objects_orientation_difference_deg": 0.00010012111488388778,
+      "max_initial_joint_difference_rad": 0.0028000000000000004,
+      "within_tolerance": false
+    },
+    {
+      "seed": 20855437,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 0.0,
+      "max_all_objects_orientation_difference_deg": 0,
+      "max_initial_joint_difference_rad": 0.0002999999999999999,
+      "within_tolerance": true
+    },
+    {
+      "seed": 20855437,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 2.2360679775015785e-06,
+      "max_all_objects_orientation_difference_deg": 0.010922113198882285,
+      "max_initial_joint_difference_rad": 0.0002999999999999999,
+      "within_tolerance": true
+    },
+    {
+      "seed": 1001730107,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 2.828427124709766e-06,
+      "max_all_objects_orientation_difference_deg": 0.01140889312693661,
+      "max_initial_joint_difference_rad": 0.0002999999999999999,
+      "within_tolerance": true
+    },
+    {
+      "seed": 1001730107,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 9.999999999732445e-07,
+      "max_all_objects_orientation_difference_deg": 4.279101250090702e-05,
+      "max_initial_joint_difference_rad": 0.0028000000000000004,
+      "within_tolerance": false
+    },
+    {
+      "seed": 393805101,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 0.0,
+      "max_all_objects_orientation_difference_deg": 0,
+      "max_initial_joint_difference_rad": 0.0025000000000000005,
+      "within_tolerance": false
+    },
+    {
+      "seed": 393805101,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 1.4142135623352571e-06,
+      "max_all_objects_orientation_difference_deg": 0.0011356665849884364,
+      "max_initial_joint_difference_rad": 0.0025000000000000005,
+      "within_tolerance": false
+    },
+    {
+      "seed": 882884764,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 3.605551275440652e-06,
+      "max_all_objects_orientation_difference_deg": 0.011430598345975401,
+      "max_initial_joint_difference_rad": 0.003299999999999999,
+      "within_tolerance": false
+    },
+    {
+      "seed": 882884764,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 0.0,
+      "max_all_objects_orientation_difference_deg": 0.0005707194249138736,
+      "max_initial_joint_difference_rad": 0.0002999999999999999,
+      "within_tolerance": true
+    },
+    {
+      "seed": 1810093728,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 3.6055512754368033e-06,
+      "max_all_objects_orientation_difference_deg": 0.01145101292211081,
+      "max_initial_joint_difference_rad": 0.0041999999999999815,
+      "within_tolerance": false
+    },
+    {
+      "seed": 1810093728,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 1.0000000000287557e-06,
+      "max_all_objects_orientation_difference_deg": 0.0006495820519637763,
+      "max_initial_joint_difference_rad": 0.0045000000000000005,
+      "within_tolerance": false
+    },
+    {
+      "seed": 1370963773,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 3.1622776601712256e-06,
+      "max_all_objects_orientation_difference_deg": 0.01147417148391532,
+      "max_initial_joint_difference_rad": 0.0017000000000000001,
+      "within_tolerance": true
+    },
+    {
+      "seed": 1370963773,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 3.6055512754445007e-06,
+      "max_all_objects_orientation_difference_deg": 0.011461341850143688,
+      "max_initial_joint_difference_rad": 0.002,
+      "within_tolerance": true
+    },
+    {
+      "seed": 1280471574,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 0.0,
+      "max_all_objects_orientation_difference_deg": 5.1226418775096056e-05,
+      "max_initial_joint_difference_rad": 0.0050000000000000044,
+      "within_tolerance": false
+    },
+    {
+      "seed": 1280471574,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 2.8284271247490186e-06,
+      "max_all_objects_orientation_difference_deg": 0.011615943858268129,
+      "max_initial_joint_difference_rad": 0.0004999999999999987,
+      "within_tolerance": true
+    },
+    {
+      "seed": 558614987,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 0.0,
+      "max_all_objects_orientation_difference_deg": 0.00029549943377404024,
+      "max_initial_joint_difference_rad": 0.003700000000000001,
+      "within_tolerance": false
+    },
+    {
+      "seed": 558614987,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 3.6055512754906894e-06,
+      "max_all_objects_orientation_difference_deg": 0.011576733553069738,
+      "max_initial_joint_difference_rad": 0.003700000000000001,
+      "within_tolerance": false
+    },
+    {
+      "seed": 1947663274,
+      "arm": "uniform",
+      "max_all_objects_position_difference_m": 0.0,
+      "max_all_objects_orientation_difference_deg": 0.0003769388892865594,
+      "max_initial_joint_difference_rad": 0.0040999999999999925,
+      "within_tolerance": false
+    },
+    {
+      "seed": 1947663274,
+      "arm": "weighted",
+      "max_all_objects_position_difference_m": 3.60555127543536e-06,
+      "max_all_objects_orientation_difference_deg": 0.011328248391865834,
+      "max_initial_joint_difference_rad": 0.004399999999999999,
+      "within_tolerance": false
+    }
+  ],
+  "all_pairs_within_tolerance": false,
+  "outputs": {
+    "baseline": "/home/lp531/smolvla_eval/pi05_sampling_ab_comparison_20261003/baseline/pi05_sim_eval_20261003_114407",
+    "uniform": "/home/lp531/smolvla_eval/pi05_sampling_ab_comparison_20261003/uniform/pi05_sim_eval_20261003_115038",
+    "weighted": "/home/lp531/smolvla_eval/pi05_sampling_ab_comparison_20261003/weighted/pi05_sim_eval_20261003_115617"
+  },
+  "inference_seed_per_episode": 20261003,
+  "freeze_until_close": true,
+  "interpretation_limits": "Ten paired layouts, one inference seed. Current freeze disables target collisions until unfreeze, so preclose contact and knockdown are unmeasurable. Initial joints have small jitter; some pairs fail the strict .002rad tolerance. Closed_once and table contact are observable; do not infer an unfrozen knockdown rate."
+}

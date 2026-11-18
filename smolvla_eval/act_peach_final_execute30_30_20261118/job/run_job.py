@@ -1,0 +1,126 @@
+"""One evaluation job lifecycle, no monitoring service or automatic restarts."""
+from pathlib import Path
+from datetime import datetime
+import json
+import os
+import signal
+import subprocess
+import time
+import urllib.request
+
+JOB = Path(__file__).resolve().parent
+REQUEST = json.loads((JOB / 'request.json').read_text())
+OUTPUT = Path(REQUEST['output'])
+scene = None
+evaluation = None
+
+
+def status(phase, **extra):
+    item = dict(phase=phase, updated_at=datetime.now().astimezone().isoformat(), **extra)
+    tmp = JOB / 'status.json.tmp'
+    tmp.write_text(json.dumps(item, ensure_ascii=False, indent=2) + '\n')
+    tmp.replace(JOB / 'status.json')
+    print(json.dumps(item, ensure_ascii=False), flush=True)
+
+
+def stop_child(child):
+    if child is None or child.poll() is not None:
+        return
+    for sig, wait_s in [(signal.SIGINT, 20), (signal.SIGTERM, 10), (signal.SIGKILL, 5)]:
+        try:
+            os.killpg(child.pid, sig)
+        except ProcessLookupError:
+            return
+        try:
+            child.wait(timeout=wait_s)
+            return
+        except subprocess.TimeoutExpired:
+            continue
+
+
+def interrupted(signum, frame):
+    raise KeyboardInterrupt('job interrupted')
+
+
+for sig in (signal.SIGINT, signal.SIGTERM):
+    signal.signal(sig, interrupted)
+
+
+def main():
+    global scene, evaluation
+    import hashlib
+    pins=json.loads((JOB/'source_snapshot.json').read_text())['files']
+    for path,expected in pins.items():
+        with open(path,'rb') as stream:
+            if hashlib.file_digest(stream,'sha256').hexdigest()!=expected:
+                raise ValueError('Pinned file changed: '+path)
+    with (JOB / 'scene.log').open('w') as scene_log, (JOB / 'evaluation.log').open('w') as eval_log:
+        scene = subprocess.Popen(json.loads((JOB/'scene_command.json').read_text()),
+                                 stdin=subprocess.DEVNULL, stdout=scene_log, stderr=subprocess.STDOUT, start_new_session=True)
+        status('starting_scene', scene_pid=scene.pid)
+        deadline = time.monotonic() + 420
+        last = 'not yet available'
+        while time.monotonic() < deadline:
+            if scene.poll() is not None:
+                raise RuntimeError('Scene exited during startup: ' + str(scene.returncode))
+            try:
+                with urllib.request.urlopen('http://127.0.0.1:8868/api/status', timeout=3) as response:
+                    state = json.load(response)
+                components = ['recording', 'episode_reset', 'collision_scene', 'object_collisions']
+                if state.get('connected') and all(state.get(k, {}).get('ready') for k in components):
+                    (JOB / 'scene_ready.json').write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n')
+                    break
+                last = json.dumps({k: state.get(k) for k in ['connected', *components]})
+            except Exception as exc:
+                last = str(exc)
+            time.sleep(2)
+        else:
+            raise RuntimeError('Scene startup timeout: ' + last)
+        command=json.loads((JOB/'evaluation_command.json').read_text())
+        evaluation = subprocess.Popen(command, stdin=subprocess.DEVNULL, stdout=eval_log,
+                                      stderr=subprocess.STDOUT, start_new_session=True)
+        status('evaluating', scene_pid=scene.pid, evaluation_pid=evaluation.pid,
+               objects=REQUEST['objects'], episodes_per_object=30, total_episodes=30, execute_steps=REQUEST['execute_steps'], predicted_chunk_size=30,
+               failure_reasons_recorded=True, output=str(OUTPUT))
+        result = evaluation.wait()
+        if result != 0:
+            raise RuntimeError('Evaluation exited with status ' + str(result))
+        reports = sorted(OUTPUT.glob('act_sim_eval_*/report.json'))
+        if len(reports) != 1:
+            raise RuntimeError('Expected one evaluation report; got ' + str(len(reports)))
+        report = json.loads(reports[0].read_text())
+        counts = {obj: report['per_object'].get(obj, {}).get('episodes', 0) for obj in REQUEST['objects']}
+        if any(count != 30 for count in counts.values()):
+            raise RuntimeError('Incomplete episode counts: ' + str(counts))
+        baseline = json.loads((JOB / 'baseline_results.json').read_text())
+        prior = {item['seed']: item for item in baseline['episodes']}
+        rows = [json.loads(path.read_text()) for path in sorted(reports[0].parent.glob('episodes/*/result.json'))]
+        if len(rows) != 30 or {item['seed'] for item in rows} != set(prior) or any(item.get('execute_steps') != 30 for item in rows):
+            raise RuntimeError('Expected 30 valid paired seed executions. See per-episode results.')
+        paired = []
+        for row in rows:
+            original = prior[row['seed']]
+            paired.append(dict(seed=row['seed'], episode_number=row['episode_number'],
+                               success_15=original['success'], success_30=row['success'],
+                               failure_15=original['failure_category'], failure_30=row['failure_category'],
+                               target_position_15=original['target_position_m'], target_position_30=row['target_position_m']))
+        comparison = dict(episodes=30, successes_15=sum(row['success_15'] for row in paired),
+                          successes_30=sum(row['success_30'] for row in paired),
+                          improved=sum(row['success_30'] and not row['success_15'] for row in paired),
+                          regressed=sum(row['success_15'] and not row['success_30'] for row in paired),
+                          baseline_report=baseline['report'], report_30=str(reports[0]), per_seed=paired)
+        (OUTPUT / 'paired_comparison.json').write_text(json.dumps(comparison, indent=2) + '\n')
+        status('completed', per_object=report['per_object'], overall=report['overall'],
+               failure_categories=report['failure_categories'], report=str(reports[0]),
+               paired_comparison=str(OUTPUT / 'paired_comparison.json'), total_episodes=30)
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except BaseException as exc:
+        status('failed' if not isinstance(exc, KeyboardInterrupt) else 'interrupted', error=str(exc))
+        raise
+    finally:
+        stop_child(evaluation)
+        stop_child(scene)

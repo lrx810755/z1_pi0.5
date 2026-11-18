@@ -1,0 +1,30 @@
+{
+  "time": "2026-11-09 20:45:58",
+  "tests_passed": 52,
+  "old_interface_hashes_match": true,
+  "forward_policy": {
+    "phases": [
+      "vertical_lift",
+      "horizontal_forward_to_box"
+    ],
+    "reverse_tolerance_m": 0.003,
+    "horizontal_height_tolerance_m": 0.003,
+    "lateral_tolerance_m": 0.02,
+    "orientation_tolerance_rad": 0.035,
+    "goal_tolerance_m": 0.003,
+    "planner_candidates": [
+      "Pilz LIN v=.04 a=.02",
+      "Pilz LIN v=.02 a=.01",
+      "OMPL v=.04 a=.02"
+    ],
+    "fallback_requires_same_audit": true,
+    "live_guard_cancels_arm": true,
+    "lost_bilateral_contact_grace_s": 0.5,
+    "feedback_max_age_s": 1.0,
+    "box_horizontal_alignment_guarded": true,
+    "nominal_object_root_height_m": 0.18
+  },
+  "first_trial_result": "lift cancelled at measured lateral displacement4.32mm >3mm; no success claim",
+  "accepted_plan": "/home/lp531/z1_queue_logs/bottle_horizontal_supplement_20261109/forward_plan_1794228321168739664.json",
+  "target_successes": 40
+}

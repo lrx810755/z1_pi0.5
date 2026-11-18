@@ -1,0 +1,424 @@
+{
+  "completed": true,
+  "diagnostic_only": true,
+  "paired": true,
+  "only_control_change": "execute_steps 15 vs 5",
+  "same_model_sha256": "e9b16e9a0c76b3130614516d953ea9e1d3ac87917c42b44807db3425c4a504d5",
+  "scene_verification": [
+    {
+      "folder": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021",
+      "scenes": 10,
+      "max_position_error_m": 3.0000000000030003e-06,
+      "max_orientation_error_deg": 0.011310056763270182,
+      "max_initial_joint_error_rad": 0.0031000000299969523
+    },
+    {
+      "folder": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021",
+      "scenes": 10,
+      "max_position_error_m": 3.6055512754906894e-06,
+      "max_orientation_error_deg": 0.011612641603682486,
+      "max_initial_joint_error_rad": 0.003999999730076548
+    }
+  ],
+  "metrics": {
+    "steps15": {
+      "total": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "ever_grasped": 1,
+      "never_closed": 7,
+      "never_entered_grasp_envelope": 7,
+      "failure_categories": {
+        "grasp_failed": 8,
+        "finger_table_contact": 1,
+        "transport_or_release_failed": 1
+      },
+      "repeated_closing_episodes": 2
+    },
+    "steps5": {
+      "total": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "ever_grasped": 0,
+      "never_closed": 10,
+      "never_entered_grasp_envelope": 9,
+      "failure_categories": {
+        "finger_table_contact": 5,
+        "grasp_failed": 5
+      },
+      "repeated_closing_episodes": 0
+    }
+  },
+  "pairs": [
+    {
+      "order": 1,
+      "seed": 812759515,
+      "training_episode": 0,
+      "grid": [
+        0,
+        0
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": true,
+        "closed_once": true,
+        "close_count": 5,
+        "open_count": 5,
+        "first_close_s": 19.95000104,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_001_seed_812759515/result.json",
+        "predictions": 40,
+        "first_close_outside_execution_window": 2,
+        "first_close_inside_execution_window": 5
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "finger_table_contact",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_001_seed_812759515/result.json",
+        "predictions": 42,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      }
+    },
+    {
+      "order": 2,
+      "seed": 955076118,
+      "training_episode": 10,
+      "grid": [
+        2,
+        0
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_002_seed_955076118/result.json",
+        "predictions": 40,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_002_seed_955076118/result.json",
+        "predictions": 114,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      }
+    },
+    {
+      "order": 3,
+      "seed": 1454372544,
+      "training_episode": 20,
+      "grid": [
+        4,
+        0
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "finger_table_contact",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_003_seed_1454372544/result.json",
+        "predictions": 9,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_003_seed_1454372544/result.json",
+        "predictions": 114,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      }
+    },
+    {
+      "order": 4,
+      "seed": 177325518,
+      "training_episode": 28,
+      "grid": [
+        0,
+        1
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_004_seed_177325518/result.json",
+        "predictions": 40,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "finger_table_contact",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_004_seed_177325518/result.json",
+        "predictions": 45,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      }
+    },
+    {
+      "order": 5,
+      "seed": 879897158,
+      "training_episode": 46,
+      "grid": [
+        3,
+        1
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_005_seed_879897158/result.json",
+        "predictions": 40,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "finger_table_contact",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_005_seed_879897158/result.json",
+        "predictions": 63,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      }
+    },
+    {
+      "order": 6,
+      "seed": 2019735327,
+      "training_episode": 68,
+      "grid": [
+        1,
+        2
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": true,
+        "closed_once": true,
+        "close_count": 2,
+        "open_count": 2,
+        "first_close_s": 47.03333578600001,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_006_seed_2019735327/result.json",
+        "predictions": 40,
+        "first_close_outside_execution_window": 1,
+        "first_close_inside_execution_window": 2
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "finger_table_contact",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_006_seed_2019735327/result.json",
+        "predictions": 37,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      }
+    },
+    {
+      "order": 7,
+      "seed": 30919195,
+      "training_episode": 87,
+      "grid": [
+        4,
+        2
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_007_seed_30919195/result.json",
+        "predictions": 40,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": true,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_007_seed_30919195/result.json",
+        "predictions": 114,
+        "first_close_outside_execution_window": 18,
+        "first_close_inside_execution_window": 0
+      }
+    },
+    {
+      "order": 8,
+      "seed": 1414627800,
+      "training_episode": 95,
+      "grid": [
+        0,
+        3
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_008_seed_1414627800/result.json",
+        "predictions": 40,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_008_seed_1414627800/result.json",
+        "predictions": 113,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      }
+    },
+    {
+      "order": 9,
+      "seed": 805028582,
+      "training_episode": 101,
+      "grid": [
+        1,
+        3
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": true,
+        "entered_envelope": true,
+        "closed_once": true,
+        "close_count": 1,
+        "open_count": 0,
+        "first_close_s": 18.116667611000025,
+        "failure_category": "transport_or_release_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_009_seed_805028582/result.json",
+        "predictions": 40,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 29
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "finger_table_contact",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_009_seed_805028582/result.json",
+        "predictions": 31,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      }
+    },
+    {
+      "order": 10,
+      "seed": 227904886,
+      "training_episode": 121,
+      "grid": [
+        4,
+        3
+      ],
+      "steps15": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_20261021/rollouts/act_sim_eval_20261021_145905/episodes/cup_010_seed_227904886/result.json",
+        "predictions": 40,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      },
+      "steps5": {
+        "success": false,
+        "physical_grasp": false,
+        "entered_envelope": false,
+        "closed_once": false,
+        "close_count": 0,
+        "open_count": 0,
+        "first_close_s": null,
+        "failure_category": "grasp_failed",
+        "source_result": "/home/lp531/smolvla_eval/act_cup_train_closedloop10_steps5_20261021/rollouts/act_sim_eval_20261021_151937/episodes/cup_010_seed_227904886/result.json",
+        "predictions": 114,
+        "first_close_outside_execution_window": 0,
+        "first_close_inside_execution_window": 0
+      }
+    }
+  ]
+}

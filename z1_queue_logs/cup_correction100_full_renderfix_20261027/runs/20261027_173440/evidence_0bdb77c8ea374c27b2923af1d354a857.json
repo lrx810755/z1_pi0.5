@@ -1,0 +1,323 @@
+{
+  "task_id": "cup_correction_006_approach",
+  "task": {
+    "id": "cup_correction_006_approach",
+    "kind": "approach",
+    "grid": [
+      1,
+      1
+    ],
+    "split": "validation",
+    "source_type": "synthetic_failure_informed",
+    "source_report": "/home/lp531/smolvla_eval/act_cup_only_frustum_steps15_paired30_20261025/失败原因分类.md",
+    "synthesis_note": "Bounded perturbation around a newly planned minus90 reference, not exact policy-state replay.",
+    "route_kind": "approach",
+    "offset_approach_m": [
+      0.0,
+      0.018000000000000002,
+      0.0
+    ],
+    "rotation_tool_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "preparation_retreat_m": 0.004,
+    "requested_shift_world_m": [
+      0.012,
+      0.0,
+      0.0
+    ],
+    "loaded_offset_world_m": [
+      0.018,
+      0.012,
+      0.025
+    ],
+    "variant": 6,
+    "reference_basic_episode": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026/episode_000043",
+    "seed": 2064602644,
+    "reference_scene": {
+      "curriculum_level": "full",
+      "target_grid": [
+        1,
+        1
+      ],
+      "seed": 2064602644,
+      "object_positions_m": {
+        "cup": [
+          0.434114,
+          -0.133875,
+          -0.0
+        ],
+        "mouse": [
+          0.519261,
+          0.106091,
+          0.00015
+        ],
+        "beverage_bottle": [
+          0.550694,
+          -0.003429,
+          0.0
+        ],
+        "apple": [
+          0.601194,
+          0.157048,
+          -0.0
+        ],
+        "peach": [
+          0.557649,
+          -0.251976,
+          0.0
+        ]
+      },
+      "object_orientations_xyzw": {
+        "cup": [
+          0.2914251,
+          -3.1e-06,
+          -1.4e-06,
+          0.9565937
+        ],
+        "mouse": [
+          0.8360744,
+          0.0,
+          -0.0,
+          0.5486161
+        ],
+        "beverage_bottle": [
+          0.4185371,
+          3.2e-06,
+          -1.28e-05,
+          0.9081997
+        ],
+        "apple": [
+          0.0568962,
+          9e-07,
+          -5.03e-05,
+          0.9983801
+        ],
+        "peach": [
+          0.2900224,
+          1.06e-05,
+          -5.34e-05,
+          0.9570199
+        ]
+      },
+      "object_displacements_mm": {
+        "cup": 193.5,
+        "mouse": 129.4,
+        "beverage_bottle": 108.5,
+        "apple": 373.6,
+        "peach": 93.7
+      },
+      "sweep_clearance_target": "cup",
+      "target_sweep_clear": true
+    },
+    "reference_initial_episode": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026/episode_000043"
+  },
+  "source_type": "synthetic_failure_informed",
+  "accepted": false,
+  "recovery_complete": true,
+  "events": [
+    {
+      "event": "gripper_intent",
+      "time": 43.200002253,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 51.516669353000005,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 56.183336263,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 56.61666961900001,
+      "state": "close",
+      "target": 0.0
+    }
+  ],
+  "recovery_stages": [
+    {
+      "stage": "recover_retreat_above_rim",
+      "start": 53.016669431000004,
+      "end": 53.966669481000004,
+      "ee_position_m": [
+        0.26776334829518555,
+        -0.2434675439081111,
+        0.13072353513740206
+      ]
+    },
+    {
+      "stage": "recover_lower_outside_rim",
+      "start": 53.966669481000004,
+      "end": 55.166669543000005,
+      "ee_position_m": [
+        0.2677671993366173,
+        -0.24347389348426954,
+        0.07574218376581054
+      ]
+    },
+    {
+      "stage": "recover_final_reference",
+      "start": 55.166669543000005,
+      "end": 56.100002925000005,
+      "ee_position_m": [
+        0.2942973679933001,
+        -0.2294942607695319,
+        0.07564387287972593
+      ]
+    }
+  ],
+  "reference_position_m": [
+    0.29452733347920124,
+    -0.2296932589237352,
+    0.07717341214545467
+  ],
+  "reference_orientation_xyzw": [
+    0.6935668944900971,
+    0.13771338892311405,
+    -0.20237334545877225,
+    -0.6775286078288488
+  ],
+  "requested_start_position_m": [
+    0.28257908668928977,
+    -0.21564906444176615,
+    0.13217341214545467
+  ],
+  "preflight": {
+    "route": {
+      "anchor_position": [
+        0.29452733347920124,
+        -0.2296932589237352,
+        0.07717341214545467
+      ],
+      "bad_position": [
+        0.28257908668928977,
+        -0.21564906444176615,
+        0.13217341214545467
+      ],
+      "bad_orientation": [
+        0.6935668944900971,
+        0.13771338892311405,
+        -0.20237334545877225,
+        -0.6775286078288488
+      ],
+      "retreat_m": 0.004,
+      "strategy": "elevated_approach_0.055_retreat_0.03",
+      "preparation": [
+        {
+          "stage": "prepare_above_deviation",
+          "position": [
+            0.28257908668928977,
+            -0.21564906444176615,
+            0.15217341214545466
+          ],
+          "orientation": [
+            0.6935668944900971,
+            0.13771338892311405,
+            -0.20237334545877225,
+            -0.6775286078288488
+          ],
+          "linear": false
+        },
+        {
+          "stage": "prepare_elevated_deviation",
+          "position": [
+            0.28257908668928977,
+            -0.21564906444176615,
+            0.13217341214545467
+          ],
+          "orientation": [
+            0.6935668944900971,
+            0.13771338892311405,
+            -0.20237334545877225,
+            -0.6775286078288488
+          ],
+          "linear": true
+        }
+      ],
+      "recovery": [
+        {
+          "stage": "recover_retreat_above_rim",
+          "position": [
+            0.2680048198466934,
+            -0.2437131116552526,
+            0.13217341214545467
+          ],
+          "orientation": [
+            0.6935668944900971,
+            0.13771338892311405,
+            -0.20237334545877225,
+            -0.6775286078288488
+          ],
+          "linear": true
+        },
+        {
+          "stage": "recover_lower_outside_rim",
+          "position": [
+            0.2680048198466934,
+            -0.2437131116552526,
+            0.07717341214545467
+          ],
+          "orientation": [
+            0.6935668944900971,
+            0.13771338892311405,
+            -0.20237334545877225,
+            -0.6775286078288488
+          ],
+          "linear": true
+        },
+        {
+          "stage": "recover_final_reference",
+          "position": [
+            0.29452733347920124,
+            -0.2296932589237352,
+            0.07717341214545467
+          ],
+          "orientation": [
+            0.6935668944900971,
+            0.13771338892311405,
+            -0.20237334545877225,
+            -0.6775286078288488
+          ],
+          "linear": true
+        }
+      ],
+      "additional_preparation_height_m": 0.055,
+      "outside_retreat_m": 0.03,
+      "horizontal_deviation_preserved": true
+    },
+    "rejected": [
+      "elevated_approach_0.055_retreat_0.06:recover_retreat_above_rim position=[0.24148230621418557, -0.25773296438677, 0.13217341214545467]: MoveIt error_code=-31",
+      "elevated_approach_0.055_retreat_0.045:recover_retreat_above_rim position=[0.2547435630304395, -0.2507230380210113, 0.13217341214545467]: MoveIt error_code=-31"
+    ]
+  },
+  "actual_start_position_m": [
+    0.28238425295332265,
+    -0.21550617662966753,
+    0.13066645694254417
+  ],
+  "actual_start_orientation_xyzw": [
+    -0.6919646929751749,
+    -0.1359326070836777,
+    0.20350433803856038,
+    0.6791856700539948
+  ],
+  "measured_start_deviation_m": 0.056658922954288884,
+  "measured_world_z_deviation_m": 0.053493044797089495,
+  "measured_finger_table_clearance_m": 0.07600840924575175,
+  "actual_cup_position_at_recording_m": [
+    0.43411368131637573,
+    -0.13387475907802582,
+    0.0
+  ],
+  "preparation_table_contact_seen": false,
+  "relocalized": false
+}

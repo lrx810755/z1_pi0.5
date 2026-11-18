@@ -1,0 +1,90 @@
+usage: smolvla_sim_rollout.py [-h]
+                              [--policy-type {smolvla,act,pi05,diffusion}]
+                              [--wrist-rgb-topic WRIST_RGB_TOPIC]
+                              [--checkpoint CHECKPOINT]
+                              [--target-xy-bounds X_MIN X_MAX Y_MIN Y_MAX]
+                              [--objects {cup,apple,peach,beverage_bottle} [{cup,apple,peach,beverage_bottle} ...]]
+                              [--episodes-per-object EPISODES_PER_OBJECT]
+                              [--eval-seeds EVAL_SEEDS [EVAL_SEEDS ...]]
+                              [--gripper-min-close-hold-s GRIPPER_MIN_CLOSE_HOLD_S]
+                              [--timeout TIMEOUT] [--rate RATE]
+                              [--execution-rate EXECUTION_RATE]
+                              [--prelift-contact-stable-s PRELIFT_CONTACT_STABLE_S]
+                              [--prelift-contact-timeout-s PRELIFT_CONTACT_TIMEOUT_S]
+                              [--execute-steps EXECUTE_STEPS]
+                              [--binary-gripper | --no-binary-gripper]
+                              [--gripper-binary-threshold-rad GRIPPER_BINARY_THRESHOLD_RAD]
+                              [--gripper-action-encoding {angle,binary}]
+                              [--stop-on-pregrasp-contact]
+                              [--freeze-target-until-close | --no-freeze-target-until-close]
+                              [--max-joint-step MAX_JOINT_STEP]
+                              [--stale-timeout STALE_TIMEOUT]
+                              [--input-sync-tolerance INPUT_SYNC_TOLERANCE]
+                              [--input-sync-max-age INPUT_SYNC_MAX_AGE]
+                              [--input-sync-timeout INPUT_SYNC_TIMEOUT]
+                              [--tracking-error TRACKING_ERROR]
+                              [--tracking-error-duration TRACKING_ERROR_DURATION]
+                              [--sim-clock-timeout SIM_CLOCK_TIMEOUT]
+                              [--startup-timeout STARTUP_TIMEOUT]
+                              [--preview-episodes PREVIEW_EPISODES]
+                              [--training-manifest TRAINING_MANIFEST]
+                              [--training-dataset-root TRAINING_DATASET_ROOT]
+                              [--max-training-target-distance-m MAX_TRAINING_TARGET_DISTANCE_M]
+                              [--reject-blank-cameras] [--output OUTPUT]
+
+Evaluate a trained policy in the running Z1 Isaac Sim scene.
+
+options:
+  -h, --help            show this help message and exit
+  --policy-type {smolvla,act,pi05,diffusion}
+  --wrist-rgb-topic WRIST_RGB_TOPIC
+                        ROS image topic for the dataset's
+                        observation.images.wrist view
+  --checkpoint CHECKPOINT
+  --target-xy-bounds X_MIN X_MAX Y_MIN Y_MAX
+  --objects {cup,apple,peach,beverage_bottle} [{cup,apple,peach,beverage_bottle} ...]
+  --episodes-per-object EPISODES_PER_OBJECT
+  --eval-seeds EVAL_SEEDS [EVAL_SEEDS ...]
+  --gripper-min-close-hold-s GRIPPER_MIN_CLOSE_HOLD_S
+  --timeout TIMEOUT
+  --rate RATE
+  --execution-rate EXECUTION_RATE
+                        Command frequency; integer multiple of --rate;
+                        defaults to --rate
+  --prelift-contact-stable-s PRELIFT_CONTACT_STABLE_S
+  --prelift-contact-timeout-s PRELIFT_CONTACT_TIMEOUT_S
+  --execute-steps EXECUTE_STEPS
+  --binary-gripper, --no-binary-gripper
+                        Threshold gripper predictions into Z1 open (-0.90) /
+                        close (0.0) targets (default: False)
+  --gripper-binary-threshold-rad GRIPPER_BINARY_THRESHOLD_RAD
+                        Close when the predicted angle is >= this threshold;
+                        default -0.75 rad
+  --gripper-action-encoding {angle,binary}
+                        binary: unnormalized policy output >= 0.5 closes,
+                        otherwise opens
+  --stop-on-pregrasp-contact
+  --freeze-target-until-close, --no-freeze-target-until-close
+                        Hold the target fixed until the policy first commands
+                        gripper closing (default: False)
+  --max-joint-step MAX_JOINT_STEP
+  --stale-timeout STALE_TIMEOUT
+  --input-sync-tolerance INPUT_SYNC_TOLERANCE
+                        Maximum spread of model image/state sensor times,
+                        seconds
+  --input-sync-max-age INPUT_SYNC_MAX_AGE
+                        Maximum age of a synchronized model observation in
+                        simulation seconds
+  --input-sync-timeout INPUT_SYNC_TIMEOUT
+                        Wall-clock wait for a fresh synchronized observation
+                        before stopping
+  --tracking-error TRACKING_ERROR
+  --tracking-error-duration TRACKING_ERROR_DURATION
+  --sim-clock-timeout SIM_CLOCK_TIMEOUT
+  --startup-timeout STARTUP_TIMEOUT
+  --preview-episodes PREVIEW_EPISODES
+  --training-manifest TRAINING_MANIFEST
+  --training-dataset-root TRAINING_DATASET_ROOT
+  --max-training-target-distance-m MAX_TRAINING_TARGET_DISTANCE_M
+  --reject-blank-cameras
+  --output OUTPUT

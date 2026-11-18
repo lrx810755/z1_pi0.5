@@ -1,0 +1,35 @@
+{
+  "changed_at": "2026-11-06T16:23:37.860850+08:00",
+  "scope": "apple basic demonstrations only",
+  "stage": 1,
+  "changes": [
+    "Reuse selected candidate full transfer precheck once when current start and scene remain valid; otherwise replan",
+    "Reuse immediately adjacent successful loaded grasp probe only with fresh positive live contact and unchanged start"
+  ],
+  "preplan_max_age_wall_s": 30,
+  "preplan_scene_translation_tolerance_m": 0.003,
+  "preplan_ee_translation_tolerance_m": 0.005,
+  "preplan_orientation_tolerance_rad": 0.035,
+  "preplan_joint_start_tolerance_rad": 0.03,
+  "probe_max_age_wall_s": 0.25,
+  "live_contact_max_age_wall_s": 0.2,
+  "probe_joint_change_tolerance_rad": 0.003,
+  "unchanged": [
+    "trajectory stop/stability conditions",
+    "physical contact and lift checks",
+    "closing and preload",
+    "release and in-box stability",
+    "PD and joint tolerances"
+  ],
+  "validation": {
+    "optimization_tests": 7,
+    "angle_tests": 3,
+    "original_apple_transfer_tests": 16,
+    "physical_run": false
+  },
+  "active_correction_restarted": false,
+  "files": {
+    "assistant.py": "127247f135992d8e91c6aa8995979be27bd67d366c9a29225fc79521fa015940",
+    "wait_optimization.py": "9e40e6a28f094b5763bce9bc9833a75dce43f5aa5643315c42d1ad44732d3f3e"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "verified_at": "2026-10-16 01:08:57",
+  "target_episodes": 160,
+  "valid_grid_columns": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "valid_grid_rows": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "quota_per_cell": 8,
+  "repeat_incomplete_rounds": true,
+  "recording": {
+    "phase": "RECORDING",
+    "ready": true,
+    "recording": true,
+    "missing_streams": [],
+    "episode_index": 0,
+    "frame_count": 94,
+    "dropped_frames": 0,
+    "target_object": "apple",
+    "task": "Physically grasp the apple, lift it clear, and place it in the box.",
+    "curriculum_level": "full",
+    "randomization_seed": 359725022,
+    "task_success": false,
+    "dataset_root": "/home/lp531/smolvla_data/z1_tabletop_raw_apple_preplanned_three_camera_20261016",
+    "fps": 10.0,
+    "sync_tolerance_s": 0.045,
+    "action_age_s": 0.4,
+    "last_error": "",
+    "sync_failure": "",
+    "duration_s": 9.4
+  },
+  "processes": [
+    "2074020 Fri Oct 16 01:08:32 2026 /usr/bin/python3 /home/lp531/ros2_ws/install/z1_isaac_bridge/lib/z1_isaac_bridge/grasp_assistant --ros-args --params-file /tmp/launch_params_uc2m2mzl --params-file /tmp/launch_params_85n0ddhj --params-file /tmp/launch_params_yeg72mkt --params-file /tmp/launch_params_dcn30tuk",
+    "2075027 Fri Oct 16 01:08:37 2026 /usr/bin/python3 /home/lp531/ros2_ws/src/z1_ros2/z1_isaac_bridge/z1_isaac_bridge/continuous_training.py --target apple --curriculum full --episodes 8 --target-grid 0,0 --max-failures 50",
+    "2075203 Fri Oct 16 01:08:56 2026 /bin/bash -c tail -12 /home/lp531/z1_queue_logs/apple_5x4x8_preplanned_20261016/collection.log cat /home/lp531/smolvla_data/z1_tabletop_raw_apple_preplanned_three_camera_20261016/dataset_info.json | head -55 python3 - <<'PY' import json,urllib.request,pathlib,subprocess,time root=pathlib.Path('/home/lp531/z1_queue_logs/apple_5x4x8_preplanned_20261016') d=json.load(urllib.request.urlopen('http://127.0.0.1:8767/api/status',timeout=4)) rows=subprocess.check_output(['ps','-eo','pid=,lstart=,args='],text=True).splitlines() procs=[r.strip() for r in rows if ('/grasp_assistant --ros-args' in r or 'continuous_training.py --target apple' in r)] report={'verified_at':time.strftime('%Y-%m-%d %H:%M:%S'),'target_episodes':160,'valid_grid_columns':[0,1,2,3],'valid_grid_rows':[0,1,2,3,4],'quota_per_cell':8,'repeat_incomplete_rounds':True,'recording':d.get('recording'),'processes':procs} (root/'startup_verified.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)) print(json.dumps({'recording':d['recording']['recording'],'frames':d['recording']['frame_count'],'missing':d['recording']['missing_streams'],'processes':procs},ensure_ascii=False)) PY"
+  ]
+}

@@ -1,0 +1,4 @@
+# Bottle preplanned lift and carry
+User request: after closing, plan lift and carry before moving; add no long wait.
+Implement in private bottle supplement only. Closed, preloaded state supplies the rigid grasp offset. Both legs must pass the existing forward, floor, orientation guards. Second leg starts at first leg endpoint, retaining measured closed gripper angle. No arm motion if either leg fails. Preserve fixed attitude and existing10mm preclose tolerance.
+User correction: follow cup look-ahead pattern, no artificial6s budget. Retain existing per-request MoveIt timeout. If infeasible, fail before lifting. No planning between legs. Keep existing physical validation and live cancellation; stale actual joints or bottle pose invalidate the stored leg. No change to descent/release or old interfaces.

@@ -1,0 +1,136 @@
+--- /home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/run_z1_ros2_scene.py
++++ /home/lp531/smolvla_eval/act_cup_only_renderfix_steps15_paired10_20261026/run_cup_only_scene.py
+@@ -8,6 +8,9 @@
+ import random
+ import sys
+ import time
++from pathlib import Path
++sys.path.insert(0, '/home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts')
++CUP_ONLY_POSES = json.loads(Path('/home/lp531/smolvla_eval/act_cup_only_renderfix_steps15_paired10_20261026/paired_cup_poses.json').read_text())
+ 
+ from layout_sweep import layout_sweep_blockers
+ from spatial_grid import grid_cell_bounds
+@@ -165,13 +168,7 @@
+ GLOBAL_CAMERA_CX = 320.0
+ GLOBAL_CAMERA_CY = 240.0
+ CAMERA_HORIZONTAL_APERTURE_MM = 20.955
+-TRAINING_OBJECT_PRIMS = (
+-    "/World/Task/Objects/Cup",
+-    "/World/Task/Objects/Apple",
+-    "/World/Task/Objects/Peach",
+-    "/World/Task/Objects/Mouse",
+-    "/World/Task/Objects/BeverageBottle",
+-)
++TRAINING_OBJECT_PRIMS = ('/World/Task/Objects/Cup',)
+ SAFE_HOME_BY_JOINT = {
+     "joint1": 0.0,
+     "joint2": 0.002,
+@@ -181,22 +178,8 @@
+     "joint6": 0.0,
+     "jointGripper": -0.90,
+ }
+-OBJECT_NAME_TO_PRIM = {
+-    "cup": "/World/Task/Objects/Cup",
+-    "apple": "/World/Task/Objects/Apple",
+-    "peach": "/World/Task/Objects/Peach",
+-    "mouse": "/World/Task/Objects/Mouse",
+-    "beverage_bottle": "/World/Task/Objects/BeverageBottle",
+-}
+-ACTIVE_OBJECT_COLLIDER_PATHS = {
+-    "cup": f"{OBJECT_NAME_TO_PRIM['cup']}/Collider",
+-    "apple": f"{OBJECT_NAME_TO_PRIM['apple']}/SmolVLACollisionProxy",
+-    "peach": f"{OBJECT_NAME_TO_PRIM['peach']}/SmolVLACollisionProxy",
+-    "mouse": f"{OBJECT_NAME_TO_PRIM['mouse']}/SmolVLACollisionProxy",
+-    "beverage_bottle": (
+-        f"{OBJECT_NAME_TO_PRIM['beverage_bottle']}/Collider"
+-    ),
+-}
++OBJECT_NAME_TO_PRIM = {'cup': '/World/Task/Objects/Cup'}
++ACTIVE_OBJECT_COLLIDER_PATHS = {'cup': '/World/Task/Objects/Cup/Collider'}
+ ACTIVE_COLLIDER_BY_OBJECT_ROOT = {
+     OBJECT_NAME_TO_PRIM[name]: collider_path
+     for name, collider_path in ACTIVE_OBJECT_COLLIDER_PATHS.items()
+@@ -474,6 +457,8 @@
+ def configure_fruit_collision_approximations(stage):
+     """Keep scan meshes visual-only and author stable convex colliders."""
+     for object_name in ("apple", "peach", "mouse"):
++        if object_name not in OBJECT_NAME_TO_PRIM:
++            continue
+         root_path = OBJECT_NAME_TO_PRIM[object_name]
+         root = stage.GetPrimAtPath(root_path)
+         disabled = 0
+@@ -612,7 +597,7 @@
+         physx_collision.CreateContactOffsetAttr(contact_offset)
+         physx_collision.CreateRestOffsetAttr(rest_offset)
+         configured.append(str(prim.GetPath()))
+-    if len(configured) < 10:
++    if len(configured) < len(ACTIVE_OBJECT_COLLIDER_PATHS) + 8:
+         raise RuntimeError(
+             "Could not configure all gripper/fruit collision contact offsets: "
+             f"{configured}"
+@@ -690,7 +675,7 @@
+         self._kinematic_path = None
+         self._frozen_position = None
+         self._frozen_orientation = None
+-        self._target_object = "apple"
++        self._target_object = "cup"
+         self._target_grid = None
+         self._collision_reenable_path = None
+         self._collision_reenable_steps = 0
+@@ -729,21 +714,6 @@
+         self._initial_object_poses = {
+             path: rigid.get_world_pose() for path, rigid in objects.items()
+         }
+-        # The mouse's scanned mesh and rounded collision proxy share an 86 mm
+-        # long axis. Rotate the complete rigid (visual and collider together)
+-        # into the reachable short-axis grasp used by the 75-degree approach.
+-        mouse_path = OBJECT_NAME_TO_PRIM["mouse"]
+-        mouse_position, mouse_orientation = self._initial_object_poses[
+-            mouse_path
+-        ]
+-        yaw_90_wxyz = np.asarray(
+-            (math.cos(math.pi / 4.0), 0.0, 0.0, math.sin(math.pi / 4.0)),
+-            dtype=np.float32,
+-        )
+-        self._initial_object_poses[mouse_path] = (
+-            mouse_position,
+-            quaternion_multiply(yaw_90_wxyz, mouse_orientation),
+-        )
+         self._context = rclpy.context.Context()
+         rclpy.init(context=self._context)
+         self._node = rclpy.create_node(
+@@ -1267,27 +1237,13 @@
+         return sampled
+ 
+     def _sample_randomized_object_poses(self, seed, level="easy"):
+-        rng = random.Random(int(seed))
+-        layout_attempts = max(
+-            1,
+-            int(
+-                RANDOMIZATION_CONFIG.get(
+-                    "maximum_layout_sampling_attempts", 20
+-                )
+-            ),
+-        )
+-        last_error = None
+-        for _layout_attempt in range(layout_attempts):
+-            try:
+-                return self._sample_randomized_object_poses_once(
+-                    rng, level=level
+-                )
+-            except RuntimeError as exc:
+-                last_error = exc
+-        raise RuntimeError(
+-            "整组布局重采样仍失败："
+-            f"attempts={layout_attempts}；last_error={last_error}"
+-        )
++        # Replay the baseline cup pose, avoiding a changed randomization layout
++        # when the non-target sampling/rejection steps no longer exist.
++        if self._target_object != "cup":
++            raise ValueError("This isolated evaluation scene only contains cup")
++        pose = CUP_ONLY_POSES[str(int(seed))]
++        return {"cup": (np.asarray(pose["position"], dtype=np.float32),
++                        np.asarray(pose["orientation"], dtype=np.float32))}
+ 
+     def _apply_scene_randomization(
+         self, seed, level="easy", auto_validate=False, settle_duration_s=None,

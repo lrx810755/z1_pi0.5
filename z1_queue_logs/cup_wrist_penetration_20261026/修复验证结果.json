@@ -1,0 +1,52 @@
+{
+  "verified_at": "2026-10-26T11:07:21.353344+08:00",
+  "renderer_fix": {
+    "/rtx/translucency/worldEps": 0.0001
+  },
+  "static_rgb_occlusion_regression": [
+    {
+      "candidate": "original",
+      "occluded_pixels": 18120,
+      "large_rgb_difference_pixels": 11,
+      "large_difference_fraction": 0.0006070640176600441,
+      "median_rgb_difference": 1.0,
+      "trial": 2
+    },
+    {
+      "candidate": "original",
+      "occluded_pixels": 12610,
+      "large_rgb_difference_pixels": 48,
+      "large_difference_fraction": 0.0038065027755749404,
+      "median_rgb_difference": 1.0,
+      "trial": 5
+    },
+    {
+      "candidate": "original",
+      "occluded_pixels": 16977,
+      "large_rgb_difference_pixels": 19,
+      "large_difference_fraction": 0.001119161218118631,
+      "median_rgb_difference": 1.0,
+      "trial": 8
+    }
+  ],
+  "dynamic_replay": {
+    "paired_poses": 520,
+    "views": 3,
+    "duration_s": 104,
+    "trials": [
+      2,
+      5,
+      8,
+      12
+    ],
+    "is_act_evaluation": false,
+    "is_physics_replay": false
+  },
+  "source_scene_sha256": "547b0902f99ea4aa537282fdbcfb57c6576f7697b3f1e3bb36fe434319b1509a",
+  "source_scene_unchanged": true,
+  "actual_entrypoint_smoke_checks": [
+    "default scene",
+    "cup-only scene"
+  ],
+  "scope": "Verified renderer occlusion correction; physical contact penetrations are audited separately and were not modified."
+}

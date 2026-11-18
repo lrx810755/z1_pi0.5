@@ -1,0 +1,40 @@
+{
+  "checkpoint": "/home/lp531/smolvla_training/pi05_bottle_three_camera_20261006/checkpoints/080000/pretrained_model",
+  "cameras": [
+    "wrist",
+    "global",
+    "global_right"
+  ],
+  "input_shapes": {
+    "observation.state": [
+      1,
+      7
+    ],
+    "observation.images.wrist": [
+      1,
+      3,
+      360,
+      640
+    ],
+    "observation.images.global": [
+      1,
+      3,
+      480,
+      640
+    ],
+    "observation.images.global_right": [
+      1,
+      3,
+      480,
+      640
+    ]
+  },
+  "action_shape": [
+    1,
+    50,
+    7
+  ],
+  "finite": true,
+  "source_episode": "/home/lp531/smolvla_data/z1_tabletop_raw_left_wrist_three_camera_v1/episode_000000",
+  "scope": "Real checkpoint prediction from saved synchronized RGB/state; no robot commands"
+}

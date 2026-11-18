@@ -1,0 +1,137 @@
+[
+  {
+    "service_success": false,
+    "error": "目标物体一次闭爪失败：目标物体一次 3.0° 预紧位移过大：0.0093 m",
+    "failed_stage": "grasp_and_lift",
+    "case": {
+      "id": "pilot_nominal",
+      "cup_position_m": [
+        0.52,
+        -0.1,
+        0
+      ],
+      "target_grid": [
+        2,
+        1
+      ],
+      "relative_target_overrides": {}
+    },
+    "steps": [
+      {
+        "stage": "planning",
+        "success": true,
+        "message": "最终抓取轨迹已生成：位置 [0.392, -0.210, 0.076] m，最大关节变化 2.494 rad"
+      },
+      {
+        "stage": "approach",
+        "success": true,
+        "message": "已到达闭爪前最终定位姿态"
+      },
+      {
+        "stage": "grasp_and_lift",
+        "success": false,
+        "message": "目标物体一次闭爪失败：目标物体一次 3.0° 预紧位移过大：0.0093 m"
+      }
+    ],
+    "elapsed_wall_s": 19.79645347595215,
+    "frames": 186,
+    "max_object_root_z_m": 6.2e-05,
+    "maximum_rise_m": 6.2e-05,
+    "final_status": {
+      "baseline_z_m": -0.0,
+      "bilateral_contact": false,
+      "bilateral_contact_consecutive_frames": 0,
+      "bilateral_contact_recent": false,
+      "capture_radius_is_debug_only": true,
+      "closed": true,
+      "contact_angle_valid": true,
+      "contact_report_available": true,
+      "cylinder_tilt_deg": 0.0,
+      "cylinder_tilt_valid": true,
+      "failure_reason": "",
+      "frozen": false,
+      "geometry_contact_valid": false,
+      "grasp_envelope": {
+        "x_max_m": 0.149,
+        "x_min_m": 0.113,
+        "y_abs_max_m": 0.07,
+        "z_max_m": 0.04,
+        "z_min_m": 0.002
+      },
+      "grasp_success": false,
+      "gripper_commanded_closed": false,
+      "gripper_object_distance_m": 0.133523,
+      "gripper_obstructed": false,
+      "gripper_obstructed_estimated": false,
+      "gripper_position_past_threshold": true,
+      "gripper_position_rad": -0.6733,
+      "gripper_tf_stamp_s": 87.350004555,
+      "gripper_world_orientation_xyzw": [
+        -0.6852851771413123,
+        -0.1667616425105411,
+        0.24686364208583944,
+        0.664554830539739
+      ],
+      "gripper_world_position_m": [
+        0.43366696776784336,
+        -0.18159897568634636,
+        0.06847011195904183
+      ],
+      "holding_observed": false,
+      "inside_grasp_envelope": true,
+      "inside_success_volume": false,
+      "left_finger_contact_impulse_ns": 0.0,
+      "left_finger_contact_object": null,
+      "left_finger_table_impulse_ns": 0.0,
+      "left_finger_touching_table": false,
+      "lifted": false,
+      "near_gripper": true,
+      "object_orientation_xyzw": [
+        1.8999715393874794e-05,
+        -0.00010362965986132622,
+        -0.023953156545758247,
+        0.999713122844696
+      ],
+      "object_pose_stamp_s": 87.366671223,
+      "object_position_m": [
+        0.527667,
+        -0.094695,
+        1e-06
+      ],
+      "object_speed_m_s": 1.1e-05,
+      "object_touching_table": true,
+      "object_touching_table_estimated": true,
+      "phase": "READY",
+      "physical_grasp_candidate": false,
+      "physical_grasp_ok": false,
+      "physical_test_lift_active": false,
+      "placement_stable": false,
+      "relative_pose_stable": false,
+      "relative_position_gripper_m": [
+        0.130116,
+        0.023041,
+        0.019167
+      ],
+      "release_sequence_complete": false,
+      "release_started": false,
+      "released": false,
+      "reported_bilateral_contact": false,
+      "right_finger_contact_impulse_ns": 0.0,
+      "right_finger_contact_object": null,
+      "right_finger_table_impulse_ns": 0.0,
+      "right_finger_touching_table": false,
+      "target_collisions_enabled": true,
+      "target_finger_contact_pair_count": 2,
+      "target_finger_max_penetration_m": 0.0,
+      "target_finger_min_separation_m": 2.0556277377181686e-05,
+      "target_object": "cup",
+      "task_success": false,
+      "transport_failure_reason": "",
+      "transport_height_ok": false,
+      "was_grasped": false
+    },
+    "ever_physical_grasp": false,
+    "table_contact": false,
+    "passed": false
+  }
+]

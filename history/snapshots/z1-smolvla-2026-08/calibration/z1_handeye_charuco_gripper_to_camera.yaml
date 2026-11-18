@@ -1,0 +1,200 @@
+parent_frame: gripperStator
+child_frame: camera_color_optical_frame
+description: Hand-eye calibration recalculated after removing dirty samples identified
+  from YAML residuals and uploaded sampling images.
+source_samples_file: z1_handeye_charuco_samples(5).yaml
+source_images_zip: z1_handeye_charuco_images(1).zip
+method: TSAI / OpenCV calibrateHandEye
+used_sample_indices:
+- 8
+- 10
+- 11
+- 12
+- 13
+- 14
+- 15
+- 17
+- 18
+- 20
+- 21
+- 23
+- 25
+- 26
+- 27
+- 28
+- 29
+- 30
+removed_sample_indices:
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 9
+- 16
+- 19
+- 22
+- 24
+removed_reason_summary:
+  1-5: different board pose cluster / very large 3D residuals in original diagnostics
+  '6': high rotation residual after samples 6-30 recalculation; first sample after
+    transition
+  '7_9_16': low reprojection but high 3D residuals, likely TF/time/pose inconsistency
+  '19_24': high reprojection error in close-up images
+  '22': borderline 3D residual; removed in strict version to keep RMS below about
+    8 mm
+sample_count: 18
+charuco_squares:
+  cols: 7
+  rows: 9
+charuco_corners:
+  cols: 6
+  rows: 8
+square_size_m: 0.027
+marker_size_m: 0.0189
+aruco_dictionary: DICT_4X4_50
+translation:
+  x: 0.10068874523346821
+  y: 0.03120320054880986
+  z: -0.030258643458123093
+rotation_xyzw:
+  x: -0.5023940423384452
+  y: 0.5151748052814218
+  z: -0.4771697724918857
+  w: 0.5044840477617976
+matrix:
+- - 0.013807856446582223
+  - -0.03619242927994476
+  - 0.9992494439143647
+  - 0.10068874523346821
+- - -0.9990905824650751
+  - 0.03981846888575702
+  - 0.01524787084124618
+  - 0.03120320054880986
+- - -0.040340440378705766
+  - -0.9985512493599966
+  - -0.03560970754782877
+  - -0.030258643458123093
+- - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+residual_summary:
+  translation_rms_m: 0.007550790470981192
+  translation_rms_mm: 7.550790470981192
+  translation_mean_mm: 7.209363576912009
+  translation_max_mm: 10.627745314192305
+  rotation_rms_deg: 1.1971005524080418
+  rotation_mean_deg: 1.0830332645509215
+  rotation_max_deg: 2.3507331560694493
+per_sample_residuals:
+- index: 8
+  trans_mm: 8.062761895913454
+  rot_deg: 2.3507331560694493
+  reproj: 0.33659422397613525
+  corners: 48
+  markers: 31
+- index: 10
+  trans_mm: 3.8293925095461954
+  rot_deg: 1.1158712923076246
+  reproj: 0.5245051980018616
+  corners: 48
+  markers: 31
+- index: 11
+  trans_mm: 10.559790660206946
+  rot_deg: 1.1348258177608097
+  reproj: 0.46095752716064453
+  corners: 48
+  markers: 31
+- index: 12
+  trans_mm: 6.866131718863326
+  rot_deg: 0.7111394624962443
+  reproj: 0.4661374092102051
+  corners: 48
+  markers: 31
+- index: 13
+  trans_mm: 6.082653367524971
+  rot_deg: 0.8877079972806761
+  reproj: 0.4175442159175873
+  corners: 48
+  markers: 31
+- index: 14
+  trans_mm: 7.021972927712088
+  rot_deg: 0.9557996930623758
+  reproj: 0.9377517700195312
+  corners: 46
+  markers: 30
+- index: 15
+  trans_mm: 4.1477180409637615
+  rot_deg: 1.4161213392667007
+  reproj: 0.4441508948802948
+  corners: 48
+  markers: 31
+- index: 17
+  trans_mm: 9.793967502844103
+  rot_deg: 0.6231049103894822
+  reproj: 0.24945367872714996
+  corners: 48
+  markers: 31
+- index: 18
+  trans_mm: 10.627745314192305
+  rot_deg: 0.40045632315509644
+  reproj: 0.6202911734580994
+  corners: 48
+  markers: 31
+- index: 20
+  trans_mm: 2.9784644183274427
+  rot_deg: 0.8146861253618196
+  reproj: 0.5332174301147461
+  corners: 48
+  markers: 31
+- index: 21
+  trans_mm: 4.330599484534746
+  rot_deg: 0.7234806359541892
+  reproj: 0.6610912680625916
+  corners: 48
+  markers: 31
+- index: 23
+  trans_mm: 6.465032251830999
+  rot_deg: 1.8039190876175553
+  reproj: 0.37043702602386475
+  corners: 48
+  markers: 31
+- index: 25
+  trans_mm: 7.179544085022527
+  rot_deg: 0.5909150254099005
+  reproj: 0.41850176453590393
+  corners: 48
+  markers: 31
+- index: 26
+  trans_mm: 8.882928775635481
+  rot_deg: 0.6949799922178943
+  reproj: 0.36966896057128906
+  corners: 48
+  markers: 31
+- index: 27
+  trans_mm: 9.173259052507637
+  rot_deg: 1.8962492738484285
+  reproj: 0.39469146728515625
+  corners: 48
+  markers: 31
+- index: 28
+  trans_mm: 6.930094956537879
+  rot_deg: 0.6850812464713159
+  reproj: 0.4249842166900635
+  corners: 48
+  markers: 31
+- index: 29
+  trans_mm: 9.359152167976816
+  rot_deg: 1.2464988026862593
+  reproj: 0.2724349796772003
+  corners: 48
+  markers: 31
+- index: 30
+  trans_mm: 7.477335254275476
+  rot_deg: 1.443028580560766
+  reproj: 0.45550432801246643
+  corners: 48
+  markers: 31

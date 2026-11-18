@@ -1,0 +1,1 @@
+Bottle coverage addition:20 approach corrections (20 cells) +10 relative-height corrections (checkerboard10 cells). New episodes, no replacement of existing58. Keep 10Hz/3 RGB/full original task/30-action expert mask; reverse<8cm, wait<8s, physical complete success. Height offsets -3/-6/-9mm relative to bottle reference, minimum3mm finger-table clearance.

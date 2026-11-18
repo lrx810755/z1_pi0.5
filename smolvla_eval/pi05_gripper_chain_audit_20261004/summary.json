@@ -1,0 +1,2465 @@
+{
+  "summary": {
+    "scope": "15 recorded model rollouts and 2 reference rollouts; no new simulation execution",
+    "note": "joint_state is sampled before publishing the command on the same trace row; use previous command to assess feedback error. Contact statuses are asynchronous.",
+    "model_rollouts": 15,
+    "model_trace_rows": 11096,
+    "executed_raw_gripper_range": [
+      -0.9084484577178955,
+      -0.897417426109314
+    ],
+    "feedback_below_train_min_rollouts": 14,
+    "negative_command_rewrites": 3018,
+    "rewrites_equal_feedback_plus_01": 1208,
+    "source_core_sha256": "7bfccf8105d612087b9b5b4f6c5fd021c722db2c80fc4d561647934dd90b68a2"
+  },
+  "trials": [
+    {
+      "stage": "home",
+      "trial": "trial_01",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/home/trial_01/episodes/beverage_bottle_001_seed_342470491/trace.jsonl",
+      "trace_sha256": "bf36ba12c779d910036d5a76f84b24e88cb81af8608fff2b9e4013472816f8cd",
+      "rows": 420,
+      "raw_range": [
+        -0.9062134027481079,
+        -0.8976922631263733
+      ],
+      "command_range": [
+        -1.5707963267948966,
+        -0.8976922631263733
+      ],
+      "feedback_range": [
+        -1.6902,
+        -0.8753
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 343,
+        "t": 7.50000039099541,
+        "raw": -0.9002723693847656,
+        "command": -0.9004759788513184,
+        "measured_before_publish": -0.9789,
+        "previous_command": -0.9005268812179565,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": null,
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206189,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.180293,
+          "relative_position_gripper_m": [
+            0.175696,
+            -0.002482,
+            0.040377
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": null,
+          "target_finger_max_penetration_m": null,
+          "target_finger_contact_pair_count": 0
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 348,
+        "t": 7.583333728995058,
+        "raw": -0.9017386436462402,
+        "command": -0.9542,
+        "measured_before_publish": -1.0542,
+        "previous_command": -0.9263,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206189,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.174601,
+          "relative_position_gripper_m": [
+            0.165663,
+            -0.005279,
+            0.054893
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0001652253995416686,
+          "target_finger_max_penetration_m": 0.0001652253995416686,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 351,
+        "t": 7.633333731995663,
+        "raw": -0.9017386436462402,
+        "command": -1.0292,
+        "measured_before_publish": -1.1292,
+        "previous_command": -1.0075999999999998,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206189,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.170173,
+          "relative_position_gripper_m": [
+            0.159921,
+            -0.003688,
+            0.058056
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0001652253995416686,
+          "target_finger_max_penetration_m": 0.0001652253995416686,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 387,
+        "t": 8.366667102993233,
+        "raw": -0.9045006036758423,
+        "command": -1.5707963267948966,
+        "measured_before_publish": -1.6902,
+        "previous_command": -1.5707963267948966,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206189,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.131664,
+          "relative_position_gripper_m": [
+            0.116653,
+            0.003771,
+            0.060936
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0009597282623872161,
+          "target_finger_max_penetration_m": 0.0009597282623872161,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 72,
+      "rewrites_equal_feedback_plus_01": 37
+    },
+    {
+      "stage": "home",
+      "trial": "trial_02",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/home/trial_02/episodes/beverage_bottle_002_seed_342470491/trace.jsonl",
+      "trace_sha256": "f2bc6572fe939516e458642186f16cf7630d1c9b4ee71290c829a99a814e07a6",
+      "rows": 444,
+      "raw_range": [
+        -0.9058012366294861,
+        -0.8976922631263733
+      ],
+      "command_range": [
+        -1.5707963267948966,
+        -0.8976922631263733
+      ],
+      "feedback_range": [
+        -1.774,
+        -0.8777
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 397,
+        "t": 8.283333764993586,
+        "raw": -0.9030333757400513,
+        "command": -0.9068999999999999,
+        "measured_before_publish": -1.0069,
+        "previous_command": -0.905339926481247,
+        "contacts": {
+          "left_finger_contact_object": "beverage_bottle",
+          "right_finger_contact_object": null,
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.14585,
+          "relative_position_gripper_m": [
+            0.141578,
+            -0.019488,
+            0.02912
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -1.4255070709623396e-05,
+          "target_finger_max_penetration_m": 1.4255070709623396e-05,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 398,
+        "t": 8.300000431991066,
+        "raw": -0.9030333757400513,
+        "command": -0.9621000000000001,
+        "measured_before_publish": -1.0621,
+        "previous_command": -0.9068999999999999,
+        "contacts": {
+          "left_finger_contact_object": "beverage_bottle",
+          "right_finger_contact_object": null,
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.147028,
+          "relative_position_gripper_m": [
+            0.138414,
+            -0.013697,
+            0.047654
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -1.4255070709623396e-05,
+          "target_finger_max_penetration_m": 1.4255070709623396e-05,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 401,
+        "t": 8.35000043499167,
+        "raw": -0.9030333757400513,
+        "command": -1.0654,
+        "measured_before_publish": -1.1654,
+        "previous_command": -1.0194999999999999,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.147028,
+          "relative_position_gripper_m": [
+            0.138414,
+            -0.013697,
+            0.047654
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 3.9974933315534145e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 437,
+        "t": 9.066667138991761,
+        "raw": -0.9036381244659424,
+        "command": -1.5707963267948966,
+        "measured_before_publish": -1.774,
+        "previous_command": -1.5707963267948966,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.140875,
+          "relative_position_gripper_m": [
+            0.095054,
+            0.037291,
+            0.097056
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 0.00011147762415930629,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 46,
+      "rewrites_equal_feedback_plus_01": 30
+    },
+    {
+      "stage": "home",
+      "trial": "trial_03",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/home/trial_03/episodes/beverage_bottle_003_seed_342470491/trace.jsonl",
+      "trace_sha256": "98d2ce73021da028036626c51c6b456a8aeb9231863ee9ea1d4487c9c03f4c2d",
+      "rows": 442,
+      "raw_range": [
+        -0.9060760140419006,
+        -0.897417426109314
+      ],
+      "command_range": [
+        -0.9936999999999999,
+        -0.8522
+      ],
+      "feedback_range": [
+        -1.0937,
+        -0.7522
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 420,
+        "t": 8.850000460995943,
+        "raw": -0.9018505811691284,
+        "command": -0.9936999999999999,
+        "measured_before_publish": -1.0937,
+        "previous_command": -0.902167797088623,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.147604,
+          "relative_position_gripper_m": [
+            0.136642,
+            -0.008793,
+            0.055125
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 5.9168603911530226e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 420,
+        "t": 8.850000460995943,
+        "raw": -0.9018505811691284,
+        "command": -0.9936999999999999,
+        "measured_before_publish": -1.0937,
+        "previous_command": -0.902167797088623,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.147604,
+          "relative_position_gripper_m": [
+            0.136642,
+            -0.008793,
+            0.055125
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 5.9168603911530226e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": null,
+      "min_feedback_event": {
+        "row": 420,
+        "t": 8.850000460995943,
+        "raw": -0.9018505811691284,
+        "command": -0.9936999999999999,
+        "measured_before_publish": -1.0937,
+        "previous_command": -0.902167797088623,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.147604,
+          "relative_position_gripper_m": [
+            0.136642,
+            -0.008793,
+            0.055125
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 5.9168603911530226e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 5,
+      "rewrites_equal_feedback_plus_01": 2
+    },
+    {
+      "stage": "home",
+      "trial": "trial_04",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/home/trial_04/episodes/beverage_bottle_004_seed_342470491/trace.jsonl",
+      "trace_sha256": "d3932f171243f483e226dce36a8d26f19a5db9cc13fd91ae8942c162788f63e5",
+      "rows": 2850,
+      "raw_range": [
+        -0.9084484577178955,
+        -0.897417426109314
+      ],
+      "command_range": [
+        -1.5707963267948966,
+        -0.897417426109314
+      ],
+      "feedback_range": [
+        -1.6774,
+        -0.8556
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 342,
+        "t": 7.216667043001507,
+        "raw": -0.9006845951080322,
+        "command": -0.9009391069412231,
+        "measured_before_publish": -0.9909,
+        "previous_command": -0.9009900093078613,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": null,
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.174441,
+          "relative_position_gripper_m": [
+            0.169711,
+            -0.004752,
+            0.040068
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": null,
+          "target_finger_max_penetration_m": null,
+          "target_finger_contact_pair_count": 0
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 344,
+        "t": 7.25000037800055,
+        "raw": -0.9006845951080322,
+        "command": -0.9646,
+        "measured_before_publish": -1.0646,
+        "previous_command": -0.936,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.172637,
+          "relative_position_gripper_m": [
+            0.166005,
+            -0.001716,
+            0.047359
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0002311561838723719,
+          "target_finger_max_penetration_m": 0.0002311561838723719,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 347,
+        "t": 7.300000381001155,
+        "raw": -0.9006845951080322,
+        "command": -1.0437999999999998,
+        "measured_before_publish": -1.1438,
+        "previous_command": -1.0138999999999998,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.172212,
+          "relative_position_gripper_m": [
+            0.16429,
+            0.002443,
+            0.051575
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0002311561838723719,
+          "target_finger_max_penetration_m": 0.0002311561838723719,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 413,
+        "t": 8.633333784004208,
+        "raw": -0.9043195843696594,
+        "command": -1.5707963267948966,
+        "measured_before_publish": -1.6774,
+        "previous_command": -1.5189499999999998,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.162866,
+          "relative_position_gripper_m": [
+            0.089457,
+            0.08021,
+            0.10995
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 3.676974301924929e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 130,
+      "rewrites_equal_feedback_plus_01": 42
+    },
+    {
+      "stage": "home",
+      "trial": "trial_05",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/home/trial_05/episodes/beverage_bottle_005_seed_342470491/trace.jsonl",
+      "trace_sha256": "b260a04d209131ad5f117d5bb527e101b833e80128d749d19d40c7fe2bce1d24",
+      "rows": 2850,
+      "raw_range": [
+        -0.9080362319946289,
+        -0.897417426109314
+      ],
+      "command_range": [
+        -1.5036999999999998,
+        -0.897417426109314
+      ],
+      "feedback_range": [
+        -1.6037,
+        -0.8408
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 337,
+        "t": 7.25000037800055,
+        "raw": -0.9014021754264832,
+        "command": -0.9014705220858256,
+        "measured_before_publish": -0.8408,
+        "previous_command": -0.9014876087506613,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.17553,
+          "relative_position_gripper_m": [
+            0.170118,
+            -0.00723,
+            0.042645
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0011425960110500455,
+          "target_finger_max_penetration_m": 0.0011425960110500455,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 345,
+        "t": 7.38333371799672,
+        "raw": -0.9006845951080322,
+        "command": -0.9746,
+        "measured_before_publish": -1.0746,
+        "previous_command": -0.9347,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.172102,
+          "relative_position_gripper_m": [
+            0.164365,
+            -0.00472,
+            0.050802
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.002185974270105362,
+          "target_finger_max_penetration_m": 0.002185974270105362,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 347,
+        "t": 7.416667052995763,
+        "raw": -0.9006845951080322,
+        "command": -1.0492,
+        "measured_before_publish": -1.1492,
+        "previous_command": -1.0093999999999999,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.171494,
+          "relative_position_gripper_m": [
+            0.161641,
+            0.006205,
+            0.056954
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0021182438358664513,
+          "target_finger_max_penetration_m": 0.0021182438358664513,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 395,
+        "t": 8.500000443003955,
+        "raw": -0.9067630171775818,
+        "command": -1.5036999999999998,
+        "measured_before_publish": -1.6037,
+        "previous_command": -1.4955999999999998,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.145912,
+          "relative_position_gripper_m": [
+            0.113904,
+            0.035969,
+            0.083799
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.009701050817966461,
+          "target_finger_max_penetration_m": 0.009701050817966461,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 103,
+      "rewrites_equal_feedback_plus_01": 35
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_01",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/midway/trial_01/episodes/beverage_bottle_001_seed_342470491/trace.jsonl",
+      "trace_sha256": "22a42575c9b05daefd627c2d9451f4284e5bf13351b5b24a0536f23e2c1a6bb0",
+      "rows": 529,
+      "raw_range": [
+        -0.9058263301849365,
+        -0.8995682597160339
+      ],
+      "command_range": [
+        -1.5707963267948966,
+        -0.8995682597160339
+      ],
+      "feedback_range": [
+        -1.8973,
+        -0.8179
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 7,
+        "t": 0.23333334499329794,
+        "raw": -0.9035869836807251,
+        "command": -0.90488334496816,
+        "measured_before_publish": -0.8327,
+        "previous_command": -0.9052074352900187,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.145624,
+          "relative_position_gripper_m": [
+            0.13604,
+            -0.013395,
+            0.0502
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.000665176659822464,
+          "target_finger_max_penetration_m": 0.000665176659822464,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 45,
+        "t": 0.9833333839924308,
+        "raw": -0.9029616713523865,
+        "command": -0.9535000000000001,
+        "measured_before_publish": -1.0535,
+        "previous_command": -0.9450999999999999,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.154008,
+          "relative_position_gripper_m": [
+            0.141127,
+            0.02262,
+            0.057359
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 7.967431884026155e-06,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 50,
+        "t": 1.0666667219920782,
+        "raw": -0.9034154415130615,
+        "command": -1.0284,
+        "measured_before_publish": -1.1284,
+        "previous_command": -1.0207,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.152177,
+          "relative_position_gripper_m": [
+            0.137913,
+            0.022901,
+            0.060111
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0008714044815860689,
+          "target_finger_max_penetration_m": 0.0008714044815860689,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 289,
+        "t": 6.033333647996187,
+        "raw": -0.9018521904945374,
+        "command": -1.5707963267948966,
+        "measured_before_publish": -1.8973,
+        "previous_command": -1.5707963267948966,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.126325,
+          "relative_position_gripper_m": [
+            0.04804,
+            0.002976,
+            0.116795
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 6.676585326204076e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 328,
+      "rewrites_equal_feedback_plus_01": 111
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_02",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/midway/trial_02/episodes/beverage_bottle_002_seed_342470491/trace.jsonl",
+      "trace_sha256": "595fe4a5984840b84235f2cadb5379bce95bf4954ffc531fea814f544af56a58",
+      "rows": 279,
+      "raw_range": [
+        -0.906589925289154,
+        -0.9001654386520386
+      ],
+      "command_range": [
+        -1.5707963267948966,
+        -0.9010764956474304
+      ],
+      "feedback_range": [
+        -1.7255,
+        -0.8725
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 15,
+        "t": 0.38333335300558247,
+        "raw": -0.9041587710380554,
+        "command": -0.9038765827814738,
+        "measured_before_publish": -0.957,
+        "previous_command": -0.903735488653183,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.144816,
+          "relative_position_gripper_m": [
+            0.134363,
+            -0.010272,
+            0.053036
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0035121410619467497,
+          "target_finger_max_penetration_m": 0.0035121410619467497,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 41,
+        "t": 0.9500000489933882,
+        "raw": -0.9034827351570129,
+        "command": -0.9733999999999999,
+        "measured_before_publish": -1.0734,
+        "previous_command": -0.9288,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.148353,
+          "relative_position_gripper_m": [
+            0.137612,
+            0.010806,
+            0.054358
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.004487781785428524,
+          "target_finger_max_penetration_m": 0.004487781785428524,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 47,
+        "t": 1.050000054994598,
+        "raw": -0.9031677842140198,
+        "command": -1.0269,
+        "measured_before_publish": -1.1269,
+        "previous_command": -1.0037999999999998,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.150575,
+          "relative_position_gripper_m": [
+            0.138734,
+            0.018118,
+            0.055655
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 2.1798250600113533e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 185,
+        "t": 4.000000208005076,
+        "raw": -0.9049697518348694,
+        "command": -1.5707963267948966,
+        "measured_before_publish": -1.7255,
+        "previous_command": -1.5707963267948966,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.134301,
+          "relative_position_gripper_m": [
+            0.066589,
+            0.017501,
+            0.115309
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0022240590769797564,
+          "target_finger_max_penetration_m": 0.0022240590769797564,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 219,
+      "rewrites_equal_feedback_plus_01": 73
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_03",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/midway/trial_03/episodes/beverage_bottle_003_seed_342470491/trace.jsonl",
+      "trace_sha256": "ca6bfd6fefb44f6a04a0af99c944906c2353f031d1baf00585210d9f0d4ede94",
+      "rows": 300,
+      "raw_range": [
+        -0.9061582684516907,
+        -0.9003461003303528
+      ],
+      "command_range": [
+        -1.5707963267948966,
+        -0.9031677842140198
+      ],
+      "feedback_range": [
+        -1.9202,
+        -0.8241
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 6,
+        "t": 0.2500000129948603,
+        "raw": -0.9035869836807251,
+        "command": -0.9052074352900187,
+        "measured_before_publish": -0.8533,
+        "previous_command": -0.9055315256118774,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.144868,
+          "relative_position_gripper_m": [
+            0.134714,
+            -0.016102,
+            0.05079
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0011718184687197208,
+          "target_finger_max_penetration_m": 0.0011718184687197208,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 51,
+        "t": 1.116666725007235,
+        "raw": -0.9037589430809021,
+        "command": -0.9560000000000001,
+        "measured_before_publish": -1.056,
+        "previous_command": -0.9428,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.148344,
+          "relative_position_gripper_m": [
+            0.135681,
+            0.00534,
+            0.059734
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0033220662735402584,
+          "target_finger_max_penetration_m": 0.0033220662735402584,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 55,
+        "t": 1.1833333950053202,
+        "raw": -0.9017223119735718,
+        "command": -1.0262,
+        "measured_before_publish": -1.1262,
+        "previous_command": -1.0099,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.145936,
+          "relative_position_gripper_m": [
+            0.131149,
+            0.006536,
+            0.063675
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0025212126784026623,
+          "target_finger_max_penetration_m": 0.0025212126784026623,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 289,
+        "t": 6.133333653997397,
+        "raw": -0.9018521904945374,
+        "command": -1.5707963267948966,
+        "measured_before_publish": -1.9202,
+        "previous_command": -1.5707963267948966,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.12492,
+          "relative_position_gripper_m": [
+            0.042756,
+            -0.013183,
+            0.116633
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.002346881665289402,
+          "target_finger_max_penetration_m": 0.002346881665289402,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 249,
+      "rewrites_equal_feedback_plus_01": 93
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_04",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/midway/trial_04/episodes/beverage_bottle_004_seed_342470491/trace.jsonl",
+      "trace_sha256": "a5f58ac72fef3191617983187e5a2c7a337cd987d08b543c159572e2f76b4936",
+      "rows": 280,
+      "raw_range": [
+        -0.9053941369056702,
+        -0.899911105632782
+      ],
+      "command_range": [
+        -1.5707963267948966,
+        -0.9010055661201477
+      ],
+      "feedback_range": [
+        -1.7517,
+        -0.831
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 17,
+        "t": 0.43333335599163547,
+        "raw": -0.903403103351593,
+        "command": -0.903403103351593,
+        "measured_before_publish": -0.9737,
+        "previous_command": -0.9033421576023102,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.144013,
+          "relative_position_gripper_m": [
+            0.133275,
+            -0.01183,
+            0.05327
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0036977913696318865,
+          "target_finger_max_penetration_m": 0.0036977913696318865,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 49,
+        "t": 1.0833333899936406,
+        "raw": -0.9038276672363281,
+        "command": -0.9632999999999999,
+        "measured_before_publish": -1.0633,
+        "previous_command": -0.9305,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.149601,
+          "relative_position_gripper_m": [
+            0.14,
+            0.004836,
+            0.052508
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0026861049700528383,
+          "target_finger_max_penetration_m": 0.0026861049700528383,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 53,
+        "t": 1.1500000599917257,
+        "raw": -0.9038276672363281,
+        "command": -1.0385,
+        "measured_before_publish": -1.1385,
+        "previous_command": -1.0127,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.145943,
+          "relative_position_gripper_m": [
+            0.131839,
+            0.009107,
+            0.061927
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.002075819531455636,
+          "target_finger_max_penetration_m": 0.002075819531455636,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 161,
+        "t": 3.433333512992249,
+        "raw": -0.9022772908210754,
+        "command": -1.5707963267948966,
+        "measured_before_publish": -1.7517,
+        "previous_command": -1.5707963267948966,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.129471,
+          "relative_position_gripper_m": [
+            0.070681,
+            0.018713,
+            0.10685
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 0.0001694406964816153,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 203,
+      "rewrites_equal_feedback_plus_01": 65
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_05",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/midway/trial_05/episodes/beverage_bottle_005_seed_342470491/trace.jsonl",
+      "trace_sha256": "859a0960ffb529293e29d4468f99f9f2681ff957f7abb9f13cfb5993f59d8817",
+      "rows": 290,
+      "raw_range": [
+        -0.9056202173233032,
+        -0.9003233313560486
+      ],
+      "command_range": [
+        -1.5707963267948966,
+        -0.9033518731594086
+      ],
+      "feedback_range": [
+        -1.733,
+        -0.838
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 7,
+        "t": 0.2666666799923405,
+        "raw": -0.9034495949745178,
+        "command": -0.9047459562619528,
+        "measured_before_publish": -0.838,
+        "previous_command": -0.9050700465838114,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.145745,
+          "relative_position_gripper_m": [
+            0.136176,
+            -0.014621,
+            0.049839
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0021048111375421286,
+          "target_finger_max_penetration_m": 0.0021048111375421286,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 40,
+        "t": 0.9500000489933882,
+        "raw": -0.903620183467865,
+        "command": -0.9664,
+        "measured_before_publish": -1.0664,
+        "previous_command": -0.9229999999999999,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.151032,
+          "relative_position_gripper_m": [
+            0.138367,
+            0.014577,
+            0.05876
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0024979719892144203,
+          "target_finger_max_penetration_m": 0.0024979719892144203,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 49,
+        "t": 1.1000000569911208,
+        "raw": -0.9036902189254761,
+        "command": -1.0311,
+        "measured_before_publish": -1.1311,
+        "previous_command": -1.0055999999999998,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.150106,
+          "relative_position_gripper_m": [
+            0.134954,
+            0.016662,
+            0.063574
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.00374049530364573,
+          "target_finger_max_penetration_m": 0.00374049530364573,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 190,
+        "t": 4.133333548990777,
+        "raw": -0.9042057991027832,
+        "command": -1.5707963267948966,
+        "measured_before_publish": -1.733,
+        "previous_command": -1.5707963267948966,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.135894,
+          "relative_position_gripper_m": [
+            0.067,
+            0.024715,
+            0.115618
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0017835668986663222,
+          "target_finger_max_penetration_m": 0.0017835668986663222,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 241,
+      "rewrites_equal_feedback_plus_01": 82
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_01",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/preclose/trial_01/episodes/beverage_bottle_001_seed_342470491/trace.jsonl",
+      "trace_sha256": "2531d152dc8042ca2bca18fc15bee4c25f60940e786a2e63210007694ca88fa9",
+      "rows": 444,
+      "raw_range": [
+        -0.9058500528335571,
+        -0.8990662693977356
+      ],
+      "command_range": [
+        -1.5475999999999999,
+        -0.8990662693977356
+      ],
+      "feedback_range": [
+        -1.6476,
+        -0.8923
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 73,
+        "t": 1.700000089011155,
+        "raw": -0.901308000087738,
+        "command": -0.9023428161938986,
+        "measured_before_publish": -0.9669,
+        "previous_command": -0.9026015202204386,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": null,
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.135398,
+          "relative_position_gripper_m": [
+            0.125388,
+            0.042194,
+            0.028812
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": null,
+          "target_finger_max_penetration_m": null,
+          "target_finger_contact_pair_count": 0
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 100,
+        "t": 2.283333453000523,
+        "raw": -0.9017560482025146,
+        "command": -0.9540000000000001,
+        "measured_before_publish": -1.054,
+        "previous_command": -0.9331999999999999,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.130985,
+          "relative_position_gripper_m": [
+            0.121275,
+            0.036682,
+            0.033224
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.001421427703462541,
+          "target_finger_max_penetration_m": 0.001421427703462541,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 128,
+        "t": 2.8833334840019234,
+        "raw": -0.9055505394935608,
+        "command": -1.0235999999999998,
+        "measured_before_publish": -1.1236,
+        "previous_command": -1.0103,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.12485,
+          "relative_position_gripper_m": [
+            0.113666,
+            0.037521,
+            0.035493
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -9.888273780234158e-06,
+          "target_finger_max_penetration_m": 9.888273780234158e-06,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 336,
+        "t": 7.200000376004027,
+        "raw": -0.9018144011497498,
+        "command": -1.5475999999999999,
+        "measured_before_publish": -1.6476,
+        "previous_command": -1.5465,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.134443,
+          "relative_position_gripper_m": [
+            0.075793,
+            -0.015574,
+            0.109944
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0003036090638488531,
+          "target_finger_max_penetration_m": 0.0003036090638488531,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 303,
+      "rewrites_equal_feedback_plus_01": 140
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_02",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/preclose/trial_02/episodes/beverage_bottle_002_seed_342470491/trace.jsonl",
+      "trace_sha256": "68a644a7ed72db5a7c0bf8839d834c01484de2727bc763cfbf7d9c30c5e2821b",
+      "rows": 498,
+      "raw_range": [
+        -0.9061335921287537,
+        -0.8979670405387878
+      ],
+      "command_range": [
+        -1.5443,
+        -0.8979670405387878
+      ],
+      "feedback_range": [
+        -1.6443,
+        -0.8743
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 102,
+        "t": 2.216666783002438,
+        "raw": -0.9017074704170227,
+        "command": -0.9007174372673035,
+        "measured_before_publish": -0.9697,
+        "previous_command": -0.9005194306373596,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.129572,
+          "relative_position_gripper_m": [
+            0.123721,
+            0.027577,
+            0.026864
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0001616294903215021,
+          "target_finger_max_penetration_m": 0.0001616294903215021,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 125,
+        "t": 2.7000001409905963,
+        "raw": -0.904401421546936,
+        "command": -0.9626,
+        "measured_before_publish": -1.0626,
+        "previous_command": -0.9487,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.122844,
+          "relative_position_gripper_m": [
+            0.1161,
+            0.020674,
+            0.03441
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -9.748036245582625e-05,
+          "target_finger_max_penetration_m": 9.748036245582625e-05,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 129,
+        "t": 2.7666668110032333,
+        "raw": -0.9057909846305847,
+        "command": -1.0234999999999999,
+        "measured_before_publish": -1.1235,
+        "previous_command": -0.9965,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.123913,
+          "relative_position_gripper_m": [
+            0.11334,
+            0.037845,
+            0.032803
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -9.748036245582625e-05,
+          "target_finger_max_penetration_m": 9.748036245582625e-05,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 319,
+        "t": 6.716667016997235,
+        "raw": -0.899799644947052,
+        "command": -1.5443,
+        "measured_before_publish": -1.6443,
+        "previous_command": -1.5439999999999998,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.137209,
+          "relative_position_gripper_m": [
+            0.072122,
+            -0.013376,
+            0.115956
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 6.444631435442716e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 269,
+      "rewrites_equal_feedback_plus_01": 124
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_03",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/preclose/trial_03/episodes/beverage_bottle_003_seed_342470491/trace.jsonl",
+      "trace_sha256": "6b42058b146ee7e983f7ab694a72023a34f64f871f606c4a2eb0facd32818785",
+      "rows": 497,
+      "raw_range": [
+        -0.9061447381973267,
+        -0.8976922631263733
+      ],
+      "command_range": [
+        -1.4785,
+        -0.8976922631263733
+      ],
+      "feedback_range": [
+        -1.574,
+        -0.8838
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 128,
+        "t": 2.7666668110032333,
+        "raw": -0.9034895300865173,
+        "command": -0.902914971113205,
+        "measured_before_publish": -0.9663,
+        "previous_command": -0.9027234514554342,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.121375,
+          "relative_position_gripper_m": [
+            0.112777,
+            0.03828,
+            0.023408
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 2.9141347113181837e-06,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 135,
+        "t": 2.8833334840019234,
+        "raw": -0.9035242199897766,
+        "command": -0.9737000000000001,
+        "measured_before_publish": -1.0737,
+        "previous_command": -0.9483,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.117898,
+          "relative_position_gripper_m": [
+            0.110418,
+            0.02914,
+            0.029305
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 8.978549885796383e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 141,
+        "t": 2.983333488999051,
+        "raw": -0.8999007940292358,
+        "command": -1.0437999999999998,
+        "measured_before_publish": -1.1438,
+        "previous_command": -1.0101,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.120609,
+          "relative_position_gripper_m": [
+            0.110507,
+            0.025404,
+            0.041103
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -3.7279740354279056e-05,
+          "target_finger_max_penetration_m": 3.7279740354279056e-05,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 330,
+        "t": 7.0166670329927,
+        "raw": -0.9035657048225403,
+        "command": -1.474,
+        "measured_before_publish": -1.574,
+        "previous_command": -1.4628999999999999,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.136132,
+          "relative_position_gripper_m": [
+            0.083417,
+            -0.00719,
+            0.10734
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0003528381639625877,
+          "target_finger_max_penetration_m": 0.0003528381639625877,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 265,
+      "rewrites_equal_feedback_plus_01": 120
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_04",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/preclose/trial_04/episodes/beverage_bottle_004_seed_342470491/trace.jsonl",
+      "trace_sha256": "f339690d4017ed91c6274fc81c7c57c8cbeebd7334e41433448fa2b70217434f",
+      "rows": 531,
+      "raw_range": [
+        -0.9065252542495728,
+        -0.8985166549682617
+      ],
+      "command_range": [
+        -1.5182,
+        -0.8985166549682617
+      ],
+      "feedback_range": [
+        -1.6182,
+        -0.8927
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 129,
+        "t": 2.9000001509994036,
+        "raw": -0.903214693069458,
+        "command": -0.9030606746673584,
+        "measured_before_publish": -0.9543,
+        "previous_command": -0.9029836654663086,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": null,
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.121358,
+          "relative_position_gripper_m": [
+            0.112848,
+            0.03762,
+            0.024034
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": null,
+          "target_finger_max_penetration_m": null,
+          "target_finger_contact_pair_count": 0
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 136,
+        "t": 3.0166668239980936,
+        "raw": -0.903489887714386,
+        "command": -0.9608,
+        "measured_before_publish": -1.0608,
+        "previous_command": -0.9494000000000001,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.119456,
+          "relative_position_gripper_m": [
+            0.111599,
+            0.022283,
+            0.036316
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 0.00010199313692282885,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 143,
+        "t": 3.1333334959927015,
+        "raw": -0.8997634053230286,
+        "command": -1.0352999999999999,
+        "measured_before_publish": -1.1353,
+        "previous_command": -0.9720000000000001,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.119944,
+          "relative_position_gripper_m": [
+            0.109469,
+            0.028576,
+            0.039832
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.001625821110792458,
+          "target_finger_max_penetration_m": 0.001625821110792458,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 344,
+        "t": 7.366667049995158,
+        "raw": -0.9019212126731873,
+        "command": -1.5182,
+        "measured_before_publish": -1.6182,
+        "previous_command": -1.5148,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.130913,
+          "relative_position_gripper_m": [
+            0.082318,
+            0.011286,
+            0.101166
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 6.14243617746979e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 322,
+      "rewrites_equal_feedback_plus_01": 138
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_05",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/preclose/trial_05/episodes/beverage_bottle_005_seed_342470491/trace.jsonl",
+      "trace_sha256": "2be420ca24bae89798452c2d3090756d1125fe57c29d62d61fc781af262a568a",
+      "rows": 442,
+      "raw_range": [
+        -0.9059373140335083,
+        -0.8976922631263733
+      ],
+      "command_range": [
+        -1.5366,
+        -0.8976922631263733
+      ],
+      "feedback_range": [
+        -1.6366,
+        -0.8927
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 102,
+        "t": 2.216666782987886,
+        "raw": -0.9017418026924133,
+        "command": -0.9003796875476837,
+        "measured_before_publish": -0.9508,
+        "previous_command": -0.9001072645187378,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.127811,
+          "relative_position_gripper_m": [
+            0.120536,
+            0.032279,
+            0.027656
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.00038139481330290437,
+          "target_finger_max_penetration_m": 0.00038139481330290437,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 131,
+        "t": 2.800000145987724,
+        "raw": -0.9052413702011108,
+        "command": -0.971,
+        "measured_before_publish": -1.071,
+        "previous_command": -0.9549,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.117966,
+          "relative_position_gripper_m": [
+            0.11195,
+            0.018626,
+            0.032191
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0010752141242846847,
+          "target_finger_max_penetration_m": 0.0010752141242846847,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": {
+        "row": 133,
+        "t": 2.8333334819908487,
+        "raw": -0.9059373140335083,
+        "command": -1.0953,
+        "measured_before_publish": -1.1953,
+        "previous_command": -1.0187,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.117966,
+          "relative_position_gripper_m": [
+            0.11195,
+            0.018626,
+            0.032191
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.0009881152072921395,
+          "target_finger_max_penetration_m": 0.0009881152072921395,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "min_feedback_event": {
+        "row": 307,
+        "t": 6.4166670019913,
+        "raw": -0.903723955154419,
+        "command": -1.5366,
+        "measured_before_publish": -1.6366,
+        "previous_command": -1.5017999999999998,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.139919,
+          "relative_position_gripper_m": [
+            0.076439,
+            -0.012777,
+            0.116495
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 4.137372343393508e-06,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 263,
+      "rewrites_equal_feedback_plus_01": 116
+    },
+    {
+      "stage": "reference",
+      "trial": "trial_01",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/reference/trial_01/episodes/beverage_bottle_001_seed_342470491/trace.jsonl",
+      "trace_sha256": "839b900f5b15c976f3defcb85926110ce2d0bdf804625fe972404eadc7b84eb6",
+      "rows": 804,
+      "raw_range": [
+        -0.9,
+        -0.6795470117495136
+      ],
+      "command_range": [
+        -0.9,
+        -0.6997
+      ],
+      "feedback_range": [
+        -0.9585,
+        -0.713
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 285,
+        "t": 4.783333583007334,
+        "raw": -0.9,
+        "command": -0.9,
+        "measured_before_publish": -0.9517,
+        "previous_command": -0.9,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.145118,
+          "relative_position_gripper_m": [
+            0.135663,
+            -0.015238,
+            0.049219
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 2.763242946457467e-06,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 678,
+        "t": 11.333333924994804,
+        "raw": -0.7395070117502771,
+        "command": -0.7917225097923066,
+        "measured_before_publish": -0.8436,
+        "previous_command": -0.799467011750768,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": null,
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.12385,
+          "relative_position_gripper_m": [
+            0.121872,
+            0.011466,
+            0.018825
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 0.00024312571622431278,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": null,
+      "min_feedback_event": {
+        "row": 387,
+        "t": 6.483333672003937,
+        "raw": -0.9,
+        "command": -0.9,
+        "measured_before_publish": -0.9585,
+        "previous_command": -0.9,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206187,
+            0.0
+          ],
+          "gripper_object_distance_m": 0.137211,
+          "relative_position_gripper_m": [
+            0.128338,
+            -0.011127,
+            0.047248
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -0.003524113679304719,
+          "target_finger_max_penetration_m": 0.003524113679304719,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 1,
+      "rewrites_equal_feedback_plus_01": 0
+    },
+    {
+      "stage": "reference",
+      "trial": "trial_02",
+      "trace_path": "/home/lp531/smolvla_eval/pi05_staged_takeover_20261004/reference/trial_02/episodes/beverage_bottle_002_seed_342470491/trace.jsonl",
+      "trace_sha256": "cc9d9783198857511373c390269407369a6522b2b1c1ef9ec3b89816b0b31f31",
+      "rows": 1388,
+      "raw_range": [
+        -0.9,
+        -0.6336335374
+      ],
+      "command_range": [
+        -0.9,
+        -0.6336335374
+      ],
+      "feedback_range": [
+        -0.9602,
+        -0.7054
+      ],
+      "first_feedback_error_gt_005": {
+        "row": 285,
+        "t": 4.783333583007334,
+        "raw": -0.9,
+        "command": -0.9,
+        "measured_before_publish": -0.9502,
+        "previous_command": -0.9,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.145292,
+          "relative_position_gripper_m": [
+            0.136044,
+            -0.014539,
+            0.048894
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": -8.419140158366645e-07,
+          "target_finger_max_penetration_m": 8.419140158366645e-07,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_command_raw_error_gt_005": {
+        "row": 678,
+        "t": 11.333333924005274,
+        "raw": -0.7395070117502771,
+        "command": -0.7917225097923066,
+        "measured_before_publish": -0.8436,
+        "previous_command": -0.799467011750768,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": null,
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.123852,
+          "relative_position_gripper_m": [
+            0.121875,
+            0.011466,
+            0.018823
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 0.00024107660283334553,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "first_feedback_below_train_min": null,
+      "min_feedback_event": {
+        "row": 291,
+        "t": 4.8833335880044615,
+        "raw": -0.9,
+        "command": -0.9,
+        "measured_before_publish": -0.9602,
+        "previous_command": -0.9,
+        "contacts": {
+          "left_finger_contact_object": null,
+          "right_finger_contact_object": "beverage_bottle",
+          "left_finger_touching_table": false,
+          "right_finger_touching_table": false,
+          "object_position_m": [
+            0.569667,
+            -0.206188,
+            -0.0
+          ],
+          "gripper_object_distance_m": 0.144033,
+          "relative_position_gripper_m": [
+            0.134023,
+            -0.016724,
+            0.050035
+          ],
+          "frozen": true,
+          "target_collisions_enabled": true,
+          "target_finger_min_separation_m": 1.2546612197184004e-05,
+          "target_finger_max_penetration_m": 0.0,
+          "target_finger_contact_pair_count": 1
+        }
+      },
+      "negative_command_rewrites": 1,
+      "rewrites_equal_feedback_plus_01": 0
+    }
+  ],
+  "limiter_reproductions": [
+    {
+      "stage": "home",
+      "trial": "trial_01",
+      "t": 7.583333728995058,
+      "raw": -0.9017386436462402,
+      "measured": -1.0542,
+      "published": -0.9542,
+      "offline_limiter_result": -0.9542
+    },
+    {
+      "stage": "home",
+      "trial": "trial_02",
+      "t": 8.300000431991066,
+      "raw": -0.9030333757400513,
+      "measured": -1.0621,
+      "published": -0.9621000000000001,
+      "offline_limiter_result": -0.9621000000000001
+    },
+    {
+      "stage": "home",
+      "trial": "trial_03",
+      "t": 8.850000460995943,
+      "raw": -0.9018505811691284,
+      "measured": -1.0937,
+      "published": -0.9936999999999999,
+      "offline_limiter_result": -0.9936999999999999
+    },
+    {
+      "stage": "home",
+      "trial": "trial_04",
+      "t": 7.25000037800055,
+      "raw": -0.9006845951080322,
+      "measured": -1.0646,
+      "published": -0.9646,
+      "offline_limiter_result": -0.9646
+    },
+    {
+      "stage": "home",
+      "trial": "trial_05",
+      "t": 7.38333371799672,
+      "raw": -0.9006845951080322,
+      "measured": -1.0746,
+      "published": -0.9746,
+      "offline_limiter_result": -0.9746
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_01",
+      "t": 0.9833333839924308,
+      "raw": -0.9029616713523865,
+      "measured": -1.0535,
+      "published": -0.9535000000000001,
+      "offline_limiter_result": -0.9535000000000001
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_02",
+      "t": 0.9500000489933882,
+      "raw": -0.9034827351570129,
+      "measured": -1.0734,
+      "published": -0.9733999999999999,
+      "offline_limiter_result": -0.9733999999999999
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_03",
+      "t": 1.116666725007235,
+      "raw": -0.9037589430809021,
+      "measured": -1.056,
+      "published": -0.9560000000000001,
+      "offline_limiter_result": -0.9560000000000001
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_04",
+      "t": 1.0833333899936406,
+      "raw": -0.9038276672363281,
+      "measured": -1.0633,
+      "published": -0.9632999999999999,
+      "offline_limiter_result": -0.9632999999999999
+    },
+    {
+      "stage": "midway",
+      "trial": "trial_05",
+      "t": 0.9500000489933882,
+      "raw": -0.903620183467865,
+      "measured": -1.0664,
+      "published": -0.9664,
+      "offline_limiter_result": -0.9664
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_01",
+      "t": 2.283333453000523,
+      "raw": -0.9017560482025146,
+      "measured": -1.054,
+      "published": -0.9540000000000001,
+      "offline_limiter_result": -0.9540000000000001
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_02",
+      "t": 2.7000001409905963,
+      "raw": -0.904401421546936,
+      "measured": -1.0626,
+      "published": -0.9626,
+      "offline_limiter_result": -0.9626
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_03",
+      "t": 2.8833334840019234,
+      "raw": -0.9035242199897766,
+      "measured": -1.0737,
+      "published": -0.9737000000000001,
+      "offline_limiter_result": -0.9737000000000001
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_04",
+      "t": 3.0166668239980936,
+      "raw": -0.903489887714386,
+      "measured": -1.0608,
+      "published": -0.9608,
+      "offline_limiter_result": -0.9608
+    },
+    {
+      "stage": "preclose",
+      "trial": "trial_05",
+      "t": 2.800000145987724,
+      "raw": -0.9052413702011108,
+      "measured": -1.071,
+      "published": -0.971,
+      "offline_limiter_result": -0.971
+    }
+  ]
+}

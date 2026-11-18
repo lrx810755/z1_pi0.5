@@ -1,0 +1,2658 @@
+{
+  "method": "URDF forward kinematics of actual observation.state at close_frame minus one, with close_frame from frozen training manifest; roll measured around approach +X using world +Z projection, matching orientation_for_approach",
+  "summary": [
+    {
+      "source": "original",
+      "split": "all",
+      "count": 160,
+      "branches": {
+        "-90": 124,
+        "+90": 36
+      },
+      "roll_range_deg": [
+        -90.688,
+        90.791
+      ],
+      "max_deviation_from_branch_deg": 0.791
+    },
+    {
+      "source": "original",
+      "split": "train",
+      "count": 144,
+      "branches": {
+        "-90": 109,
+        "+90": 35
+      },
+      "roll_range_deg": [
+        -90.688,
+        90.791
+      ],
+      "max_deviation_from_branch_deg": 0.791
+    },
+    {
+      "source": "original",
+      "split": "validation",
+      "count": 16,
+      "branches": {
+        "-90": 15,
+        "+90": 1
+      },
+      "roll_range_deg": [
+        -89.722,
+        90.753
+      ],
+      "max_deviation_from_branch_deg": 0.753
+    },
+    {
+      "source": "old_correction",
+      "split": "all",
+      "count": 55,
+      "branches": {
+        "+90": 19,
+        "-90": 36
+      },
+      "roll_range_deg": [
+        -90.701,
+        90.779
+      ],
+      "max_deviation_from_branch_deg": 0.779
+    },
+    {
+      "source": "old_correction",
+      "split": "train",
+      "count": 50,
+      "branches": {
+        "+90": 18,
+        "-90": 32
+      },
+      "roll_range_deg": [
+        -90.701,
+        90.779
+      ],
+      "max_deviation_from_branch_deg": 0.779
+    },
+    {
+      "source": "old_correction",
+      "split": "validation",
+      "count": 5,
+      "branches": {
+        "-90": 4,
+        "+90": 1
+      },
+      "roll_range_deg": [
+        -89.718,
+        90.757
+      ],
+      "max_deviation_from_branch_deg": 0.757
+    },
+    {
+      "source": "new_correction",
+      "split": "all",
+      "count": 34,
+      "branches": {
+        "-90": 22,
+        "+90": 12
+      },
+      "roll_range_deg": [
+        -90.644,
+        90.787
+      ],
+      "max_deviation_from_branch_deg": 0.787
+    },
+    {
+      "source": "new_correction",
+      "split": "train",
+      "count": 30,
+      "branches": {
+        "-90": 18,
+        "+90": 12
+      },
+      "roll_range_deg": [
+        -90.644,
+        90.787
+      ],
+      "max_deviation_from_branch_deg": 0.787
+    },
+    {
+      "source": "new_correction",
+      "split": "validation",
+      "count": 4,
+      "branches": {
+        "-90": 4
+      },
+      "roll_range_deg": [
+        -89.72,
+        -89.702
+      ],
+      "max_deviation_from_branch_deg": 0.298
+    }
+  ],
+  "episodes": [
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000000",
+      "split": "train",
+      "frame": 129,
+      "roll_deg": -89.74276076123358,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000001",
+      "split": "train",
+      "frame": 125,
+      "roll_deg": -89.71197360584235,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000002",
+      "split": "train",
+      "frame": 123,
+      "roll_deg": -89.71271935101605,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000003",
+      "split": "train",
+      "frame": 150,
+      "roll_deg": -89.72418466088654,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000004",
+      "split": "train",
+      "frame": 152,
+      "roll_deg": -89.71533350331072,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000005",
+      "split": "train",
+      "frame": 125,
+      "roll_deg": -89.71964314299416,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000006",
+      "split": "train",
+      "frame": 123,
+      "roll_deg": -89.71451151162815,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000007",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": -89.7027815783797,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000008",
+      "split": "train",
+      "frame": 134,
+      "roll_deg": -89.69969473174176,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000009",
+      "split": "train",
+      "frame": 123,
+      "roll_deg": -90.66024948874183,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000010",
+      "split": "train",
+      "frame": 193,
+      "roll_deg": 90.74332992850655,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000011",
+      "split": "train",
+      "frame": 140,
+      "roll_deg": 90.7484644014225,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000012",
+      "split": "train",
+      "frame": 132,
+      "roll_deg": -89.6988763489348,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000013",
+      "split": "train",
+      "frame": 127,
+      "roll_deg": -90.66223749272716,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000014",
+      "split": "train",
+      "frame": 141,
+      "roll_deg": -89.69784831824416,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000015",
+      "split": "train",
+      "frame": 125,
+      "roll_deg": -89.67797738854625,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000016",
+      "split": "train",
+      "frame": 141,
+      "roll_deg": -90.0196975371921,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000017",
+      "split": "train",
+      "frame": 147,
+      "roll_deg": -89.68994509270263,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000018",
+      "split": "train",
+      "frame": 140,
+      "roll_deg": -89.66418924510049,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000019",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": -90.01484139637887,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000020",
+      "split": "train",
+      "frame": 141,
+      "roll_deg": -90.02330504628435,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000021",
+      "split": "train",
+      "frame": 135,
+      "roll_deg": 90.01996526092965,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000022",
+      "split": "train",
+      "frame": 148,
+      "roll_deg": 90.3754331515851,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000023",
+      "split": "train",
+      "frame": 137,
+      "roll_deg": -90.6336711687847,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000024",
+      "split": "train",
+      "frame": 159,
+      "roll_deg": 90.72856489750654,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000025",
+      "split": "train",
+      "frame": 138,
+      "roll_deg": 90.02310112755939,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000026",
+      "split": "train",
+      "frame": 145,
+      "roll_deg": 90.72418102376892,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000027",
+      "split": "train",
+      "frame": 140,
+      "roll_deg": 90.37171177837193,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000028",
+      "split": "train",
+      "frame": 117,
+      "roll_deg": -89.76227727943309,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000029",
+      "split": "train",
+      "frame": 125,
+      "roll_deg": -89.73827914344385,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000030",
+      "split": "train",
+      "frame": 167,
+      "roll_deg": -89.72981051149478,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000031",
+      "split": "train",
+      "frame": 129,
+      "roll_deg": -89.73142933297457,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000032",
+      "split": "train",
+      "frame": 147,
+      "roll_deg": -89.74171372310808,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000033",
+      "split": "train",
+      "frame": 126,
+      "roll_deg": -89.7581501369856,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000034",
+      "split": "validation",
+      "frame": 149,
+      "roll_deg": -89.72217437431142,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000035",
+      "split": "validation",
+      "frame": 135,
+      "roll_deg": -89.69717426005684,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000036",
+      "split": "validation",
+      "frame": 139,
+      "roll_deg": -89.70352610912197,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000037",
+      "split": "validation",
+      "frame": 125,
+      "roll_deg": -89.71355535695331,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000038",
+      "split": "validation",
+      "frame": 137,
+      "roll_deg": -89.71465182018929,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000039",
+      "split": "validation",
+      "frame": 137,
+      "roll_deg": -89.70603363459533,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000040",
+      "split": "validation",
+      "frame": 133,
+      "roll_deg": -89.71276229839653,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000041",
+      "split": "validation",
+      "frame": 132,
+      "roll_deg": -89.71300839842706,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000042",
+      "split": "train",
+      "frame": 147,
+      "roll_deg": 90.75455451313843,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000043",
+      "split": "train",
+      "frame": 131,
+      "roll_deg": -89.70204951928076,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000044",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -89.69657733620468,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000045",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -89.68950214028219,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000046",
+      "split": "train",
+      "frame": 138,
+      "roll_deg": -90.35663771809712,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000047",
+      "split": "train",
+      "frame": 137,
+      "roll_deg": 90.40425208091784,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000048",
+      "split": "train",
+      "frame": 135,
+      "roll_deg": 90.01869847389557,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000049",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -89.69135043010647,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000050",
+      "split": "train",
+      "frame": 129,
+      "roll_deg": -90.01922033273264,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000051",
+      "split": "train",
+      "frame": 146,
+      "roll_deg": -89.68570198651285,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000052",
+      "split": "train",
+      "frame": 125,
+      "roll_deg": -89.6920587582193,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000053",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -90.01638554974421,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000054",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -90.01820281531566,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000055",
+      "split": "train",
+      "frame": 140,
+      "roll_deg": 90.01983469097881,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000056",
+      "split": "train",
+      "frame": 137,
+      "roll_deg": -90.0206940059996,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000057",
+      "split": "train",
+      "frame": 135,
+      "roll_deg": -90.6280695400215,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000058",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": -90.34141060149554,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000059",
+      "split": "train",
+      "frame": 140,
+      "roll_deg": -90.33861312226958,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000060",
+      "split": "train",
+      "frame": 134,
+      "roll_deg": 90.01533481791782,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000061",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -90.02427168226171,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000062",
+      "split": "train",
+      "frame": 143,
+      "roll_deg": -89.76617535602541,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000063",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": -89.75075690449509,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000064",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": -89.75235362749832,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000065",
+      "split": "train",
+      "frame": 131,
+      "roll_deg": -89.76164706171254,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000066",
+      "split": "train",
+      "frame": 131,
+      "roll_deg": -89.75497682689766,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000067",
+      "split": "train",
+      "frame": 121,
+      "roll_deg": -89.74631319009437,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000068",
+      "split": "train",
+      "frame": 135,
+      "roll_deg": -89.72635739989481,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000069",
+      "split": "train",
+      "frame": 129,
+      "roll_deg": -89.71308848545998,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000070",
+      "split": "train",
+      "frame": 137,
+      "roll_deg": -89.71182702388298,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000071",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": 90.767100522025,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000072",
+      "split": "train",
+      "frame": 132,
+      "roll_deg": -89.70587905292683,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000073",
+      "split": "train",
+      "frame": 131,
+      "roll_deg": -89.70189033153176,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000074",
+      "split": "train",
+      "frame": 135,
+      "roll_deg": -89.70408033937058,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000075",
+      "split": "train",
+      "frame": 138,
+      "roll_deg": 90.7536402697756,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000076",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": 90.75899647225205,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000077",
+      "split": "train",
+      "frame": 125,
+      "roll_deg": -89.69245377822266,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000078",
+      "split": "train",
+      "frame": 131,
+      "roll_deg": -89.70204951928076,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000079",
+      "split": "train",
+      "frame": 136,
+      "roll_deg": -89.69320225145465,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000080",
+      "split": "train",
+      "frame": 135,
+      "roll_deg": -90.0130169906062,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000081",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -89.68902471778559,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000082",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": -90.01631160355808,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000083",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": 90.4079887698602,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000084",
+      "split": "train",
+      "frame": 132,
+      "roll_deg": 90.74036996941226,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000085",
+      "split": "train",
+      "frame": 134,
+      "roll_deg": -89.69592552258452,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000086",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": 90.40455154227158,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000087",
+      "split": "train",
+      "frame": 137,
+      "roll_deg": -90.01854174222277,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000088",
+      "split": "train",
+      "frame": 136,
+      "roll_deg": -89.66234347298241,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000089",
+      "split": "train",
+      "frame": 140,
+      "roll_deg": -89.67773173332317,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000090",
+      "split": "train",
+      "frame": 140,
+      "roll_deg": 90.38044787951777,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000091",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -90.01530746823886,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000092",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -90.02241739509768,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000093",
+      "split": "train",
+      "frame": 141,
+      "roll_deg": 90.73025593746517,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000094",
+      "split": "train",
+      "frame": 129,
+      "roll_deg": -90.01538098582398,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000095",
+      "split": "train",
+      "frame": 131,
+      "roll_deg": -89.76670022719993,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000096",
+      "split": "train",
+      "frame": 121,
+      "roll_deg": -89.75421514009119,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000097",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": -89.75909994647917,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000098",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -89.75335516284424,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000099",
+      "split": "train",
+      "frame": 127,
+      "roll_deg": -89.75672826098679,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000100",
+      "split": "train",
+      "frame": 166,
+      "roll_deg": -89.74126369390832,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000101",
+      "split": "train",
+      "frame": 127,
+      "roll_deg": -89.71046657168509,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000102",
+      "split": "train",
+      "frame": 127,
+      "roll_deg": -89.70455927863519,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000103",
+      "split": "train",
+      "frame": 122,
+      "roll_deg": 90.79098609777101,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000104",
+      "split": "train",
+      "frame": 129,
+      "roll_deg": -89.71564211665566,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000105",
+      "split": "train",
+      "frame": 131,
+      "roll_deg": 90.78245739482892,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000106",
+      "split": "train",
+      "frame": 168,
+      "roll_deg": 90.7906142509744,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000107",
+      "split": "train",
+      "frame": 123,
+      "roll_deg": -89.71273663589012,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000108",
+      "split": "train",
+      "frame": 137,
+      "roll_deg": -89.71353066428425,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000109",
+      "split": "validation",
+      "frame": 143,
+      "roll_deg": -89.69561602660092,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000110",
+      "split": "validation",
+      "frame": 141,
+      "roll_deg": 90.75284844004035,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000111",
+      "split": "validation",
+      "frame": 131,
+      "roll_deg": -89.69921127251988,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000112",
+      "split": "validation",
+      "frame": 129,
+      "roll_deg": -89.70525067817483,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000113",
+      "split": "train",
+      "frame": 141,
+      "roll_deg": -89.69183194158802,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000114",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": -89.69164331826079,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000115",
+      "split": "train",
+      "frame": 141,
+      "roll_deg": -89.692737210725,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000116",
+      "split": "train",
+      "frame": 134,
+      "roll_deg": 90.0165397612819,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000117",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": -89.69848544952795,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000118",
+      "split": "train",
+      "frame": 127,
+      "roll_deg": 90.7467759851439,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000119",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": 90.3996350343172,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000120",
+      "split": "train",
+      "frame": 131,
+      "roll_deg": 90.39485743203328,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000121",
+      "split": "train",
+      "frame": 135,
+      "roll_deg": 90.73192456938311,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000122",
+      "split": "train",
+      "frame": 144,
+      "roll_deg": -89.68240044425102,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000123",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": -90.01889208716484,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000124",
+      "split": "train",
+      "frame": 127,
+      "roll_deg": -90.02193195411388,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000125",
+      "split": "train",
+      "frame": 138,
+      "roll_deg": 90.72892057302482,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000126",
+      "split": "train",
+      "frame": 145,
+      "roll_deg": 90.37562837343515,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000127",
+      "split": "train",
+      "frame": 144,
+      "roll_deg": -89.64355831232507,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000128",
+      "split": "train",
+      "frame": 142,
+      "roll_deg": 90.72818786366582,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000129",
+      "split": "train",
+      "frame": 129,
+      "roll_deg": -89.72789098487796,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000130",
+      "split": "train",
+      "frame": 125,
+      "roll_deg": -89.72015656724233,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000131",
+      "split": "train",
+      "frame": 121,
+      "roll_deg": -90.68750391731015,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000132",
+      "split": "train",
+      "frame": 124,
+      "roll_deg": -89.70752671042374,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000133",
+      "split": "train",
+      "frame": 141,
+      "roll_deg": -89.69911022274154,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000134",
+      "split": "train",
+      "frame": 121,
+      "roll_deg": -90.67779808217615,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000135",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": -89.69733735490374,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000136",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": -90.36390170964128,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000137",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": 90.41045864227475,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000138",
+      "split": "train",
+      "frame": 141,
+      "roll_deg": -89.68432152922728,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000139",
+      "split": "train",
+      "frame": 127,
+      "roll_deg": -90.34768755302446,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000140",
+      "split": "train",
+      "frame": 129,
+      "roll_deg": -90.01672481941874,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000141",
+      "split": "train",
+      "frame": 133,
+      "roll_deg": -89.71713803034079,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000142",
+      "split": "train",
+      "frame": 152,
+      "roll_deg": -89.74879900277166,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000143",
+      "split": "train",
+      "frame": 164,
+      "roll_deg": -89.70849219871893,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000144",
+      "split": "train",
+      "frame": 135,
+      "roll_deg": -89.69717908841523,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000145",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": 90.77209283491841,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000146",
+      "split": "train",
+      "frame": 130,
+      "roll_deg": 90.7704045744847,
+      "branch": "+90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000147",
+      "split": "train",
+      "frame": 188,
+      "roll_deg": -89.74954471432063,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000148",
+      "split": "train",
+      "frame": 139,
+      "roll_deg": -89.75403042016134,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000149",
+      "split": "train",
+      "frame": 183,
+      "roll_deg": -89.7129620463699,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000150",
+      "split": "train",
+      "frame": 132,
+      "roll_deg": -89.72423687834187,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000151",
+      "split": "train",
+      "frame": 120,
+      "roll_deg": -89.72398347605039,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000152",
+      "split": "train",
+      "frame": 137,
+      "roll_deg": -89.71026612871808,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000153",
+      "split": "train",
+      "frame": 127,
+      "roll_deg": -89.72317200643376,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000154",
+      "split": "train",
+      "frame": 128,
+      "roll_deg": -89.77701067403098,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000155",
+      "split": "validation",
+      "frame": 117,
+      "roll_deg": -89.70414218296162,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000156",
+      "split": "validation",
+      "frame": 123,
+      "roll_deg": -89.70233886421575,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000157",
+      "split": "validation",
+      "frame": 123,
+      "roll_deg": -89.69771155401791,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000158",
+      "split": "validation",
+      "frame": 141,
+      "roll_deg": -89.71162950979097,
+      "branch": "-90"
+    },
+    {
+      "source": "original",
+      "path": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_standard_dynamic_three_camera_20261020/episode_000159",
+      "split": "train",
+      "frame": 132,
+      "roll_deg": -89.75179594462749,
+      "branch": "-90"
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000000",
+      "split": "train",
+      "frame": 46,
+      "roll_deg": 89.74794643519449,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 89.74946321188925
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000001",
+      "split": "train",
+      "frame": 43,
+      "roll_deg": 90.37852063611065,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.37617165388103
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000002",
+      "split": "train",
+      "frame": 40,
+      "roll_deg": -89.68690189147331,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.69349820722104
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000003",
+      "split": "train",
+      "frame": 47,
+      "roll_deg": -89.68535294984814,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.68534575513718
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000004",
+      "split": "train",
+      "frame": 49,
+      "roll_deg": -89.6957479254101,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.69070146931445
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000005",
+      "split": "train",
+      "frame": 48,
+      "roll_deg": -90.64894645951107,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -90.6593136835805
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000006",
+      "split": "train",
+      "frame": 48,
+      "roll_deg": -90.01841264193887,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -90.01625435043368
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000007",
+      "split": "train",
+      "frame": 45,
+      "roll_deg": 90.72391193797992,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.73570571079797
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000008",
+      "split": "train",
+      "frame": 50,
+      "roll_deg": -89.72098028526896,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.72071139075676
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000009",
+      "split": "train",
+      "frame": 44,
+      "roll_deg": -90.01612667682207,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        3.0,
+        0.0
+      ],
+      "initial_roll_deg": -90.29992692187194
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000010",
+      "split": "train",
+      "frame": 43,
+      "roll_deg": 89.7481577118083,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "initial_roll_deg": 89.89086088563455
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000011",
+      "split": "train",
+      "frame": 50,
+      "roll_deg": 90.73901585744876,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        1.5,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 92.24462848482318
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000012",
+      "split": "validation",
+      "frame": 17,
+      "roll_deg": -89.71769449218249,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.71769449218249
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000013",
+      "split": "train",
+      "frame": 42,
+      "roll_deg": 90.75715544492306,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.75613855085224
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000014",
+      "split": "train",
+      "frame": 41,
+      "roll_deg": -89.71162763072174,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.70822080080931
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000015",
+      "split": "train",
+      "frame": 46,
+      "roll_deg": 90.74661826478619,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.75209265131119
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000016",
+      "split": "train",
+      "frame": 45,
+      "roll_deg": 90.74508904793913,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        -1.5,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 89.25623007327638
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000017",
+      "split": "train",
+      "frame": 49,
+      "roll_deg": 90.37791484896063,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        3.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 93.37775854712781
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000018",
+      "split": "train",
+      "frame": 18,
+      "roll_deg": -90.01884200172778,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -90.01884200172778
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000019",
+      "split": "validation",
+      "frame": 49,
+      "roll_deg": -89.70611376888097,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.71020973368783
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000020",
+      "split": "train",
+      "frame": 50,
+      "roll_deg": -89.74445481174446,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.75985479340551
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000021",
+      "split": "train",
+      "frame": 47,
+      "roll_deg": -90.01402975921856,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -90.01658838080515
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000022",
+      "split": "validation",
+      "frame": 43,
+      "roll_deg": -89.7098518147605,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.7117016856281
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000023",
+      "split": "train",
+      "frame": 43,
+      "roll_deg": 90.0244699131083,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.02413929239825
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000024",
+      "split": "validation",
+      "frame": 46,
+      "roll_deg": -89.7038676674523,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.70655635725254
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000025",
+      "split": "train",
+      "frame": 43,
+      "roll_deg": -90.02361738358996,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        1.5,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -88.52110965079797
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000026",
+      "split": "train",
+      "frame": 47,
+      "roll_deg": -89.68924938233134,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        -1.5,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -91.19499322764071
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000027",
+      "split": "train",
+      "frame": 20,
+      "roll_deg": 90.76496256724754,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.76496256724754
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000028",
+      "split": "train",
+      "frame": 41,
+      "roll_deg": -89.7223531980278,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.73269561948402
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000029",
+      "split": "train",
+      "frame": 49,
+      "roll_deg": -89.71347320124707,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        3.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -86.71150348072756
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000030",
+      "split": "train",
+      "frame": 14,
+      "roll_deg": 90.74405953231079,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.74405953231079
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000031",
+      "split": "train",
+      "frame": 47,
+      "roll_deg": -90.62988513135934,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -90.63089480526972
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000032",
+      "split": "train",
+      "frame": 45,
+      "roll_deg": -89.75810076424835,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.77382655528702
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000033",
+      "split": "train",
+      "frame": 46,
+      "roll_deg": -90.34214276392133,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        -3.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -93.34930128559041
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000034",
+      "split": "train",
+      "frame": 41,
+      "roll_deg": -90.02338393347873,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -90.01908007635298
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000035",
+      "split": "train",
+      "frame": 41,
+      "roll_deg": -89.70514840743357,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "initial_roll_deg": -89.86470853336904
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000036",
+      "split": "train",
+      "frame": 47,
+      "roll_deg": 90.75470993573765,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.75334683948546
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000037",
+      "split": "train",
+      "frame": 45,
+      "roll_deg": -90.70122553077806,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -90.73924638226195
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000038",
+      "split": "train",
+      "frame": 48,
+      "roll_deg": -89.76542403217327,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.76643265470861
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000039",
+      "split": "train",
+      "frame": 49,
+      "roll_deg": -89.72085759339947,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.71887746956668
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000040",
+      "split": "train",
+      "frame": 50,
+      "roll_deg": -89.72696014693689,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        -3.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -92.75035846693511
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000041",
+      "split": "train",
+      "frame": 46,
+      "roll_deg": 90.01792777569972,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.01349075478134
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000042",
+      "split": "train",
+      "frame": 47,
+      "roll_deg": 90.74478963359998,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.75174255182125
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000043",
+      "split": "train",
+      "frame": 49,
+      "roll_deg": -89.74297899929556,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.75298592213491
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000044",
+      "split": "train",
+      "frame": 41,
+      "roll_deg": 90.73765303024052,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.77463451614521
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000045",
+      "split": "train",
+      "frame": 48,
+      "roll_deg": -89.69628177647031,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        3.0,
+        0.0
+      ],
+      "initial_roll_deg": -90.03416662715907
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000046",
+      "split": "validation",
+      "frame": 50,
+      "roll_deg": 90.75713205420284,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        -3.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 87.75987664079298
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000047",
+      "split": "train",
+      "frame": 52,
+      "roll_deg": -89.7218929006666,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.72353674575798
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000048",
+      "split": "train",
+      "frame": 44,
+      "roll_deg": -89.69657733620467,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.69985074606244
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000049",
+      "split": "train",
+      "frame": 48,
+      "roll_deg": 90.77940346035409,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        1.5,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 92.28964022026734
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000050",
+      "split": "train",
+      "frame": 51,
+      "roll_deg": -89.74437497324811,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        -1.5,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -91.25243809325099
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000051",
+      "split": "train",
+      "frame": 46,
+      "roll_deg": -89.70617397298572,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.70675817963992
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000052",
+      "split": "train",
+      "frame": 48,
+      "roll_deg": -89.71662362007648,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -89.72625882128904
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000053",
+      "split": "train",
+      "frame": 37,
+      "roll_deg": 90.01575333811037,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": 90.01372857105905
+    },
+    {
+      "source": "old_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_correction_fragments_20261019/episode_000054",
+      "split": "train",
+      "frame": 48,
+      "roll_deg": -89.73542531592304,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        3.0,
+        0.0,
+        0.0
+      ],
+      "initial_roll_deg": -86.73484829657124
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000000",
+      "split": "train",
+      "frame": 29,
+      "roll_deg": -89.7019412112025,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        -3.3,
+        1.083,
+        -2.2
+      ],
+      "initial_roll_deg": -93.1878885735634
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000001",
+      "split": "train",
+      "frame": 31,
+      "roll_deg": -89.6977506975343,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": -90.86233777513071
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000002",
+      "split": "train",
+      "frame": 42,
+      "roll_deg": -89.71836343373927,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        3.3,
+        3.3,
+        -1.351
+      ],
+      "initial_roll_deg": -85.85114644241122
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000003",
+      "split": "train",
+      "frame": 28,
+      "roll_deg": 90.31402718632518,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        2.177,
+        3.3,
+        1.209
+      ],
+      "initial_roll_deg": 91.06889160009906
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000004",
+      "split": "train",
+      "frame": 26,
+      "roll_deg": -89.6943394830555,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        -3.3,
+        3.3,
+        0.334
+      ],
+      "initial_roll_deg": -94.06581109064705
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000005",
+      "split": "train",
+      "frame": 27,
+      "roll_deg": -90.64447736895005,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.678,
+        -0.93,
+        -0.463
+      ],
+      "initial_roll_deg": -90.64516022498121
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000006",
+      "split": "train",
+      "frame": 26,
+      "roll_deg": 90.78737962559207,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        -1.491,
+        -0.237,
+        -0.084
+      ],
+      "initial_roll_deg": 88.13015388712003
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000007",
+      "split": "train",
+      "frame": 27,
+      "roll_deg": -89.68677241086728,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        3.011,
+        3.3,
+        2.2
+      ],
+      "initial_roll_deg": -87.08216196487847
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000008",
+      "split": "validation",
+      "frame": 35,
+      "roll_deg": -89.7029526393678,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        6.0,
+        -6.0,
+        4.0
+      ],
+      "initial_roll_deg": -81.57021289604617
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000009",
+      "split": "validation",
+      "frame": 26,
+      "roll_deg": -89.71970730193199,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": -90.95110869761712
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000010",
+      "split": "train",
+      "frame": 21,
+      "roll_deg": -89.72578761319187,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": -88.81457479074332
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000011",
+      "split": "train",
+      "frame": 21,
+      "roll_deg": 89.72333694591339,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": 88.71009485740335
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000012",
+      "split": "train",
+      "frame": 28,
+      "roll_deg": -89.74030539864604,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        2.969,
+        3.3,
+        1.316
+      ],
+      "initial_roll_deg": -86.12152910388082
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000013",
+      "split": "train",
+      "frame": 32,
+      "roll_deg": -90.01658838080515,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        4.8,
+        -4.8,
+        3.2
+      ],
+      "initial_roll_deg": -83.20383857522576
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000014",
+      "split": "train",
+      "frame": 30,
+      "roll_deg": 90.77679843849471,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        -2.169,
+        -0.345,
+        -0.122
+      ],
+      "initial_roll_deg": 88.51667535825706
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000015",
+      "split": "validation",
+      "frame": 31,
+      "roll_deg": -89.70227336546183,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        3.3,
+        3.3,
+        -1.247
+      ],
+      "initial_roll_deg": -85.24061106384295
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000016",
+      "split": "train",
+      "frame": 22,
+      "roll_deg": -89.73749713714764,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        1.232,
+        -1.692,
+        -0.841
+      ],
+      "initial_roll_deg": -89.17826402551786
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000017",
+      "split": "train",
+      "frame": 23,
+      "roll_deg": -90.02104389770587,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": -88.97475600784763
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000018",
+      "split": "train",
+      "frame": 28,
+      "roll_deg": 89.75216413245039,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": 88.99649257520666
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000019",
+      "split": "train",
+      "frame": 27,
+      "roll_deg": -90.34227516000621,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        3.3,
+        -3.3,
+        2.2
+      ],
+      "initial_roll_deg": -85.27348431264215
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000020",
+      "split": "validation",
+      "frame": 25,
+      "roll_deg": -89.71415007221337,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0.986,
+        -1.353,
+        -0.673
+      ],
+      "initial_roll_deg": -89.69951848033655
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000021",
+      "split": "train",
+      "frame": 35,
+      "roll_deg": -90.01610595323719,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        -4.8,
+        -4.8,
+        -3.2
+      ],
+      "initial_roll_deg": -93.6405987742157
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000022",
+      "split": "train",
+      "frame": 29,
+      "roll_deg": -89.6865582101583,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        -6.0,
+        -6.0,
+        -4.0
+      ],
+      "initial_roll_deg": -95.48283808182366
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000023",
+      "split": "train",
+      "frame": 33,
+      "roll_deg": 90.37886019738103,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        6.0,
+        -6.0,
+        4.0
+      ],
+      "initial_roll_deg": 94.68971951201276
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000024",
+      "split": "train",
+      "frame": 22,
+      "roll_deg": -89.6654362655646,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": -89.1703738056482
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000025",
+      "split": "train",
+      "frame": 28,
+      "roll_deg": -90.35223951205526,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": -91.59810810627128
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000026",
+      "split": "train",
+      "frame": 36,
+      "roll_deg": 89.73230849586237,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        3.957,
+        6.0,
+        2.198
+      ],
+      "initial_roll_deg": 93.8469635840483
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000027",
+      "split": "train",
+      "frame": 27,
+      "roll_deg": 90.74040815749636,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        3.166,
+        4.8,
+        1.759
+      ],
+      "initial_roll_deg": 93.11225583490855
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000028",
+      "split": "train",
+      "frame": 25,
+      "roll_deg": 90.72725071917662,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": 89.82982301982342
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000029",
+      "split": "train",
+      "frame": 24,
+      "roll_deg": 90.74065725779992,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": 90.02062929510818
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000030",
+      "split": "train",
+      "frame": 19,
+      "roll_deg": -89.74438008273748,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": -89.99951053359592
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000031",
+      "split": "train",
+      "frame": 23,
+      "roll_deg": -89.7001438035327,
+      "branch": "-90",
+      "perturbation_tool_deg": [
+        0,
+        0,
+        0
+      ],
+      "initial_roll_deg": -89.0113080102268
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000032",
+      "split": "train",
+      "frame": 26,
+      "roll_deg": 89.7361708061903,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        3.3,
+        -3.3,
+        2.2
+      ],
+      "initial_roll_deg": 92.11766242671325
+    },
+    {
+      "source": "new_correction",
+      "path": "/home/lp531/smolvla_data/z1_cup_failure_recovery_20261019/episode_000033",
+      "split": "train",
+      "frame": 25,
+      "roll_deg": 90.37920218876309,
+      "branch": "+90",
+      "perturbation_tool_deg": [
+        -2.711,
+        -0.432,
+        -0.152
+      ],
+      "initial_roll_deg": 88.82099390183377
+    }
+  ]
+}

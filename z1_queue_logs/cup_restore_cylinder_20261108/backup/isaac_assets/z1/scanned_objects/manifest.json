@@ -1,0 +1,211 @@
+{
+  "description": "Local high-quality visual assets for the Z1 SmolVLA tabletop scene",
+  "license_note": "Upstream credits list each source as CC Attribution; the dataset is marked cc-by-4.0. Preserve creator attribution when redistributing.",
+  "gripper_profile": {
+    "model": "Unitree Z1 single-DOF angular gripper",
+    "joint_range_deg": [
+      -90.0,
+      0.0
+    ],
+    "collision_envelope_m": [
+      0.156,
+      0.082,
+      0.06885
+    ],
+    "recommended_max_object_grasp_width_m": 0.055,
+    "design_rule": "Use a regular pinch region no wider than 55 mm; avoid handles and strongly concave contact surfaces."
+  },
+  "assets": [
+    {
+      "name": "cup",
+      "source_file": "scanned_objects/source/cup.usdz",
+      "usd_file": "scanned_objects/usd/cup.usd",
+      "sha256": "abe69401fe5c2993eaca0c4253d46bda32e3cb20fb44a93fcdff1a4cde1c73be",
+      "title": "Indian Tea Glass (Chai)",
+      "author": "bhagathgoud",
+      "license": "CC Attribution",
+      "source_url": "https://sketchfab.com/3d-models/indian-tea-glass-chai-bc87e1579d544bbd9f7d132095e40e3d",
+      "normalization_scale": 0.5,
+      "removed_source_physics_api_count": 10,
+      "bounds_m": {
+        "min": [
+          -0.0251453910022974,
+          -0.0251453910022974,
+          1.1929166987556528e-08
+        ],
+        "max": [
+          0.0251453947275877,
+          0.0251453910022974,
+          0.0609697550535202
+        ]
+      },
+      "collision": {
+        "shape": "frustum",
+        "bottom_radius_m": 0.018,
+        "top_radius_m": 0.0252,
+        "height_m": 0.061,
+        "sides": 64
+      },
+      "grasp": {
+        "strategy": "side_pinch",
+        "width_m": 0.0504,
+        "height_m": 0.035,
+        "compatible_with_z1_gripper": true,
+        "recommended_max_width_m": 0.055
+      }
+    },
+    {
+      "name": "apple",
+      "source_file": "scanned_objects/source/apple.usdz",
+      "usd_file": "scanned_objects/usd/apple.usd",
+      "sha256": "5d9c76535a611c3cbf8fb2705ff7c25abe1e76a243d19c0f080f30e419e17044",
+      "title": "Apple",
+      "author": "Moshe Caine",
+      "license": "CC Attribution",
+      "source_url": "https://sketchfab.com/3d-models/apple-da0cfd4c6a4e41c5aaf06797b463235b",
+      "normalization_scale": 0.29,
+      "removed_source_physics_api_count": 18,
+      "bounds_m": {
+        "min": [
+          -0.018152758479118347,
+          -0.018059056252241135,
+          1.0387424254076905e-10
+        ],
+        "max": [
+          0.018152758479118347,
+          0.018059054389595985,
+          0.04559699073433876
+        ]
+      },
+      "collision": {
+        "shape": "ellipsoid",
+        "radii_m": [
+          0.0176,
+          0.0175,
+          0.019
+        ]
+      },
+      "grasp": {
+        "strategy": "equatorial_pinch",
+        "width_m": 0.0352,
+        "height_m": 0.019,
+        "compatible_with_z1_gripper": true,
+        "recommended_max_width_m": 0.055
+      }
+    },
+    {
+      "name": "peach",
+      "source_file": "scanned_objects/source/peach.usdz",
+      "usd_file": "scanned_objects/usd/peach.usd",
+      "sha256": "8200623981c7caa6091713129b1d8b186d6e2d2adc007d8d98db370ab49bdd9a",
+      "title": "Peach Polycam",
+      "author": "Moshe Caine",
+      "license": "CC Attribution",
+      "source_url": "https://sketchfab.com/3d-models/peach-polycam-b6a1d0ee969e4cbd921249be04b16e65",
+      "normalization_scale": 0.24,
+      "removed_source_physics_api_count": 4,
+      "bounds_m": {
+        "min": [
+          -0.015461807139217854,
+          -0.015164059586822987,
+          2.0915925241782318e-11
+        ],
+        "max": [
+          0.015461809001863003,
+          0.015164060518145561,
+          0.028973184525966644
+        ]
+      },
+      "collision": {
+        "shape": "ellipsoid",
+        "radii_m": [
+          0.01545,
+          0.01515,
+          0.0145
+        ]
+      },
+      "grasp": {
+        "strategy": "equatorial_pinch",
+        "width_m": 0.0309,
+        "height_m": 0.0145,
+        "compatible_with_z1_gripper": true,
+        "recommended_max_width_m": 0.055
+      }
+    },
+    {
+      "name": "mouse",
+      "source_file": "scanned_objects/source/mouse.usdz",
+      "usd_file": "scanned_objects/usd/mouse.usd",
+      "sha256": "1b1972788b7390cc01d70b00c84f204b435a2e78206a53512fb525d1d55f0cdc",
+      "title": "Computer Mouse",
+      "author": "kubassa",
+      "license": "CC Attribution",
+      "source_url": "https://sketchfab.com/3d-models/computer-mouse-4a6e2b1cf5d54ed5b97da093ed1e74a4",
+      "normalization_scale": 0.44,
+      "removed_source_physics_api_count": 36,
+      "bounds_m": {
+        "min": [
+          -0.04400000348687172,
+          -0.02469024993479252,
+          8.7042870688947e-08
+        ],
+        "max": [
+          0.04400000348687172,
+          0.02469024993479252,
+          0.028364071622490883
+        ]
+      },
+      "collision": {
+        "shape": "box",
+        "size_m": [
+          0.086,
+          0.049,
+          0.0283
+        ]
+      },
+      "grasp": {
+        "strategy": "side_pinch_across_short_axis",
+        "width_m": 0.049,
+        "height_m": 0.02,
+        "compatible_with_z1_gripper": true,
+        "recommended_max_width_m": 0.055
+      }
+    },
+    {
+      "name": "beverage_bottle",
+      "source_file": "scanned_objects/source/beverage_bottle.usdz",
+      "usd_file": "scanned_objects/usd/beverage_bottle.usd",
+      "sha256": "76f9d3ee1a6dc978e226615db5609aad4cc15756054050b4be8ee1904a9516d9",
+      "title": "Coca-Cola Bottle",
+      "author": "MemoRorschach",
+      "license": "CC Attribution",
+      "source_url": "https://sketchfab.com/3d-models/coca-cola-bottle-34075fedb0ef40d9a172231134849914",
+      "normalization_scale": 0.5,
+      "removed_source_physics_api_count": 14,
+      "bounds_m": {
+        "min": [
+          -0.024042734876275063,
+          -0.02417096495628357,
+          6.112155404025543e-08
+        ],
+        "max": [
+          0.024042706936597824,
+          0.024170728400349617,
+          0.15697529911994934
+        ]
+      },
+      "collision": {
+        "shape": "cylinder",
+        "radius_m": 0.0242,
+        "height_m": 0.157
+      },
+      "grasp": {
+        "strategy": "side_pinch_on_body",
+        "width_m": 0.0484,
+        "height_m": 0.075,
+        "compatible_with_z1_gripper": true,
+        "recommended_max_width_m": 0.055
+      }
+    }
+  ]
+}

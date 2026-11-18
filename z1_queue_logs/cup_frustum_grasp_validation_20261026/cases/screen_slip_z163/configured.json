@@ -1,0 +1,361 @@
+{
+  "case": {
+    "id": "screen_slip_z163",
+    "cup_position_m": [
+      0.459,
+      -0.141,
+      0
+    ],
+    "target_grid": [
+      1,
+      1
+    ],
+    "relative_target_overrides": {
+      "z_m": 0.0163
+    },
+    "planning_attempts": 3
+  },
+  "profile": {
+    "height": 0.034,
+    "world_z_offset_m": 0.0,
+    "pitch_deg": -5.0,
+    "elevation_deg": [
+      -5.0,
+      -5.0
+    ],
+    "standoff": 0.195,
+    "pregrasp_m": [
+      0.27,
+      0.3
+    ],
+    "alignment_standoff_m": 0.27,
+    "azimuth_spread_deg": 0.0,
+    "roll_deg": -90.0,
+    "insertion_center_x_m": 0.12083045,
+    "dynamic_insertion_stop_x_m": 0.12083045,
+    "dynamic_insertion_step_m": 0.005,
+    "dynamic_lateral_step_m": 0.015,
+    "dynamic_alignment_corridor_m": 0.012,
+    "desired_center_x_m": 0.12083045,
+    "desired_center_y_m": -0.0028452,
+    "entry_center_z_m": 0.0163,
+    "desired_center_z_m": 0.0163,
+    "preclose_contact_center_z_m": 0.0187797,
+    "allow_preclose_target_contact": true,
+    "disable_preclose_live_centering": true,
+    "preclose_clearance_lift_m": 0.0,
+    "minimum_object_rise_m": 0.03,
+    "transport_object_z_m": 0.15,
+    "physical_test_lift_safe_completion_z_m": 0.14,
+    "physical_test_lift_completion_tolerance_m": 0.005,
+    "physical_test_lift_segment_m": 0.06,
+    "physical_test_lift_near_table_segment_m": 0.02,
+    "physical_test_lift_near_table_until_z_m": 0.04,
+    "physical_test_lift_min_retry_segment_m": 0.005,
+    "physical_test_lift_min_progress_m": 0.001,
+    "physical_test_lift_max_stalled_iterations": 2,
+    "physical_test_lift_orientation_tolerances_rad": [
+      0.04,
+      0.08
+    ],
+    "physical_test_lift_bounded_fallback_max_joint_delta_rad": 0.35,
+    "gripper_contact_closed_limit_rad": -0.8,
+    "gripper_contact_open_limit_rad": -0.2,
+    "maximum_close_displacement_m": 0.008,
+    "loaded_samples_required": 2,
+    "gripper_rad": 0.0,
+    "outer_alignment_iterations": 20,
+    "outer_alignment_gain_y": 0.85,
+    "outer_alignment_gain_z": 0.85,
+    "outer_alignment_max_y_step_m": 0.015,
+    "outer_alignment_max_z_step_m": 0.012,
+    "outer_alignment_moveit_position_tolerance_m": 0.001,
+    "dynamic_alignment_gain_y": 1.5,
+    "dynamic_alignment_gain_z": 0.75,
+    "dynamic_alignment_abort_corridor_m": 0.05,
+    "dynamic_alignment_correction_budget": 12,
+    "align_before_axial_advance": true,
+    "final_alignment_iterations": 6,
+    "final_alignment_gain": 0.8,
+    "final_alignment_max_step_m": 0.003,
+    "final_alignment_moveit_position_tolerance_m": 0.001,
+    "hardware_pitch_deg": 5.0,
+    "calibrated_grasp_reference": {
+      "source": "Geometry-derived cup upper-body grasp using bottle tool orientation and contact-height offset; pending simulation validation",
+      "object_in_gripper_local_m": [
+        0.12083045,
+        -0.0028452,
+        0.0163
+      ],
+      "position_tolerance_m": [
+        0.008,
+        0.009,
+        0.008
+      ],
+      "captured_object_center_minus_stator_world_z_m": -0.043865094,
+      "tool_roll_deg": -90.0,
+      "reference_grasp_height_m": 0.04
+    },
+    "max_joint_delta_rad": 2.7,
+    "pregrasp_velocity_scale": 0.08,
+    "candidate_azimuth_offsets_deg": [
+      0.0,
+      -45.0,
+      45.0,
+      -30.0,
+      0.0,
+      -45.0,
+      45.0,
+      30.0
+    ],
+    "precheck_final_ik": true,
+    "final_pose_position_tolerance_m": 0.003,
+    "accept_first_valid_candidate": true,
+    "pregrasp_target_command": "unfreeze",
+    "single_pass_box_transport": false,
+    "single_pass_box_alignment": true,
+    "single_pass_preclose": true,
+    "single_alignment_tolerance_m": [
+      0.008,
+      0.009,
+      0.008
+    ],
+    "single_contact_preload_rad": 0.0523598776,
+    "single_contact_retry_preload_rad": 0.0523598776,
+    "single_contact_retry_attempts": 0,
+    "near_grasp_elevation_steps_deg": [],
+    "near_grasp_orientation_max_joint_delta_rad": 0.65,
+    "near_grasp_orientation_tolerance_rad": 0.02,
+    "near_grasp_transition_x_m": 0.145,
+    "dynamic_fine_alignment_start_x_m": 0.155,
+    "defer_calibrated_alignment_until_x_m": 0.155,
+    "axial_only_before_calibrated_alignment": true,
+    "unlimited_fine_adjustment": true,
+    "coarse_alignment_y_guard_m": 0.01,
+    "assume_dynamic_xy_coupling": false,
+    "far_alignment_soft_corridor_m": 0.03,
+    "far_alignment_recovery_trigger_m": 0.04,
+    "far_alignment_recovery_release_m": 0.03,
+    "far_alignment_reduced_axial_step_m": 0.005,
+    "near_grasp_transition_alignment_y_m": 0.015,
+    "near_grasp_transition_alignment_z_m": 0.012,
+    "near_grasp_transition_envelope": {
+      "x_min_m": 0.135,
+      "x_max_m": 0.18,
+      "y_abs_max_m": 0.018,
+      "z_min_m": 0.005,
+      "z_max_m": 0.045
+    },
+    "open_jaw_resume_envelope": {
+      "x_min_m": 0.11283045,
+      "x_max_m": 0.12883045,
+      "y_abs_max_m": 0.07,
+      "z_min_m": 0.008,
+      "z_max_m": 0.0227797
+    },
+    "cylinder_high_contact_recovery_attempts": 3,
+    "cylinder_high_contact_recovery_lower_m": 0.025,
+    "cylinder_high_contact_recovery_retreat_m": 0.01,
+    "maximum_insertion_distance_m": 0.11,
+    "maximum_dynamic_insertion_step_m": 0.02,
+    "dynamic_feedback_min_progress_ratio": 0.35,
+    "dynamic_feedback_step_growth": 1.8,
+    "dynamic_feedback_min_progress_m": 0.001,
+    "dynamic_feedback_joint_space_after_stalls": 2,
+    "dynamic_feedback_coupling_ratio": 0.7,
+    "dynamic_feedback_coupling_min_drift_m": 0.004,
+    "dynamic_feedback_coupled_xy_correction": false,
+    "dynamic_feedback_coupled_orientation_tolerance_rad": 0.1,
+    "dynamic_feedback_coupled_max_joint_delta_rad": 0.65,
+    "alignment_axis_order": [
+      "z",
+      "y",
+      "x"
+    ],
+    "alignment_tolerance_y_m": 0.006,
+    "alignment_tolerance_z_m": 0.004,
+    "outer_alignment_acceptance_y_m": 0.008,
+    "outer_alignment_acceptance_z_m": 0.008,
+    "insertion_alignment_tolerance_y_m": 0.006,
+    "insertion_alignment_tolerance_z_m": 0.006,
+    "dynamic_vertical_step_m": 0.01,
+    "contact_preclose_x_tolerance_m": 0.005,
+    "contact_alignment_tolerance_y_m": 0.012,
+    "contact_alignment_tolerance_z_m": 0.01,
+    "disable_preclose_bilateral_height_correction": true,
+    "contact_preclose_center_z_m": 0.0187797,
+    "accept_calibrated_high_contact_as_ready": false,
+    "lock_outer_alignment_orientation": true,
+    "outer_alignment_orientation_tolerance_rad": 0.006,
+    "lock_dynamic_insertion_orientation": true,
+    "insertion_orientation_tolerance_rad": 0.006,
+    "decouple_outer_alignment": true,
+    "decouple_dynamic_alignment": true,
+    "guard_dynamic_alignment_depth": false,
+    "dynamic_alignment_centering_depth_guard_m": 0.006,
+    "dynamic_alignment_depth_recovery_max_step_m": 0.006,
+    "dynamic_alignment_depth_recovery_min_improvement_m": 0.001,
+    "dynamic_alignment_safe_pose_recovery_attempts": 2,
+    "dynamic_alignment_world_z_floor_margin_m": 0.005,
+    "preclose_capture_envelope": {
+      "x_min_m": 0.11283045,
+      "x_max_m": 0.12883045,
+      "y_abs_max_m": 0.07,
+      "z_min_m": 0.008,
+      "z_max_m": 0.0227797
+    },
+    "preclose_no_contact_x_max_m": 0.13183045,
+    "grasp_envelope_overrides": {
+      "x_min_m": 0.11283045,
+      "x_max_m": 0.12883045,
+      "y_abs_max_m": 0.07,
+      "z_min_m": 0.008,
+      "z_max_m": 0.0227797
+    },
+    "freeze_before_approach": true,
+    "alignment_reference_uses_tool_rotation": true,
+    "alignment_geometry_z_offset_m": 0.0305,
+    "preclose_alignment_guard": true,
+    "candidate_local_offsets_yz_m": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.002,
+        0.0
+      ],
+      [
+        -0.002,
+        0.0
+      ],
+      [
+        0.0,
+        0.002
+      ],
+      [
+        0.0,
+        -0.002
+      ],
+      [
+        0.004,
+        0.0
+      ],
+      [
+        -0.004,
+        0.0
+      ],
+      [
+        0.002,
+        0.002
+      ]
+    ],
+    "unfreeze_settle_duration_s": 0.1,
+    "extra_candidate_azimuths_deg": [
+      70.0,
+      75.0,
+      80.0
+    ],
+    "candidate_count": 11
+  },
+  "physical": {
+    "strategy": "cylinder_side_pinch",
+    "radius_m": 0.0252,
+    "height_m": 0.061,
+    "grasp_height_target_m": 0.034,
+    "grasp_height_range_m": [
+      0.03,
+      0.049
+    ],
+    "hardware_approach_pitch_deg": 5.0,
+    "urdf_approach_pitch_deg": -5.0,
+    "approach_pitch_deg": -5.0,
+    "approach_elevation_deg": -5.0,
+    "fallback_approach_elevation_deg": 75.0,
+    "approach_angle_tolerance_deg": 5.0,
+    "approach_pitch_max_deg": -5.0,
+    "approach_pitch_min_deg": -7.0,
+    "mirror_wrist_roll_candidates": false,
+    "calibrated_grasp_reference": {
+      "source": "Geometry-derived cup upper-body grasp using bottle tool orientation and contact-height offset; pending simulation validation",
+      "object_in_gripper_local_m": [
+        0.12083045,
+        -0.0028452,
+        0.0163
+      ],
+      "position_tolerance_m": [
+        0.008,
+        0.009,
+        0.008
+      ],
+      "captured_object_center_minus_stator_world_z_m": -0.049865094,
+      "tool_roll_deg": -90.0,
+      "reference_grasp_height_m": 0.04
+    },
+    "single_pass_preclose": true,
+    "single_contact_preload_rad": 0.0523598776,
+    "single_contact_retry_preload_rad": 0.0523598776,
+    "single_contact_retry_attempts": 0,
+    "preclose_envelope": {
+      "x_min_m": 0.11283045,
+      "x_max_m": 0.12883045,
+      "y_abs_max_m": 0.07,
+      "z_min_m": 0.008,
+      "z_max_m": 0.0227797
+    },
+    "preclose_capture_envelope": {
+      "x_min_m": 0.11283045,
+      "x_max_m": 0.12883045,
+      "y_abs_max_m": 0.07,
+      "z_min_m": 0.008,
+      "z_max_m": 0.0227797
+    },
+    "preclose_no_contact_x_max_m": 0.12883045,
+    "loaded_envelope": {
+      "x_min_m": 0.113,
+      "x_max_m": 0.149,
+      "y_abs_max_m": 0.07,
+      "z_min_m": 0.002,
+      "z_max_m": 0.04
+    },
+    "gripper_contact_angle_range_rad": [
+      -0.8,
+      -0.2
+    ],
+    "minimum_contact_impulse_ratio": 0.2,
+    "maximum_close_displacement_m": 0.008,
+    "minimum_proof_rise_m": 0.03,
+    "minimum_table_clearance_m": 0.02,
+    "transport_object_z_m": 0.15,
+    "loaded_transport_max_joint_delta_rad": 3.0,
+    "physical_test_lift_safe_completion_z_m": 0.14,
+    "physical_test_lift_minimum_accepted_z_m": 0.135,
+    "physical_test_lift_completion_tolerance_m": 0.005,
+    "physical_test_lift_segment_m": 0.06,
+    "physical_test_lift_near_table_segment_m": 0.02,
+    "physical_test_lift_near_table_until_z_m": 0.04,
+    "physical_test_lift_min_retry_segment_m": 0.005,
+    "physical_test_lift_min_progress_m": 0.001,
+    "physical_test_lift_max_stalled_iterations": 2,
+    "physical_test_lift_orientation_tolerances_rad": [
+      0.04,
+      0.08
+    ],
+    "physical_test_lift_bounded_fallback_max_joint_delta_rad": 0.35,
+    "relative_position_tolerance_m": 0.006,
+    "relative_rotation_tolerance_deg": 5.0,
+    "stable_duration_s": 0.4,
+    "loaded_samples_required": 2,
+    "require_contact_height_band": false,
+    "envelope_validation_enabled": true,
+    "trajectory_tolerance_enforcement_enabled": true,
+    "unfreeze_settle_duration_s": 0.1,
+    "physical_test_lift_settle_duration_s": 0.0,
+    "loaded_transport_velocity_scale": 0.08,
+    "loaded_transport_acceleration_scale": 0.04,
+    "loaded_transport_orientation_tolerances_rad": [
+      0.2,
+      0.4
+    ]
+  }
+}

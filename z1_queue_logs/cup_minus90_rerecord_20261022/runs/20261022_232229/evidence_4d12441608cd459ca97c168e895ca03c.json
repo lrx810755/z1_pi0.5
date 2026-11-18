@@ -1,0 +1,172 @@
+{
+  "task_id": "new_correction_episode_000009",
+  "task": {
+    "id": "cup_post_shift_03",
+    "kind": "post_shift_realign",
+    "grid": [
+      1,
+      1
+    ],
+    "split": "validation",
+    "offset_approach_m": [
+      0,
+      0,
+      0
+    ],
+    "rotation_tool_deg": [
+      0,
+      0,
+      0
+    ],
+    "requested_shift_world_m": [
+      0,
+      0.008,
+      0
+    ],
+    "preparation_retreat_m": 0.012,
+    "freeze_policy": "pre_approach_only",
+    "source_note": "Cup relocated during scene preparation; record recovery from stale target pose, never teleport during recording."
+  },
+  "accepted": false,
+  "recovery_complete": true,
+  "reference_position": [
+    0.3103000838742586,
+    -0.210765064955766,
+    0.07616413281708621
+  ],
+  "reference_orientation": [
+    0.6903715070970662,
+    0.15292842583974792,
+    -0.2300970498206718,
+    -0.6686220355496261
+  ],
+  "requested_position": [
+    0.30006629244325345,
+    -0.22503174301384618,
+    0.08416414958089255
+  ],
+  "requested_orientation": [
+    0.6903715070970662,
+    0.15292842583974792,
+    -0.2300970498206718,
+    -0.6686220355496261
+  ],
+  "actual_position": [
+    0.30102044006356843,
+    -0.2245161912716788,
+    0.08383166557986224
+  ],
+  "actual_orientation": [
+    -0.6890742933620058,
+    -0.13712530083181765,
+    0.23474791853515792,
+    0.6717638609234997
+  ],
+  "preflight": {
+    "route": {
+      "anchor_position": [
+        0.3103000838742586,
+        -0.210765064955766,
+        0.07616413281708621
+      ],
+      "bad_position": [
+        0.30006629244325345,
+        -0.22503174301384618,
+        0.08416414958089255
+      ],
+      "bad_orientation": [
+        0.6903715070970662,
+        0.15292842583974792,
+        -0.2300970498206718,
+        -0.6686220355496261
+      ],
+      "retreat_m": 0.012,
+      "strategy": "raised",
+      "preparation": [
+        {
+          "stage": "prepare_deviation",
+          "position": [
+            0.30006629244325345,
+            -0.22503174301384618,
+            0.08416414958089255
+          ],
+          "orientation": [
+            0.6903715070970662,
+            0.15292842583974792,
+            -0.2300970498206718,
+            -0.6686220355496261
+          ],
+          "linear": false
+        }
+      ],
+      "recovery": [
+        {
+          "stage": "recover_clearance",
+          "position": [
+            0.30006629244325345,
+            -0.22503174301384618,
+            0.10216414958089255
+          ],
+          "orientation": [
+            0.6903715070970662,
+            0.15292842583974792,
+            -0.2300970498206718,
+            -0.6686220355496261
+          ],
+          "linear": false
+        },
+        {
+          "stage": "recover_approach",
+          "position": [
+            0.3103000838742586,
+            -0.210765064955766,
+            0.07616413281708621
+          ],
+          "orientation": [
+            0.6903715070970662,
+            0.15292842583974792,
+            -0.2300970498206718,
+            -0.6686220355496261
+          ],
+          "linear": true
+        }
+      ]
+    },
+    "rejected_routes": [
+      "prepare_safe_behind: MoveIt error_code=99999",
+      "prepare_safe_behind: MoveIt error_code=99999",
+      "prepare_deviation: MoveIt error_code=-2"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "recover_clearance",
+      "start_sim_time": 1088.033390078,
+      "end_sim_time": 1088.683390112
+    },
+    {
+      "stage": "recover_approach",
+      "start_sim_time": 1088.683390112,
+      "end_sim_time": 1089.650056829
+    }
+  ],
+  "freeze_policy": "pre_approach_only",
+  "prepared_cup_shift": {
+    "before": [
+      0.4431789815425873,
+      -0.11455795913934708,
+      1.862645149230957e-09
+    ],
+    "after": [
+      0.4431789517402649,
+      -0.10655777156352997,
+      -1.4901161193847656e-08
+    ],
+    "actual_shift_world_m": [
+      -2.9802322387695312e-08,
+      0.008000187575817108,
+      -1.6763806343078613e-08
+    ],
+    "mode": "setup_relocation_before_approach"
+  }
+}

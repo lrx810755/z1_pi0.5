@@ -1,0 +1,1089 @@
+{
+  "original_grid": {
+    "tested": 20,
+    "passed": 9,
+    "categories": {
+      "通过": 9,
+      "闭爪前定位失败": 4,
+      "规划失败": 2,
+      "抬升或运输中丢失夹持": 4,
+      "机械臂轨迹跟踪超限": 1
+    },
+    "cases": [
+      {
+        "id": "original_grid_c0r0",
+        "cup_position_m": [
+          0.393,
+          -0.227,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 161.578,
+        "final_root_z_mm": 161.467,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c0r1",
+        "cup_position_m": [
+          0.393,
+          -0.141,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "闭爪前定位失败",
+        "maximum_rise_mm": 3.078,
+        "final_root_z_mm": -0.001,
+        "error": "目标物体闭爪前最终位置验收失败：单次最终定位后未进入闭爪允许区间：local=(0.134279, 0.027668, 0.019414), target=(0.12083045, 0.030638796286213993, 0.0194797), tolerance=(0.008, 0.009, 0.008)",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c0r2",
+        "cup_position_m": [
+          0.393,
+          -0.055,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "闭爪前定位失败",
+        "maximum_rise_mm": 0.002,
+        "final_root_z_mm": -0.0,
+        "error": "目标物体闭爪前最终位置验收失败：单次最终定位后未进入闭爪允许区间：local=(0.11992, 0.029174, 0.022876), target=(0.12083045, 0.030638796286213993, 0.0194797), tolerance=(0.008, 0.009, 0.008)",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c0r3",
+        "cup_position_m": [
+          0.393,
+          0.031,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "规划失败",
+        "maximum_rise_mm": -0.0,
+        "final_root_z_mm": -0.0,
+        "error": "11 个候选均失败：candidate 11: 夹爪扫掠通道被占用：smolvla_box(蓝盒闭爪空间)",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c1r0",
+        "cup_position_m": [
+          0.459,
+          -0.227,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "闭爪前定位失败",
+        "maximum_rise_mm": 17.909,
+        "final_root_z_mm": 17.892,
+        "error": "目标物体闭爪前最终位置验收失败：单次最终定位后未进入闭爪允许区间：local=(0.170709, 0.005791, 0.049316), target=(0.12083045, 0.030638796286213993, 0.0194797), tolerance=(0.008, 0.009, 0.008)",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c1r1",
+        "cup_position_m": [
+          0.459,
+          -0.141,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 30.572,
+        "final_root_z_mm": 17.8,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.319511, 0.06083, -0.124083], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c1r2",
+        "cup_position_m": [
+          0.459,
+          -0.055,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 146.3,
+        "final_root_z_mm": 17.809,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.296977, 0.093036, -0.098334], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c1r3",
+        "cup_position_m": [
+          0.459,
+          0.031,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "规划失败",
+        "maximum_rise_mm": -0.0,
+        "final_root_z_mm": -0.0,
+        "error": "11 个候选均失败：candidate 11: 夹爪扫掠通道被占用：smolvla_box(蓝盒夹爪接近扫掠通道)",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c2r0",
+        "cup_position_m": [
+          0.525,
+          -0.227,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 217.245,
+        "final_root_z_mm": 152.827,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c2r1",
+        "cup_position_m": [
+          0.525,
+          -0.141,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 288.35,
+        "final_root_z_mm": 152.172,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c2r2",
+        "cup_position_m": [
+          0.525,
+          -0.055,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 118.563,
+        "final_root_z_mm": -0.0,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.293976, 0.107109, -0.194971], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c2r3",
+        "cup_position_m": [
+          0.525,
+          0.031,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 424.621,
+        "final_root_z_mm": 175.702,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c3r0",
+        "cup_position_m": [
+          0.591,
+          -0.227,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 435.858,
+        "final_root_z_mm": 151.731,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c3r1",
+        "cup_position_m": [
+          0.591,
+          -0.141,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 175.386,
+        "final_root_z_mm": 173.892,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c3r2",
+        "cup_position_m": [
+          0.591,
+          -0.055,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 258.44,
+        "final_root_z_mm": 145.909,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c3r3",
+        "cup_position_m": [
+          0.591,
+          0.031,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "闭爪前定位失败",
+        "maximum_rise_mm": 17.878,
+        "final_root_z_mm": 17.803,
+        "error": "目标物体闭爪前最终位置验收失败：单次最终定位后未进入闭爪允许区间：local=(0.181425, 0.004634, 0.084775), target=(0.12083045, 0.030638796286214014, 0.0194797), tolerance=(0.008, 0.009, 0.008)",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c4r0",
+        "cup_position_m": [
+          0.657,
+          -0.227,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 149.216,
+        "final_root_z_mm": 148.918,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c4r1",
+        "cup_position_m": [
+          0.657,
+          -0.141,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "机械臂轨迹跟踪超限",
+        "maximum_rise_mm": 179.772,
+        "final_root_z_mm": 171.254,
+        "error": "目标物体纯物理抬升失败：带载荷自由规划到蓝盒上方安全位（第 2/3 次）失败：预抓取执行失败：-5 Isaac Sim did not reach the final point within tolerance: max_error=0.0136 rad, joint=joint4, controller_tolerance=0.0120 rad，最终关节误差 0.0136 rad",
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c4r2",
+        "cup_position_m": [
+          0.657,
+          -0.055,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 251.085,
+        "final_root_z_mm": 170.546,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_grid_c4r3",
+        "cup_position_m": [
+          0.657,
+          0.031,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 1.712,
+        "final_root_z_mm": 0.013,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.362393, 0.030815, -0.27618], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      }
+    ]
+  },
+  "original_range": {
+    "tested": 9,
+    "passed": 3,
+    "categories": {
+      "规划失败": 5,
+      "通过": 3,
+      "闭爪前定位失败": 1
+    },
+    "cases": [
+      {
+        "id": "original_range_x0.1140_z0.0090",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.114,
+          "z_m": 0.009
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "规划失败",
+        "maximum_rise_mm": -0.0,
+        "final_root_z_mm": -0.0,
+        "error": "1 个候选均失败：candidate 1: MoveIt error_code=-2",
+        "table_contact": false
+      },
+      {
+        "id": "original_range_x0.1140_z0.0150",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.114,
+          "z_m": 0.015
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 160.733,
+        "final_root_z_mm": 160.634,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_range_x0.1140_z0.0215",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.114,
+          "z_m": 0.0215
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 158.908,
+        "final_root_z_mm": 151.137,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "original_range_x0.1208_z0.0090",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.12083045,
+          "z_m": 0.009
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "规划失败",
+        "maximum_rise_mm": -0.0,
+        "final_root_z_mm": -0.0,
+        "error": "1 个候选均失败：candidate 1: MoveIt error_code=-2",
+        "table_contact": false
+      },
+      {
+        "id": "original_range_x0.1208_z0.0150",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.12083045,
+          "z_m": 0.015
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "规划失败",
+        "maximum_rise_mm": -0.0,
+        "final_root_z_mm": -0.0,
+        "error": "1 个候选均失败：candidate 1: MoveIt error_code=-2",
+        "table_contact": false
+      },
+      {
+        "id": "original_range_x0.1208_z0.0215",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.12083045,
+          "z_m": 0.0215
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "闭爪前定位失败",
+        "maximum_rise_mm": 18.669,
+        "final_root_z_mm": 17.892,
+        "error": "目标物体闭爪前最终位置验收失败：单次最终定位后未进入闭爪允许区间：local=(0.253692, -0.00928, 0.058908), target=(0.12083045, 0.026381998610882113, 0.0215), tolerance=(0.008, 0.009, 0.008)",
+        "table_contact": false
+      },
+      {
+        "id": "original_range_x0.1275_z0.0090",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.1275,
+          "z_m": 0.009
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "规划失败",
+        "maximum_rise_mm": -0.0,
+        "final_root_z_mm": -0.0,
+        "error": "1 个候选均失败：candidate 1: MoveIt error_code=-2",
+        "table_contact": false
+      },
+      {
+        "id": "original_range_x0.1275_z0.0150",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.1275,
+          "z_m": 0.015
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "规划失败",
+        "maximum_rise_mm": -0.0,
+        "final_root_z_mm": 0.0,
+        "error": "1 个候选均失败：candidate 1: MoveIt error_code=-2",
+        "table_contact": false
+      },
+      {
+        "id": "original_range_x0.1275_z0.0215",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.1275,
+          "z_m": 0.0215
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 172.662,
+        "final_root_z_mm": 156.189,
+        "error": null,
+        "table_contact": false
+      }
+    ]
+  },
+  "screen_": {
+    "tested": 15,
+    "passed": 9,
+    "categories": {
+      "通过": 9,
+      "抬升或运输中丢失夹持": 3,
+      "闭爪前定位失败": 1,
+      "闭爪后夹持不足": 2
+    },
+    "cases": [
+      {
+        "id": "screen_mid_approach90",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {
+          "minimum_pregrasp_z_m": 0.09,
+          "standoff": 0.23
+        },
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 162.009,
+        "final_root_z_mm": 161.738,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "screen_mid_depth116",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.116
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 91.978,
+        "final_root_z_mm": 0.0,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.256883, 0.163584, -0.106556], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "screen_mid_height30",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.03
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 0.102,
+        "final_root_z_mm": -0.0,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.214945, 0.158925, -0.303368], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "screen_mid_height40",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 144.295,
+        "final_root_z_mm": 144.295,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "screen_mid_height45",
+        "cup_position_m": [
+          0.52,
+          -0.1,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.045
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 163.775,
+        "final_root_z_mm": 146.365,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "screen_path_approach90",
+        "cup_position_m": [
+          0.459,
+          -0.227,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {
+          "minimum_pregrasp_z_m": 0.09,
+          "standoff": 0.23
+        },
+        "passed": false,
+        "category": "闭爪前定位失败",
+        "maximum_rise_mm": 17.957,
+        "final_root_z_mm": 17.892,
+        "error": "目标物体闭爪前最终位置验收失败：单次最终定位后未进入闭爪允许区间：local=(0.168924, 0.005998, 0.055763), target=(0.12083045, 0.030638796286213986, 0.0194797), tolerance=(0.008, 0.009, 0.008)",
+        "table_contact": false
+      },
+      {
+        "id": "screen_path_depth116",
+        "cup_position_m": [
+          0.459,
+          -0.227,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.116
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 174.881,
+        "final_root_z_mm": 138.914,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "screen_path_height30",
+        "cup_position_m": [
+          0.459,
+          -0.227,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.03
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 0.594,
+        "final_root_z_mm": 0.017,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.160477, 0.128612, -0.403363], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "screen_path_height40",
+        "cup_position_m": [
+          0.459,
+          -0.227,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 135.664,
+        "final_root_z_mm": 135.632,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "screen_path_height45",
+        "cup_position_m": [
+          0.459,
+          -0.227,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.045
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "闭爪后夹持不足",
+        "maximum_rise_mm": 0.013,
+        "final_root_z_mm": 0.013,
+        "error": "目标物体一次闭爪失败：目标物体闭爪后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=1/2, attempts=6, local=[0.121928, 0.04309, 0.019288], reference=None, left=cup, right=cup, bilateral=True, contact_report=True, impulses_ns=(0.009015942343633048, 0.02774840302541543), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "screen_slip_approach90",
+        "cup_position_m": [
+          0.459,
+          -0.141,
+          0
+        ],
+        "overrides": {},
+        "profile_overrides": {
+          "minimum_pregrasp_z_m": 0.09,
+          "standoff": 0.23
+        },
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 152.478,
+        "final_root_z_mm": 152.478,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "screen_slip_depth116",
+        "cup_position_m": [
+          0.459,
+          -0.141,
+          0
+        ],
+        "overrides": {
+          "x_m": 0.116
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 143.708,
+        "final_root_z_mm": 143.654,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "screen_slip_height30",
+        "cup_position_m": [
+          0.459,
+          -0.141,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.03
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 163.909,
+        "final_root_z_mm": 163.842,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "screen_slip_height40",
+        "cup_position_m": [
+          0.459,
+          -0.141,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 178.475,
+        "final_root_z_mm": 147.904,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "screen_slip_height45",
+        "cup_position_m": [
+          0.459,
+          -0.141,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.045
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "闭爪后夹持不足",
+        "maximum_rise_mm": 0.152,
+        "final_root_z_mm": -0.001,
+        "error": "目标物体一次闭爪失败：目标物体闭爪后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=1/2, attempts=6, local=[0.121481, 0.035416, 0.018559], reference=None, left=cup, right=cup, bilateral=True, contact_report=True, impulses_ns=(0.009942387119942412, 0.03139291213861874), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      }
+    ]
+  },
+  "optimized_grid": {
+    "tested": 15,
+    "passed": 10,
+    "categories": {
+      "通过": 10,
+      "闭爪后夹持不足": 1,
+      "抬升或运输中丢失夹持": 4
+    },
+    "cases": [
+      {
+        "id": "optimized_grid_h40_c0r0",
+        "cup_position_m": [
+          0.393,
+          -0.227,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 169.124,
+        "final_root_z_mm": 169.074,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c0r1",
+        "cup_position_m": [
+          0.393,
+          -0.141,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 547.207,
+        "final_root_z_mm": 172.441,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c0r2",
+        "cup_position_m": [
+          0.393,
+          -0.055,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "闭爪后夹持不足",
+        "maximum_rise_mm": 0.094,
+        "final_root_z_mm": 0.005,
+        "error": "目标物体一次闭爪失败：目标物体闭爪后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.122429, 0.035017, 0.018953], reference=None, left=None, right=cup, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.034121916686289576), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c1r0",
+        "cup_position_m": [
+          0.459,
+          -0.227,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 292.14,
+        "final_root_z_mm": 17.81,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.297765, 0.017201, 0.007727], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c1r1",
+        "cup_position_m": [
+          0.459,
+          -0.141,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 486.152,
+        "final_root_z_mm": 118.995,
+        "error": "目标物体纯物理抬升失败：带载荷自由搬运未到达任务安全位：object=(0.31216979026794434, 0.09807777404785156, 0.11901120841503143), required_z=0.1350, box_xy_error=0.0426 m, last_error=None",
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c1r2",
+        "cup_position_m": [
+          0.459,
+          -0.055,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 323.717,
+        "final_root_z_mm": 148.983,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c2r0",
+        "cup_position_m": [
+          0.525,
+          -0.227,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 238.057,
+        "final_root_z_mm": 158.809,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c2r1",
+        "cup_position_m": [
+          0.525,
+          -0.141,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 147.968,
+        "final_root_z_mm": 147.929,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c2r2",
+        "cup_position_m": [
+          0.525,
+          -0.055,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 313.509,
+        "final_root_z_mm": 143.419,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c3r0",
+        "cup_position_m": [
+          0.591,
+          -0.227,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 271.023,
+        "final_root_z_mm": 137.454,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c3r1",
+        "cup_position_m": [
+          0.591,
+          -0.141,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 154.131,
+        "final_root_z_mm": 154.001,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c3r2",
+        "cup_position_m": [
+          0.591,
+          -0.055,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 163.812,
+        "final_root_z_mm": 163.557,
+        "error": null,
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c4r0",
+        "cup_position_m": [
+          0.657,
+          -0.227,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 17.963,
+        "final_root_z_mm": 17.892,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.601982, -0.153669, -0.074987], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c4r1",
+        "cup_position_m": [
+          0.657,
+          -0.141,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": false,
+        "category": "抬升或运输中丢失夹持",
+        "maximum_rise_mm": 135.422,
+        "final_root_z_mm": 17.803,
+        "error": "目标物体纯物理抬升失败：带载荷向蓝盒搬运后：连续夹持验证未通过（检查双指接触、受力比例、位置包络或参考位姿偏差；接触高度带仅作提示）：valid=0/2, attempts=6, local=[0.280411, 0.04538, 0.149107], reference=None, left=None, right=None, bilateral=False, contact_report=True, impulses_ns=(0.0, 0.0), envelope={'x_min_m': 0.113, 'x_max_m': 0.149, 'y_abs_max_m': 0.07, 'z_min_m': 0.002, 'z_max_m': 0.04}",
+        "table_contact": false
+      },
+      {
+        "id": "optimized_grid_h40_c4r2",
+        "cup_position_m": [
+          0.657,
+          -0.055,
+          0
+        ],
+        "overrides": {
+          "grasp_height_target_m": 0.04
+        },
+        "profile_overrides": {},
+        "passed": true,
+        "category": "通过",
+        "maximum_rise_mm": 165.588,
+        "final_root_z_mm": 163.508,
+        "error": null,
+        "table_contact": false
+      }
+    ]
+  },
+  "optimized_range": {
+    "tested": 0,
+    "passed": 0,
+    "categories": {},
+    "cases": []
+  }
+}

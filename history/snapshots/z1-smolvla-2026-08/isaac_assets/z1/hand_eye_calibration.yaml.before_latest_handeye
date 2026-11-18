@@ -1,0 +1,30 @@
+# Eye-in-hand calibration exported from the actual USD WristCamera prim.
+# Convention: T_mount_camera maps camera-frame coordinates into mount-frame coordinates.
+# Isaac/USD camera convention: optical axis is camera local -Z, image up is camera local +Y.
+calibration_type: eye_in_hand
+robot_usd: /home/lp531/isaac_assets/z1/z1.usd
+mount_name: gripperStator
+mount_frame: /z1_description/gripperStator
+camera_frame: /z1_description/gripperStator/WristCamera
+translation_mount_camera_xyz_m: [0.055, 0.0, -0.055]
+quaternion_mount_camera_wxyz: [0.5, 0.5, -0.5, -0.5]
+T_mount_camera:
+  - [2.22044604925e-16, 2.22044604925e-16, -1, 0.055]
+  - [-1, 4.93038065763e-32, -2.22044604925e-16, 0.0]
+  - [0, 1, 2.22044604925e-16, -0.055]
+  - [0, 0, 0, 1]
+T_camera_mount:
+  - [2.22044604925e-16, -1, -0, 0.0]
+  - [2.22044604925e-16, 4.93038065763e-32, 1, 0.055]
+  - [-1, -2.22044604925e-16, 2.22044604925e-16, 0.055]
+  - [0, 0, 0, 1]
+image_width_px: 640
+image_height_px: 480
+focal_length_mm: 24
+horizontal_aperture_mm: 20.9549999237
+vertical_aperture_mm: 15.7162504196
+camera_matrix_K:
+  - [732.999286849, 0, 320]
+  - [0, 732.99926461, 240]
+  - [0, 0, 1]
+distortion_coefficients: [0, 0, 0, 0, 0]

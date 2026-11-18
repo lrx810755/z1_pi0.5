@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Z1 Teleop</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --ink: #162033;
+      --muted: #667085;
+      --line: #d8dee9;
+      --accent: #0f766e;
+      --danger: #c2410c;
+      --ok: #15803d;
+      --shadow: 0 8px 24px rgba(22, 32, 51, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 24px auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    header, section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    button {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #ffffff;
+      color: var(--ink);
+      font-weight: 650;
+      cursor: pointer;
+      padding: 8px 12px;
+    }
+
+    button:hover { border-color: #98a2b3; }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .danger {
+      background: var(--danger);
+      border-color: var(--danger);
+      color: #ffffff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 16px;
+    }
+
+    section { padding: 16px; }
+
+    .joint-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .joint-row {
+      display: grid;
+      grid-template-columns: 120px 42px minmax(180px, 1fr) 42px 82px;
+      gap: 8px;
+      align-items: center;
+      min-height: 44px;
+    }
+
+    .joint-name {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .joint-meta {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    input[type="range"] { width: 100%; }
+
+    .readout {
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      color: var(--muted);
+    }
+
+    .status {
+      display: grid;
+      gap: 10px;
+    }
+
+    .status-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .status-line:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 78px;
+      min-height: 26px;
+      border-radius: 999px;
+      background: #eef2f7;
+      color: var(--muted);
+      font-weight: 700;
+      padding: 3px 10px;
+    }
+
+    .pill.ok {
+      background: #dcfce7;
+      color: var(--ok);
+    }
+
+    .pill.stop {
+      background: #ffedd5;
+      color: var(--danger);
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    input[type="number"], select {
+      width: 100%;
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 6px 8px;
+      color: var(--ink);
+      font: inherit;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .settings {
+      display: grid;
+      gap: 12px;
+    }
+
+    .message {
+      min-height: 22px;
+      color: var(--muted);
+    }
+
+    .camera-panel {
+      margin-top: 18px;
+    }
+
+    .grasp-panel {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .task-controls {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 8px;
+      align-items: end;
+    }
+
+    .grasp-actions {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .mono {
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .math-panel {
+      display: grid;
+      gap: 6px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #f8fafc;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .camera-feed {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      background: #0b1220;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .grasp-actions { grid-template-columns: 1fr; }
+      .task-controls { grid-template-columns: 1fr; }
+      .joint-row {
+        grid-template-columns: 88px 40px minmax(110px, 1fr) 40px;
+      }
+      .readout { grid-column: 1 / -1; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Z1 遥操作</h1>
+        <div class="joint-meta">关节空间控制台</div>
+      </div>
+      <div class="toolbar">
+        <button id="enableBtn" class="primary">使能</button>
+        <button id="holdBtn">保持当前位置</button>
+        <button id="homeBtn">回安全位</button>
+        <button id="stopBtn" class="danger">急停</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section>
+        <h2>关节控制</h2>
+        <div id="jointList" class="joint-list"></div>
+      </section>
+
+      <section>
+        <h2>状态</h2>
+        <div class="status">
+          <div class="status-line"><span>连接</span><span id="connPill" class="pill">等待</span></div>
+          <div class="status-line"><span>控制</span><span id="enabledPill" class="pill">未使能</span></div>
+          <div class="status-line"><span>急停</span><span id="stopPill" class="pill">正常</span></div>
+          <div class="status-line"><span>限位事件</span><span id="clampText">0</span></div>
+          <div class="status-line"><span>Isaac step</span><span id="stepText">0</span></div>
+          <div class="status-line"><span>真机连接</span><span id="realConnPill" class="pill">未启用</span></div>
+          <div class="status-line"><span>真机控制</span><span id="realEnabledPill" class="pill">未使能</span></div>
+          <div class="status-line"><span>真机消息</span><span id="realMessageText">-</span></div>
+        </div>
+
+        <h2 style="margin-top:18px;">步进参数</h2>
+        <div class="settings">
+          <label>
+            单步角度 rad
+            <input id="stepSize" type="number" min="0.005" max="0.2" step="0.005" value="0.05">
+          </label>
+          <label>
+            速度倍率
+            <input id="speedScale" type="number" min="0.05" max="1" step="0.05" value="0.5">
+          </label>
+        <div id="message" class="message"></div>
+        </div>
+
+        <div class="grasp-panel">
+          <h2>视觉抓取</h2>
+          <div class="grasp-actions">
+            <button id="graspBtn" class="primary">抓取模式</button>
+            <button id="fixedDemoBtn">固定Demo</button>
+            <button id="resetBallBtn">重置目标</button>
+            <button id="graspStopBtn">停止抓取</button>
+          </div>
+          <div class="status-line"><span>阶段</span><span id="graspPhase" class="pill">idle</span></div>
+          <div id="graspInfo" class="mono"></div>
+          <div id="mathPanel" class="math-panel"></div>
+        </div>
+
+        <div class="grasp-panel">
+          <h2>SmolVLA 抓取与放置判定</h2>
+          <div class="task-controls">
+            <label>本轮目标
+              <select id="smolTargetSelect">
+                <option value="cup">杯子</option>
+                <option value="apple">苹果</option>
+                <option value="peach">桃子</option>
+                <option value="mouse">鼠标</option>
+                <option value="beverage_bottle">饮料瓶</option>
+              </select>
+            </label>
+            <button id="smolApplyBtn" class="primary">切换并开始</button>
+            <button id="smolResetBtn">复位判定</button>
+          </div>
+          <div class="grasp-actions">
+            <button id="smolGenerateBtn">生成预抓取轨迹</button>
+            <button id="smolExecuteBtn" class="primary" disabled>确认移动到附近</button>
+          </div>
+          <div class="status-line"><span>ROS 判定节点</span><span id="smolConn" class="pill">等待</span></div>
+          <div class="status-line"><span>阶段</span><span id="smolPhase" class="pill">WAITING</span></div>
+          <div class="status-line"><span>抓稳</span><span id="smolGrasp" class="pill">否</span></div>
+          <div class="status-line"><span>放置任务</span><span id="smolTask" class="pill">未完成</span></div>
+          <div id="smolInfo" class="math-panel"></div>
+        </div>
+
+        <div class="camera-panel">
+          <h2>摄像头画面</h2>
+          <img id="cameraImage" class="camera-feed" alt="摄像头画面">
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const jointList = document.getElementById("jointList");
+    const message = document.getElementById("message");
+    const connPill = document.getElementById("connPill");
+    const enabledPill = document.getElementById("enabledPill");
+    const stopPill = document.getElementById("stopPill");
+    const clampText = document.getElementById("clampText");
+    const stepText = document.getElementById("stepText");
+    const realConnPill = document.getElementById("realConnPill");
+    const realEnabledPill = document.getElementById("realEnabledPill");
+    const realMessageText = document.getElementById("realMessageText");
+    const stepSize = document.getElementById("stepSize");
+    const speedScale = document.getElementById("speedScale");
+    const cameraImage = document.getElementById("cameraImage");
+    const graspPhase = document.getElementById("graspPhase");
+    const graspInfo = document.getElementById("graspInfo");
+    const mathPanel = document.getElementById("mathPanel");
+    const smolTargetSelect = document.getElementById("smolTargetSelect");
+    const smolConn = document.getElementById("smolConn");
+    const smolPhase = document.getElementById("smolPhase");
+    const smolGrasp = document.getElementById("smolGrasp");
+    const smolTask = document.getElementById("smolTask");
+    const smolInfo = document.getElementById("smolInfo");
+
+    let status = null;
+    let sliderBusy = false;
+    let speedSyncTimer = null;
+
+    function api(path, payload) {
+      return fetch(path, {
+        method: payload ? "POST" : "GET",
+        headers: payload ? {"Content-Type": "application/json"} : {},
+        body: payload ? JSON.stringify(payload) : undefined
+      }).then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || res.statusText);
+        return data;
+      });
+    }
+
+    function setMessage(text) {
+      message.textContent = text || "";
+    }
+
+    function command(path, payload) {
+      return api(path, payload).then((data) => {
+        setMessage(data.message || "");
+        return refresh();
+      }).catch((err) => {
+        setMessage(err.message);
+      });
+    }
+
+    function createJointRows(data) {
+      jointList.innerHTML = "";
+      data.joints.forEach((joint) => {
+        const row = document.createElement("div");
+        row.className = "joint-row";
+        row.dataset.name = joint.name;
+
+        const name = document.createElement("div");
+        name.innerHTML = `<div class="joint-name">${joint.name}</div><div class="joint-meta">${joint.lower.toFixed(3)} 至 ${joint.upper.toFixed(3)}</div>`;
+
+        const minus = document.createElement("button");
+        minus.textContent = "-";
+        minus.title = `${joint.name} 负向步进`;
+        minus.onclick = () => jog(joint.name, -Number(stepSize.value));
+
+        const slider = document.createElement("input");
+        slider.type = "range";
+        slider.min = joint.lower;
+        slider.max = joint.upper;
+        slider.step = 0.001;
+        slider.value = joint.target;
+        slider.onpointerdown = () => { sliderBusy = true; };
+        slider.onpointerup = () => { sliderBusy = false; };
+        slider.onchange = () => setJoint(joint.name, Number(slider.value));
+
+        const plus = document.createElement("button");
+        plus.textContent = "+";
+        plus.title = `${joint.name} 正向步进`;
+        plus.onclick = () => jog(joint.name, Number(stepSize.value));
+
+        const readout = document.createElement("div");
+        readout.className = "readout";
+        readout.textContent = joint.position.toFixed(3);
+
+        row.append(name, minus, slider, plus, readout);
+        jointList.appendChild(row);
+      });
+    }
+
+    function updateJointRows(data) {
+      data.joints.forEach((joint) => {
+        const row = jointList.querySelector(`[data-name="${joint.name}"]`);
+        if (!row) return;
+        const slider = row.querySelector("input[type='range']");
+        const readout = row.querySelector(".readout");
+        if (!sliderBusy) slider.value = joint.target;
+        readout.textContent = joint.position.toFixed(3);
+      });
+    }
+
+    function updatePills(data) {
+      connPill.textContent = "在线";
+      connPill.className = "pill ok";
+      enabledPill.textContent = data.enabled ? "已使能" : "未使能";
+      enabledPill.className = data.enabled ? "pill ok" : "pill";
+      stopPill.textContent = data.estop ? "急停" : "正常";
+      stopPill.className = data.estop ? "pill stop" : "pill ok";
+      clampText.textContent = String(data.clamp_count);
+      stepText.textContent = String(data.step_count);
+      updateRealArm(data.real_arm);
+      updateGrasp(data.grasp, data.red_ball, data.fixed_demo);
+      updateSmolVLA(data.smolvla);
+    }
+
+    function updateRealArm(realArm) {
+      if (!realArm || !realArm.configured) {
+        realConnPill.textContent = "未启用";
+        realConnPill.className = "pill";
+        realEnabledPill.textContent = "未使能";
+        realEnabledPill.className = "pill";
+        realMessageText.textContent = realArm && realArm.message ? realArm.message : "-";
+        return;
+      }
+      realConnPill.textContent = realArm.connected ? "在线" : "离线";
+      realConnPill.className = realArm.connected ? "pill ok" : "pill stop";
+      if (realArm.estop) {
+        realEnabledPill.textContent = "急停";
+        realEnabledPill.className = "pill stop";
+      } else {
+        realEnabledPill.textContent = realArm.enabled ? "已使能" : "未使能";
+        realEnabledPill.className = realArm.enabled ? "pill ok" : "pill";
+      }
+      const qText = realArm.q ? ` q=[${fmtVec(realArm.q)}]` : "";
+      realMessageText.textContent = `${realArm.message || "-"}${qText}`;
+    }
+
+    function fmtVec(values) {
+      if (!values) return "-";
+      return values.map((value) => Number(value).toFixed(3)).join(", ");
+    }
+
+    function fmtMatrix(values) {
+      if (!values) return "-";
+      return values.map((row) => `[${fmtVec(row)}]`).join(" ");
+    }
+
+    function updateGrasp(grasp, redBall, fixedDemo) {
+      if (!grasp) {
+        graspPhase.textContent = "未初始化";
+        graspPhase.className = "pill";
+        graspInfo.textContent = "";
+        mathPanel.textContent = "";
+        return;
+      }
+      const fixedActive = fixedDemo && fixedDemo.active;
+      const phase = fixedActive ? fixedDemo.phase : (grasp.phase || "idle");
+      const phaseNames = {
+        idle: "空闲",
+        detecting: "识别目标",
+        pregrasp: "接近目标",
+        grasp: "移动到抓取位",
+        close_gripper: "闭合夹爪",
+        lift: "抬升",
+        done: "完成",
+        approach: "接近目标",
+        close: "闭合夹爪",
+      };
+      graspPhase.textContent = phaseNames[phase] || phase;
+      graspPhase.className = (grasp.active || fixedActive) ? "pill ok" : "pill";
+      const result = grasp.last_result;
+      const moveit = grasp.moveit_state || {};
+      const traj = grasp.trajectory_state || {};
+      const plan = grasp.plan || {};
+      const geometry = redBall && redBall.geometry ? redBall.geometry : "目标";
+      const targetText = redBall && redBall.position_xyz_m
+        ? `目标: ${geometry} [${fmtVec(redBall.position_xyz_m)}]`
+        : "目标: 未初始化";
+      const motionText = traj.point_count
+        ? `运动: Isaac轨迹 ${traj.point_index + 1}/${traj.point_count}`
+        : (moveit.active ? `运动: MoveIt ${moveit.phase || ""}` : `运动: ${phaseNames[phase] || phase}`);
+      const error = (fixedDemo && fixedDemo.error) || grasp.error || moveit.error || "";
+      if (result) {
+        graspInfo.textContent = `${targetText} | 状态: ${phaseNames[phase] || phase} | ${motionText}${error ? ` | ${error}` : ""}`;
+        renderMath(result, plan, moveit);
+      } else {
+        graspInfo.textContent = `${targetText} | 状态: ${phaseNames[phase] || phase} | ${motionText}${error ? ` | ${error}` : ""}`;
+        mathPanel.textContent = "";
+      }
+    }
+
+    function updateSmolVLA(smol) {
+      if (!smol) smol = {connected: false, phase: "GUI_BRIDGE_OFFLINE"};
+      smolConn.textContent = smol.connected ? "在线" : "离线";
+      smolConn.className = smol.connected ? "pill ok" : "pill stop";
+      smolPhase.textContent = smol.phase || "WAITING";
+      smolPhase.className = smol.phase === "SUCCESS" ? "pill ok" : "pill";
+      smolGrasp.textContent = smol.grasp_success ? "是" : "否";
+      smolGrasp.className = smol.grasp_success ? "pill ok" : "pill";
+      smolTask.textContent = smol.task_success ? "已完成" : "未完成";
+      smolTask.className = smol.task_success ? "pill ok" : "pill";
+      const pregrasp = smol.pregrasp || {};
+      document.getElementById("smolExecuteBtn").disabled = !pregrasp.plan_ready;
+      if (document.activeElement !== smolTargetSelect && smol.target_object) {
+        smolTargetSelect.value = smol.target_object;
+      }
+      const pos = Array.isArray(smol.object_position_m) ? `[${fmtVec(smol.object_position_m)}]` : "-";
+      smolInfo.textContent = [
+        `目标: ${smol.target_object || "-"}`,
+        `物体位置 m: ${pos}`,
+        `夹爪开合 rad: ${smol.gripper_position_rad ?? "-"}`,
+        `夹爪距离 m: ${smol.gripper_object_distance_m ?? "-"}`,
+        `箱内: ${smol.inside_success_volume === undefined ? "-" : (smol.inside_success_volume ? "是" : "否")}`,
+        `失败原因: ${smol.failure_reason || smol.error || "-"}`,
+        `预抓取: ${pregrasp.phase || "IDLE"}`,
+        `预抓取位置 m: ${pregrasp.pregrasp_position_m ? `[${fmtVec(pregrasp.pregrasp_position_m)}]` : "-"}`,
+        `预抓取消息: ${pregrasp.message || "-"}`,
+      ].join("\n");
+    }
+
+    function renderMath(result, plan, moveit) {
+      const trajectory = moveit.result && moveit.result.trajectory ? moveit.result.trajectory : null;
+      const math = result.math || {};
+      const firstPoint = trajectory && trajectory.points && trajectory.points.length ? trajectory.points[0] : null;
+      const lastPoint = trajectory && trajectory.points && trajectory.points.length ? trajectory.points[trajectory.points.length - 1] : null;
+      const lines = [
+        `P_camera = [(u-cx)/fx*z, -(v-cy)/fy*z, -z, 1]`,
+        `K = ${fmtMatrix(math.camera_matrix_K)}`,
+        `T_mount_camera = ${fmtMatrix(math.T_mount_camera)}`,
+        `pixel_uv = [${fmtVec(result.pixel_uv)}]`,
+        `camera_xyz_m = [${fmtVec(result.camera_xyz_m)}]`,
+        `mount_xyz_m = [${fmtVec(result.mount_xyz_m)}]`,
+        `world_xyz_m = [${fmtVec(result.world_xyz_m)}]`,
+        `pregrasp_xyz_m = [${fmtVec(plan.pregrasp_xyz_m)}]`,
+        `grasp_xyz_m = [${fmtVec(plan.grasp_xyz_m)}]`,
+        `lift_xyz_m = [${fmtVec(plan.lift_xyz_m)}]`,
+        `trajectory_points = ${trajectory ? trajectory.point_count : 0}`,
+        `joint_names = ${trajectory ? trajectory.joint_names.join(", ") : "-"}`,
+        `first_positions = [${firstPoint ? fmtVec(firstPoint.positions) : "-"}]`,
+        `last_positions = [${lastPoint ? fmtVec(lastPoint.positions) : "-"}]`,
+      ];
+      mathPanel.textContent = lines.join("\n");
+    }
+
+    function refresh() {
+      return api("/api/status").then((data) => {
+        if (!status || status.joints.length !== data.joints.length) createJointRows(data);
+        else updateJointRows(data);
+        status = data;
+        updatePills(data);
+      }).catch((err) => {
+        connPill.textContent = "离线";
+        connPill.className = "pill stop";
+        setMessage(err.message);
+      });
+    }
+
+    function jog(name, delta) {
+      command("/api/jog", {joint: name, delta, speed_scale: Number(speedScale.value)});
+    }
+
+    function setJoint(name, value) {
+      command("/api/set_joint", {joint: name, value, speed_scale: Number(speedScale.value)});
+    }
+
+    function syncSpeed() {
+      command("/api/speed", {speed_scale: Number(speedScale.value)});
+    }
+
+    document.getElementById("enableBtn").onclick = () => command("/api/enable", {speed_scale: Number(speedScale.value)});
+    document.getElementById("holdBtn").onclick = () => command("/api/hold", {});
+    document.getElementById("homeBtn").onclick = () => command("/api/home", {speed_scale: Number(speedScale.value)});
+    document.getElementById("stopBtn").onclick = () => command("/api/stop", {});
+    document.getElementById("graspBtn").onclick = () => command("/api/grasp_red_ball", {speed_scale: Number(speedScale.value)});
+    document.getElementById("fixedDemoBtn").onclick = () => command("/api/fixed_demo_grasp", {speed_scale: Number(speedScale.value)});
+    document.getElementById("resetBallBtn").onclick = () => command("/api/reset_red_ball", {});
+    document.getElementById("graspStopBtn").onclick = () => command("/api/grasp_stop", {});
+    document.getElementById("smolApplyBtn").onclick = async () => {
+      await command("/api/smolvla_target", {target_object: smolTargetSelect.value});
+      await command("/api/smolvla_reset", {});
+    };
+    document.getElementById("smolResetBtn").onclick = () => command("/api/smolvla_reset", {});
+    document.getElementById("smolGenerateBtn").onclick = () => command("/api/smolvla_pregrasp_generate", {});
+    document.getElementById("smolExecuteBtn").onclick = () => command("/api/smolvla_pregrasp_execute", {});
+
+    speedScale.addEventListener("change", syncSpeed);
+    speedScale.addEventListener("input", () => {
+      window.clearTimeout(speedSyncTimer);
+      speedSyncTimer = window.setTimeout(syncSpeed, 150);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        command("/api/stop", {});
+      }
+    });
+
+    function refreshCamera() {
+      cameraImage.src = `/api/camera.bmp?t=${Date.now()}`;
+    }
+
+    refresh();
+    refreshCamera();
+    setInterval(refresh, 200);
+    setInterval(refreshCamera, 120);
+  </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+{
+  "selected": {
+    "position": [
+      0.5302921443885391,
+      -0.07183080672945959,
+      0.07934182747565208
+    ],
+    "orientation": [
+      -0.6400026370274011,
+      0.30066031430498547,
+      -0.23677206970883458,
+      0.6662874657426738
+    ],
+    "target_point": [
+      0.6646721959114075,
+      -0.17470061779022217,
+      0.03400000558793545
+    ],
+    "azimuth_deg": -44.72638021747356,
+    "elevation_deg": 17.68928926851672,
+    "roll_deg": -90.0,
+    "standoff_m": 0.1752029596983543,
+    "pitch_deg": -5.6,
+    "desired_grasp_point_in_stator_m": [
+      0.12083045,
+      0.03222791927792845,
+      0.021479699999999997
+    ],
+    "planning_geometry_point_m": [
+      0.6646721959114075,
+      -0.17470061779022217,
+      0.030500005587935447
+    ],
+    "desired_object_in_stator_m": [
+      0.12083045,
+      0.03222791927792845,
+      0.021479699999999997
+    ],
+    "final_grasp_target": true
+  },
+  "rejected_references": [
+    {
+      "azimuth": -15.0,
+      "error": "纠正全路径预检未通过: prepare_lower_behind: MoveIt error_code=-31 | prepare_deviation: MoveIt error_code=99999 | prepare_deviation: MoveIt error_code=99999"
+    },
+    {
+      "azimuth": 0.0,
+      "error": "纠正全路径预检未通过: prepare_lower_behind: MoveIt error_code=-31 | prepare_deviation: MoveIt error_code=99999 | prepare_deviation: MoveIt error_code=99999"
+    },
+    {
+      "azimuth": 15.0,
+      "error": "纠正全路径预检未通过: prepare_side_entry: MoveIt error_code=-2 | prepare_deviation: MoveIt error_code=99999 | prepare_deviation: MoveIt error_code=99999"
+    },
+    {
+      "azimuth": 30.0,
+      "error": "纠正全路径预检未通过: prepare_side_entry: MoveIt error_code=-2 | prepare_deviation: MoveIt error_code=99999 | prepare_deviation: MoveIt error_code=99999"
+    },
+    {
+      "azimuth": -14.726380217473558,
+      "error": "纠正全路径预检未通过: prepare_lower_behind: MoveIt error_code=-31 | prepare_deviation: MoveIt error_code=99999 | prepare_deviation: MoveIt error_code=99999"
+    },
+    {
+      "azimuth": 30.273619782526442,
+      "error": "纠正全路径预检未通过: prepare_side_entry: MoveIt error_code=-2 | prepare_deviation: MoveIt error_code=99999 | prepare_deviation: MoveIt error_code=99999"
+    }
+  ],
+  "route": {
+    "anchor_position": [
+      0.5304203371446887,
+      -0.07181166975378891,
+      0.07858411538830722
+    ],
+    "bad_position": [
+      0.5218876864813374,
+      -0.04837381104031063,
+      0.08658410421243631
+    ],
+    "bad_orientation": [
+      -0.6413377304203375,
+      0.3051882793475336,
+      -0.2312409982414931,
+      0.6648861785452156
+    ],
+    "retreat_m": 0.012,
+    "strategy": "raised",
+    "preparation": [
+      {
+        "stage": "prepare_deviation",
+        "position": [
+          0.5218876864813374,
+          -0.04837381104031063,
+          0.08658410421243631
+        ],
+        "orientation": [
+          -0.6413377304203375,
+          0.3051882793475336,
+          -0.2312409982414931,
+          0.6648861785452156
+        ],
+        "linear": false
+      }
+    ],
+    "recovery": [
+      {
+        "stage": "recover_clearance",
+        "position": [
+          0.5218876864813374,
+          -0.04837381104031063,
+          0.10458410421243632
+        ],
+        "orientation": [
+          -0.6413377304203375,
+          0.3051882793475336,
+          -0.2312409982414931,
+          0.6648861785452156
+        ],
+        "linear": false
+      },
+      {
+        "stage": "recover_approach",
+        "position": [
+          0.5304203371446887,
+          -0.07181166975378891,
+          0.07858411538830722
+        ],
+        "orientation": [
+          -0.6413377304203375,
+          0.3051882793475336,
+          -0.2312409982414931,
+          0.6648861785452156
+        ],
+        "linear": true
+      }
+    ]
+  }
+}

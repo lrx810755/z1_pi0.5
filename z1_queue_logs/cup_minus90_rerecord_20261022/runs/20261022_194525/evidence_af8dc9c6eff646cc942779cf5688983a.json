@@ -1,0 +1,148 @@
+{
+  "task_id": "new_correction_episode_000030",
+  "task": {
+    "id": "cup_post_shift_10",
+    "kind": "post_shift_realign",
+    "grid": [
+      0,
+      3
+    ],
+    "split": "train",
+    "offset_approach_m": [
+      0,
+      0,
+      0
+    ],
+    "rotation_tool_deg": [
+      0,
+      0,
+      0
+    ],
+    "requested_shift_world_m": [
+      -0.015,
+      0,
+      0
+    ],
+    "preparation_retreat_m": 0.012,
+    "freeze_policy": "pre_approach_only",
+    "source_note": "Cup relocated during scene preparation; record recovery from stale target pose, never teleport during recording."
+  },
+  "accepted": false,
+  "recovery_complete": true,
+  "reference_position": [
+    0.30222320902988437,
+    -0.13756342831715465,
+    0.07616416821950918
+  ],
+  "reference_orientation": [
+    0.6695374499960975,
+    0.22741944440776848,
+    -0.30175137469522534,
+    -0.6394889422245913
+  ],
+  "requested_position": [
+    0.3085944099561523,
+    -0.14590278246668353,
+    0.08416415331834798
+  ],
+  "requested_orientation": [
+    0.6695374499960977,
+    0.2274194444077685,
+    -0.3017513746952254,
+    -0.6394889422245914
+  ],
+  "actual_position": [
+    0.30831720051661415,
+    -0.14488006622681443,
+    0.08249478386788542
+  ],
+  "actual_orientation": [
+    -0.6686378992327454,
+    -0.21752687722558578,
+    0.30426600728760156,
+    0.6426722447744003
+  ],
+  "preflight": {
+    "route": {
+      "anchor_position": [
+        0.30222320902988437,
+        -0.13756342831715465,
+        0.07616416821950918
+      ],
+      "bad_position": [
+        0.3085944099561523,
+        -0.14590278246668353,
+        0.08416415331834798
+      ],
+      "bad_orientation": [
+        0.6695374499960977,
+        0.2274194444077685,
+        -0.3017513746952254,
+        -0.6394889422245914
+      ],
+      "retreat_m": 0.012,
+      "strategy": "direct",
+      "preparation": [
+        {
+          "stage": "prepare_deviation",
+          "position": [
+            0.3085944099561523,
+            -0.14590278246668353,
+            0.08416415331834798
+          ],
+          "orientation": [
+            0.6695374499960977,
+            0.2274194444077685,
+            -0.3017513746952254,
+            -0.6394889422245914
+          ],
+          "linear": false
+        }
+      ],
+      "recovery": [
+        {
+          "stage": "recover_align_approach",
+          "position": [
+            0.30222320902988437,
+            -0.13756342831715465,
+            0.07616416821950918
+          ],
+          "orientation": [
+            0.6695374499960975,
+            0.22741944440776848,
+            -0.30175137469522534,
+            -0.6394889422245913
+          ],
+          "linear": true
+        }
+      ]
+    },
+    "rejected_routes": []
+  },
+  "stages": [
+    {
+      "stage": "recover_align_approach",
+      "start_sim_time": 10773.000561855,
+      "end_sim_time": 10773.683895224
+    }
+  ],
+  "freeze_policy": "pre_approach_only",
+  "prepared_cup_shift": {
+    "before": [
+      0.42430347204208374,
+      -0.006988671608269215,
+      -1.1175870895385742e-08
+    ],
+    "after": [
+      0.40930336713790894,
+      -0.006988503038883209,
+      3.725290298461914e-09
+    ],
+    "actual_shift_world_m": [
+      -0.015000104904174805,
+      1.685693860054016e-07,
+      1.4901161193847656e-08
+    ],
+    "mode": "setup_relocation_before_approach"
+  }
+}

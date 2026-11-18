@@ -1,0 +1,28 @@
+--- /home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/run_z1_ros2_scene.py
++++ run_scene_mass300g.py
+@@ -9,6 +9,7 @@
+ import sys
+ import time
+ 
++sys.path.insert(0,'/home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts')
+ from layout_sweep import layout_sweep_blockers
+ from spatial_grid import grid_cell_bounds
+ from z1_paths import asset_root, isaac_sim_root, repository_root
+@@ -2468,6 +2469,9 @@
+     configure_fruit_collision_approximations(stage)
+     remove_gripper_contact_helpers(stage)
+     configure_grasp_friction(stage)
++    sys.path.insert(0,'/home/lp531/smolvla_eval/pi05_cup_300g_friction2_steps15_paired30_20261030')
++    import cup_physics_override
++    cup_physics_override.apply(stage)
+     configure_eval_table_friction(stage, ARGS.eval_table_friction)
+     configure_grasp_contact_offsets(stage)
+     configure_grasp_contact_reports(stage)
+@@ -2531,6 +2535,7 @@
+     )
+     robot = configure_drive_gains(articulation_root)
+     training_objects = initialize_training_objects()
++    cup_physics_override.verify(stage,training_objects,robot,DRIVE_GAINS,GRIPPER_STATOR)
+     reset_interface = SceneResetInterface(
+         robot, training_objects, GRIPPER_STATOR
+     )

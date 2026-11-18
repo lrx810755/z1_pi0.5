@@ -1,0 +1,1 @@
+Fresh official-base LoRA; 20Hz H50; batch1 accumulation16; maximum60000 optimizer updates (960000 microsteps); warmup2000updates; cosine5e-5 to5e-6; save/heldout validation2000updates. Same immutable513 data/splits/weights. No old adapter resume. Closed-loop evaluation milestones10000updates require GPU handoff; not automatically launched by this training runner.

@@ -1,0 +1,19 @@
+import json
+from pathlib import Path
+import numpy as np
+P=Path(__file__).resolve().parent;d=json.loads((P/'results.json').read_text());r=d['samples'];g=d['groups'];meta=json.loads((P/'inference_completed.json').read_text());a=np.load(P/'predictions.npz');probes=json.loads((P/'probes.json').read_text())
+assert len(r)==458 and len({s['episode_index'] for s in r})==78
+assert a['predicted'].shape==a['expert'].shape==(458,16,7)
+assert np.isfinite(a['predicted']).all() and np.array_equal(a['absolute_indices'],probes['absolute_indices'])
+low=np.load('/home/lp531/smolvla_data/act_cup_recovery_rgb224_cache_20261020/lowdim.npz')['actions']
+for i,z in enumerate(a['absolute_indices']):assert np.array_equal(low[z:z+16],a['expert'][i])
+lines=['# 咖啡杯ACT浅位示范离线预测','', '## 实验设置','', f"检查点：{meta['checkpoint']}", '', '从已有两批纠偏的首次闭爪前观测中，每0.3秒取一个锚点，筛选杯中心工具X方向比参考0.12083045米浅超过5毫米、X<0.30米、|Y|与|Z|<0.10米，且未来16步完整。共458个观测，来自78条示范；408个属于70条训练示范，50个属于8条验证示范。验证按采集网格留出，不是随机拆相邻帧。没有为了凑数重复观测，阈值筛选后并非全部89条纠偏都进入本实验。', '', '模型只输入该时刻原始三路JPG和真实七维状态。使用50k检查点保存的裁切、缩放、归一化及输出反归一化；不向模型传入专家action，直接predict_action_chunk，eval模式；重复预测一致。输出全部16步，主要比较第15步（索引14）以对应当前执行15步。专家真值与训练cache逐样本完全一致，所有预测有限。', '', '位移用实际URDF正运动学转换，推进为相对于输入时刻工具X轴的平移投影；“专家要求推进”为专家第15步目标比实际当前末端前进≥2毫米；“模型推进”为对应预测前进≥1毫米。模型预测第15步运动学目标不等于仿真实际执行后的位姿。', '', '浅位筛选沿用初始/纠偏开始杯位置加30.5毫米中心高估计，动态杯发生接触移动后存在误差；推进比较本身仅使用实际关节、专家动作和模型动作，不依赖杯位置估计。样本同条示范内相关，计数不是独立试验成功率。', '', '## 是否学到继续推进','', '|范围|观测数|专家要求推进|模型推进≥1毫米|达到专家推进量一半|模型基本全段停住|', '|---|---:|---:|---:|---:|---:|']
+for key,name in [('train/all/all','训练集合计'),('validation/all/all','验证集合计'),('train/new_correction/all','新纠偏训练集'),('validation/new_correction/all','新纠偏验证集')]:
+ s=g[key];lines.append(f"|{name}|{s['samples']}|{s['expert_advance_samples']}|{s['model_forward_ge1mm']}|{s['model_forward_ge_half_expert']}|{s['model_stalled_all16']}|")
+lines+=['', '“全段停住”要求全部16步末端预测位置均距当前实际位置小于2毫米，只在专家要求推进的样本里计数。训练集合计29个样本推进不足，其中17个反向，全部来自旧纠偏；它们可能沿别的方向运动，不能一概称为整体停住。', '', '把初始等待样本排除后：训练集238个专家要求推进，模型209个推进；验证集24个专家要求推进，24个推进。结果不单纯来自等待帧的未来监督。', '', '## 会推进不代表纠偏准确','', '|范围（专家要求推进样本）|专家推进中位数|模型推进中位数|预测末端与专家目标位置误差中位数|', '|---|---:|---:|---:|']
+for key,name in [('train/all/all','训练集'),('validation/all/all','验证集'),('train/new_correction/all','新纠偏训练集'),('validation/new_correction/all','新纠偏验证集')]:
+ s=g[key];lines.append(f"|{name}|{s['median_expert_forward_mm']:.2f}毫米|{s['median_pred_forward_mm']:.2f}毫米|{s['median_endpoint_error_mm']:.2f}毫米|")
+lines+=['', '这里两个推进中位数是各自分布的中位数，不能解释为每个样本都恰好多推某个固定比例。验证集中专家末端总位移≥3毫米的47个观测，37个预测沿专家位移方向前进超过1毫米，另10个不足或反向。验证集50个锚点只来自8条示范，不能当作大规模泛化成功率。', '', '## 两个明确的验证样本','', '1. 新纠偏episode_000008，输入第12帧（1.2秒）。沿输入时刻工具三个轴，专家第15步位移为[13.69,19.55,29.08]毫米，模型为[34.81,3.02,-0.88]毫米，目标位置误差40.21毫米。模型会前进，但漏掉了大量另外两个方向的调整。这三个轴是局部工具轴，不能直接把第三项称为世界高度。该条还有3个相邻推进样本有同类偏差，不能把4帧称4次独立失败。', '', '2. 旧纠偏episode_000046，验证集第21帧（2.1秒）。专家局部位移[3.91,2.60,6.49]毫米，模型[12.52,-15.99,-6.78]毫米，位置误差24.42毫米。推进方向有动作，但其他分量反向，无法据“会向前”判断能正确到位。', '', '附带观察：旧纠偏验证集23个浅位观测，专家未来16步均未闭爪；模型9个观测的输出超过0.6闭爪阈值。这是提前闭爪预测，不是实际闭爪事件或独立9次失败。新纠偏验证集6个未来含闭爪的观测，只有3个预测超过0.6；因此纠偏精度与闭爪时机仍有问题。', '', '## 与在线浅位停滞的关系','', '离线观测中，尤其新纠偏，模型已学到一定继续推进能力；没有复现专家要求推进而16步全段停住的现象。因此，仅解释为“等待帧权重大，让模型不会前进”不符合本实验结果。', '', '但不能因此断言所有纠偏都已学好：旧纠偏训练样本仍有29/177推进不足，验证末端位置误差也偏大。在线评估episode22在浅位时模型目标仅前进约0.2毫米，而示范浅位观测通常有推进预测；这一差异支持在线轨迹进入了与示范不同的状态组合，是值得下一步核对的方向，不是已证明的唯一根因。', '', '下一步更适合把实际停滞观测与同位置、相近姿态的示范逐一匹配，检查图像与关节组合差异，并优先补充实际失败状态下多方向联合调整的连续专家恢复。清理起始等待可作为小对照，但本结果不支持仅靠减少等待加权解决主要问题。', '', '本次仅离线推理与分析；未运行仿真、未训练或修改控制/采样配置。保留probes.json、predictions.npz、predictions_vs_expert.csv、results.json和全部脚本。']
+(P/'离线预测分析.md').write_text('\n'.join(lines)+'\n')
+(P/'verified.json').write_text(json.dumps(dict(samples=458,episodes=78,train_samples=408,validation_samples=50,shape_verified=True,all_expert_actions_match_training_cache=True,finite=True,inference_metadata=meta),ensure_ascii=False,indent=2))
+print('verified; report saved')

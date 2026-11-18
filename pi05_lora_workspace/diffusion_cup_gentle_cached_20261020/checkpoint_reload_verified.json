@@ -1,0 +1,72 @@
+{
+  "tests": [
+    {
+      "model": "pretrained_model",
+      "source": "original",
+      "output_shape": [
+        1,
+        15,
+        7
+      ],
+      "raw_cached_processors_match": true,
+      "action_roundtrip": true
+    },
+    {
+      "model": "pretrained_model",
+      "source": "old_correction",
+      "output_shape": [
+        1,
+        15,
+        7
+      ],
+      "raw_cached_processors_match": true,
+      "action_roundtrip": true
+    },
+    {
+      "model": "pretrained_model",
+      "source": "new_correction",
+      "output_shape": [
+        1,
+        15,
+        7
+      ],
+      "raw_cached_processors_match": true,
+      "action_roundtrip": true
+    },
+    {
+      "model": "pretrained_model_ema",
+      "source": "original",
+      "output_shape": [
+        1,
+        15,
+        7
+      ],
+      "raw_cached_processors_match": true,
+      "action_roundtrip": true
+    },
+    {
+      "model": "pretrained_model_ema",
+      "source": "old_correction",
+      "output_shape": [
+        1,
+        15,
+        7
+      ],
+      "raw_cached_processors_match": true,
+      "action_roundtrip": true
+    },
+    {
+      "model": "pretrained_model_ema",
+      "source": "new_correction",
+      "output_shape": [
+        1,
+        15,
+        7
+      ],
+      "raw_cached_processors_match": true,
+      "action_roundtrip": true
+    }
+  ],
+  "ema_updates": 20,
+  "deploy_preprocessing": "per-frame crop/resize then collect two observation steps"
+}

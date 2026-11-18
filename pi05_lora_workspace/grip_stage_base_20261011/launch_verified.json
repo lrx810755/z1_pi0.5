@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "verified_at": "2026-10-11T01:21:54.719032+08:00",
+  "service": {
+    "MainPID": "2435528",
+    "ExecMainStartTimestamp": "Sun 2026-10-11 01:19:52 CST",
+    "ActiveState": "active",
+    "SubState": "running"
+  },
+  "current_progress": {
+    "microsteps": 104,
+    "optimizer_updates": 13,
+    "actual_optimizer_steps": [
+      13
+    ],
+    "scheduler_microsteps": 104,
+    "learning_rate": 1.3121719570107494e-06,
+    "loss": 0.3840148448944092
+  },
+  "first_update": {
+    "checkpoint": "/home/lp531/smolvla_training/pi05_grip_stage_base_20261011/checkpoints/000008/pretrained_model",
+    "microstep": 8,
+    "optimizer_updates": 1,
+    "actual_optimizer_steps": [
+      1
+    ],
+    "scheduler_microsteps": 8,
+    "changed_tensors": 255,
+    "finite": true
+  },
+  "initialization": {
+    "base_weights": "/home/lp531/pi05_lora_workspace/weights/pi05_base",
+    "fresh_adapter": true,
+    "zero_lora_b_matrices": 252,
+    "full_projection_tensors_match_base": true,
+    "tensors": 512,
+    "trainable_parameters": 55249952,
+    "vision_frozen": true
+  },
+  "sampling": {
+    "training_windows": 43817,
+    "original_mass": 0.6999999999999997,
+    "correction_mass": 0.29999999999999993,
+    "heldout_excluded": true,
+    "loss_weight": 1,
+    "within_pool_weights": {
+      "other": 1,
+      "preclose_1s": 1.5,
+      "close_to_stable_lift": 2
+    },
+    "key_mass": 0.5135643071643968,
+    "natural_key_fraction": 0.34781021064883494,
+    "phase_mass": {
+      "1.0": 0.4864356928356028,
+      "1.5": 0.048720314891943256,
+      "2.0": 0.46484399227245354
+    },
+    "pool_phase_mass": {
+      "original": {
+        "1.0": 0.34768790783855613,
+        "1.5": 0.03383549504551679,
+        "2.0": 0.3184765971159267
+      },
+      "correction": {
+        "1.0": 0.13874778499704665,
+        "1.5": 0.01488481984642646,
+        "2.0": 0.14636739515652686
+      }
+    }
+  },
+  "config": "/home/lp531/pi05_lora_workspace/grip_stage_base_20261011/resolved_train_config.json",
+  "output": "/home/lp531/smolvla_training/pi05_grip_stage_base_20261011",
+  "source_sha256": {
+    "phases.py": "6ac5a3e83b805c2d4949f4249a4f6d7692e141e44766e094b7f9c3f2f24cf4bb",
+    "prepare.py": "dfafa8a4ceba9d11c5b8146f087c63f57b2ec35d45f774d9c9a3341eaec721c8",
+    "sampling.py": "b55ead75bd4e4a9bd54dcb180ef5c08704b2177d88d35e29fb01f67ddd2418e6",
+    "train.py": "24e226fb8cc26662180f3a9d995925ea09b353eb60e1edf17df6f600790e4a22",
+    "run_training.sh": "104a6269288dec8381ae973ddda4f757d08a96e0b4c6daae378cb658f04c3b63"
+  }
+}

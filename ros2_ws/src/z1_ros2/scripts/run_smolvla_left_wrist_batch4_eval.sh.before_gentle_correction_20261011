@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+batch4=/home/lp531/smolvla_training/z1_left_wrist_no_phase_all_batch4_lr_restart_20260928_004609/checkpoints/075605/pretrained_model
+batch8=/home/lp531/smolvla_training/z1_left_wrist_no_phase_all_batch8_lr_restart_20260928_004609/checkpoints/037803/pretrained_model
+bottle_recovery=/home/lp531/smolvla_training/smolvla_bottle_recovery_boundary_only_batch8_20260930/checkpoints/030000/pretrained_model
+pi05=/home/lp531/smolvla_training/pi05_bottle_binary_chunk15_attn_ffn_20261007/checkpoints/080000/pretrained_model
+pi05_continuous=/home/lp531/smolvla_training/pi05_bottle_three_camera_20261006/best
+pi05_legacy=/home/lp531/smolvla_training/pi05_bottle_lora_20261001/best
+weight_file=model.safetensors
+training_dataset=/home/lp531/smolvla_data/z1_tabletop_raw_left_wrist_physical_checked_v1
+model_args=()
+
+model=''
+args=()
+while (( $# )); do
+  case "$1" in
+    --help|-h)
+      printf '用法：%s [--model batch4|batch8|bottle-recovery|pi05|pi05-continuous|pi05-legacy] [--objects cup|apple|peach|beverage_bottle] [其他验证参数]\n' "$0"
+      printf '终端运行时，未指定模型或物体将显示选择菜单。\n'
+      printf '默认使用10 Hz动作、60 Hz插值；闭爪后的双指接触等待已关闭。\n'
+      printf 'pi05 使用二值标签：预测 >= 0.5 闭爪目标0 rad，否则开爪目标-0.90 rad；必须启用二值映射。pi05-continuous/pi05-legacy 使用原角度阈值 -0.75 rad。\n'
+      printf 'bottle-recovery 为瓶子纠偏模型（batch 8，30000 step），默认测试瓶子。\n'
+      printf 'pi05 为二值夹爪三相机 π0.5（chunk15，Attention+FFN LoRA，80000 step），每次执行5帧，瓶子保持自由物理状态；场景需 external_camera_layout:=dual。\n'
+      printf 'pi05-legacy 保留旧双相机 π0.5 模型用于对照。\n'
+      exit 0
+      ;;
+    --model)
+      if (( $# < 2 )); then echo '--model 需要 batch4、batch8、bottle-recovery、pi05、pi05-continuous 或 pi05-legacy。' >&2; exit 2; fi
+      model=$2
+      shift 2
+      ;;
+    --model=*) model=${1#*=}; shift ;;
+    --checkpoint|--checkpoint=*) echo '请使用 --model batch4|batch8|bottle-recovery|pi05|pi05-continuous|pi05-legacy 选择模型。' >&2; exit 2 ;;
+    *) args+=("$1"); shift ;;
+  esac
+done
+set -- "${args[@]}"
+
+if [[ -z "$model" ]]; then
+  if [[ ! -t 0 ]]; then
+    echo '请在终端选择模型，或传入 --model batch4|batch8|bottle-recovery|pi05|pi05-continuous|pi05-legacy。' >&2
+    exit 2
+  fi
+  printf '选择验证模型：1) batch 4 续训最终模型  2) batch 8 续训最终模型  3) 瓶子纠偏模型（batch 8，30000 step）  4) 新二值夹爪三相机 π0.5（chunk15）  5) 旧双相机 π0.5  6) 上一版连续标签三相机 π0.5\n'
+  read -r -p '输入 1-6: ' selection
+  case "$selection" in
+    1) model=batch4 ;;
+    2) model=batch8 ;;
+    3) model=bottle-recovery ;;
+    4) model=pi05 ;;
+    5) model=pi05-legacy ;;
+    6) model=pi05-continuous ;;
+    *) echo '无效模型选择。' >&2; exit 2 ;;
+  esac
+fi
+
+case "$model" in
+  batch4) checkpoint=$batch4 ;;
+  batch8) checkpoint=$batch8 ;;
+  bottle-recovery)
+    checkpoint=$bottle_recovery
+    training_dataset=/home/lp531/smolvla_data/z1_tabletop_bottle_recovery_boundary_only_prepared_v1
+    model_args=(--output /home/lp531/smolvla_eval/bottle_recovery_boundary_only_batch8_30000)
+    ;;
+  pi05|pi05-continuous)
+    export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+    export FASTRTPS_DEFAULT_PROFILES_FILE=/home/lp531/ros2_ws/src/z1_ros2/z1_isaac_bridge/config/fastdds_camera.xml
+    export FASTDDS_DEFAULT_PROFILES_FILE="$FASTRTPS_DEFAULT_PROFILES_FILE"
+    checkpoint=$pi05
+    if [[ "$model" == pi05-continuous ]]; then checkpoint=$pi05_continuous; fi
+    weight_file=adapter_model.safetensors
+    training_dataset=/home/lp531/smolvla_data/z1_tabletop_raw_left_wrist_three_camera_v1
+    model_args=(--policy-type pi05 --execute-steps 5 --binary-gripper --no-freeze-target-until-close --output /home/lp531/smolvla_eval/pi05_bottle_three_camera_best)
+    if [[ "$model" == pi05 ]]; then
+      model_args=(--policy-type pi05 --execute-steps 5 --binary-gripper --gripper-action-encoding binary --no-freeze-target-until-close --output /home/lp531/smolvla_eval/pi05_bottle_binary_chunk15_attn_ffn)
+    fi
+    ;;
+  pi05-legacy)
+    checkpoint=$pi05_legacy
+    weight_file=adapter_model.safetensors
+    training_dataset=/home/lp531/smolvla_data/z1_tabletop_bottle_recovery_boundary_only_prepared_v1
+    model_args=(--policy-type pi05 --execute-steps 5 --binary-gripper --no-freeze-target-until-close --output /home/lp531/smolvla_eval/pi05_bottle_lora_best)
+    ;;
+  *) echo '无效模型；请选择 batch4、batch8、bottle-recovery、pi05、pi05-continuous 或 pi05-legacy。' >&2; exit 2 ;;
+esac
+if [[ ! -s "$checkpoint/$weight_file" || ! -s "$checkpoint/config.json" ]]; then
+  echo "找不到完整的 $model checkpoint：$checkpoint" >&2
+  exit 1
+fi
+
+choose_object=true
+for arg in "$@"; do
+  case "$arg" in
+    --objects|--objects=*|--help|-h) choose_object=false ;;
+  esac
+done
+
+if $choose_object && [[ "$model" == bottle-recovery || "$model" == pi05 || "$model" == pi05-continuous || "$model" == pi05-legacy ]]; then
+  set -- --objects beverage_bottle "$@"
+  choose_object=false
+fi
+
+if $choose_object; then
+  if [[ ! -t 0 ]]; then
+    echo '请在终端选择物体，或传入 --objects cup|apple|peach|beverage_bottle。' >&2
+    exit 2
+  fi
+  printf '选择验证物体：1) 杯子  2) 苹果  3) 桃子  4) 瓶子  5) 全部\n'
+  read -r -p '输入 1-5: ' selection
+  case "$selection" in
+    1) set -- --objects cup "$@" ;;
+    2) set -- --objects apple "$@" ;;
+    3) set -- --objects peach "$@" ;;
+    4) set -- --objects beverage_bottle "$@" ;;
+    5) set -- --objects cup apple peach beverage_bottle "$@" ;;
+    *) echo '无效选择。' >&2; exit 2 ;;
+  esac
+fi
+
+if [[ "$model" == pi05 || "$model" == pi05-continuous ]]; then
+  echo '三相机验证：场景须使用 external_camera_layout:=dual，并发布 wrist/global/global_right。'
+fi
+echo "验证 $model checkpoint：$checkpoint"
+exec /home/lp531/ros2_ws/src/z1_ros2/scripts/run_smolvla_sim_eval.sh \
+  --checkpoint "$checkpoint" \
+  --wrist-rgb-topic /left_wrist_camera/color/image_raw \
+  --training-dataset-root "$training_dataset" \
+  --max-training-target-distance-m 0.03 \
+  --reject-blank-cameras \
+  --episodes-per-object 1 \
+  --rate 10 --execution-rate 60 \
+  --prelift-contact-stable-s 0 --prelift-contact-timeout-s 2.0 \
+  "${model_args[@]}" \
+  "$@"

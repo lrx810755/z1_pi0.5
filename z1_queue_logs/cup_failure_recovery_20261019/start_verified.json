@@ -1,0 +1,82 @@
+{
+  "checked_episodes": [
+    {
+      "episode": "episode_000000",
+      "task": "cup_failure_03_level1",
+      "kind": "approach_recovery",
+      "frames": 58,
+      "close_frame": 30,
+      "dynamic_samples": 191,
+      "actual_cup_shift": null,
+      "final_root": [
+        0.500426,
+        -0.137686,
+        0.058408
+      ],
+      "three_cameras_verified": true
+    },
+    {
+      "episode": "episode_000001",
+      "task": "cup_post_shift_01",
+      "kind": "post_shift_realign",
+      "frames": 61,
+      "close_frame": 32,
+      "dynamic_samples": 202,
+      "actual_cup_shift": {
+        "before": [
+          0.5149749517440796,
+          -0.02650885470211506,
+          9.313225746154785e-09
+        ],
+        "after": [
+          0.5229748487472534,
+          -0.026508957147598267,
+          3.725290298461914e-09
+        ],
+        "actual_shift_world_m": [
+          0.007999897003173828,
+          -1.0244548320770264e-07,
+          -5.587935447692871e-09
+        ],
+        "mode": "setup_relocation_before_approach"
+      },
+      "final_root": [
+        0.520056,
+        -0.025449,
+        0.05878
+      ],
+      "three_cameras_verified": true
+    },
+    {
+      "episode": "episode_000002",
+      "task": "cup_failure_01_level1",
+      "kind": "approach_recovery",
+      "frames": 70,
+      "close_frame": 43,
+      "dynamic_samples": 228,
+      "actual_cup_shift": null,
+      "final_root": [
+        0.385951,
+        -0.239698,
+        0.058991
+      ],
+      "three_cameras_verified": true
+    }
+  ],
+  "count": 3,
+  "quota": 48,
+  "freeze_policy": "pre_approach_only",
+  "live_stage": {
+    "phase": "PLANNING",
+    "running": true,
+    "step": "规划预抓取",
+    "message": "正在验证夹爪扫掠通道并生成碰撞安全轨迹（布局 1）"
+  },
+  "launch": {
+    "pid": 2539337,
+    "command": "bash /home/lp531/start_cup_failure_recovery_collection.sh",
+    "quota": 48,
+    "ros_domain_id": 87,
+    "gui_port": 8781
+  }
+}

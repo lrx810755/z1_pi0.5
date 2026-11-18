@@ -1,0 +1,71 @@
+{
+  "created_at": "2026-10-11T22:32:07.446453+08:00",
+  "models": {
+    "old_080000": {
+      "checkpoint": "/home/lp531/smolvla_training/pi05_gentle_correction_base_20261010/checkpoints/080000/pretrained_model",
+      "adapter_sha256": "f855d7764c2dd0b7ce12c277c45a36c27b6905f0349ce30ce7dc2a37dc5d768e"
+    },
+    "new_080000": {
+      "checkpoint": "/home/lp531/smolvla_training/pi05_grip_stage_base_20261011/checkpoints/080000/pretrained_model",
+      "adapter_sha256": "267af4378d0959296a0e295960fab71bf6da97143b51d7abf68f5e081165c8cf"
+    },
+    "new_096000": {
+      "checkpoint": "/home/lp531/smolvla_training/pi05_grip_stage_base_20261011/checkpoints/096000/pretrained_model",
+      "adapter_sha256": "b2f0fe92f74a51b0803d3dd452e3a5b261050eb8361ebc71cb00340a5ca18e9c"
+    },
+    "new_120000": {
+      "checkpoint": "/home/lp531/smolvla_training/pi05_grip_stage_base_20261011/checkpoints/120000/pretrained_model",
+      "adapter_sha256": "49ac0e6a1ad174b75a8a350d67b5311463886aa6dc0e78313d265b6fb93593d9"
+    }
+  },
+  "scenes": [
+    {
+      "seed": 431927079,
+      "label": "previous_old_success"
+    },
+    {
+      "seed": 1420929974,
+      "label": "previous_new_success"
+    },
+    {
+      "seed": 1778049255,
+      "label": "side_short_close"
+    },
+    {
+      "seed": 1437796936,
+      "label": "side_repeated_close"
+    },
+    {
+      "seed": 381017666,
+      "label": "far_open_only"
+    },
+    {
+      "seed": 1174105379,
+      "label": "far_table_contact"
+    },
+    {
+      "seed": 276137783,
+      "label": "near_side"
+    },
+    {
+      "seed": 517570180,
+      "label": "middle_open_only"
+    }
+  ],
+  "inference_seed": 20261011,
+  "expected_episodes": 32,
+  "execute_steps": 10,
+  "action_rate": 10,
+  "execution_rate": 60,
+  "episode_timeout_sim_s": 60,
+  "selection": "diagnostic matched scenarios including historical successes and failures; not a random population sample",
+  "current_simulator_reused": true,
+  "physics": {
+    "path": "/home/lp531/ros2_ws/install/z1_isaac_bridge/share/z1_isaac_bridge/config/grasp_physics.json",
+    "sha256": "26a9a56c2a1d9a246e5681b8e01a96529c82738d4ff03c9a92de6da9105e4a03"
+  },
+  "scene_script": {
+    "path": "/home/lp531/ros2_ws/src/z1_ros2/isaac_assets/z1/scripts/run_z1_ros2_scene.py",
+    "sha256": "acdd4e3a52e408b6776efb504e38a657a31e30d39201b19b29fe4cdba5c2ff96"
+  }
+}

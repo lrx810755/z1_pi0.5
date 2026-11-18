@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "original_episodes": 160,
+  "correction_episodes": 32,
+  "train_episodes": 188,
+  "train_frames": 43817,
+  "validation_episodes": [
+    167,
+    169,
+    179,
+    181
+  ],
+  "total_frames": 44645,
+  "all_binary_labels_exact": true,
+  "all_arm_actions_exact": true,
+  "all_state_values_exact": true,
+  "all_source_frame_hashes_match": true,
+  "normalization_preserved": true,
+  "dataset": "/home/lp531/smolvla_data/z1_bottle_gentle_correction_20261010",
+  "dataset_stats_sha256": "499c948cdb974dd65cb1898057692aaf3e2015ec6e069d8ccad1b1054e54f7b6",
+  "train_phase_sampling_mass": {
+    "1.0": 0.4864356928356028,
+    "1.5": 0.048720314891943256,
+    "2.0": 0.46484399227245354
+  },
+  "phase_definition": "last 1s before close:1.5; close through 5 consecutive physical_grasp_ok AND off-table frames:2; otherwise:1",
+  "loss_weight": 1,
+  "old_recovery_interval_extra_weight": false
+}

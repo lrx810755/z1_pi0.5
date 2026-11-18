@@ -1,0 +1,29 @@
+{
+  "unit_tests": "4 passed",
+  "shell_syntax": "passed",
+  "ab_configs_identical_except": [
+    "output_dir",
+    "job_name"
+  ],
+  "independent_review": "log overwrite on restart fixed; output guard and append logs",
+  "smoke": {
+    "complete": true,
+    "arm": "weighted",
+    "smoke": true,
+    "microsteps": 4,
+    "optimizer_updates": 1,
+    "last_checkpoint": "/home/lp531/smolvla_training/pi05_bottle_sampling_ab_20261003/smoke_weighted/checkpoints/000004/pretrained_model",
+    "adapter_finite": true,
+    "adapter_changed": true,
+    "physical_success_evaluated": false
+  },
+  "initialization": {
+    "source_checkpoint": "/home/lp531/smolvla_training/pi05_bottle_lora_20261001/checkpoints/108000/pretrained_model",
+    "adapter_sha256": "78b92866f4853c4210ec2e9a70d17472f45753b51ad3f096993e45f113e33eea",
+    "all_adapter_tensors_equal": true,
+    "adapter_tensors": 152,
+    "trainable_parameters": 8358944,
+    "optimizer": "fresh AdamW; identical for both arms",
+    "seed": 20261003
+  }
+}

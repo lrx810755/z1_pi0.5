@@ -1,0 +1,377 @@
+{
+    "dataset": {
+        "repo_id": "lp531/z1_smolvla_tabletop_global_only_all_v1",
+        "root": "/home/lp531/smolvla_data/z1_tabletop_lerobot_global_only_all_v1",
+        "episodes": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            176,
+            177,
+            178,
+            179,
+            180,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            242,
+            243,
+            244,
+            245,
+            246,
+            268,
+            269,
+            270,
+            271,
+            272,
+            295,
+            296,
+            297,
+            298,
+            299,
+            300,
+            301,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            341,
+            342,
+            343,
+            344,
+            345,
+            346,
+            347,
+            348,
+            360,
+            361,
+            362,
+            363,
+            364,
+            365,
+            366,
+            390,
+            391,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            423,
+            445,
+            446,
+            447,
+            448,
+            449,
+            458,
+            459,
+            460,
+            461,
+            462,
+            467,
+            468,
+            469,
+            470,
+            471,
+            472,
+            481,
+            482,
+            483,
+            484,
+            485,
+            486,
+            487,
+            488,
+            495,
+            496,
+            497,
+            498,
+            499,
+            500,
+            501,
+            513,
+            514,
+            515,
+            518,
+            522,
+            524,
+            529,
+            532,
+            533,
+            536,
+            537,
+            542,
+            543,
+            544,
+            549,
+            550,
+            551,
+            552,
+            556,
+            557,
+            558,
+            561,
+            567,
+            574,
+            576,
+            579,
+            580,
+            581,
+            583,
+            584,
+            585,
+            590,
+            591,
+            594,
+            598,
+            599
+        ],
+        "image_transforms": {
+            "enable": false,
+            "max_num_transforms": 3,
+            "random_order": false,
+            "tfs": {
+                "brightness": {
+                    "weight": 1.0,
+                    "type": "ColorJitter",
+                    "kwargs": {
+                        "brightness": [
+                            0.8,
+                            1.2
+                        ]
+                    }
+                },
+                "contrast": {
+                    "weight": 1.0,
+                    "type": "ColorJitter",
+                    "kwargs": {
+                        "contrast": [
+                            0.8,
+                            1.2
+                        ]
+                    }
+                },
+                "saturation": {
+                    "weight": 1.0,
+                    "type": "ColorJitter",
+                    "kwargs": {
+                        "saturation": [
+                            0.5,
+                            1.5
+                        ]
+                    }
+                },
+                "hue": {
+                    "weight": 1.0,
+                    "type": "ColorJitter",
+                    "kwargs": {
+                        "hue": [
+                            -0.05,
+                            0.05
+                        ]
+                    }
+                },
+                "sharpness": {
+                    "weight": 1.0,
+                    "type": "SharpnessJitter",
+                    "kwargs": {
+                        "sharpness": [
+                            0.5,
+                            1.5
+                        ]
+                    }
+                }
+            }
+        },
+        "revision": null,
+        "use_imagenet_stats": true,
+        "video_backend": "pyav"
+    },
+    "env": null,
+    "policy": {
+        "type": "smolvla",
+        "n_obs_steps": 1,
+        "normalization_mapping": {
+            "VISUAL": "IDENTITY",
+            "STATE": "MEAN_STD",
+            "ACTION": "MEAN_STD"
+        },
+        "input_features": {
+            "observation.state": {
+                "type": "STATE",
+                "shape": [
+                    7
+                ]
+            },
+            "observation.images.global": {
+                "type": "VISUAL",
+                "shape": [
+                    3,
+                    480,
+                    640
+                ]
+            }
+        },
+        "output_features": {
+            "action": {
+                "type": "ACTION",
+                "shape": [
+                    7
+                ]
+            }
+        },
+        "device": "cuda",
+        "use_amp": true,
+        "push_to_hub": false,
+        "repo_id": null,
+        "private": null,
+        "tags": null,
+        "license": null,
+        "chunk_size": 30,
+        "n_action_steps": 10,
+        "max_state_dim": 32,
+        "max_action_dim": 32,
+        "resize_imgs_with_padding": [
+            512,
+            512
+        ],
+        "empty_cameras": 0,
+        "adapt_to_pi_aloha": false,
+        "use_delta_joint_actions_aloha": false,
+        "tokenizer_max_length": 48,
+        "num_steps": 10,
+        "use_cache": true,
+        "freeze_vision_encoder": true,
+        "train_expert_only": true,
+        "train_state_proj": true,
+        "optimizer_lr": 0.0001,
+        "optimizer_betas": [
+            0.9,
+            0.95
+        ],
+        "optimizer_eps": 1e-08,
+        "optimizer_weight_decay": 1e-10,
+        "optimizer_grad_clip_norm": 10,
+        "scheduler_warmup_steps": 1000,
+        "scheduler_decay_steps": 30000,
+        "scheduler_decay_lr": 2.5e-06,
+        "vlm_model_name": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+        "load_vlm_weights": false,
+        "add_image_special_tokens": false,
+        "attention_mode": "cross_attn",
+        "prefix_length": -1,
+        "pad_language_to": "longest",
+        "num_expert_layers": -1,
+        "num_vlm_layers": 16,
+        "self_attn_every_n_layers": 2,
+        "expert_width_multiplier": 0.75,
+        "min_period": 0.004,
+        "max_period": 4.0
+    },
+    "output_dir": "/home/lp531/smolvla_training/smolvla_bottle_global_only_batch8_20260929",
+    "job_name": "smolvla",
+    "resume": false,
+    "seed": 1000,
+    "num_workers": 4,
+    "batch_size": 8,
+    "steps": 30000,
+    "eval_freq": 100000,
+    "log_freq": 20,
+    "save_checkpoint": true,
+    "save_freq": 3000,
+    "use_policy_training_preset": true,
+    "optimizer": {
+        "type": "adamw",
+        "lr": 0.0001,
+        "weight_decay": 1e-10,
+        "grad_clip_norm": 10,
+        "betas": [
+            0.9,
+            0.95
+        ],
+        "eps": 1e-08
+    },
+    "scheduler": {
+        "type": "cosine_decay_with_warmup",
+        "num_warmup_steps": 1000,
+        "num_decay_steps": 30000,
+        "peak_lr": 0.0001,
+        "decay_lr": 2.5e-06
+    },
+    "eval": {
+        "n_episodes": 50,
+        "batch_size": 50,
+        "use_async_envs": false
+    },
+    "wandb": {
+        "enable": false,
+        "disable_artifact": false,
+        "project": "lerobot",
+        "entity": null,
+        "notes": null,
+        "run_id": null,
+        "mode": null
+    }
+}

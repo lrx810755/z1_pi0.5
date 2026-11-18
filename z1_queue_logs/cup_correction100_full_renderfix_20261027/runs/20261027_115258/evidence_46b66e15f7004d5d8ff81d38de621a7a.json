@@ -1,0 +1,129 @@
+{
+  "task_id": "cup_correction_002_approach",
+  "task": {
+    "id": "cup_correction_002_approach",
+    "kind": "approach",
+    "grid": [
+      2,
+      0
+    ],
+    "split": "train",
+    "source_type": "synthetic_failure_informed",
+    "source_report": "/home/lp531/smolvla_eval/act_cup_only_frustum_steps15_paired30_20261025/失败原因分类.md",
+    "synthesis_note": "Bounded perturbation around a newly planned minus90 reference, not exact policy-state replay.",
+    "route_kind": "approach",
+    "offset_approach_m": [
+      -0.025,
+      0.0,
+      0.0
+    ],
+    "rotation_tool_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "preparation_retreat_m": 0.004,
+    "requested_shift_world_m": [
+      0.012,
+      0.0,
+      0.0
+    ],
+    "loaded_offset_world_m": [
+      0.026,
+      0.012,
+      0.012
+    ],
+    "variant": 2
+  },
+  "source_type": "synthetic_failure_informed",
+  "accepted": false,
+  "recovery_complete": false,
+  "events": [
+    {
+      "event": "gripper_intent",
+      "time": 178.000009283,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 186.70000973700002,
+      "state": "open",
+      "target": -0.9
+    }
+  ],
+  "recovery_stages": [],
+  "reference_position_m": [
+    0.34329871236143816,
+    -0.30811294163498865,
+    0.07717345386720113
+  ],
+  "reference_orientation_xyzw": [
+    0.7015230939578105,
+    0.08868682993298499,
+    -0.15431245159928977,
+    -0.6900635203528119
+  ],
+  "requested_start_position_m": [
+    0.3160149315587708,
+    -0.31794123269254293,
+    0.07717345386720113
+  ],
+  "preflight": {
+    "route": {
+      "anchor_position": [
+        0.34329871236143816,
+        -0.30811294163498865,
+        0.07717345386720113
+      ],
+      "bad_position": [
+        0.3160149315587708,
+        -0.31794123269254293,
+        0.07717345386720113
+      ],
+      "bad_orientation": [
+        0.7015230939578105,
+        0.08868682993298499,
+        -0.15431245159928977,
+        -0.6900635203528119
+      ],
+      "retreat_m": 0.004,
+      "strategy": "direct",
+      "preparation": [
+        {
+          "stage": "prepare_deviation",
+          "position": [
+            0.3160149315587708,
+            -0.31794123269254293,
+            0.07717345386720113
+          ],
+          "orientation": [
+            0.7015230939578105,
+            0.08868682993298499,
+            -0.15431245159928977,
+            -0.6900635203528119
+          ],
+          "linear": false
+        }
+      ],
+      "recovery": [
+        {
+          "stage": "recover_align_approach",
+          "position": [
+            0.34329871236143816,
+            -0.30811294163498865,
+            0.07717345386720113
+          ],
+          "orientation": [
+            0.7015230939578105,
+            0.08868682993298499,
+            -0.15431245159928977,
+            -0.6900635203528119
+          ],
+          "linear": true
+        }
+      ]
+    },
+    "rejected": []
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "episodes": 500,
+  "frames": 142877,
+  "source_counts": {
+    "basic": 400,
+    "correction": 100
+  },
+  "train_episodes": 450,
+  "validation_episodes": 50,
+  "training_windows": 113168,
+  "validation_windows": 11961,
+  "source_mass": {
+    "basic": 0.7499999999999998,
+    "correction": 0.25
+  },
+  "phase_sampling_mass": {
+    "basic": {
+      "recovery": {
+        "anchors": 0,
+        "global_mass": 0.0,
+        "within_pool_mass": 0.0
+      },
+      "transition_only": {
+        "anchors": 8576,
+        "global_mass": 0.09638746803069055,
+        "within_pool_mass": 0.12851662404092073
+      },
+      "ordinary": {
+        "anchors": 87232,
+        "global_mass": 0.653612531969309,
+        "within_pool_mass": 0.8714833759590787
+      }
+    },
+    "correction": {
+      "recovery": {
+        "anchors": 5941,
+        "global_mass": 0.14808567915184956,
+        "within_pool_mass": 0.5923427166073982
+      },
+      "transition_only": {
+        "anchors": 1694,
+        "global_mass": 0.021112366645618004,
+        "within_pool_mass": 0.08444946658247202
+      },
+      "ordinary": {
+        "anchors": 9725,
+        "global_mass": 0.0808019542025325,
+        "within_pool_mass": 0.32320781681013
+      }
+    }
+  },
+  "recovery_multiplier": 3.0,
+  "transition_multiplier": 1.5,
+  "ordinary_multiplier": 1.0,
+  "overlap_rule": "maximum",
+  "horizon": 30,
+  "excluded_nonexpert_frames": 2397,
+  "normalization_rule": "train episodes AND expert frames; exclude policy/intervention/heldout"
+}

@@ -1,0 +1,154 @@
+{
+  "task_id": "new_correction_episode_000008",
+  "task": {
+    "id": "cup_failure_14_level3",
+    "kind": "approach_recovery",
+    "grid": [
+      2,
+      3
+    ],
+    "split": "validation",
+    "offset_approach_m": [
+      0.004,
+      -0.04,
+      0.025
+    ],
+    "rotation_tool_deg": [
+      6.0,
+      -6.0,
+      4.0
+    ],
+    "preparation_retreat_m": 0.012,
+    "freeze_policy": "pre_approach_only",
+    "failure_evidence": {
+      "eval_episode": 14,
+      "eval_seed": 1838132667,
+      "time_s": 21.633334461000004,
+      "reference_training_episode": 135,
+      "raw_world_offset_m": [
+        0.002848947239409299,
+        -0.0722020773459685,
+        0.0428935008268018
+      ],
+      "raw_approach_offset_m": [
+        0.02730758508364841,
+        -0.06689956853631762,
+        0.0428935008268018
+      ],
+      "bounded_offset_m": [
+        0.004,
+        -0.04,
+        0.025
+      ],
+      "relative_tool_rotation_deg": [
+        6.0,
+        -6.0,
+        4.0
+      ],
+      "diagnostic_error_m": 0.06364442721717667
+    },
+    "perturbation_scale": 1.0,
+    "source_note": "Failure-derived bounded perturbation, not an exact replay. Random fresh scene."
+  },
+  "accepted": false,
+  "recovery_complete": true,
+  "reference_position": [
+    0.43299618404876966,
+    -0.11189851673367422,
+    0.08256550617362873
+  ],
+  "reference_orientation": [
+    0.6685825547718294,
+    0.23021150898020507,
+    -0.30997511498128305,
+    -0.6355434341413426
+  ],
+  "requested_position": [
+    0.4556235990475187,
+    -0.1458396435634421,
+    0.10756550617362873
+  ],
+  "requested_orientation": [
+    0.6249430990503521,
+    0.2196002271269223,
+    -0.3789138329584281,
+    -0.6462554993095985
+  ],
+  "actual_position": [
+    0.45439138137264046,
+    -0.1450978623518792,
+    0.10695510140680589
+  ],
+  "actual_orientation": [
+    -0.6195282569888162,
+    -0.21145789458417438,
+    0.3931363044554846,
+    0.6456888908208908
+  ],
+  "preflight": {
+    "route": {
+      "anchor_position": [
+        0.43299618404876966,
+        -0.11189851673367422,
+        0.08256550617362873
+      ],
+      "bad_position": [
+        0.4556235990475187,
+        -0.1458396435634421,
+        0.10756550617362873
+      ],
+      "bad_orientation": [
+        0.6249430990503521,
+        0.2196002271269223,
+        -0.3789138329584281,
+        -0.6462554993095985
+      ],
+      "retreat_m": 0.012,
+      "strategy": "direct",
+      "preparation": [
+        {
+          "stage": "prepare_deviation",
+          "position": [
+            0.4556235990475187,
+            -0.1458396435634421,
+            0.10756550617362873
+          ],
+          "orientation": [
+            0.6249430990503521,
+            0.2196002271269223,
+            -0.3789138329584281,
+            -0.6462554993095985
+          ],
+          "linear": false
+        }
+      ],
+      "recovery": [
+        {
+          "stage": "recover_align_approach",
+          "position": [
+            0.43299618404876966,
+            -0.11189851673367422,
+            0.08256550617362873
+          ],
+          "orientation": [
+            0.6685825547718294,
+            0.23021150898020507,
+            -0.30997511498128305,
+            -0.6355434341413426
+          ],
+          "linear": true
+        }
+      ]
+    },
+    "rejected_routes": []
+  },
+  "stages": [
+    {
+      "stage": "recover_align_approach",
+      "start_sim_time": 1226.81673065,
+      "end_sim_time": 1228.700064081
+    }
+  ],
+  "freeze_policy": "pre_approach_only",
+  "prepared_cup_shift": null
+}

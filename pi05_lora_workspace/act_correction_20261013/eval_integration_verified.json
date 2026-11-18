@@ -1,0 +1,42 @@
+{
+  "checkpoint": "/home/lp531/smolvla_training/act_correction_chunk16_20261013/checkpoints/050000/pretrained_model",
+  "rollout_module": "/home/lp531/ros2_ws/build/z1_isaac_bridge/z1_isaac_bridge/smolvla_sim_rollout.py",
+  "camera_keys": [
+    "wrist",
+    "global",
+    "global_right"
+  ],
+  "state_dim": 7,
+  "device": "cpu",
+  "binary_gripper_checked": true,
+  "checks": [
+    {
+      "source": "original",
+      "episode": 2,
+      "max_abs_error": 0.0,
+      "execution_shape": [
+        5,
+        7
+      ]
+    },
+    {
+      "source": "old_correction",
+      "episode": 163,
+      "max_abs_error": 0.0,
+      "execution_shape": [
+        5,
+        7
+      ]
+    },
+    {
+      "source": "new_fragment",
+      "episode": 193,
+      "max_abs_error": 0.0,
+      "execution_shape": [
+        5,
+        7
+      ]
+    }
+  ],
+  "robot_commands_sent": false
+}

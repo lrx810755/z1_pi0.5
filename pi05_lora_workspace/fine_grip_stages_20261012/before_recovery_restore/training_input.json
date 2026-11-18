@@ -1,0 +1,35 @@
+{
+  "dataset_root": "/home/lp531/smolvla_data/z1_bottle_with_fragments_20261012",
+  "window_manifest": "/home/lp531/pi05_lora_workspace/correction_windows_20261012/mapped_windows.json",
+  "chunk_size": 15,
+  "sampler_source": "/home/lp531/pi05_lora_workspace/correction_windows_20261012/sampling.py",
+  "sampler_class": "WindowSampler",
+  "sampler_kwargs": {
+    "eligibility_path": "/home/lp531/smolvla_data/z1_bottle_with_fragments_20261012/meta/fine_grip_sampling_arrays.npz"
+  },
+  "validation_episodes": [
+    167,
+    169,
+    179,
+    181,
+    198,
+    203,
+    207,
+    208
+  ],
+  "train_episode_count": 203,
+  "validation_episode_count": 8,
+  "training_started": false,
+  "sampling_scheme": "fine_grip_stages_20261012",
+  "phase_manifest": "/home/lp531/smolvla_data/z1_bottle_with_fragments_20261012/meta/fine_grip_phase_manifest.json",
+  "stage_weights": {
+    "other": 1.0,
+    "preclose": 1.5,
+    "closing": 2.0,
+    "prelift_hold": 2.0,
+    "initial_lift": 1.5,
+    "stable_hold": 1.0
+  },
+  "anchor_weight_rule": "weight of the anchor frame stage; normalize within 70/30 source pools",
+  "loss_weight": 1
+}

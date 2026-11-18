@@ -1,0 +1,233 @@
+{
+  "status": {
+    "state": "training",
+    "pid": 2629380,
+    "supervisor_pid": 2629379,
+    "started_at": "2026-10-20T14:25:30.169409+08:00",
+    "target_optimizer_updates": 50000
+  },
+  "live_training": {
+    "optimizer_updates": 280,
+    "target_updates": 50000,
+    "loss": 0.14972975850105286,
+    "learning_rate": 5.6000000000000006e-05,
+    "elapsed_s": 43.18569107307121,
+    "median_update_s": 0.08055382687598467,
+    "allocated_gib": 7.510281562805176,
+    "reserved_gib": 8.197265625,
+    "actual_optimizer_steps": [
+      280
+    ]
+  },
+  "first_weight_update": {
+    "action_unet_changed": true,
+    "actual_optimizer_updates": 2,
+    "loss": 1.188982605934143,
+    "first_step_lr_zero_due_to_warmup": true
+  },
+  "first_formal_checkpoint_files": {
+    "/home/lp531/smolvla_training/diffusion_cup_gentle_cached_h16_20261020/checkpoints/000020/pretrained_model/model.safetensors": 1171170612,
+    "/home/lp531/smolvla_training/diffusion_cup_gentle_cached_h16_20261020/checkpoints/000020/pretrained_model/config.json": 2471,
+    "/home/lp531/smolvla_training/diffusion_cup_gentle_cached_h16_20261020/checkpoints/000020/pretrained_model/policy_preprocessor.json": 2068,
+    "/home/lp531/smolvla_training/diffusion_cup_gentle_cached_h16_20261020/checkpoints/000020/pretrained_model/policy_postprocessor.json": 658,
+    "/home/lp531/smolvla_training/diffusion_cup_gentle_cached_h16_20261020/checkpoints/000020/pretrained_model_ema/model.safetensors": 1171170612,
+    "/home/lp531/smolvla_training/diffusion_cup_gentle_cached_h16_20261020/checkpoints/000020/pretrained_model_ema/config.json": 2471,
+    "/home/lp531/smolvla_training/diffusion_cup_gentle_cached_h16_20261020/checkpoints/000020/pretrained_model_ema/policy_preprocessor.json": 2068,
+    "/home/lp531/smolvla_training/diffusion_cup_gentle_cached_h16_20261020/checkpoints/000020/pretrained_model_ema/policy_postprocessor.json": 658
+  },
+  "smoke_reload": {
+    "tests": [
+      {
+        "model": "pretrained_model",
+        "source": "original",
+        "output_shape": [
+          1,
+          15,
+          7
+        ],
+        "raw_cached_processors_match": true,
+        "action_roundtrip": true
+      },
+      {
+        "model": "pretrained_model",
+        "source": "old_correction",
+        "output_shape": [
+          1,
+          15,
+          7
+        ],
+        "raw_cached_processors_match": true,
+        "action_roundtrip": true
+      },
+      {
+        "model": "pretrained_model",
+        "source": "new_correction",
+        "output_shape": [
+          1,
+          15,
+          7
+        ],
+        "raw_cached_processors_match": true,
+        "action_roundtrip": true
+      },
+      {
+        "model": "pretrained_model_ema",
+        "source": "original",
+        "output_shape": [
+          1,
+          15,
+          7
+        ],
+        "raw_cached_processors_match": true,
+        "action_roundtrip": true
+      },
+      {
+        "model": "pretrained_model_ema",
+        "source": "old_correction",
+        "output_shape": [
+          1,
+          15,
+          7
+        ],
+        "raw_cached_processors_match": true,
+        "action_roundtrip": true
+      },
+      {
+        "model": "pretrained_model_ema",
+        "source": "new_correction",
+        "output_shape": [
+          1,
+          15,
+          7
+        ],
+        "raw_cached_processors_match": true,
+        "action_roundtrip": true
+      }
+    ],
+    "ema_updates": 20,
+    "deploy_preprocessing": "per-frame crop/resize then collect two observation steps"
+  },
+  "data_checks": {
+    "episodes": 249,
+    "all_episode_boundary_and_action_checks": 747,
+    "raw_cached_history_image_checks": [
+      {
+        "source": "original",
+        "split": "train",
+        "cam": "observation.images.wrist",
+        "max_error": 0.0
+      },
+      {
+        "source": "original",
+        "split": "train",
+        "cam": "observation.images.global",
+        "max_error": 0.0
+      },
+      {
+        "source": "original",
+        "split": "train",
+        "cam": "observation.images.global_right",
+        "max_error": 0.0
+      },
+      {
+        "source": "original",
+        "split": "validation",
+        "cam": "observation.images.wrist",
+        "max_error": 0.0
+      },
+      {
+        "source": "original",
+        "split": "validation",
+        "cam": "observation.images.global",
+        "max_error": 0.0
+      },
+      {
+        "source": "original",
+        "split": "validation",
+        "cam": "observation.images.global_right",
+        "max_error": 0.0
+      },
+      {
+        "source": "old_correction",
+        "split": "train",
+        "cam": "observation.images.wrist",
+        "max_error": 0.0
+      },
+      {
+        "source": "old_correction",
+        "split": "train",
+        "cam": "observation.images.global",
+        "max_error": 0.0
+      },
+      {
+        "source": "old_correction",
+        "split": "train",
+        "cam": "observation.images.global_right",
+        "max_error": 0.0
+      },
+      {
+        "source": "old_correction",
+        "split": "validation",
+        "cam": "observation.images.wrist",
+        "max_error": 0.0
+      },
+      {
+        "source": "old_correction",
+        "split": "validation",
+        "cam": "observation.images.global",
+        "max_error": 0.0
+      },
+      {
+        "source": "old_correction",
+        "split": "validation",
+        "cam": "observation.images.global_right",
+        "max_error": 0.0
+      },
+      {
+        "source": "new_correction",
+        "split": "train",
+        "cam": "observation.images.wrist",
+        "max_error": 0.0
+      },
+      {
+        "source": "new_correction",
+        "split": "train",
+        "cam": "observation.images.global",
+        "max_error": 0.0
+      },
+      {
+        "source": "new_correction",
+        "split": "train",
+        "cam": "observation.images.global_right",
+        "max_error": 0.0
+      },
+      {
+        "source": "new_correction",
+        "split": "validation",
+        "cam": "observation.images.wrist",
+        "max_error": 0.0
+      },
+      {
+        "source": "new_correction",
+        "split": "validation",
+        "cam": "observation.images.global",
+        "max_error": 0.0
+      },
+      {
+        "source": "new_correction",
+        "split": "validation",
+        "cam": "observation.images.global_right",
+        "max_error": 0.0
+      }
+    ],
+    "source_mass": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "training_windows": 44723,
+    "sampling_arrays_sha256": "fe7f6bf0e6e683bc9caa2e022065d06dc18e2fb31ceee5396fd1a2561b15fc79",
+    "cache_reused": "/home/lp531/smolvla_data/act_cup_recovery_rgb224_cache_20261020",
+    "no_new_video_decode": true
+  }
+}

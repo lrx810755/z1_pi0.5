@@ -1,0 +1,231 @@
+{
+  "root_convention": "paths under the original or restored project home directory",
+  "frozen_data": {
+    "path": "smolvla_data",
+    "episodes": 1762,
+    "physical_source_directories": 18,
+    "jpeg_count": 1703757,
+    "jpeg_bytes": 41069203563,
+    "frozen_manifest": "pi05_lora_workspace/pi05_current_round_20261111/split_manifest.json",
+    "per_image_sha256": "pi05_lora_workspace/pi05_current_round_20261111/image_pins.npz",
+    "sources": [
+      {
+        "object": "apple",
+        "path": "smolvla_data/apple_scale110_correction60_20261106",
+        "episodes": 59
+      },
+      {
+        "object": "apple",
+        "path": "smolvla_data/apple_scale110_demo400_20261105",
+        "episodes": 322
+      },
+      {
+        "object": "apple",
+        "path": "smolvla_data/reverse8_apple_basic_1_20261112",
+        "episodes": 1
+      },
+      {
+        "object": "bottle",
+        "path": "smolvla_data/bottle_approach_height30_20261112",
+        "episodes": 25
+      },
+      {
+        "object": "bottle",
+        "path": "smolvla_data/bottle_correction60_20261111",
+        "episodes": 52
+      },
+      {
+        "object": "bottle",
+        "path": "smolvla_data/bottle_horizontal50_after_basic_20261109",
+        "episodes": 181
+      },
+      {
+        "object": "bottle",
+        "path": "smolvla_data/bottle_horizontal_supplement_20261109",
+        "episodes": 36
+      },
+      {
+        "object": "bottle",
+        "path": "smolvla_data/bottle_rerecord160_renderfix_20261111",
+        "episodes": 156
+      },
+      {
+        "object": "bottle",
+        "path": "smolvla_data/bottle_reverse8_corrections4_20261112",
+        "episodes": 4
+      },
+      {
+        "object": "bottle",
+        "path": "smolvla_data/bottle_wait8_retake12_20261111",
+        "episodes": 12
+      },
+      {
+        "object": "bottle",
+        "path": "smolvla_data/reverse8_bottle_basic_17_20261112",
+        "episodes": 17
+      },
+      {
+        "object": "cup",
+        "path": "smolvla_data/cup_cylinder_horizontal200_20261108",
+        "episodes": 183
+      },
+      {
+        "object": "cup",
+        "path": "smolvla_data/cup_reverse8_corrections7_20261112",
+        "episodes": 7
+      },
+      {
+        "object": "cup",
+        "path": "smolvla_data/reverse8_cup_basic_19_20261112",
+        "episodes": 19
+      },
+      {
+        "object": "cup",
+        "path": "smolvla_data/z1_cup_correction100_full_renderfix_20261027",
+        "episodes": 93
+      },
+      {
+        "object": "cup",
+        "path": "smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026",
+        "episodes": 198
+      },
+      {
+        "object": "peach",
+        "path": "smolvla_data/peach_scale120_correction60_20261106",
+        "episodes": 57
+      },
+      {
+        "object": "peach",
+        "path": "smolvla_data/peach_scale120_demo_20261106",
+        "episodes": 340
+      }
+    ],
+    "available_elsewhere": "Original local project disk; user export required"
+  },
+  "required_weights": [
+    {
+      "relative_path": "pi05_lora_workspace/weights/pi05_base/model.safetensors",
+      "bytes": 14467165872,
+      "sha256": "0eb11ca9587678c1d2ef8cf32807c29f8ce53a2bfdfc1aa4a4c96f16fca59b0f",
+      "provenance": "existing final-model bridge verification",
+      "url": "https://huggingface.co/lerobot/pi05_base/resolve/b211f3d44c36b6acfcf7ae94a64e8e96f75a64ba/model.safetensors"
+    },
+    {
+      "relative_path": "smolvla_training/pi05_current_round_20261111/checkpoints/800000/pretrained_model/adapter_model.safetensors",
+      "bytes": 221091648,
+      "sha256": "1686114efeb104bdb3cedb82cc6707ad2ced2ce9679f60eddc0e584bf7c33110",
+      "provenance": "existing final-model bridge verification",
+      "url": null
+    }
+  ],
+  "optional_external": [
+    {
+      "path": "smolvla_training",
+      "scope": "historical checkpoint weights and optimizer state, current final adapter included in the required_weights list"
+    },
+    {
+      "path": "smolvla_eval",
+      "scope": "full per-episode camera videos and bulk rollout traces retained in the original corresponding experiment directories"
+    },
+    {
+      "path": "act_eval",
+      "scope": "historical per-episode recordings and rollout traces"
+    },
+    {
+      "path": "video_exports",
+      "scope": "edited failure reels and chapter videos; trim rules, rendering scripts and verification reports are archived"
+    },
+    {
+      "path": "z1_queue_logs",
+      "scope": "raw capture and transport event streams; selected checksums in external_bulk_evidence.json"
+    },
+    {
+      "path": "ros2_ws/calibration",
+      "scope": "raw Charuco images and original calibration bundle"
+    },
+    {
+      "path": "z1-smolvla/dist/z1-smolvla-core-2026-08-31.tar.zst",
+      "scope": "original early migration package",
+      "sha256": "1a4a18c7350d06457ce53cb0e923f47758f92d6063c300132049dafcde789e30"
+    },
+    {
+      "path": "models/openvla-7b",
+      "scope": "optional weight dependency for the archived OpenVLA local smoke test"
+    },
+    {
+      "path": "isaac-sim",
+      "scope": "install Isaac Sim 5.1 separately"
+    },
+    {
+      "path": "miniconda3/envs/unifolm-vla",
+      "scope": "rebuild the ROS/rollout Python 3.10 environment"
+    },
+    {
+      "path": ".local/opt/ros-humble-moveit-servo/opt/ros/humble",
+      "scope": "rebuild or restore the vendor Servo prefix used by the published evaluation shell script"
+    }
+  ],
+  "freeze_rebuild_inputs": {
+    "candidate_roots": [
+      {
+        "path": "smolvla_data/apple_scale110_demo400_20261105",
+        "expected_traces": 323
+      },
+      {
+        "path": "smolvla_data/apple_scale110_correction60_20261106",
+        "expected_traces": 59
+      },
+      {
+        "path": "smolvla_data/peach_scale120_demo_20261106",
+        "expected_traces": 340
+      },
+      {
+        "path": "smolvla_data/peach_scale120_correction60_20261106",
+        "expected_traces": 57
+      },
+      {
+        "path": "smolvla_data/cup_cylinder_horizontal200_20261108",
+        "expected_traces": 200
+      },
+      {
+        "path": "smolvla_data/bottle_horizontal_supplement_20261109",
+        "expected_traces": 40
+      },
+      {
+        "path": "smolvla_data/bottle_horizontal50_after_basic_20261109",
+        "expected_traces": 200
+      },
+      {
+        "path": "smolvla_data/bottle_correction60_20261111",
+        "expected_traces": 58
+      },
+      {
+        "path": "smolvla_data/cup_quality200_from_pi05_513_20261111",
+        "expected_traces": 200
+      },
+      {
+        "path": "smolvla_data/z1_cup_correction100_full_renderfix_20261027",
+        "expected_traces": 100
+      },
+      {
+        "path": "smolvla_data/bottle_approach_height30_20261112",
+        "expected_traces": 25
+      },
+      {
+        "path": "smolvla_data/bottle_rerecord160_renderfix_20261111",
+        "expected_traces": 160
+      },
+      {
+        "path": "smolvla_data/bottle_wait8_retake12_20261111",
+        "expected_traces": 12
+      }
+    ],
+    "selection_links": "manifests/cup_selection_symlinks.json",
+    "refreeze_requires_original_candidate_counts_including_replaced_episodes": true,
+    "training_input_pins": "pi05_lora_workspace/pi05_current_round_20261111/sources_frozen.json",
+    "historical_cup_label_inputs": [
+      "pi05_lora_workspace/pi05_cup_recovery513_lora_20261029/split_manifest.json",
+      "pi05_lora_workspace/pi05_cup_recovery513_lora_20261029/lowdim.npz"
+    ]
+  }
+}

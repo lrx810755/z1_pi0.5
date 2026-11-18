@@ -1,0 +1,536 @@
+{
+  "old80k": {
+    "checkpoint": "/home/lp531/smolvla_training/pi05_gentle_correction_base_20261010/checkpoints/080000/pretrained_model",
+    "config": {
+      "type": "pi05",
+      "n_obs_steps": 1,
+      "input_features": {
+        "observation.state": {
+          "type": "STATE",
+          "shape": [
+            7
+          ]
+        },
+        "observation.images.wrist": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            360,
+            640
+          ]
+        },
+        "observation.images.global": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        },
+        "observation.images.global_right": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        }
+      },
+      "output_features": {
+        "action": {
+          "type": "ACTION",
+          "shape": [
+            7
+          ]
+        }
+      },
+      "device": "cuda",
+      "use_amp": false,
+      "use_peft": true,
+      "push_to_hub": false,
+      "repo_id": null,
+      "private": null,
+      "tags": null,
+      "license": null,
+      "pretrained_path": "/home/lp531/pi05_lora_workspace/weights/pi05_base",
+      "pretrained_revision": null,
+      "paligemma_variant": "gemma_2b",
+      "action_expert_variant": "gemma_300m",
+      "dtype": "bfloat16",
+      "chunk_size": 15,
+      "n_action_steps": 5,
+      "use_visual_memory": false,
+      "use_proprioceptive_memory": false,
+      "memory_frames": 6,
+      "memory_stride": 30,
+      "memory_temporal_attention_every": 4,
+      "max_state_dim": 32,
+      "max_action_dim": 32,
+      "num_inference_steps": 10,
+      "time_sampling_beta_alpha": 1.5,
+      "time_sampling_beta_beta": 1.0,
+      "time_sampling_scale": 0.999,
+      "time_sampling_offset": 0.001,
+      "min_period": 0.004,
+      "max_period": 4.0,
+      "use_relative_actions": false,
+      "relative_exclude_joints": [
+        "gripper"
+      ],
+      "action_feature_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "gripper_close_binary"
+      ],
+      "rtc_config": null,
+      "rtc_training_max_delay": 0,
+      "image_resolution": [
+        224,
+        224
+      ],
+      "empty_cameras": 0,
+      "tokenizer_max_length": 200,
+      "text_tokenizer_name": "/home/lp531/pi05_lora_workspace/weights/tokenizer",
+      "normalization_mapping": {
+        "VISUAL": "IDENTITY",
+        "STATE": "QUANTILES",
+        "ACTION": "QUANTILES"
+      },
+      "gradient_checkpointing": true,
+      "compile_model": false,
+      "compile_mode": "max-autotune",
+      "freeze_vision_encoder": true,
+      "train_expert_only": false,
+      "optimizer_lr": 5e-05,
+      "optimizer_betas": [
+        0.9,
+        0.95
+      ],
+      "optimizer_eps": 1e-08,
+      "optimizer_weight_decay": 0.01,
+      "optimizer_grad_clip_norm": 1.0,
+      "scheduler_warmup_steps": 4000,
+      "scheduler_decay_steps": 80000,
+      "scheduler_decay_lr": 5e-06
+    },
+    "adapter_config": {
+      "alora_invocation_tokens": null,
+      "alpha_pattern": {},
+      "arrow_config": null,
+      "auto_mapping": {
+        "base_model_class": "PI05Policy",
+        "parent_library": "lerobot.policies.pi05.modeling_pi05"
+      },
+      "base_model_name_or_path": "/home/lp531/pi05_lora_workspace/weights/pi05_base",
+      "bias": "none",
+      "corda_config": null,
+      "ensure_weight_tying": false,
+      "eva_config": null,
+      "exclude_modules": null,
+      "fan_in_fan_out": false,
+      "inference_mode": true,
+      "init_lora_weights": true,
+      "kasa_config": null,
+      "layer_replication": null,
+      "layers_pattern": null,
+      "layers_to_transform": null,
+      "loftq_config": {},
+      "lora_alpha": 32,
+      "lora_bias": false,
+      "lora_dropout": 0.0,
+      "lora_ga_config": null,
+      "megatron_config": null,
+      "megatron_core": "megatron.core",
+      "modules_to_save": [
+        "action_in_proj",
+        "action_out_proj",
+        "time_mlp_in",
+        "time_mlp_out"
+      ],
+      "monteclora_config": null,
+      "peft_type": "LORA",
+      "peft_version": "0.21.1",
+      "qalora_group_size": 16,
+      "r": 32,
+      "rank_pattern": {},
+      "revision": null,
+      "target_modules": ".*paligemma_with_expert\\.(paligemma\\.model\\.language_model|gemma_expert\\.model)\\.layers\\.\\d+\\.(self_attn\\.(q|k|v|o)_proj|mlp\\.(gate|up|down)_proj)",
+      "target_parameters": null,
+      "task_type": null,
+      "trainable_token_indices": null,
+      "use_bdlora": null,
+      "use_dora": false,
+      "use_qalora": false,
+      "use_rslora": false,
+      "velora_config": null
+    }
+  },
+  "new80k": {
+    "checkpoint": "/home/lp531/smolvla_training/pi05_fine_grip_recovery_base_20261012/checkpoints/080000/pretrained_model",
+    "config": {
+      "type": "pi05",
+      "n_obs_steps": 1,
+      "input_features": {
+        "observation.state": {
+          "type": "STATE",
+          "shape": [
+            7
+          ]
+        },
+        "observation.images.wrist": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            360,
+            640
+          ]
+        },
+        "observation.images.global": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        },
+        "observation.images.global_right": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        }
+      },
+      "output_features": {
+        "action": {
+          "type": "ACTION",
+          "shape": [
+            7
+          ]
+        }
+      },
+      "device": "cuda",
+      "use_amp": false,
+      "use_peft": true,
+      "push_to_hub": false,
+      "repo_id": null,
+      "private": null,
+      "tags": null,
+      "license": null,
+      "pretrained_path": "/home/lp531/pi05_lora_workspace/weights/pi05_base",
+      "pretrained_revision": null,
+      "paligemma_variant": "gemma_2b",
+      "action_expert_variant": "gemma_300m",
+      "dtype": "bfloat16",
+      "chunk_size": 15,
+      "n_action_steps": 5,
+      "use_visual_memory": false,
+      "use_proprioceptive_memory": false,
+      "memory_frames": 6,
+      "memory_stride": 30,
+      "memory_temporal_attention_every": 4,
+      "max_state_dim": 32,
+      "max_action_dim": 32,
+      "num_inference_steps": 10,
+      "time_sampling_beta_alpha": 1.5,
+      "time_sampling_beta_beta": 1.0,
+      "time_sampling_scale": 0.999,
+      "time_sampling_offset": 0.001,
+      "min_period": 0.004,
+      "max_period": 4.0,
+      "use_relative_actions": false,
+      "relative_exclude_joints": [
+        "gripper"
+      ],
+      "action_feature_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "gripper_close_binary"
+      ],
+      "rtc_config": null,
+      "rtc_training_max_delay": 0,
+      "image_resolution": [
+        224,
+        224
+      ],
+      "empty_cameras": 0,
+      "tokenizer_max_length": 200,
+      "text_tokenizer_name": "/home/lp531/pi05_lora_workspace/weights/tokenizer",
+      "normalization_mapping": {
+        "VISUAL": "IDENTITY",
+        "STATE": "QUANTILES",
+        "ACTION": "QUANTILES"
+      },
+      "gradient_checkpointing": true,
+      "compile_model": false,
+      "compile_mode": "max-autotune",
+      "freeze_vision_encoder": true,
+      "train_expert_only": false,
+      "optimizer_lr": 5e-05,
+      "optimizer_betas": [
+        0.9,
+        0.95
+      ],
+      "optimizer_eps": 1e-08,
+      "optimizer_weight_decay": 0.01,
+      "optimizer_grad_clip_norm": 1.0,
+      "scheduler_warmup_steps": 4000,
+      "scheduler_decay_steps": 120000,
+      "scheduler_decay_lr": 5e-06
+    },
+    "adapter_config": {
+      "alora_invocation_tokens": null,
+      "alpha_pattern": {},
+      "arrow_config": null,
+      "auto_mapping": {
+        "base_model_class": "PI05Policy",
+        "parent_library": "lerobot.policies.pi05.modeling_pi05"
+      },
+      "base_model_name_or_path": "/home/lp531/pi05_lora_workspace/weights/pi05_base",
+      "bias": "none",
+      "corda_config": null,
+      "ensure_weight_tying": false,
+      "eva_config": null,
+      "exclude_modules": null,
+      "fan_in_fan_out": false,
+      "inference_mode": true,
+      "init_lora_weights": true,
+      "kasa_config": null,
+      "layer_replication": null,
+      "layers_pattern": null,
+      "layers_to_transform": null,
+      "loftq_config": {},
+      "lora_alpha": 32,
+      "lora_bias": false,
+      "lora_dropout": 0.0,
+      "lora_ga_config": null,
+      "megatron_config": null,
+      "megatron_core": "megatron.core",
+      "modules_to_save": [
+        "action_in_proj",
+        "action_out_proj",
+        "time_mlp_in",
+        "time_mlp_out"
+      ],
+      "monteclora_config": null,
+      "peft_type": "LORA",
+      "peft_version": "0.21.1",
+      "qalora_group_size": 16,
+      "r": 32,
+      "rank_pattern": {},
+      "revision": null,
+      "target_modules": ".*paligemma_with_expert\\.(paligemma\\.model\\.language_model|gemma_expert\\.model)\\.layers\\.\\d+\\.(self_attn\\.(q|k|v|o)_proj|mlp\\.(gate|up|down)_proj)",
+      "target_parameters": null,
+      "task_type": null,
+      "trainable_token_indices": null,
+      "use_bdlora": null,
+      "use_dora": false,
+      "use_qalora": false,
+      "use_rslora": false,
+      "velora_config": null
+    }
+  },
+  "new120k": {
+    "checkpoint": "/home/lp531/smolvla_training/pi05_fine_grip_recovery_base_20261012/checkpoints/120000/pretrained_model",
+    "config": {
+      "type": "pi05",
+      "n_obs_steps": 1,
+      "input_features": {
+        "observation.state": {
+          "type": "STATE",
+          "shape": [
+            7
+          ]
+        },
+        "observation.images.wrist": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            360,
+            640
+          ]
+        },
+        "observation.images.global": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        },
+        "observation.images.global_right": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        }
+      },
+      "output_features": {
+        "action": {
+          "type": "ACTION",
+          "shape": [
+            7
+          ]
+        }
+      },
+      "device": "cuda",
+      "use_amp": false,
+      "use_peft": true,
+      "push_to_hub": false,
+      "repo_id": null,
+      "private": null,
+      "tags": null,
+      "license": null,
+      "pretrained_path": "/home/lp531/pi05_lora_workspace/weights/pi05_base",
+      "pretrained_revision": null,
+      "paligemma_variant": "gemma_2b",
+      "action_expert_variant": "gemma_300m",
+      "dtype": "bfloat16",
+      "chunk_size": 15,
+      "n_action_steps": 5,
+      "use_visual_memory": false,
+      "use_proprioceptive_memory": false,
+      "memory_frames": 6,
+      "memory_stride": 30,
+      "memory_temporal_attention_every": 4,
+      "max_state_dim": 32,
+      "max_action_dim": 32,
+      "num_inference_steps": 10,
+      "time_sampling_beta_alpha": 1.5,
+      "time_sampling_beta_beta": 1.0,
+      "time_sampling_scale": 0.999,
+      "time_sampling_offset": 0.001,
+      "min_period": 0.004,
+      "max_period": 4.0,
+      "use_relative_actions": false,
+      "relative_exclude_joints": [
+        "gripper"
+      ],
+      "action_feature_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "gripper_close_binary"
+      ],
+      "rtc_config": null,
+      "rtc_training_max_delay": 0,
+      "image_resolution": [
+        224,
+        224
+      ],
+      "empty_cameras": 0,
+      "tokenizer_max_length": 200,
+      "text_tokenizer_name": "/home/lp531/pi05_lora_workspace/weights/tokenizer",
+      "normalization_mapping": {
+        "VISUAL": "IDENTITY",
+        "STATE": "QUANTILES",
+        "ACTION": "QUANTILES"
+      },
+      "gradient_checkpointing": true,
+      "compile_model": false,
+      "compile_mode": "max-autotune",
+      "freeze_vision_encoder": true,
+      "train_expert_only": false,
+      "optimizer_lr": 5e-05,
+      "optimizer_betas": [
+        0.9,
+        0.95
+      ],
+      "optimizer_eps": 1e-08,
+      "optimizer_weight_decay": 0.01,
+      "optimizer_grad_clip_norm": 1.0,
+      "scheduler_warmup_steps": 4000,
+      "scheduler_decay_steps": 120000,
+      "scheduler_decay_lr": 5e-06
+    },
+    "adapter_config": {
+      "alora_invocation_tokens": null,
+      "alpha_pattern": {},
+      "arrow_config": null,
+      "auto_mapping": {
+        "base_model_class": "PI05Policy",
+        "parent_library": "lerobot.policies.pi05.modeling_pi05"
+      },
+      "base_model_name_or_path": "/home/lp531/pi05_lora_workspace/weights/pi05_base",
+      "bias": "none",
+      "corda_config": null,
+      "ensure_weight_tying": false,
+      "eva_config": null,
+      "exclude_modules": null,
+      "fan_in_fan_out": false,
+      "inference_mode": true,
+      "init_lora_weights": true,
+      "kasa_config": null,
+      "layer_replication": null,
+      "layers_pattern": null,
+      "layers_to_transform": null,
+      "loftq_config": {},
+      "lora_alpha": 32,
+      "lora_bias": false,
+      "lora_dropout": 0.0,
+      "lora_ga_config": null,
+      "megatron_config": null,
+      "megatron_core": "megatron.core",
+      "modules_to_save": [
+        "action_in_proj",
+        "action_out_proj",
+        "time_mlp_in",
+        "time_mlp_out"
+      ],
+      "monteclora_config": null,
+      "peft_type": "LORA",
+      "peft_version": "0.21.1",
+      "qalora_group_size": 16,
+      "r": 32,
+      "rank_pattern": {},
+      "revision": null,
+      "target_modules": ".*paligemma_with_expert\\.(paligemma\\.model\\.language_model|gemma_expert\\.model)\\.layers\\.\\d+\\.(self_attn\\.(q|k|v|o)_proj|mlp\\.(gate|up|down)_proj)",
+      "target_parameters": null,
+      "task_type": null,
+      "trainable_token_indices": null,
+      "use_bdlora": null,
+      "use_dora": false,
+      "use_qalora": false,
+      "use_rslora": false,
+      "velora_config": null
+    }
+  },
+  "scope": {
+    "completed_new_results": 16,
+    "new_valid_results": 15,
+    "completed_old_results": 12,
+    "offline_episodes": [
+      0,
+      40,
+      80,
+      120,
+      160,
+      180,
+      198,
+      203
+    ],
+    "offline_offsets_from_close_frames": [
+      -5,
+      0,
+      5
+    ],
+    "offline_noise_seed": 20261013,
+    "closed_loop_matched_scene_comparison": false,
+    "visual_review": "3 fractions per video, 3 cameras, selected cases; not exhaustive video playback",
+    "latest_model_is_not": "pi05_grip_stage_base_20261011"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "authorized": true,
+  "created": "2026-10-20T22:45:54.637852+08:00",
+  "collection_goal": 160,
+  "data_sources": {
+    "dynamic_standard": 160,
+    "old_correction": 55,
+    "new_correction": 34
+  },
+  "source_sampling_mass": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "key_weight": 2,
+  "other_weight": 1,
+  "key_intervals": "20 frames before first close plus logged recovery stages; overlap max, first close anchor receives no extra weight",
+  "training": {
+    "fresh": true,
+    "optimizer_updates": 50000,
+    "batch": 16,
+    "gradient_accumulation": 1,
+    "chunk": 16,
+    "learning_rate": 1e-05,
+    "backbone_learning_rate": 1e-05,
+    "seed": 20261013
+  },
+  "evaluation": {
+    "total_valid": 50,
+    "execute_steps": 15,
+    "action_rate_hz": 10,
+    "execution_rate_hz": 60,
+    "min_close_hold_s": 1,
+    "random_scenes": true,
+    "freeze": false,
+    "retain": [
+      "three_videos",
+      "trace",
+      "prediction_chunks",
+      "input_sync",
+      "final_status"
+    ],
+    "blank_camera_trials": "archive and replace",
+    "success": "final cup root inside blue box and released and not held"
+  }
+}

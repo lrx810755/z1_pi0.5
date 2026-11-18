@@ -1,0 +1,142 @@
+{
+  "service_success": false,
+  "error": "目标物体闭爪前最终位置验收失败：单次最终定位后未进入闭爪允许区间：local=(0.142219, 0.026872, 0.063426), target=(0.12083045, 0.030638796286213986, 0.0194797), tolerance=(0.008, 0.009, 0.008)",
+  "failed_stage": "grasp_and_lift",
+  "case": {
+    "id": "frustum_h34_middle_01",
+    "shape": "frustum",
+    "height_mm": 34,
+    "position": "middle",
+    "repeat": 1,
+    "target_grid": [
+      2,
+      1
+    ],
+    "cup_position_m": [
+      0.525,
+      -0.141,
+      0.0
+    ],
+    "planning_attempts": 1
+  },
+  "steps": [
+    {
+      "stage": "planning",
+      "attempt": 1,
+      "success": true,
+      "message": "外侧低位→水平精确对位：两段已连续融合"
+    },
+    {
+      "stage": "approach",
+      "attempt": 1,
+      "success": true,
+      "message": "已到达闭爪前最终定位姿态"
+    },
+    {
+      "stage": "grasp_and_lift",
+      "attempt": 1,
+      "success": false,
+      "message": "目标物体闭爪前最终位置验收失败：单次最终定位后未进入闭爪允许区间：local=(0.142219, 0.026872, 0.063426), target=(0.12083045, 0.030638796286213986, 0.0194797), tolerance=(0.008, 0.009, 0.008)"
+    }
+  ],
+  "elapsed_wall_s": 28.398504495620728,
+  "frames": 211,
+  "max_object_root_z_m": 0.005981,
+  "maximum_rise_m": 0.005981,
+  "final_status": {
+    "baseline_z_m": 0.0,
+    "bilateral_contact": false,
+    "bilateral_contact_consecutive_frames": 0,
+    "bilateral_contact_recent": false,
+    "capture_radius_is_debug_only": true,
+    "closed": false,
+    "contact_angle_valid": false,
+    "contact_report_available": true,
+    "cylinder_tilt_deg": 0.024168055322886944,
+    "cylinder_tilt_valid": true,
+    "failure_reason": "",
+    "frozen": false,
+    "geometry_contact_valid": false,
+    "grasp_envelope": {
+      "x_max_m": 0.149,
+      "x_min_m": 0.113,
+      "y_abs_max_m": 0.07,
+      "z_max_m": 0.04,
+      "z_min_m": 0.002
+    },
+    "grasp_success": false,
+    "gripper_commanded_closed": false,
+    "gripper_object_distance_m": 0.158016,
+    "gripper_obstructed": false,
+    "gripper_obstructed_estimated": false,
+    "gripper_position_past_threshold": false,
+    "gripper_position_rad": -0.915,
+    "gripper_tf_stamp_s": 460.750024029,
+    "gripper_world_orientation_xyzw": [
+      -0.6899362812225182,
+      -0.14889067706729578,
+      0.21583091410605296,
+      0.674712168744147
+    ],
+    "gripper_world_position_m": [
+      0.4327642276393548,
+      -0.21637470387655208,
+      0.0707828478570514
+    ],
+    "holding_observed": false,
+    "inside_grasp_envelope": false,
+    "inside_success_volume": false,
+    "left_finger_contact_impulse_ns": 0.0,
+    "left_finger_contact_object": null,
+    "left_finger_table_impulse_ns": 0.0,
+    "left_finger_touching_table": false,
+    "lifted": false,
+    "near_gripper": true,
+    "object_orientation_xyzw": [
+      2.6197682018391788e-05,
+      3.488131915219128e-05,
+      0.472253680229187,
+      0.8814626336097717
+    ],
+    "object_pose_stamp_s": 460.750024029,
+    "object_position_m": [
+      0.521476,
+      -0.091972,
+      -0.0
+    ],
+    "object_speed_m_s": 0.0,
+    "object_touching_table": true,
+    "object_touching_table_estimated": true,
+    "phase": "READY",
+    "physical_grasp_candidate": false,
+    "physical_grasp_ok": false,
+    "physical_test_lift_active": false,
+    "placement_stable": false,
+    "relative_pose_stable": false,
+    "relative_position_gripper_m": [
+      0.14221,
+      0.02686,
+      0.063434
+    ],
+    "release_sequence_complete": false,
+    "release_started": false,
+    "released": true,
+    "reported_bilateral_contact": false,
+    "right_finger_contact_impulse_ns": 0.004301989338283872,
+    "right_finger_contact_object": "cup",
+    "right_finger_table_impulse_ns": 0.0,
+    "right_finger_touching_table": false,
+    "target_collisions_enabled": true,
+    "target_finger_contact_pair_count": 1,
+    "target_finger_max_penetration_m": 1.7478072550147772e-05,
+    "target_finger_min_separation_m": -1.7478072550147772e-05,
+    "target_object": "cup",
+    "task_success": false,
+    "transport_failure_reason": "",
+    "transport_height_ok": false,
+    "was_grasped": false
+  },
+  "ever_physical_grasp": false,
+  "table_contact": false,
+  "passed": false
+}

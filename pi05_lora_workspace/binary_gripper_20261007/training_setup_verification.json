@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "verification": "real model + PEFT on meta tensors; no weights loaded or training run",
+  "module_coverage": {
+    "language_attention": 72,
+    "language_ffn": 54,
+    "expert_attention": 72,
+    "expert_ffn": 54
+  },
+  "matched_modules": 252,
+  "trainable_parameters": 55249952,
+  "effective_batch": 8,
+  "optimizer_updates": 10000,
+  "chunk_size": 15,
+  "learning_rate": 5e-05,
+  "base_weights": "/home/lp531/pi05_lora_workspace/weights/pi05_base",
+  "vision_frozen": true,
+  "full_training_modules": [
+    "action_in_proj",
+    "action_out_proj",
+    "time_mlp_in",
+    "time_mlp_out"
+  ],
+  "binary_quantiles": [
+    0,
+    1
+  ],
+  "train_episodes": 160,
+  "validation_episodes": 0,
+  "training_started": false
+}

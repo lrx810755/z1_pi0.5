@@ -1,0 +1,187 @@
+{
+  "task_id": "cup_correction_021_close_transition",
+  "task": {
+    "id": "cup_correction_021_close_transition",
+    "kind": "close_transition",
+    "grid": [
+      1,
+      0
+    ],
+    "split": "train",
+    "source_type": "synthetic_failure_informed",
+    "source_report": "/home/lp531/smolvla_eval/act_cup_only_frustum_steps15_paired30_20261025/失败原因分类.md",
+    "synthesis_note": "Bounded perturbation around a newly planned minus90 reference, not exact policy-state replay.",
+    "route_kind": "close_ready",
+    "offset_approach_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_tool_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "preparation_retreat_m": 0.0,
+    "requested_shift_world_m": [
+      -0.01,
+      0.0,
+      0.0
+    ],
+    "loaded_offset_world_m": [
+      -0.022,
+      -0.012,
+      0.012
+    ],
+    "variant": 1,
+    "reference_basic_episode": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026/episode_000015",
+    "seed": 160373262,
+    "reference_scene": {
+      "curriculum_level": "full",
+      "target_grid": [
+        1,
+        0
+      ],
+      "seed": 160373262,
+      "object_positions_m": {
+        "cup": [
+          0.426111,
+          -0.190621,
+          0.0
+        ],
+        "mouse": [
+          0.559851,
+          0.066561,
+          0.00015
+        ],
+        "beverage_bottle": [
+          0.616671,
+          -0.067647,
+          0.0
+        ],
+        "apple": [
+          0.523688,
+          -0.082804,
+          -0.0
+        ],
+        "peach": [
+          0.38484,
+          -0.010527,
+          0.0
+        ]
+      },
+      "object_orientations_xyzw": {
+        "cup": [
+          0.9179802,
+          -2.2e-06,
+          1.2e-06,
+          0.3966263
+        ],
+        "mouse": [
+          -0.3263014,
+          0.0,
+          -0.0,
+          0.9452658
+        ],
+        "beverage_bottle": [
+          0.9979028,
+          -6.5e-06,
+          7.9e-06,
+          -0.0647308
+        ],
+        "apple": [
+          -0.0312213,
+          3.7e-06,
+          -5e-05,
+          0.9995127
+        ],
+        "peach": [
+          0.4311669,
+          2.9e-06,
+          -5.81e-05,
+          0.9022722
+        ]
+      },
+      "object_displacements_mm": {
+        "cup": 223.2,
+        "mouse": 111.2,
+        "beverage_bottle": 147.7,
+        "apple": 128.3,
+        "peach": 215.4
+      },
+      "sweep_clearance_target": "cup",
+      "target_sweep_clear": true
+    },
+    "reference_initial_episode": "/home/lp531/smolvla_data/z1_tabletop_raw_cup_basic_4x5x20_renderfix_20261026/episode_000013"
+  },
+  "source_type": "synthetic_failure_informed",
+  "accepted": false,
+  "recovery_complete": false,
+  "events": [
+    {
+      "event": "gripper_intent",
+      "time": 6890.81702605,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 6905.667026825,
+      "state": "open",
+      "target": -0.9
+    }
+  ],
+  "recovery_stages": [],
+  "pregrasp_mode": "approved_reference_no_initial_offset",
+  "reference_position_m": [
+    0.27593949007267926,
+    -0.268813258761075,
+    0.07717343057910028
+  ],
+  "reference_orientation_xyzw": [
+    0.700649156282896,
+    0.09534547667831494,
+    -0.1608592419048339,
+    -0.6885668480045006
+  ],
+  "requested_start_position_m": [
+    0.27593949007267926,
+    -0.268813258761075,
+    0.07717343057910028
+  ],
+  "preflight": {
+    "route": {
+      "bad_position": [
+        0.27593949007267926,
+        -0.268813258761075,
+        0.07717343057910028
+      ],
+      "bad_orientation": [
+        0.700649156282896,
+        0.09534547667831494,
+        -0.1608592419048339,
+        -0.6885668480045006
+      ],
+      "preparation": [
+        {
+          "stage": "prepare_reference",
+          "position": [
+            0.27593949007267926,
+            -0.268813258761075,
+            0.07717343057910028
+          ],
+          "orientation": [
+            0.700649156282896,
+            0.09534547667831494,
+            -0.1608592419048339,
+            -0.6885668480045006
+          ],
+          "linear": false
+        }
+      ],
+      "recovery": [],
+      "strategy": "approved_reference"
+    },
+    "rejected": []
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "task_id": "wait8_retake_03_basic_retake",
+  "task": {
+    "kind": "basic_retake",
+    "grid": [
+      1,
+      0
+    ],
+    "reference_basic_episode": "/home/lp531/smolvla_data/bottle_rerecord160_renderfix_20261111/episode_000100",
+    "reference_scene": {
+      "curriculum_level": "full",
+      "target_grid": [
+        1,
+        0
+      ],
+      "seed": 351952898,
+      "object_positions_m": {
+        "beverage_bottle": [
+          0.476002,
+          -0.213129,
+          -0.0
+        ],
+        "mouse": [
+          0.631288,
+          0.062324,
+          0.00015
+        ],
+        "cup": [
+          0.505998,
+          0.117698,
+          0.0
+        ],
+        "peach": [
+          0.388723,
+          0.01126,
+          0.0
+        ],
+        "apple": [
+          0.368001,
+          -0.087193,
+          -0.0
+        ]
+      },
+      "object_orientations_xyzw": {
+        "beverage_bottle": [
+          0.942638,
+          -4.2e-06,
+          -1.27e-05,
+          0.3338168
+        ],
+        "mouse": [
+          -0.3312755,
+          -2e-07,
+          2e-07,
+          0.9435341
+        ],
+        "cup": [
+          0.5454787,
+          -6e-07,
+          3e-07,
+          0.8381248
+        ],
+        "peach": [
+          0.9995456,
+          -4.03e-05,
+          -1.42e-05,
+          -0.0301454
+        ],
+        "apple": [
+          0.918328,
+          -4.26e-05,
+          -2.06e-05,
+          0.3958206
+        ]
+      },
+      "object_displacements_mm": {
+        "beverage_bottle": 326.6,
+        "mouse": 163.5,
+        "cup": 228.2,
+        "peach": 228.5,
+        "apple": 117.5
+      },
+      "sweep_clearance_target": "beverage_bottle",
+      "target_sweep_clear": true
+    },
+    "seed": 351952898,
+    "route_kind": "close_ready",
+    "offset_approach_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_tool_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "preparation_retreat_m": 0.0,
+    "source_pool": "basic",
+    "id": "wait8_retake_03_basic_retake",
+    "split": "train",
+    "source_type": "rerecorded_long_wait_episode",
+    "rerecord_source": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000041",
+    "rerecord_source_frames_sha256": "ed3e84083c15b3ea90d96ef7b4a1134d29d13b4103527a10c78b4c225d96b3f8",
+    "original_wait_intervals": [
+      {
+        "type": "长停顿候选",
+        "start_frame": 100,
+        "end_frame_exclusive": 208,
+        "start_s": 10.0,
+        "end_s": 20.8,
+        "recorded_s": 10.8,
+        "priority": "high",
+        "detail": "近静止10.80s；末端范围1.49mm；最大关节范围0.29deg"
+      }
+    ],
+    "reference_initial_episode": "/home/lp531/smolvla_data/bottle_horizontal50_after_basic_20261109/episode_000041"
+  },
+  "source_type": "rerecorded_long_wait_episode",
+  "accepted": false,
+  "recovery_complete": true,
+  "events": [
+    {
+      "event": "gripper_intent",
+      "time": 127.400006644,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 136.033340428,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "gripper_intent",
+      "time": 136.600007124,
+      "state": "close",
+      "target": 0.0
+    },
+    {
+      "event": "stale_leg_replanned",
+      "time": 162.683341817,
+      "phase": "descent",
+      "retry": 1,
+      "measured_object_position": [
+        0.33276766538619995,
+        0.1359926462173462,
+        0.18158717453479767
+      ],
+      "destination": [
+        0.3199999622910755,
+        0.13999991615078478,
+        0.11500003451692956
+      ]
+    },
+    {
+      "event": "gripper_intent",
+      "time": 165.216675283,
+      "state": "open",
+      "target": -0.9
+    },
+    {
+      "event": "withdrawal_measured",
+      "time": 171.66667561900002,
+      "before": [
+        0.219106519092025,
+        0.21746482751754453,
+        0.28615691623897743
+      ],
+      "after": [
+        0.21905515359265018,
+        0.21762963206651384,
+        0.32529702450847964
+      ]
+    },
+    {
+      "event": "gripper_intent",
+      "time": 171.68334228700002,
+      "state": "open",
+      "target": -0.9
+    }
+  ],
+  "recovery_stages": [],
+  "measured_finger_table_clearance_m": 0.0532419121310824,
+  "preparation_table_contact_seen": false,
+  "close_transition_verified": true,
+  "withdrawal_rise_m": 0.039140108269502205
+}
